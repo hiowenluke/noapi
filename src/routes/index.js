@@ -59,10 +59,14 @@ const handler = async (req, res) => {
 	}
 };
 
-const fn = (expressApp, power_) => {
+// options: {power, apiPath, module}
+const fn = (expressApp, options = {}) => {
 
 	// Save customer handler
-	power = power_;
+	power = options.power;
+
+	// Load Api Servers from directories such api, api-forms
+	me.loadApiServers(options.apiPath, options.module);
 
 	// All requests, what ever get or post，be sent to handler
 	expressApp.get('*', handler);
