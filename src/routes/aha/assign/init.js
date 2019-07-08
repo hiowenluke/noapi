@@ -5,13 +5,14 @@ const data = require('../../../data');
 /** @name me.assign.init */
 const fn = () => {
 
-	const root = data.projectRoot;
-	const serverNames = data.serverNames; // ["api-forms", "api-mms", ...]
-	const sysNames = data.sysNames; // ["forms", "mms", ...] // 也即 serverName 去掉了前缀 "api-"
+	const isSimpleMode = data.isSimpleMode;
+	const root = data.apiServicesRoot;
+	const serviceNames = data.serviceNames; // ["api-forms", "api-mms", ...]
+	const sysNames = data.sysNames; // ["forms", "mms", ...] // 也即 serviceName 去掉了前缀 "api-"
 
 	// The aha/assign.js for all projects is loaded as data.xxx.aha.assgin
-	serverNames.forEach((serverName, index) => {
-		const assignFilePath = root + '/' + serverName + '/aha/assign.js';
+	serviceNames.forEach((serviceName, index) => {
+		const assignFilePath = root + (isSimpleMode ? '' : '/' + serviceName) + '/aha/assign.js';
 		if (fs.existsSync(assignFilePath)) {
 			const sysName = sysNames[index]; // "forms"
 

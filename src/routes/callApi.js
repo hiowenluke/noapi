@@ -41,7 +41,7 @@ const fn = async (query, isFromTransfer) => {
 	saveToPrivateNameSpace(query, {sysName, apiPath});
 
 	// Get the core object of the current subsystem, for example:
-	// 		data.core.forms.api、data.core.forms.aha
+	// 		data.core.forms.api, data.core.forms.aha
 	const sysApis = data.core[sysName].api;
 	const sysAhaFn = data.core[sysName].aha;
 

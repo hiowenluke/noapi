@@ -1,9 +1,14 @@
 
 const me = {
-	projectRoot: '', // root path of project
-	serverNames: [], // ["api-forms", ...]
+	webServiceRoot: '', // root path of web service
+	apiServicesRoot: '', // root path of api service(s)
+	isSimpleMode: true, // single api service (web service is api service)
+
+	serviceNames: [], // ["api-forms", ...]
 	sysNames: [], // ["forms", ...]
-	core: {}, // data.core.forms.aha、data.core.forms.api、data.core.forms.biz
+	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp"} // for getting sysName by serviceName
+
+	core: {}, // {aha, api, biz}
 };
 
 module.exports = me;

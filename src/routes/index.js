@@ -8,8 +8,10 @@ let power;
 const flow = {
 	validateOriginalUrl({req, res}) {
 
-		// An api url must be start with "/xxx:/"
-		if (!/^\/[a-zA-Z0-9_]+?:\//.test(req.originalUrl)) return res.end();
+		// If the url is not start with "/xxx:", then set with "/default:"
+		if (!/^\/[a-zA-Z0-9_]+?:\//.test(req.originalUrl)) {
+			req.originalUrl = '/default:' + req.originalUrl;
+		}
 	},
 
 	initQuery({req}) {
@@ -65,12 +67,12 @@ const fn = (expressApp, options = {}) => {
 	// Save customer handler
 	power = options.power;
 
-	// Load Api Servers from directories such api, api-forms
-	me.loadApiServers(options.apiPath, options.module);
-
-	// All requests, what ever get or post，be sent to handler
+	// All requests, what ever get or post, be sent to handler
 	expressApp.get('*', handler);
 	expressApp.post('*', handler);
+
+	// Load Api Services from directories such "api", "api-forms"
+	me.loadApiServices(options.apiPath, options.module);
 
 	// Init core modules
 	me.aha.init();
