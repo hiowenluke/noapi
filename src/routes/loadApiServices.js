@@ -1,9 +1,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const data = require('../../data');
+const data = require('../data');
 
-// The serviceName is equals to the api service directory name, such as "api", "api-forms", etc.
+// The serviceName is the api service directory name, such as "api", "api-forms", etc.
 const initServiceInfo = (serviceName) => {
 	const isSimpleMode = data.isSimpleMode;
 	const folderPath = data.apiServicesRoot + (isSimpleMode ? '' : '/' + serviceName);

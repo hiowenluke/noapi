@@ -12,12 +12,13 @@ const fn = (callerModule) => {
 	}
 	else {
 		// For installing (the path of noapi is ./node_modules/noapi)
-		// the relative path to the web service is '../../../../../../'.
-		webServiceRoot = path.resolve(module.filename, '../../../../../../');
+		// The relativePath is the relative path of THIS file to the web service.
+		const relativePath = '../../../../../../';
+		webServiceRoot = path.resolve(module.filename, relativePath);
 	}
 
 	if (webServiceRoot === '/') {
-		throw new Error(`The web service root / is invalid. If you require('<work folder>\/noapi'), use noapi.routes(app, {module}) please.`);
+		throw new Error(`The web service root / is invalid. \nIf you require('<work folder>\/noapi'), please use noapi({..., module}) or noapi.routes(app, {..., module}).`);
 	}
 
 	data.webServiceRoot = webServiceRoot;

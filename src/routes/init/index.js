@@ -1,12 +1,9 @@
 
 const me = require('kdo').obj(module);
 
-/** @name me.loadApiServices */
 const fn = (apiServicePath, module) => {
-
 	me.initWebServiceRoot(module);
-	me.initApiServiceNames(apiServicePath);
-	me.loadApiServicesInfo();
+	me.initApiServices(apiServicePath);
 };
 
 module.exports = fn;

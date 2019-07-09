@@ -2,6 +2,7 @@
 const kdo = require('kdo');
 const me = kdo.obj(module);
 const urlencode = require('urlencode');
+const init = require('./init');
 
 let power;
 
@@ -64,6 +65,9 @@ const handler = async (req, res) => {
 // options: {power, apiPath, module}
 const fn = (expressApp, options = {}) => {
 
+	// Initializing for routes
+	init(options.apiPath, options.module);
+
 	// Save customer handler
 	power = options.power;
 
@@ -72,7 +76,7 @@ const fn = (expressApp, options = {}) => {
 	expressApp.post('*', handler);
 
 	// Load Api Services from directories such "api", "api-forms"
-	me.loadApiServices(options.apiPath, options.module);
+	me.loadApiServices();
 
 	// Init core modules
 	me.aha.init();
