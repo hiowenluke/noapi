@@ -1,7 +1,7 @@
 
 const data = require('../data');
 const lib = require('./__lib');
-const ahaAssignDo = require('./aha/assign/do');
+const assignTo = require('./assignTo');
 
 // ------------------------------------------------ -------
 // The following result is a legal result:
@@ -79,8 +79,8 @@ const fn = async (query, isFromTransfer) => {
 
 	let result;
 
-	// Execute the current subsystem's assign task (if any)
-	result = await ahaAssignDo(query);
+	// Try to assign requests to another subsystem (if any)
+	result = await assignTo(query);
 	if (isValidResult(result)) return result;
 
 	// Some preparation work (if any), such as pre-processing parameters

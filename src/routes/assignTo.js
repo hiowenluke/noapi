@@ -1,5 +1,5 @@
 /*
-	Transfer some requests from the current subsystem to other systems for execution.
+	Transfer some requests from the current subsystem to other systems.
 
 	E.g:
 
@@ -9,7 +9,7 @@
 
 * */
 
-const data = require('../../../data');
+const data = require('../data');
 
 // -------------------------------------------------------
 // Get toApiPath according to the rules
@@ -44,11 +44,6 @@ const getToApiPath = (sysName, rule, query) => {
 	// -------------------------------------------------------
 	// Fix fromApiPath
 	// -------------------------------------------------------
-
-	// If xxx: is omitted from fromApiPath, it is automatically filled with sysName
-	if (fromApiPath.indexOf(':') === -1) {
-		fromApiPath = `${sysName}:` + fromApiPath; // forms:/info/form/new
-	}
 
 	// Since url starts with "/", fromApiPath also needs to be like this
 	if (fromApiPath.substr(0, 1) !== '/') {
@@ -101,6 +96,11 @@ const getToApiPath = (sysName, rule, query) => {
 	return toApiPath;
 };
 
+const getRulesFromSysName = (rulesFromApiPath) => {
+	const result = rulesFromApiPath.match(/^([a-zA-Z0-9_])+(?=:)/);
+	return result ? result[0] : ''; // 'forms:/info/*' => 'forms'
+};
+
 const tryToGetResult = async (apiPath, query) => {
 
 	if (!apiPath) return;
@@ -114,14 +114,7 @@ const tryToGetResult = async (apiPath, query) => {
 };
 
 // Transfer some requests from the current subsystem to other subsystems
-/** @name me.assign.do */
 const fn = async (query) => {
-
-	const sysName = query.__.sysName; // The name of the current subsystem, such as "forms"
-	const sys = data.core[sysName]; // data.forms
-
-	// If data.core.xxx.aha.assign does not exist, it will not be processed
-	if (!sys.aha || !sys.aha.assign) return;
 
 	// The assign rule array:
 	// 		[
@@ -129,12 +122,17 @@ const fn = async (query) => {
 	//			['forms:/info/form/new', 'kind:/form/new'],
 	//			['forms:/bill/dropDownList', 'kind:/dropDownList'],
 	// 		]
-	// Note:
-	// 		'forms:' can be omitted (it will automatically be added with the name of the current subsystem)
-	const assignRules = sys.aha.assign;
+	const assignRules = data.assignRules;
+	if (!assignRules || !assignRules.length) return;
+
+	// The name of the current subsystem, such as "forms"
+	const sysName = query.__.sysName;
 
 	for (let i = 0; i < assignRules.length; i ++) {
 		const assignRule = assignRules[i]; // ['forms:/info/*', 'kind:/*']
+		const rulesFromSysName = getRulesFromSysName(assignRule[0]); // "forms"
+		if (rulesFromSysName !== sysName) continue;
+
 		const apiPath = getToApiPath(sysName, assignRule, query);
 		const result = await tryToGetResult(apiPath, query);
 		if (result) return result;

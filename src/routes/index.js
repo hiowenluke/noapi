@@ -66,7 +66,7 @@ const handler = async (req, res) => {
 const fn = (expressApp, options = {}) => {
 
 	// Initializing for routes
-	init(options.apiPath, options.module);
+	init(options);
 
 	// Save customer handler
 	power = options.power;

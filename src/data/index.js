@@ -9,6 +9,7 @@ const me = {
 	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp"} // for getting sysName by serviceName
 
 	core: {}, // {aha, api, biz}
+	assignRules: [], // rules of assigning
 };
 
 module.exports = me;
