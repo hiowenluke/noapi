@@ -1,5 +1,7 @@
 
 const kdo = require('kdo');
+kdo.config(true);
+
 const express = require('express');
 const http = require('http');
 
