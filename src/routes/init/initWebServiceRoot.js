@@ -6,7 +6,7 @@ const data = require('../../data');
 const fn = (callerModule) => {
 	let webServiceRoot;
 
-	// For debug
+	// For debugging in user's project
 	if (callerModule) {
 		webServiceRoot = path.resolve(callerModule.filename, '../');
 	}
