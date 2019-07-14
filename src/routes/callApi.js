@@ -65,7 +65,7 @@ const fn = async (query, isFromTransfer) => {
 
 			// For example, if the forms subsystem doesn't have a newKind interface,
 			// then requests "/forms:/info/form/newKind" will get an error
-			return {error: 'Error API url ' + query.originalUrl};
+			return {error: 'Error API url ' + query.originalUrl.replace('/default:', '')};
 		}
 	}
 
