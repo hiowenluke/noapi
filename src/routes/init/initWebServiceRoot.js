@@ -11,10 +11,16 @@ const fn = (callerModule) => {
 		webServiceRoot = path.resolve(callerModule.filename, '../');
 	}
 	else {
+		// For noapi/examples
+		if (data.pathToCaller.indexOf(`/noapi/examples/`) >= 0) {
+			webServiceRoot = path.resolve(data.pathToCaller, '../');
+		}
+		else {
 			// For installing (the path of noapi is ./node_modules/noapi)
 			// The relativePath is the relative path of THIS file to the web service.
 			const relativePath = '../../../../../../';
 			webServiceRoot = path.resolve(module.filename, relativePath);
+		}
 	}
 
 	if (webServiceRoot === '/') {
