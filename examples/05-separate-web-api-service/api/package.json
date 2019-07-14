@@ -1,0 +1,9 @@
+{
+  "name": "my-project-api",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "owen@myproject.com",
+  "dependencies": {
+    "kdo": "^1.5.8"
+  }
+}
