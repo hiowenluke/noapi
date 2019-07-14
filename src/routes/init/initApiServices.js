@@ -20,7 +20,7 @@ const getApiServiceNames = (root) => {
 			}
 			else {
 				// If there is no package.json in the API directory,
-				// this is not an api service directory, we should ignore it.
+				// it is not an api service directory, we should ignore it.
 			}
 		}
 
@@ -62,8 +62,9 @@ const fn = (apiServicesRelativePath) => {
 		}
 	}
 
-	// If the api service directory is not found, it is a simple mode, that is,
-	// the current web service directory is the api service directory, and the service name is "default".
+	// If the api service directory is not found, it is simple mode, that is,
+	// the current web service directory is the api service directory,
+	// then set the service name to "default".
 	if (!serviceNames.length) {
 		data.isSimpleMode = true;
 		apiServicesRoot = webServiceRoot;
@@ -78,7 +79,7 @@ const fn = (apiServicesRelativePath) => {
 
 	serviceNames.forEach(serviceName => {
 
-		// If there is only one service name "api" or "default", then the name of subsystem is "default".
+		// If there is only one service name "api" or "default", then it is the name of subsystem too.
 		// Otherwise, the name of subsystem is "xxx", which is the second part of "api-xxx".
 		const sysName = serviceName === 'api' || serviceName === 'default' ? 'default' : serviceName.split('-')[1];
 
