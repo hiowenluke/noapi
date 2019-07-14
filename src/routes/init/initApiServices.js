@@ -79,7 +79,7 @@ const fn = (apiServicesRelativePath) => {
 
 	serviceNames.forEach(serviceName => {
 
-		// If there is only one service name "api" or "default", then it is the name of subsystem too.
+		// If there is only one service name "api" or "default", then set it as the name of subsystem.
 		// Otherwise, the name of subsystem is "xxx", which is the second part of "api-xxx".
 		const sysName = serviceName === 'api' || serviceName === 'default' ? 'default' : serviceName.split('-')[1];
 
