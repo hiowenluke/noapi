@@ -9,6 +9,7 @@
   "author": "hi.owen.luke@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "caller": "^1.0.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
