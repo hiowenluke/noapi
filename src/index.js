@@ -1,6 +1,8 @@
 
 const routes = require('./routes');
 const web = require('./web');
+const data = require('./data');
+const caller = require('caller');
 
 const optionsDefault = {
 	serverName: 'default',
@@ -8,6 +10,8 @@ const optionsDefault = {
 };
 
 const noapi = (options = {}) => {
+	data.pathToCaller = caller();
+
 	options.serverName = options.serverName || optionsDefault.serverName;
 	options.port = options.port || optionsDefault.port;
 	return web(options, routes);
