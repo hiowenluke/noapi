@@ -81,9 +81,6 @@ const fn = (expressApp, options = {}) => {
 	expressApp.get('*', handler);
 	expressApp.post('*', handler);
 
-	// Load Api Services from directories such "api", "api-forms"
-	me.loadApiServices();
-
 	// Init core modules
 	me.aha.init();
 	me.api.init();

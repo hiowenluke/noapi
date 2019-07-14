@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const data = require('../data');
+const data = require('../../data');
 
 // The serviceName is the api service directory name, such as "api", "api-forms", etc.
 const initServiceInfo = (serviceName) => {
