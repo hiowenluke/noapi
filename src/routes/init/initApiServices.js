@@ -37,7 +37,7 @@ const getApiServiceNames = (root) => {
 const fn = (apiServicesRelativePath) => {
 	const webServiceRoot = data.webServiceRoot;
 	let apiServicesRoot;
-	let serviceNames;
+	let serviceNames = [];
 
 	// If the relative path of the api service is specified, use it.
 	if (apiServicesRelativePath) {
