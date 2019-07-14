@@ -19,6 +19,29 @@ const flow = {
 
 	setPublic({options}) {
 		if (options.public) { // options.public can be omitted
+
+			if (typeof options.public === 'object') {
+
+				// options.public = {path}, without name
+				if (!options.public.name) {
+					options.public.name = 'public';
+				}
+
+				// Use the root folder of project as public folder
+				if (options.public.name === '/') {
+					options.public.name = '';
+				}
+			}
+
+			// If options.public is string, it is a path to public
+			if (typeof options.public === 'string') {
+				const pathToPublic = options.public;
+				options.public = {
+					name: 'public',
+					path: pathToPublic,
+				}
+			}
+
 			app.use('/' + (options.public.name || ''), express.static(options.public.path));
 		}
 	},
