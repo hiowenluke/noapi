@@ -10,7 +10,7 @@ const flow = {
 	validateOriginalUrl({req, res}) {
 		const originalUrl = req.originalUrl;
 
-		// "/default:/favicon.ico"
+		// ".../favicon.ico"
 		if (/\.ico$/.test(originalUrl)) {
 			return 'break';
 		}
