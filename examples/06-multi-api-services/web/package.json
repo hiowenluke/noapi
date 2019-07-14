@@ -1,0 +1,9 @@
+{
+  "name": "my-project-web",
+  "version": "0.1.0",
+  "main": "app.js",
+  "author": "thanos@theavengers.com",
+  "dependencies": {
+    "noapi": "^0.7.7"
+  }
+}
