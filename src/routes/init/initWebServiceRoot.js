@@ -18,7 +18,20 @@ const fn = (callerModule) => {
 	}
 
 	if (webServiceRoot === '/') {
-		throw new Error(`The web service root / is invalid. \nIf you require('<work folder>\/noapi'), please use noapi({..., module}) or noapi.routes(app, {..., module}).`);
+		throw new Error(`The web service root / is invalid. 
+		
+			If you:
+				require('.../noapi') // for debugging noapi in your project
+				
+			please do:
+				noapi({module});
+
+			or:
+				const options = {...};
+				options.module = module;
+				noapi(options);
+		
+		`.replace(/\n\t\t\t/g, '\n\t').replace(/\t/g, '    '));
 	}
 
 	data.webServiceRoot = webServiceRoot;
