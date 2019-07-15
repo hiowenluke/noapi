@@ -3,6 +3,10 @@
   "version": "0.8.2",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiowenluke/noapi.git"
+  },
   "scripts": {
     "test": "cd ./test && ./run.sh"
   },
