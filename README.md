@@ -74,7 +74,9 @@ The following demo project consists of 3+ api services. Each api service is an i
 
 ## Examples
 
-See [examples](./examples) directory for more details.
+See examples directory for more details.
+
+[How To Run These Examples](./examples/readme.md)
 
 
 
@@ -83,3 +85,4 @@ See [examples](./examples) directory for more details.
 [MIT](LICENSE)
 
 Copyright (c) 2019, Owen Luke
+
