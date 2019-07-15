@@ -10,7 +10,7 @@ The simplest framework for Node.js Api app. You just need to focus on business l
 
 The files in the api directory have no code, just a description of the api (e.g., the test url). Noapi saves the parameters (from url or post) to the "query" and calls the files in the biz directory for processing.
 
-![](./doc/images/demo.jpg)
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo.jpg?raw=true)
 
 
 
