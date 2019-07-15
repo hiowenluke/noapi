@@ -1,68 +1,85 @@
 
 
-## Noapi
+# Noapi
 
-A framework for Node.js Api app.
+The simplest framework for Node.js Api app. You just need to focus on business logic, no need to care about how to manage web services, routes, multi-level directory routing, multi-api services, etc. 
 
+
+
+## Demo
+
+The files in the api directory have no code, just a description of the api (e.g., the test url). Noapi saves the parameters (from url or post) to the "query" and calls the files in the biz directory for processing.
+
+![](./doc/images/demo.jpg)
+
+
+
+## Multi-Api Services
+
+The following demo project consists of 3+ api services. Each api service is an independent project, which is maintained by different people and has a clear division of labor.
 
 ```
 /<Project root>
-    /api-forms							 <- Independent subproject (api service, api-forms subsystem)
-        /aha
-            ...
-        /api
-            /bill
-                /form
-                    crud.js					http://localhost:3000/forms:/bill/form/crud
-                    new.js					http://localhost:3000/forms:/bill/form/new
-                /list
-                    getData.js				http://localhost:3000/forms:/bill/list/getdata
-                    getFields.js			http://localhost:3000/forms:/bill/list/getfields
-                dropDownList.js				http://localhost:3000/forms:/bill/dropdownlist
-            index.js
-                    
-        /biz
-            ...
-        /doc
-        /test
-        index.js
-        package.json
+  /api-forms             <- Independent subproject (api service "forms" subsystem)
+    /api
+      /bill
+        /form
+          crud.js           http://localhost:3000/forms:/bill/form/crud
+          new.js            http://localhost:3000/forms:/bill/form/new
+        dropDownList.js     http://localhost:3000/forms:/bill/dropdownlist
+      index.js
+          
+    /biz
+      ...
+    index.js
+    package.json
 
-    /api-erp							 <- Independent subproject (api service, api-erp subsystem)
-        /api
-            /bill
-                /mms
-                    /mnf
-                        manuPlan.js			http://localhost:3000/erp:/bill/mms/mnf/manuplan
-                /purchase
-                    plan.js					http://localhost:3000/erp:/bill/purchase/plan
-                    order.js				http://localhost:3000/erp:/bill/purchase/order
+  /api-erp               <- Independent subproject (api service "erp" subsystem)
+    /api
+      /bill
+        /mms
+          /mnf
+            manuPlan.js     http://localhost:3000/erp:/bill/mms/mnf/manuplan
+        /purchase
+          plan.js           http://localhost:3000/erp:/bill/purchase/plan
+          order.js          http://localhost:3000/erp:/bill/purchase/order
 
-                /sales
-                    plan.js					http://localhost:3000/erp:/bill/sales/plan
-                    order.js				http://localhost:3000/erp:/bill/sales/order
+        /sales
+          plan.js           http://localhost:3000/erp:/bill/sales/plan
+          order.js          http://localhost:3000/erp:/bill/sales/order
 
-            /report
-                /mms
-                    /mnf
-                        /manuPlan
-                            summary.js		http://localhost:3000/erp:/report/mms/mnf/manuplan/summary
-                            detail.js		http://localhost:3000/erp:/report/mms/mnf/manuplan/detail
-        /biz
-            ...
-        /lib
-        /test
-        index.js
-        package.json
+      /report
+        /mms
+          /mnf
+            /manuPlan
+              summary.js    http://localhost:3000/erp:/report/mms/mnf/manuplan/summary
+              detail.js     http://localhost:3000/erp:/report/mms/mnf/manuplan/detail
+    /biz
+      ...
+    index.js
+    package.json
 
-    /api-xxx							 <- Independent subproject (api service, api-xxx subsystem)
-        ...
+  /api-xxx               <- Independent subproject (api service "xxx" subsystem)
+    ...
 
-    /web								 <- Independent subproject (web service)
-        /doc
-        /test
-        app.js
-        package.json
+  /web                   <- Independent subproject (web service)
+    /test
+    app.js
+    package.json
 
-    README.md
+  README.md
 ```
+
+
+
+## Examples
+
+See [examples](./examples) directory for more details.
+
+
+
+## License
+
+[MIT](LICENSE)
+
+Copyright (c) 2019, Owen Luke
