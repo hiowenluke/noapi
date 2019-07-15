@@ -8,7 +8,7 @@
     "url": "https://github.com/hiowenluke/noapi.git"
   },
   "scripts": {
-    "test": "cd ./test && ./run.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hi.owen.luke@gmail.com",
   "license": "MIT",
