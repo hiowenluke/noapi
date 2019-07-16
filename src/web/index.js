@@ -3,8 +3,9 @@ const kdo = require('kdo');
 const express = require('express');
 const http = require('http');
 
-const app = express();
-const server = http.Server(app);
+const expressApp = express();
+const httpServer = http.Server(expressApp);
+const noapiApp = require('./app').init(expressApp);
 
 const flow = {
 	setCors() {
@@ -14,7 +15,7 @@ const flow = {
 
 		// use it before all route definitions
 		const cors = require('cors');
-		app.use(cors({origin: '*'}));
+		expressApp.use(cors({origin: '*'}));
 	},
 
 	setPublic({options}) {
@@ -42,7 +43,7 @@ const flow = {
 				}
 			}
 
-			app.use('/' + (options.public.name || ''), express.static(options.public.path));
+			expressApp.use('/' + (options.public.name || ''), express.static(options.public.path));
 		}
 	},
 
@@ -54,13 +55,13 @@ const flow = {
 		// Note that must be {extended: true}:
 		// https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
 
-		app.use(express.urlencoded({extended: true})); // to support URL-encoded bodies, eg: name=foo&color=red
-		app.use(express.json()); // to support JSON-encoded bodies, eg: {"name":"foo","color":"red"}
+		expressApp.use(express.urlencoded({extended: true})); // to support URL-encoded bodies, eg: name=foo&color=red
+		expressApp.use(express.json()); // to support JSON-encoded bodies, eg: {"name":"foo","color":"red"}
 
 		// for form-data, such as postman, file upload
 		const multer = require('multer');
 		const uploadFolder = options.uploadFolder || ''; // options.uploadFolder can be omitted
-		app.use(multer({dest: uploadFolder}).any()); // app.use(multer()) can not be ommited
+		expressApp.use(multer({dest: uploadFolder}).any()); // app.use(multer()) can not be ommited
 
 		// test
 		// app.all('/test', (req, res) => {
@@ -69,26 +70,26 @@ const flow = {
 	},
 
 	setRoutes({options, routes}) {
-		routes(app, options);
+		routes(options);
 	},
 
 	setListen({options}) {
-		app.listen = () => {
+		expressApp.listen = () => {
 			const {serverName, port} = options;
-			server.listen(port, () => {
+			httpServer.listen(port, () => {
 				console.log('%s server listening on port %d', serverName, port);
 			});
 		};
 	},
 
 	run() {
-		app.listen();
+		expressApp.listen();
 	}
 };
 
 const fn = (options, routes) => {
 	kdo.sync.do(flow, {options, routes});
-	return {app, server, express};
+	return {app: noapiApp, server: httpServer, express};
 };
 
 module.exports = fn;

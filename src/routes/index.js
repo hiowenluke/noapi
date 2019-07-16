@@ -3,6 +3,7 @@ const kdo = require('kdo');
 const me = kdo.obj(module);
 const urlencode = require('urlencode');
 const init = require('./init');
+const app = require('../web/app');
 
 let power;
 
@@ -58,7 +59,7 @@ const flow = {
 	}
 };
 
-const handler = async (req, res) => {
+const noapiRouter = async (req, res) => {
 	try {
 		await kdo.do(flow, {req, res});
 	}
@@ -69,17 +70,11 @@ const handler = async (req, res) => {
 };
 
 // options: {power, apiPath, module}
-const fn = (expressApp, options = {}) => {
-
-	// Initializing for routes
-	init(options);
-
-	// Save customer handler
+const fn = (options = {}) => {
 	power = options.power;
 
-	// All requests, what ever get or post, be sent to handler
-	expressApp.get('*', handler);
-	expressApp.post('*', handler);
+	init(options);
+	app.saveNoapiRouter(noapiRouter);
 
 	// Init core modules
 	me.aha.init();
