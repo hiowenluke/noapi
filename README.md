@@ -4,7 +4,7 @@
 
 The simplest framework for [Node](https://nodejs.org) Api app. You just need to focus on your great project, no need to care about how to manage web services, routes, multi-level directory routing, multi-api services, etc. 
 
-Noapi is based on [Express](https://expressjs.com/), we can use all the middleware of Express or write our own middleware and custom routes. (All of them will be executed before noapi)
+Noapi is based on [Express](https://expressjs.com/), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi)
 	
 
 ## Installation
