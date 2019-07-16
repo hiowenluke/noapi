@@ -88,7 +88,7 @@ const flow = {
 
 const fn = (options, routes) => {
 	kdo.sync.do(flow, {options, routes});
-	return {app, server};
+	return {app, server, express};
 };
 
 module.exports = fn;
