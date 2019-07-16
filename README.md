@@ -17,7 +17,7 @@ npm i noapi --save
 
 ## Demo
 
-The api file has no code, just with a description(e.g., the test url). Noapi saves the parameters (from url or post) to the "query" and calls the biz file for processing.
+The api file has no code, just with a description(e.g., the test url). Noapi saves the parameters (from url or posted data) to the "query" and calls the biz file for processing.
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo.jpg?raw=true)
 
