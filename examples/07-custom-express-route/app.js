@@ -7,8 +7,9 @@
 		http://localhost:3000/bill/form/crud?formname=trader
  * */
 
-const noapi = require('../noapi');
-const {app, express} = noapi();
+// The app is an express app.
+// The express is the express self.
+const {app, express} = require('../noapi')();
 
 const router = express.Router();
 router.use('/test', (req, res, next) => {

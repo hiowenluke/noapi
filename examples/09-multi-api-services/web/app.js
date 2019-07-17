@@ -1,6 +1,4 @@
 
-const noapi = require('../../noapi');
-
 const options = {
 	public: {
 		name: '/',
@@ -8,4 +6,4 @@ const options = {
 	}
 };
 
-noapi(options);
+require('../../noapi')(options);
