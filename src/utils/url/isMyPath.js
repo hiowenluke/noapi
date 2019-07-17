@@ -1,21 +1,16 @@
 
-// Check if the url belongs to the specified path range
+const isStartWith = require('./isStartWith');
+
+// Check if the url is the specified path
+//		url:		/mms/bom/form/saveData/detail?billid=123&act=delete
+//		pathStr:	/mms/bom/form/saveData/detail
+
 /** @name noapi.url.isMyPath */
 const fn = (url, pathStr) => {
 
-	debugger;
-
-	// The url is query
-	if (typeof url === 'object' && (url.originalUrl || url.originalurl)) {
-		url = url.originalUrl;
-	}
-
-	// "/mms/bom/form/saveData/detail/(insert)|(update)" =>
-	// "^\\/mms\\/bom\\/form\\/saveData\\/detail\\/(insert)|(update)\\?"
-	const regStr = '^' + pathStr.replace(/\//g, '\\/') + '\\?';
-	const reg = new RegExp(regStr, "i"); //
-
-	return reg.test(url);
+	// Append '?' at the end of pathStr
+	// /mms/bom/form/saveData/detail => /mms/bom/form/saveData/detail?
+	return isStartWith(url, pathStr + '?');
 };
 
 module.exports = fn;
