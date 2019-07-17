@@ -1,5 +1,6 @@
 
 const routes = require('./routes');
+const utils = require('./utils');
 const web = require('./web');
 const data = require('./data');
 const caller = require('caller');
@@ -18,4 +19,7 @@ const noapi = (options = {}) => {
 };
 
 noapi.routes = routes;
+noapi.params = utils.params;
+noapi.url = utils.url;
+
 module.exports = noapi;
