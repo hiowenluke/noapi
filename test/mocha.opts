@@ -1,0 +1,4 @@
+test/api
+--recursive
+--bail
+--timeout 2000
