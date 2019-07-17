@@ -1,6 +1,9 @@
 
 const fn = async (query) => {
-	return {formname: query.formname};
+	return [
+		'Cash',
+		'MasterCard',
+	];
 };
 
 module.exports = fn;
