@@ -13,6 +13,8 @@ const flow = {
 
 		// ".../favicon.ico"
 		if (/\.ico$/.test(originalUrl)) {
+
+			// Use the break flag to let kdo terminate execution.
 			return 'break';
 		}
 
