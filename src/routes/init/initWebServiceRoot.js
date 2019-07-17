@@ -1,6 +1,19 @@
 
+const fs = require('fs');
 const path = require('path');
 const data = require('../../data');
+
+const getInstallationPath = () => {
+
+	// For .../node_modules/noapi
+	// Path of this file is .../node_modules/noapi/src/routes/init/initWebServiceRoot.js
+
+	const relativePath = '../../../../../';
+	const nodeModulesPath = path.resolve(module.filename, relativePath);
+	const isInstalled = /\/node_modules$/.test(nodeModulesPath);
+
+	return isInstalled ? nodeModulesPath + '/noapi' : '';
+};
 
 /** @name me.initWebServiceRoot */
 const fn = (callerModule) => {
@@ -11,15 +24,16 @@ const fn = (callerModule) => {
 		webServiceRoot = path.resolve(callerModule.filename, '../');
 	}
 	else {
-		// For noapi/examples
-		if (data.pathToCaller.indexOf(`/noapi/examples/`) >= 0) {
-			webServiceRoot = path.resolve(data.pathToCaller, '../');
+		// For .../xxx/node_modules/noapi
+		const installationPath = getInstallationPath();
+		if (installationPath) {
+
+			// .../xxx
+			webServiceRoot = path.resolve(installationPath, '../../');
 		}
 		else {
-			// For installing (the path of noapi is ./node_modules/noapi)
-			// The relativePath is the relative path of THIS file to the web service.
-			const relativePath = '../../../../../../';
-			webServiceRoot = path.resolve(module.filename, relativePath);
+			// For examples and tests in noapi source
+			webServiceRoot = path.resolve(data.pathToCaller, '../');
 		}
 	}
 
