@@ -7,7 +7,7 @@
 		http://localhost:3000/bill/form/crud?formname=trader
  * */
 
-const noapi = require('../../src'); // require('noapi')
+const noapi = require('../noapi');
 const {app, express} = noapi();
 
 const router = express.Router();

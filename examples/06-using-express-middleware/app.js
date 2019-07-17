@@ -15,7 +15,7 @@
 		4. When times'up, the server will responses a result to the browser.
 * */
 
-const noapi = require('../../src'); // require('noapi')
+const noapi = require('../noapi');
 const {app, express} = noapi(); // The app is an express app
 
 const waitSeconds = (seconds) => {
