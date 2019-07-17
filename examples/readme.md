@@ -8,11 +8,11 @@ node app.js
 ```
 
 **Note:**
-For examples 05 and 06, do the following:
+For examples 08 and 09, do the following:
 
 ```sh
-cd /path/to/noapi/examples/05-separate-web-api-service/web
-cd /path/to/noapi/examples/06-multi-api-services/web
+cd /path/to/noapi/examples/08-indenpendent-web-api-service/web
+cd /path/to/noapi/examples/09-multi-api-services/web
 ```
 
 

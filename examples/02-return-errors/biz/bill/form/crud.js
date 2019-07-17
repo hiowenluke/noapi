@@ -5,7 +5,7 @@ const fn = async (query) => {
 	}
 	else {
 		// do something
-		return {formname: query.formname};
+		return {formName: query.formname};
 	}
 };
 
