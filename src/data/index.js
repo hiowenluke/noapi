@@ -10,6 +10,8 @@ const me = {
 
 	core: {}, // {aha, api, biz}
 	assignRules: [], // rules of assigning
+
+	isSilence: false, // do not print logs if data.isSilence is true
 };
 
 module.exports = me;
