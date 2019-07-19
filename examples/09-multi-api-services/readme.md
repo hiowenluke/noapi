@@ -32,7 +32,7 @@ node app.js
 
 
 
-2. Open the api files in ./api-xxx/api/...js, see the test url(s) like below:
+2. Open the api files in ./api-xxx/api directories, see the test url(s) like below:
 
 [http://localhost:3000/erp:/report/purchase/order?billid=1]()
 

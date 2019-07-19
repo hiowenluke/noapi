@@ -9,7 +9,7 @@ node app.js
 
 
 
-2. Open an api file such as ./api/bill/form/crud.js, see the test url(s) like below:
+2. Open the api files in ./api directory, see the test url(s) like below:
 
 [http://localhost:3000/bill/form/crud?formname=trader]()
 
