@@ -39,6 +39,7 @@ const getWebServiceRoot = (pathToCaller) => {
 const noapi = (options = {}) => {
 
 	data.webServiceRoot = getWebServiceRoot(caller());
+	data.assignRules = options.assignRules;
 
 	options.serverName = options.serverName || optionsDefault.serverName;
 	options.port = options.port || optionsDefault.port;
