@@ -80,7 +80,8 @@ const noapiRouter = async (req, res) => {
 const fn = (options = {}) => {
 	power = options.power;
 
-	init(options);
+	// Wrap options as {options} for kdo
+	init({options});
 	app.saveNoapiRouter(noapiRouter);
 
 	// Init core modules
