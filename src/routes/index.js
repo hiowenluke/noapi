@@ -1,7 +1,6 @@
 
 const kdo = require('kdo');
 const me = kdo.obj(module);
-const urlencode = require('urlencode');
 const init = require('./init');
 const app = require('../web/app');
 
@@ -20,7 +19,9 @@ const flow = {
 
 	initOriginalUrl({req}) {
 		let originalUrl = req.originalUrl;
-		originalUrl = urlencode.decode(originalUrl);
+
+		// The url must be encoded by encodeURI()
+		originalUrl = decodeURI(originalUrl);
 		req.originalUrl = originalUrl;
 
 		console.log('originalUrl', originalUrl);
