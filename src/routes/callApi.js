@@ -37,14 +37,17 @@ const fn = async (query, isFromTransfer) => {
 	// to be inconsistent, resulting in an error.
 	const {sysName, apiPath} = lib.parseUrl(query.originalUrl);
 
-	// Save to query._ for use by other modules
-	saveToPrivateNameSpace(query, {sysName, apiPath});
+	if (!data.core[sysName]) {
+		return {error: 'Invalid api'};
+	}
 
 	// Get the core object of the current subsystem, for example:
 	// 		data.core.forms.api, data.core.forms.aha
 	const sysApis = data.core[sysName].api;
 	const sysAhaFn = data.core[sysName].aha;
 
+	// Save to query._ for use by other modules
+	saveToPrivateNameSpace(query, {sysName, apiPath});
 
 	// Get the api function based on sysName, apiPath, sysApis, for example:
 	// 		data.core.forms.api.bill.dropDownList
