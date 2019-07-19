@@ -83,9 +83,7 @@ The following demo project consists of 3+ api services. Each api service is an i
 
 ## Examples
 
-See examples directory to learn more.
-
-[How To Run These Examples](./examples/readme.md)
+See [examples](./examples) to learn more.
 
 
 
