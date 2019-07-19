@@ -1,4 +1,6 @@
 
+const fs = require('fs');
+const path = require('path');
 const caller = require('caller');
 
 const data = require('./data');
@@ -11,8 +13,32 @@ const optionsDefault = {
 	port: 3000,
 };
 
+const getWebServiceRoot = (pathToCaller) => {
+
+	if (pathToCaller === '/') {
+		throw new Error('no package.json found in parent path of ' + pathToCaller);
+	}
+
+	// Find package.json in parent path
+	const parentPath = path.resolve(pathToCaller, '..');
+	const packageJson = parentPath + '/package.json';
+
+	// Found the package.json
+	if (fs.existsSync(packageJson)) {
+		const pkg = require(packageJson);
+		const mainJs = pkg.main;
+		return parentPath + '/' + mainJs;
+	}
+	else {
+		// Not found
+		// Recurse to Find
+		return getWebServiceRoot(parentPath);
+	}
+};
+
 const noapi = (options = {}) => {
-	data.pathToCaller = caller();
+
+	data.webServiceRoot = getWebServiceRoot(caller());
 
 	options.serverName = options.serverName || optionsDefault.serverName;
 	options.port = options.port || optionsDefault.port;
