@@ -8,15 +8,22 @@ const app = require('../web/app');
 let power;
 
 const flow = {
-	validateOriginalUrl({req, res}) {
-		const originalUrl = req.originalUrl;
+	validateUrl({req}) {
 
 		// ".../favicon.ico"
-		if (/\.ico$/.test(originalUrl)) {
+		if (/\.ico$/.test(req.originalUrl)) {
 
 			// Use the break flag to let kdo terminate execution.
 			return 'break';
 		}
+	},
+
+	initOriginalUrl({req}) {
+		let originalUrl = req.originalUrl;
+		originalUrl = urlencode.decode(originalUrl);
+		req.originalUrl = originalUrl;
+
+		console.log('originalUrl', originalUrl);
 
 		// If the url is not start with "/xxx:", then set with "/default:"
 		if (!/^\/[a-zA-Z0-9_]+?:\//.test(originalUrl)) {
@@ -44,9 +51,7 @@ const flow = {
 	},
 
     attachOriginalUrlToQuery({req, query}) {
-        let originalUrl = req.originalUrl;
-        originalUrl = urlencode.decode(originalUrl);
-        query.originalUrl = originalUrl;
+        query.originalUrl = req.originalUrl;
     },
 
 	async do({res, query}) {
