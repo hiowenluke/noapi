@@ -25,9 +25,9 @@ const getWebServiceRoot = (pathToCaller) => {
 
 	// Found the package.json
 	if (fs.existsSync(packageJson)) {
-		const pkg = require(packageJson);
-		const mainJs = pkg.main;
-		return parentPath + '/' + mainJs;
+
+		// The parent path is the web services root directory
+		return parentPath;
 	}
 	else {
 		// Not found
