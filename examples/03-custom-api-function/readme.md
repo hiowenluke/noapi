@@ -3,25 +3,22 @@
 
 1. Run it:
 ```sh
-cd /path/to/this/example
+cd /path/to/noapi/examples/03-custom-api-function
 node app.js
 ```
 
 
 
 2. Open an api file such as ./api/bill/form/crud.js, see the test url(s) like below:
-```
-http://localhost:3000/bill/form/crud?formname=trader
-```
 
+[http://localhost:3000/bill/form/crud?formname=trader]()
 
-
-3. Visit it in your browser, then get the result like below:
-```
+```json
 {
-	"success": true,
-	"data": {
-		"formname": "trader"
-	}
+    "success": true,
+    "data": {
+        "formName": "trader",
+        "requestTime": 1563531028955
+    }
 }
 ```

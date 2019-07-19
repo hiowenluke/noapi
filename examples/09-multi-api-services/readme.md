@@ -32,19 +32,37 @@ node app.js
 
 
 
-2. Open an api file such as ./api/api/bill/form/crud.js, see the test url(s) like below:
-```
-http://localhost:3000/bill/form/crud?formname=trader
-```
+2. Open the api files in ./api-xxx/api/...js, see the test url(s) like below:
 
+[http://localhost:3000/erp:/report/purchase/order?billid=1]()
 
-
-3. Visit it in your browser, then get the result like below:
-```
+```json
 {
 	"success": true,
 	"data": {
-		"formname": "trader"
+		"billid": "1"
 	}
+}
+```
+
+[http://localhost:3000/forms:/bill/form/crud?formname=trader]()
+
+```json
+{
+    "success": true,
+    "data": {
+      "formName": "trader"
+    }
+}
+```
+
+[http://localhost:3000/mms:/mrp/calc?goodsid=1]()
+
+```json
+{
+    "success": true,
+    "data": {
+      "goodsid": "1"
+    }
 }
 ```
