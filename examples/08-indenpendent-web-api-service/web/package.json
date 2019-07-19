@@ -4,6 +4,6 @@
   "main": "app.js",
   "author": "luke@myproject.com",
   "dependencies": {
-    "noapi": "^0.7.7"
+    "noapi": "^1.1.2"
   }
 }
