@@ -24,8 +24,6 @@ const flow = {
 		originalUrl = decodeURI(originalUrl);
 		req.originalUrl = originalUrl;
 
-		console.log('originalUrl', originalUrl);
-
 		// If the url is not start with "/xxx:", then set with "/default:"
 		if (!/^\/[a-zA-Z0-9_]+?:\//.test(originalUrl)) {
 			req.originalUrl = '/default:' + originalUrl;
