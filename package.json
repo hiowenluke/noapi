@@ -23,7 +23,8 @@
     "express": "^4.16.4",
     "kdo": "^1.5.8",
     "lodash": "^4.17.15",
-    "multer": "^1.4.1"
+    "multer": "^1.4.1",
+    "voca": "^1.4.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
