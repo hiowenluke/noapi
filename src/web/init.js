@@ -1,11 +1,10 @@
 
 const kdo = require('kdo');
-const express = require('express');
-const http = require('http');
+const {express, expressApp, app} = require('./app');
 
-const expressApp = express();
+const http = require('http');
 const httpServer = http.Server(expressApp);
-const noapiApp = require('./app').init(expressApp);
+const pub = require('./public');
 
 const flow = {
 	setCors() {
@@ -19,32 +18,7 @@ const flow = {
 	},
 
 	setPublic({options}) {
-		if (options.public) { // options.public can be omitted
-
-			if (typeof options.public === 'object') {
-
-				// options.public = {path}, without name
-				if (!options.public.name) {
-					options.public.name = 'public';
-				}
-
-				// Use the root folder of project as public folder
-				if (options.public.name === '/') {
-					options.public.name = '';
-				}
-			}
-
-			// If options.public is string, it is a path to public
-			if (typeof options.public === 'string') {
-				const pathToPublic = options.public;
-				options.public = {
-					name: 'public',
-					path: pathToPublic,
-				}
-			}
-
-			expressApp.use('/' + (options.public.name || ''), express.static(options.public.path));
-		}
+		pub.init(options, express, expressApp);
 	},
 
 	setPostParser({options}) {
@@ -69,8 +43,8 @@ const flow = {
 		// });
 	},
 
-	setRoutes({options, routes}) {
-		routes(options);
+	setRoutes() {
+		app.loadRoutes();
 	},
 
 	setListen({options}) {
@@ -88,9 +62,10 @@ const flow = {
 	}
 };
 
-const fn = (options, routes) => {
-	kdo.sync.do(flow, {options, routes});
-	return {app: noapiApp, server: httpServer, express};
+/** @name me.web.init */
+const fn = (options) => {
+	kdo.sync.do(flow, {options});
+	return {app, server: httpServer, express};
 };
 
 module.exports = fn;
