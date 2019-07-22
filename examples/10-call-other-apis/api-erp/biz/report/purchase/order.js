@@ -1,6 +1,7 @@
 
 const fn = async (query) => {
-	return {billid: query.billid};
+	const result = await global.api.do('forms:/bill/form/crud?formname=trader', query);
+	return result;
 };
 
 module.exports = fn;
