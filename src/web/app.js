@@ -1,6 +1,8 @@
 
-let expressApp;
-let noapiRouter;
+const express = require('express');
+const expressApp = express();
+
+const noapiRouter = require('../routes');
 
 const expressStack = {
 	originalRouteNames: [],
@@ -23,7 +25,7 @@ const expressStack = {
 				routes.splice(i, 1);
 
 				// Don't forget it.
-				// For this reason, we use for loop instead of routes.forEach
+				// For this reason, we use for ... loop instead of routes.forEach
 				i --;
 			}
 		}
@@ -38,22 +40,15 @@ const expressStack = {
 
 const me = {
 	newRoutesArgs: [],
-	expressApp: null, // for debugging in examples
+	expressApp: expressApp, // for debugging in examples
 
-	init(app) {
-		expressApp = app;
-		this.expressApp = app;
-		return this;
-	},
-
-	saveNoapiRouter(router) {
-		noapiRouter = router;
+	loadRoutes() {
 
 		// Save the current state of the stack
 		expressStack.init();
 
 		// All routes will be handled by noapi
-		expressApp.use('*', router);
+		expressApp.use('*', noapiRouter);
 	},
 
 	use(...args) {
@@ -67,4 +62,4 @@ const me = {
 	}
 };
 
-module.exports = me;
+module.exports = {express, expressApp, app: me};
