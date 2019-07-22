@@ -55,6 +55,7 @@ const loadCoreModules = (serviceName) => {
 	data.core[sysName] = coreModules;
 };
 
+/** @name me.loadCoreModules */
 const fn = () => {
 	const serviceNames = data.serviceNames;
 	serviceNames.forEach(serviceName => loadCoreModules(serviceName));
