@@ -18,22 +18,33 @@ const initServiceInfo = (serviceName) => {
 		// There is .../aha or .../api or .../biz directory
 		if (fs.existsSync(coreFolderPath)) {
 
-			if (fs.existsSync(coreFolderPath + '/index.js')) {
+			const indexJs = coreFolderPath + '/index.js';
+			if (fs.existsSync(indexJs)) {
 				coreModules[coreModuleName] = require(coreFolderPath);
 			}
 			else {
 				// But there is no .../index.js
 
-				// Simulate index.js as module.filename for kdo.
-				// Note it is required for flag isSimulatedIndexJs.
-				const module = {filename: coreFolderPath + '/index.js', isSimulatedIndexJs: true};
+				const defineJs = coreFolderPath + '/define.js';
 
-				if (coreModuleName === 'aha') {
-					coreModules[coreModuleName] = kdo.flow(module, 'query');
+				// If there is /api/define.js
+				if (coreModuleName === 'api' && fs.existsSync(defineJs)) {
+
+					// Save it. The routes/api/init.js will do something for this file.
+					data.apiDefinePaths.push(defineJs);
 				}
+				else {
+					// Simulate index.js as module.filename for kdo.
+					// Note it is required for flag isSimulatedIndexJs.
+					const module = {filename: indexJs, isSimulatedIndexJs: true};
 
-				if (coreModuleName === 'api' || coreModuleName === 'biz') {
-					coreModules[coreModuleName] = kdo.obj(module);
+					if (coreModuleName === 'aha') {
+						coreModules[coreModuleName] = kdo.flow(module, 'query');
+					}
+
+					if (coreModuleName === 'api' || coreModuleName === 'biz') {
+						coreModules[coreModuleName] = kdo.obj(module);
+					}
 				}
 			}
 		}
