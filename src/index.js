@@ -3,6 +3,7 @@ const caller = require('caller');
 const me = require('kdo').obj(module);
 
 const noapi = (options = {}) => {
+	options.pathToCaller = caller();
 
 
 	return web(options, routes);
