@@ -31,7 +31,7 @@ const loadCoreModules = (serviceName) => {
 				if (coreModuleName === 'api' && fs.existsSync(defineJs)) {
 
 					// Save it. The routes/api/init.js will do something for this file.
-					data.apiDefinePaths.push(defineJs);
+					data.apiDefineJsPaths.push(defineJs);
 				}
 				else {
 					// Simulate index.js as module.filename for kdo.

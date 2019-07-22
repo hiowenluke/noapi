@@ -11,7 +11,7 @@ const optionsDefault = {
 const me = {
 	webServiceRoot: '', // root path of web service
 	apiServicesRoot: '', // root path of api service(s)
-	apiDefinePaths: [], // path of .../api/defines.js in all api services
+	apiDefineJsPaths: [], // path of .../api/defines.js in all api services
 	isSimpleMode: true, // single api service (web service is api service)
 
 	serviceNames: [], // ["api-forms", ...]
