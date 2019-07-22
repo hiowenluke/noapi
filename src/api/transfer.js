@@ -1,5 +1,5 @@
 
-const callApi = require('../callApi');
+const callApi = require('../routes/callApi');
 const queryString = require('querystring');
 
 // Call another api in the form of route forwarding, for example:
