@@ -9,7 +9,7 @@
 
 * */
 
-const data = require('../__data');
+const data = require('../data');
 
 // -------------------------------------------------------
 // Get toApiPath according to the rules

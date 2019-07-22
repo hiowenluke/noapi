@@ -2,7 +2,7 @@
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const data = require('../../../__data');
+const data = require('../../data');
 const model = require('./model');
 
 const fn = () => {

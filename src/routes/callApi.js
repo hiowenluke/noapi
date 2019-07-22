@@ -1,6 +1,6 @@
 
-const data = require('../__data');
 const lib = require('./__lib');
+const data = require('../data');
 const assignTo = require('./assignTo');
 
 // ------------------------------------------------ -------

@@ -1,5 +1,5 @@
 
-const data = require('../../__data');
+const data = require('../data');
 const lib = require('../__lib');
 
 // Convenient api quick calls to its biz method
