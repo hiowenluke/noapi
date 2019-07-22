@@ -1,5 +1,5 @@
 
-const data = require('../../data');
+const data = require('../../__data');
 
 // If the api js file content is empty, it will be automatically set to the following apiFn.
 // If the user writes his own api function, he needs to be aware that he must

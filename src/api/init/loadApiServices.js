@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const kdo = require('kdo');
-const data = require('../../data');
+const data = require('../../__data');
 
 // The serviceName is the api service directory name, such as "api", "api-forms", etc.
 const initServiceInfo = (serviceName) => {

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const caller = require('caller');
 
-const data = require('./data');
+const data = require('./__data');
 const routes = require('./routes');
 const utils = require('./utils');
 const web = require('./web');

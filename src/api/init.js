@@ -1,6 +1,6 @@
 
 const me = require('kdo').obj(module);
-const data = require('../../data');
+const data = require('../../__data');
 
 const fn = () => {
 
