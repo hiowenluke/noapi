@@ -1,6 +1,7 @@
 
 const me = require('kdo').obj(module);
 
+/** @name me.biz.init */
 const fn = () => {
 
 	global.biz = {};

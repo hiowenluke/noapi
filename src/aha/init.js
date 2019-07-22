@@ -1,4 +1,5 @@
 
+/** @name me.aha.init */
 const fn = () => {
 
 };

@@ -2,6 +2,7 @@
 const me = require('kdo').obj(module);
 const data = require('../data');
 
+/** @name me.api.init */
 const fn = () => {
 
 	global.api = {};
