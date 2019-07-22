@@ -1,10 +1,7 @@
 
 const kdo = require('kdo');
-const me = kdo.obj(module);
-const init = require('./init');
-const app = require('../web/app');
-
-let power;
+const callApi = require('./callApi');
+const data = require('../data');
 
 const flow = {
 	validateUrl({req}) {
@@ -43,8 +40,8 @@ const flow = {
 	},
 
 	applyPowerFunctionForQuery({req, res, query}) {
-		if (power) {
-			const newQuery = power(query, req, res);
+		if (data.power) {
+			const newQuery = data.power(query, req, res);
 			this.setArgs({query: newQuery || query});
 		}
 	},
@@ -54,7 +51,7 @@ const flow = {
     },
 
 	async do({res, query}) {
-		const result = await me.callApi(query);
+		const result = await callApi(query);
 
 		if (result && typeof result === 'object' && result.error) {
 			res.send({success: false, error: result.error});
@@ -65,7 +62,8 @@ const flow = {
 	}
 };
 
-const noapiRouter = async (req, res) => {
+/** @name me.routes */
+const fn = async (req, res) => {
 	try {
 		await kdo.do(flow, {req, res});
 	}
@@ -73,20 +71,6 @@ const noapiRouter = async (req, res) => {
 		console.log(e);
 		res.send({success: false, error: e.toString()});
 	}
-};
-
-// options: {power, apiPath, module}
-const fn = (options = {}) => {
-	power = options.power;
-
-	// Wrap options as {options} for kdo
-	init({options});
-	app.saveNoapiRouter(noapiRouter);
-
-	// Init core modules
-	me.aha.init();
-	me.api.init();
-	me.biz.init();
 };
 
 module.exports = fn;
