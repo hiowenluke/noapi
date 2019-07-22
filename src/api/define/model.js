@@ -1,6 +1,6 @@
 
 // Complete definition
-
+/** @name define.model */
 const me = {
 	api: '/bill/form/crud', // If omitted, parse from url
 	title: 'Bill - Form - Crud', // If omitted, parse from url

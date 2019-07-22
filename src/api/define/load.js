@@ -2,20 +2,12 @@
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const data = require('../../data');
-const model = require('./model');
+const parse = require('./parse');
 
+/** @name define.load */
 const fn = () => {
-	data.apiDefinePaths.forEach(definePath => {
-		const apiDefineArr = require(definePath);
-		apiDefineArr.forEach(item => {
-
-			// 'http://localhost:3000/bill/form/crud?formname=trader'
-			if (typeof item === 'string') {
-
-			}
-		});
-	});
+	const definitions = parse();
+	if (!definitions) return;
 };
 
 module.exports = fn;
