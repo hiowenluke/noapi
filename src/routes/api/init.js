@@ -1,5 +1,6 @@
 
 const me = require('kdo').obj(module);
+const data = require('../../data');
 
 const fn = () => {
 
@@ -9,7 +10,14 @@ const fn = () => {
 	// await global.api.do('forms:/info/dropdownlist', query);
 	global.api.do = me.transfer;
 
-	// Add function to all project apis (if the api's js file content is empty)
+	// All apis are defined in /api/define.js
+	if (data.apiDefinePaths.length > 0) {
+
+		// Load apis from definition
+		me.define.load();
+	}
+
+	// Add apiFn() if the /api/xxx/xxx.js does not exports a function.
 	me.fixFn();
 };
 
