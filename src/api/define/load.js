@@ -1,13 +1,12 @@
 
-const _ = require('lodash');
-const fs = require('fs');
-const path = require('path');
 const parse = require('./parse');
 
 /** @name define.load */
 const fn = () => {
 	const definitions = parse();
 	if (!definitions) return;
+
+	const apiPaths = definitions.map(item => item.apiPaths);
 };
 
 module.exports = fn;
