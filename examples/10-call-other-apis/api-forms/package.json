@@ -1,0 +1,9 @@
+{
+  "name": "my-project-api-forms",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "iron.man@theavengers.com",
+  "dependencies": {
+    "kdo": "^1.5.8"
+  }
+}
