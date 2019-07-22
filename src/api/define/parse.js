@@ -1,6 +1,10 @@
 
+const _ = require('lodash');
+const fs = require('fs');
+const path = require('path');
+
 const data = require('../../data');
-const model = require('./model');
+const model = require('./__model');
 
 /** @name define.parse */
 const fn = () => {
