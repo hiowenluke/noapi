@@ -33,7 +33,6 @@ const getApiServiceNames = (root) => {
 	return serviceNames;
 };
 
-/** @name me.initApiServiceNames */
 const fn = ({options}) => {
 	const apiServicesRelativePath = options.apiPath;
 	const webServiceRoot = data.webServiceRoot;

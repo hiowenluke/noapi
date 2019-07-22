@@ -5,7 +5,7 @@ const kdo = require('kdo');
 const data = require('../../data');
 
 // The serviceName is the api service directory name, such as "api", "api-forms", etc.
-const initServiceInfo = (serviceName) => {
+const loadCoreModules = (serviceName) => {
 	const isSimpleMode = data.isSimpleMode;
 	const folderPath = data.apiServicesRoot + (isSimpleMode ? '' : '/' + serviceName);
 
@@ -55,10 +55,9 @@ const initServiceInfo = (serviceName) => {
 	data.core[sysName] = coreModules;
 };
 
-/** @name me.loadApiServicesInfo */
 const fn = () => {
 	const serviceNames = data.serviceNames;
-	serviceNames.forEach(serviceName => initServiceInfo(serviceName));
+	serviceNames.forEach(serviceName => loadCoreModules(serviceName));
 };
 
 module.exports = fn;
