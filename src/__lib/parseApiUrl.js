@@ -8,10 +8,10 @@
 // 	  forms:/bill/dropDownList
 
 /** @name lib.parseApiUrl */
-const fn = (url) => {
+const fn = (apiUrl) => {
 
 	// apiPath = "/forms:/bill/dropDownList"
-	let apiPath = url.split('?')[0];
+	let apiPath = apiUrl.split('?')[0];
 
 	const temp = apiPath.split(':'); // '/forms:/info/dropdownlist'
 	const sysName = temp[0].replace("/", ''); // 'forms'
