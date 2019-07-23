@@ -6,7 +6,6 @@ const noapi = (options = {}) => {
 	options.pathToCaller = caller();
 	me.data.init(options);
 
-	me.aha.init();
 	me.api.init();
 	me.biz.init();
 
