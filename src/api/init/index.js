@@ -15,7 +15,7 @@ const fn = (options) => {
 	me.initRootAndNames(options);
 	me.loadCoreModules(options);
 
-	// All apis are defined in /api/define.js
+	// If the apis are defined in /api/define.js
 	if (data.apiDefineJsPaths.length > 0) {
 
 		// Load apis from definition
