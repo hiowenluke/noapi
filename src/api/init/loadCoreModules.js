@@ -30,7 +30,7 @@ const loadCoreModules = (serviceName) => {
 				// If there is /api/define.js
 				if (coreModuleName === 'api' && fs.existsSync(defineJs)) {
 
-					// Save it. The routes/api/init.js will do something for this file.
+					// Save it. The /api/define/load.js will do something with this file.
 					data.apiDefineJsPaths.push(defineJs);
 				}
 				else {
