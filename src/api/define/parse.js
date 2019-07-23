@@ -6,7 +6,6 @@ const fs = require('fs');
 const path = require('path');
 
 const data = require('../../data');
-const model = require('./__model');
 
 const parser = {
 	getApiFromUrl(url) {
