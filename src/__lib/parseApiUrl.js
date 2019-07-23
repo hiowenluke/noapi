@@ -1,5 +1,5 @@
 
-// Parse url
+// Parse api url (without host and port such as http://localhost:3000)
 
 // 1. If the request comes from web, then the url is like below:
 // 	  /forms:/bill/dropDownList?formname=purchaseOrder&listname=trader
