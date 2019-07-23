@@ -2,17 +2,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const optionsDefault = {
-	serverName: 'default',
-	port: 3000,
-};
-
 /** @name me.data */
 const me = {
 	webServiceRoot: '', // root path of web service
 	apiServicesRoot: '', // root path of api service(s)
 	apiDefineJsPaths: [], // path of .../api/defines.js in all api services
 	isSimpleMode: true, // single api service (web service is api service)
+
+	serverOptions: {
+		serverName: 'default',
+		port: '3000',
+	},
 
 	serviceNames: [], // ["api-forms", ...]
 	sysNames: [], // ["forms", ...]
@@ -30,8 +30,8 @@ const me = {
 		this.assignRules = options.assignRules;
 		this.power = options.power;
 
-		options.serverName = options.serverName || optionsDefault.serverName;
-		options.port = options.port || optionsDefault.port;
+		options.serverName && (this.serverOptions.serverName = options.serverName);
+		options.port && (this.serverOptions.port = options.port);
 	},
 
 	getWebServiceRoot(pathToCaller) {
