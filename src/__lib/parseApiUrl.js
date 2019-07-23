@@ -7,7 +7,7 @@
 // 2. If the request comes from api, then the url is like below:
 // 	  forms:/bill/dropDownList
 
-/** @name lib.parseUrl */
+/** @name lib.parseApiUrl */
 const fn = (url) => {
 
 	// apiPath = "/forms:/bill/dropDownList"
