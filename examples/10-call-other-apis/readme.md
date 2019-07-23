@@ -12,15 +12,4 @@ node app.js
 
 
 
-2. Open the api file ./api-erp/api/report/purchase/order.js, see the test url(s) like below:
-
-[http://localhost:3000/erp:/report/purchase/order?billid=1]()
-
-```json
-{
-    "success": true,
-    "data": {
-      "formName": "trader"
-    }
-}
-```
+2. Open /api-xxx/api/define.js, and you will know what it is.

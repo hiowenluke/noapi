@@ -32,37 +32,4 @@ node app.js
 
 
 
-2. Open the api files in ./api-xxx/api directories, see the test url(s) like below:
-
-[http://localhost:3000/erp:/report/purchase/order?billid=1]()
-
-```json
-{
-	"success": true,
-	"data": {
-		"billid": "1"
-	}
-}
-```
-
-[http://localhost:3000/forms:/bill/form/crud?formname=trader]()
-
-```json
-{
-    "success": true,
-    "data": {
-      "formName": "trader"
-    }
-}
-```
-
-[http://localhost:3000/mms:/mrp/calc?goodsid=1]()
-
-```json
-{
-    "success": true,
-    "data": {
-      "goodsid": "1"
-    }
-}
-```
+2. Open /api-xxx/api/define.js, and you will know what it is.

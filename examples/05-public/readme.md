@@ -9,18 +9,7 @@ node app.js
 
 
 
-2. Open an api file such as ./api/bill/form/crud.js, see the test url(s) like below:
-
-[http://localhost:3000/bill/form/crud?formname=trader]()
-
-```
-{
-	"success": true,
-	"data": {
-		"formname": "trader"
-	}
-}
-```
+2. Open /api/define.js, and you will know what it is.
 
 
 
