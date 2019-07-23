@@ -9,8 +9,8 @@ const fn = (options) => {
 	global.api = {};
 
 	// Append the transfer to the global so that the apis can calls each other. E.g:
-	// await global.api.do('forms:/info/dropdownlist', query);
 	global.api.do = me.transfer;
+	// 		await global.api.do('forms:/info/dropdownlist', query);
 
 	me.initRootAndNames(options);
 	me.loadCoreModules(options);
