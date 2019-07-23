@@ -10,7 +10,12 @@ const me = {
 
 		const apiInfos = [];
 		data.apiDefineJsPaths.forEach(defineJsPath => {
-			const apiDefineArr = require(defineJsPath);
+			let apiDefineArr = require(defineJsPath);
+
+			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
+			if (!Array.isArray(apiDefineArr)) {
+				apiDefineArr = [apiDefineArr];
+			}
 
 			apiDefineArr.forEach(item => {
 
