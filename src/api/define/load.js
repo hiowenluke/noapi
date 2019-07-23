@@ -10,8 +10,8 @@ const fn = () => {
 
 	const apis = apiInfos.map(item => item.api);
 	apis.forEach(api => { // /bill/form/crud
-		const {sysName, apiPath} = lib.parseApiUrlToSysNameAndApiPath(api);
-		data.core[sysName].api = lib.parseApiPathToObject(apiPath);
+		const {sysName, apiPath} = lib.apiParser.parseApiUrlToSysNameAndApiPath(api);
+		data.core[sysName].api = lib.apiParser.parseApiPathToObject(apiPath);
 	});
 };
 
