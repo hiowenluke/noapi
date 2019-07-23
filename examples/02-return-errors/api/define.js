@@ -3,15 +3,10 @@
 
 const me = [
 	{
-		// The demo url with parameters
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
-
-		// Expected result
 		result: {
-			"success": true,
-			"data": {
-				"formname": "trader"
-			}
+			"success": false,
+			"error": "The formname must be employee"
 		}
 	}
 ];

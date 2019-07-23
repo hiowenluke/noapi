@@ -3,14 +3,11 @@
 
 const me = [
 	{
-		// The demo url with parameters
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
-
-		// Expected result
+		url: 'http://localhost:3000/forms:/bill/form/crud?formname=trader',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		}
 	}

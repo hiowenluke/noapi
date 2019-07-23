@@ -3,14 +3,11 @@
 
 const me = [
 	{
-		// The demo url with parameters
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
-
-		// Expected result
+		url: 'http://localhost:3000/mms:/mrp/calc?goodsid=1',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"goodsid": "1"
 			}
 		}
 	}

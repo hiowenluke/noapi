@@ -1,9 +1,0 @@
-{
-  "name": "my-project-api-mms",
-  "version": "0.1.0",
-  "main": "index.js",
-  "author": "thor@theavengers.com",
-  "dependencies": {
-    "kdo": "^1.5.8"
-  }
-}
