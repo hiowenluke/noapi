@@ -1,13 +1,13 @@
 
 const me = {
 
-	// Specify test files
+	// Only run test cases with a title of the following values.
 	onlyTests: [
 		// '/calc/roughCapacityPlan/calc-*',
 		// '/calc/bom/form/check/do',
 	],
 
-	// Files, folders to ignore
+	// Ignore test cases whose title is the following value.
 	ignoreTests: [
 
 	],
@@ -22,6 +22,8 @@ const me = {
 	// 		the SuperTest will instantly get the service object and then immediately post
 	// 		the test data to the app. At this time, the app has not completed initialization,
 	// 		and an error will occur.
+
+	// In this case, we do not need it.
 	waitTime: 2,
 };
 

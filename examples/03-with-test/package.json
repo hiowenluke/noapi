@@ -1,0 +1,6 @@
+{
+  "main": "app.js",
+  "scripts": {
+    "test": "cd ./test && node index.js"
+  }
+}
