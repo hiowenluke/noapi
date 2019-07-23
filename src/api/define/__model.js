@@ -1,11 +1,11 @@
 
 const demos = [
 
-	// *********************************************
+	// ---------------------------------------------
 	// 1. A demo url
 	'http://localhost:3000/bill/form/crud?formname=trader',
 
-	// *********************************************
+	// ---------------------------------------------
 	// 2. With params property
 	// When testing, it will replaces the parameters in demo url which start with "?".
 	// That is, the parameters in demo url is for demo, the params property is for test.
@@ -24,7 +24,7 @@ const demos = [
 		// 		},
 	},
 
-	// *********************************************
+	// ---------------------------------------------
 	// 3. With result property
 	// When testing, the test result must be matches it exactly if the test property is omitted.
 	{
@@ -48,7 +48,7 @@ const demos = [
 		// 		resultComparisonFile: "bill.form.crud",
 	},
 
-	// *********************************************
+	// ---------------------------------------------
 	// 4. With test property (an object, a string, or a function)
 	// When testing, the result property will be ignored if the test property is specified.
 	{
@@ -107,16 +107,16 @@ const demos = [
 		// 		}
 	},
 
-	// *********************************************
+	// ---------------------------------------------
 	// 5. Complete definition
 	// An api corresponds to one set or multiple sets of parameters,
 	// each set of parameters has a unique return result, and a test rule.
 
-	// *********************************************
+	// ---------------------------------------------
 	// 5.1 An api with a set of parameters
 	{
 		api: '/bill/form/crud', // If omitted, parse from url
-		title: 'Bill - Form - Crud', // If omitted, parse from url
+		title: 'Bill - Form - Crud', // If omitted, parse from api
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
 		// Send it to server. If omitted, parse from url
@@ -168,7 +168,7 @@ const demos = [
 		}
 	},
 
-	// *********************************************
+	// ---------------------------------------------
 	// 5.2 An api with multiple sets of parameters
 	{
 		api: '/bill/form/crud', // If omitted, parse from url
