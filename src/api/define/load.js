@@ -1,4 +1,5 @@
 
+const _ = require('lodash');
 const data = require('../../data');
 const lib = require('../../__lib');
 const parse = require('./parse');
@@ -11,7 +12,11 @@ const fn = () => {
 	const apis = apiInfos.map(item => item.api);
 	apis.forEach(api => { // /bill/form/crud
 		const {sysName, apiPath} = lib.apiParser.parseApiUrlToSysNameAndApiPath(api);
-		data.core[sysName].api = lib.apiParser.parseApiPathToObject(apiPath);
+		const apis = lib.apiParser.parseApiPathToObject(apiPath);
+
+		const core = data.core[sysName];
+		if (!core.api) core.api = {};
+		core.api = _.merge(core.api, apis);
 	});
 };
 
