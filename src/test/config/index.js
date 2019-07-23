@@ -17,7 +17,7 @@ const me = {
 	],
 
 	// Files, folders to ignore
-	ignores: [
+	ignoreTests: [
 		'__lib',
 	],
 
