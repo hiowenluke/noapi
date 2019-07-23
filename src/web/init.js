@@ -5,6 +5,7 @@ const {express, expressApp, app} = require('./app');
 const http = require('http');
 const httpServer = http.Server(expressApp);
 const pub = require('./public');
+const data = require('../data');
 
 const flow = {
 	setCors() {
@@ -17,8 +18,8 @@ const flow = {
 		expressApp.use(cors({origin: '*'}));
 	},
 
-	setPublic({options}) {
-		pub.init(options, express, expressApp);
+	setPublic() {
+		pub.init(express, expressApp);
 	},
 
 	setPostParser({options}) {
@@ -63,8 +64,8 @@ const flow = {
 };
 
 /** @name me.web.init */
-const fn = (options) => {
-	kdo.sync.do(flow, {options});
+const fn = () => {
+	kdo.sync.do(flow, {options: data.serverOptions});
 	return {app, server: httpServer, express};
 };
 

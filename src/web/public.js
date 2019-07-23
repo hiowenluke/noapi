@@ -1,6 +1,9 @@
 
+const data = require('../data');
+
 const me = {
-	init(options, express, expressApp) {
+	init(express, expressApp) {
+		const options = data.serverOptions;
 		if (!options.public) return;
 
 		if (typeof options.public === 'object') {

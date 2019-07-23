@@ -5,7 +5,7 @@ const data = require('../../data');
 const transfer = require('../transfer');
 
 /** @name me.api.init */
-const fn = (options) => {
+const fn = () => {
 
 	global.api = {};
 
@@ -13,8 +13,8 @@ const fn = (options) => {
 	// 		await global.api.do('forms:/info/dropdownlist', query);
 	global.api.do = transfer;
 
-	me.initRootAndNames(options);
-	me.loadCoreModules(options);
+	me.initRootAndNames();
+	me.loadCoreModules();
 
 	// If the apis are defined in /api/define.js
 	if (data.apiDefineJsPaths.length > 0) {
