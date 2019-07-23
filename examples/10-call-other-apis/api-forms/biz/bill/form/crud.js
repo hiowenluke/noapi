@@ -1,6 +1,6 @@
 
 const fn = async (query) => {
-	return {formName: query.formname};
+	return {formname: query.formname};
 };
 
 module.exports = fn;

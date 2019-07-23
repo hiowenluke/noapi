@@ -7,7 +7,7 @@ const me = [
 		result: {
 			"success": true,
 			"data": {
-				"formName": "trader"
+				"formname": "trader"
 			}
 		}
 	}

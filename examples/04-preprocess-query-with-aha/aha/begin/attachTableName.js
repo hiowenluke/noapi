@@ -1,8 +1,8 @@
 
 // Fake lib
 const lib = {
-	async getTableNameByFormName(formName) {
-		return 'tbl_' + formName;
+	async getTableNameByFormName(formname) {
+		return 'tbl_' + formname;
 	}
 };
 

@@ -7,7 +7,7 @@ const fn = async (query) => {
 	}
 
 	return {
-		formName: query.formname,
+		formname: query.formname,
 		tableName: query.tablename,
 		billName: query.billname,
 		infoName: query.infoname,

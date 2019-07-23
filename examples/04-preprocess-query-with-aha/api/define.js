@@ -7,7 +7,7 @@ const me = [
 		result: {
 			"success": true,
 			"data": {
-				"formName": "trader",
+				"formname": "trader",
 				"tableName": "tbl_trader",
 				"billName": "trader",
 				"isBill": true,
@@ -17,7 +17,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/dropdownlist?formName=paymethod',
+		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
 		result: {
 			"success": true,
 			"data": [
@@ -28,11 +28,11 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formName=goods',
+		url: 'http://localhost:3000/info/form/crud?formname=goods',
 		result: {
 			"success": true,
 			"data": {
-				"formName": "goods",
+				"formname": "goods",
 				"tableName": "tbl_goods",
 				"infoName": "goods",
 				"isBill": false,
@@ -43,11 +43,11 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formName=employee',
+		url: 'http://localhost:3000/info/form/crud?formname=employee',
 		result: {
 			"success": true,
 			"data": {
-				"formName": "employee",
+				"formname": "employee",
 				"tableName": "tbl_employee",
 				"infoName": "employee",
 				"isBill": false,
@@ -58,7 +58,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/dropdownlist?formName=employee',
+		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
 		result: {
 			"success": true,
 			"data": [
