@@ -40,7 +40,7 @@ const me = {
 						url = lib.urlParser.getUrlFromApi(api);
 					}
 
-					title = lib.urlParser.getTitleFromApi(api);
+					!title && (title = lib.urlParser.getTitleFromApi(api));
 					apiInfos.push({api, title, url});
 				}
 			});
