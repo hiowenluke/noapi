@@ -15,11 +15,12 @@ const me = {
 		port: '3000',
 	},
 
-	serviceNames: [], // ["api-forms", ...]
-	sysNames: [], // ["forms", ...]
-	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp"} // for getting sysName by serviceName
+	serviceNames: [], // ["api-forms", "api-erp", "api-mms"]
+	sysNames: [], // ["forms", "erp", "mms"] // without prefix "api-"
+	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp", "api-mms": "mms"} // for getting sysName by serviceName
 
-	core: {}, // {aha, api, biz}
+	core: {}, // {aha, api, biz} // see the demo of it at top of this file
+
 	assignRules: [], // rules of assigning
 
 	isSilence: false, // do not print logs if it is true
