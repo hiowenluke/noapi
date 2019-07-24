@@ -56,8 +56,16 @@ const parseDefineJs = {
 		return apiInfos;
 	},
 
-	forIoInfos() {
+	forIoInfos(apiDefineArr) {
+		const ioInfos = [];
+		apiDefineArr.forEach(item => {
+			if (!_.isPlainObject(item)) return;
 
+			let {params, result} = item;
+			ioInfos.push({params, result});
+		});
+
+		return ioInfos;
 	},
 
 	forTestInfos() {
