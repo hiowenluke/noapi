@@ -7,8 +7,10 @@ const lib = require('../../__lib');
 const fn = () => {
 	data.sysNames.forEach(sysName => {
 		const core = data.core[sysName];
-		const apiInfos = core.apiInfos;
 		if (!core.api) core.api = {};
+
+		const defineJs = data.defineJs[sysName];
+		const apiInfos = defineJs.api;
 
 		const apiUrls = apiInfos.map(item => item.api);
 		apiUrls.forEach(apiUrl => { // /form:/bill/form/crud
