@@ -78,6 +78,16 @@ const demos = [
 
 	{
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		test: /(trader)|(goodsid)/,
+
+		// Equal to:
+		// 		test: {
+		// 			verify: /(trader)|(goodsid)/,
+		// 		}
+	},
+
+	{
+		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		test(resultText, result) {
 
 			// Find the feature string in the result text
