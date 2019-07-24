@@ -16,12 +16,8 @@ const fn = () => {
 	me.initRootAndNames();
 	me.loadCoreModules();
 
-	// If the apis are defined in /api/define.js
-	if (data.apiDefineJsPaths.length > 0) {
-
-		// Load apis from definition
-		define.load();
-	}
+	// Load /api/define.js (if exists)
+	define.init();
 
 	// Add apiFn() if the /api/xxx/xxx.js does not exports a function.
 	me.fixFn();
