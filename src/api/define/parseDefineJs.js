@@ -3,14 +3,16 @@ const _ = require('lodash');
 const data = require('../../data');
 const lib = require('../../__lib');
 
-/** @name define.parse */
+/** @name define.parseDefineJs */
 const me = {
 	forApiInfos() {
-		if (data.apiDefineJsPaths.length === 0) return;
+		data.sysNames.forEach(sysName => {
 
-		const apiInfos = [];
-		data.apiDefineJsPaths.forEach(defineJsPath => {
-			let apiDefineArr = require(defineJsPath);
+			const apiDefineJsPath = data.core[sysName].apiDefineJsPath;
+			if (!apiDefineJsPath) return;
+
+			const apiInfos = [];
+			let apiDefineArr = require(apiDefineJsPath);
 
 			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
 			if (!Array.isArray(apiDefineArr)) {
@@ -44,9 +46,9 @@ const me = {
 					apiInfos.push({api, title, url});
 				}
 			});
-		});
 
-		return apiInfos;
+			data.core[sysName].apiInfos = apiInfos;
+		});
 	},
 
 	forAll() {
