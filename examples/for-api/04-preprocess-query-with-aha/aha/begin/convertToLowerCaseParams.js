@@ -1,5 +1,5 @@
 
-const noapi = require('../../../../src');
+const noapi = require('../../../noapi');
 
 const fn = ({query}) => {
 
