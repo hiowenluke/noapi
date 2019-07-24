@@ -4,7 +4,7 @@ const define = require('../define');
 const transfer = require('../transfer');
 
 /** @name me.api.init */
-const fn = () => {
+const fn = (isTest) => {
 
 	global.api = {};
 
@@ -16,7 +16,7 @@ const fn = () => {
 	me.loadCoreModules();
 
 	// Load /api/define.js (if exists)
-	define.init();
+	define.init(isTest);
 
 	// Add apiFn() if the /api/xxx/xxx.js does not exports a function.
 	me.fixFn();
