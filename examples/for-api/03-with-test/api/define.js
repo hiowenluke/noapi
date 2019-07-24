@@ -1,5 +1,5 @@
 
-// See /noapi/src/api/define/__model.js to learn more.
+// See /noapi/src/defineJs_demos.js to learn more.
 
 const me = [
 	{
