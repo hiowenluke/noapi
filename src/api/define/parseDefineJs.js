@@ -10,20 +10,21 @@ const parseDefineJs = {
 
 		data.sysNames.forEach(sysName => {
 			const defineJs = data.defineJs[sysName];
-			if (!defineJs) return;
+			const filename = defineJs.filename;
+			if (!filename) return;
 
-			let apiDefineArr = require(defineJs);
+			let apiDefineArr = require(filename);
 
 			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
 			if (!Array.isArray(apiDefineArr)) {
 				apiDefineArr = [apiDefineArr];
 			}
 
-			data.core[sysName][type] = this[method](apiDefineArr);
+			defineJs[type] = this[method](apiDefineArr);
 		});
 	},
 
-	forApiInfos(apiDefineArr) {
+	forApi(apiDefineArr) {
 		const apiInfos = [];
 		apiDefineArr.forEach(item => {
 
@@ -56,7 +57,7 @@ const parseDefineJs = {
 		return apiInfos;
 	},
 
-	forIoInfos(apiDefineArr) {
+	forIo(apiDefineArr) {
 		const ioInfos = [];
 		apiDefineArr.forEach(item => {
 			if (!_.isPlainObject(item)) return;
@@ -68,7 +69,7 @@ const parseDefineJs = {
 		return ioInfos;
 	},
 
-	forTestInfos(apiDefineArr) {
+	forTest(apiDefineArr) {
 		const testInfos = [];
 		apiDefineArr.forEach(item => {
 			if (!_.isPlainObject(item)) return;
@@ -84,13 +85,13 @@ const parseDefineJs = {
 /** @name define.parseDefineJs */
 const me = {
 	forRun() {
-		parseDefineJs.do('apiInfos');
+		parseDefineJs.do('api');
 	},
 
 	forTest() {
-		parseDefineJs.do('apiInfos');
-		parseDefineJs.do('ioInfos');
-		parseDefineJs.do('testInfos');
+		parseDefineJs.do('api');
+		parseDefineJs.do('io');
+		parseDefineJs.do('test');
 	},
 };
 
