@@ -26,11 +26,11 @@ const loadCoreModules = (serviceName) => {
 			else {
 				// But there is no .../index.js
 
-				const defineJs = coreFolderPath + '/define.js';
+				const defineJsPath = coreFolderPath + '/define.js';
 
 				// If there is /api/define.js
-				if (coreModuleName === 'api' && fs.existsSync(defineJs)) {
-					apiDefineJs = defineJs;
+				if (coreModuleName === 'api' && fs.existsSync(defineJsPath)) {
+					apiDefineJs = defineJsPath;
 				}
 				else {
 					// Simulate index.js as module.filename for kdo.
