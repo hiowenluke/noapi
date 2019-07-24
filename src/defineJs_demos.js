@@ -1,4 +1,5 @@
 
+// The demos of define.js
 const demos = [
 
 	// ---------------------------------------------
@@ -210,27 +211,3 @@ const demos = [
 		],
 	},
 ];
-
-const {api, title, url, params, data, result, test, beforeDo, getResult, afterDo, verify} = {};
-
-/** @name define.model */
-const me = {
-	api,
-	title,
-	url,
-	multi: [
-		{
-			params,
-			result,
-			test: {
-				beforeDo,
-				url,
-				getResult,
-				afterDo,
-				verify,
-			}
-		}
-	]
-};
-
-module.exports = me;
