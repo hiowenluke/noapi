@@ -94,7 +94,7 @@ const me = {
 	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp", "api-mms": "mms"} // for getting sysName by serviceName
 
 	core: {}, // {aha, api, biz} // see the demo of it at top of this file
-	apiDefineJs: {}, // {"default": "/path/to/user project/api/define.js"}
+	defineJs: {}, // {"default": "/path/to/user project/api/define.js"}
 
 	assignRules: [], // rules of assigning
 

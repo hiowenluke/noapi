@@ -9,10 +9,10 @@ const parseDefineJs = {
 		const method = 'for' + v.titleCase(type); // apiInfos => forApiInfos
 
 		data.sysNames.forEach(sysName => {
-			const apiDefineJs = data.apiDefineJs[sysName];
-			if (!apiDefineJs) return;
+			const defineJs = data.defineJs[sysName];
+			if (!defineJs) return;
 
-			let apiDefineArr = require(apiDefineJs);
+			let apiDefineArr = require(defineJs);
 
 			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
 			if (!Array.isArray(apiDefineArr)) {
