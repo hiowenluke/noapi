@@ -115,6 +115,7 @@ const me = {
 	apiServicesRoot: '', // root path of api service(s)
 	apiDefineJsPaths: [], // path of .../api/defines.js in all api services
 	isSimpleMode: true, // single api service (web service is api service)
+	testRoot: '', // root path of test
 
 	serverOptions: {
 		serverName: 'default',
@@ -166,6 +167,11 @@ const me = {
 			// Recurse to Find
 			return this.getWebServiceRoot(parentPath);
 		}
+
+	getTestRoot(pathToCaller) {
+
+		// If pathToCaller is .../test/api/index.js, then the root path of test is .../test/api
+		this.testRoot = path.resolve(pathToCaller, '../');
 	}
 };
 
