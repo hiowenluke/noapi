@@ -11,7 +11,7 @@ const loadCoreModules = (serviceName) => {
 
 	const coreModules = {};
 	const coreModuleNames = ['aha', 'api', 'biz'];
-	let defineJs;
+	let defineJsFilename;
 
 	coreModuleNames.forEach(coreModuleName => {
 		const coreFolderPath = path.resolve(folderPath + '/' + coreModuleName);
@@ -26,11 +26,11 @@ const loadCoreModules = (serviceName) => {
 			else {
 				// But there is no .../index.js
 
-				const defineJsPath = coreFolderPath + '/define.js';
+				const defineJsFilename_ = coreFolderPath + '/define.js';
 
 				// If there is /api/define.js
-				if (coreModuleName === 'api' && fs.existsSync(defineJsPath)) {
-					defineJs = defineJsPath;
+				if (coreModuleName === 'api' && fs.existsSync(defineJsFilename_)) {
+					defineJsFilename = defineJsFilename_;
 				}
 				else {
 					// Simulate index.js as module.filename for kdo.
@@ -52,7 +52,7 @@ const loadCoreModules = (serviceName) => {
 	// api-xxx => xxx
 	const sysName = data.serviceSysNames[serviceName];
 	data.core[sysName] = coreModules;
-	data.defineJs[sysName] = defineJs;
+	data.defineJs[sysName] = {filename: defineJsFilename};
 };
 
 /** @name me.loadCoreModules */
