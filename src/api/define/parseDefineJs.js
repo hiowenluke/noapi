@@ -9,7 +9,7 @@ const parseDefineJs = {
 		const method = 'for' + v.titleCase(type); // apiInfos => forApiInfos
 
 		data.sysNames.forEach(sysName => {
-			const apiDefineJsPath = data.core[sysName].apiDefineJsPath;
+			const apiDefineJsPath = data.apiDefineJsPath[sysName];
 			if (!apiDefineJsPath) return;
 
 			let apiDefineArr = require(apiDefineJsPath);

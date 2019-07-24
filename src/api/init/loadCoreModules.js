@@ -52,7 +52,7 @@ const loadCoreModules = (serviceName) => {
 	// api-xxx => xxx
 	const sysName = data.serviceSysNames[serviceName];
 	data.core[sysName] = coreModules;
-	data.core[sysName].apiDefineJsPath = apiDefineJsPath;
+	data.apiDefineJsPath[sysName] = apiDefineJsPath;
 };
 
 /** @name me.loadCoreModules */
