@@ -111,10 +111,11 @@ const dataDemo = {
 
 /** @name me.data */
 const me = {
+	isSimpleMode: true, // single api service (web service is api service)
+
 	webServiceRoot: '', // root path of web service
 	apiServicesRoot: '', // root path of api service(s)
 	apiDefineJsPaths: [], // path of .../api/defines.js in all api services
-	isSimpleMode: true, // single api service (web service is api service)
 	testRoot: '', // root path of test
 
 	serverOptions: {
@@ -167,6 +168,7 @@ const me = {
 			// Recurse to Find
 			return this.getWebServiceRoot(parentPath);
 		}
+	},
 
 	getTestRoot(pathToCaller) {
 
