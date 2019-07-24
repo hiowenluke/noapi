@@ -115,10 +115,23 @@ const demos = [
 	// ---------------------------------------------
 	// 5.1 An api with a set of parameters
 	{
+
+		// /////////////////////////////////////////////
+		//
+		// api infos
+		//
+		// /////////////////////////////////////////////
 		api: '/bill/form/crud', // If omitted, parse from url
 		title: 'Bill - Form - Crud', // If omitted, parse from api
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
+
+		// /////////////////////////////////////////////
+		//
+		// io infos
+		// io: input params, output result
+		//
+		// /////////////////////////////////////////////
 		// Send it to server. If omitted, parse from url
 		params: {
 			formname: 'trader',
@@ -132,7 +145,12 @@ const demos = [
 			}
 		},
 
-		// Test case
+
+		// /////////////////////////////////////////////
+		//
+		// test infos
+		//
+		// /////////////////////////////////////////////
 		// For clarity of reading, write it as the sequence below:
 		//		{beforeDo, url, getResult, afterDo, verify}
 		test: {
