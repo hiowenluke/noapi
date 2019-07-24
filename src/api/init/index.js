@@ -1,7 +1,6 @@
 
 const me = require('kdo').obj(module);
-const define = require('kdo').obj(module, '../define');
-const data = require('../../data');
+const define = require('../define');
 const transfer = require('../transfer');
 
 /** @name me.api.init */
