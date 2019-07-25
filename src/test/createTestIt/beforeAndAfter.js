@@ -1,6 +1,6 @@
 
 const request = require('./request');
-const lib = require('./__lib');
+const lib = require('../__lib');
 
 const me = {
 	async do(typeStrArr) {
