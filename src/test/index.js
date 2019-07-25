@@ -4,13 +4,14 @@ const caller = require('caller');
 const expect = require('chai').expect;
 
 const config = require('./config');
-const request = require('./request');
 
 const data = require('../data');
 const apiInit = require('../api/init');
 const lib = require('./__lib');
 const baa = require('./beforeAndAfter');
+
 const createTestIt = require('./createTestIt');
+const request = require('./createTestIt/request');
 
 const flow = {
 	initData({pathToCaller}) {
