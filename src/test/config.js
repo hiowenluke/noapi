@@ -1,6 +1,25 @@
 
 const data = require('../data');
 
+const tools = {
+	applyRuleArray(rules, apiTitle) {
+
+		for (let i = 0; i < rules.length; i ++) {
+			const rule = rules[i];
+
+			if (rule === apiTitle) return true;
+
+			// Process the * at the end of rule
+			if (/\*$/.test(rule)) {
+				const testStr = rule.replace(/\*$/, '');
+				if (apiTitle.substr(0, testStr.length) === testStr) return true;
+			}
+		}
+
+		return false;
+	}
+};
+
 const me = {
 
 	// Only run test cases with a title of the following values
@@ -35,22 +54,7 @@ const me = {
 		// If no onlyTests is specified, all test cases are legal
 		if (!onlyTests || !onlyTests.length) return true;
 
-		for (let i = 0; i < onlyTests.length; i ++) {
-			const rule = onlyTests[i];
-
-			// Legal if it is the specified test
-			if (rule === apiTitle) return true;
-
-			// Support for using at the end * wildcard
-			if (/\*$/.test(rule)) {
-				const testStr = rule.replace(/\*$/, '');
-
-				// Legal if it meets the specified * wildcard rule
-				if (apiTitle.substr(0, testStr.length) === testStr) return true;
-			}
-		}
-
-		return false;
+		return tools.applyRuleArray(onlyTests, apiTitle);
 	},
 
 	applyUserConfig() {
