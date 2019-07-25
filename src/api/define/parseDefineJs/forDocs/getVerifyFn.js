@@ -28,7 +28,7 @@ const me = {
 
 			// Result must contains the property value in expectedData
 			Object.keys(expectedData).find(key => {
-				if (!_.isEqual(expectedData[key], result[key])) {
+				if (!_.isEqual(expectedData[key], result.data[key])) {
 					isOK = false;
 					return key;
 				}
