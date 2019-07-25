@@ -1,6 +1,7 @@
 
 const kdo = require('kdo');
 const caller = require('caller');
+const expect = require('chai').expect;
 
 const config = require('./config');
 const request = require('./request');
@@ -42,6 +43,7 @@ const flow = {
 
 		serviceNames.forEach(serviceName => {
 			const title = serviceName === 'default' ? 'api' : serviceName;
+
 			describe(title, () => {
 				const sysName = data.serviceSysNames[serviceName];
 				const defineJs = data.defineJs[sysName];
