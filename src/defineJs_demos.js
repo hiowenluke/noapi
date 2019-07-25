@@ -26,16 +26,28 @@ const demos = [
 
 	// ---------------------------------------------
 	// 3. With result property
-	// When testing, the test result must be matches it exactly if the test property is omitted.
+	// When testing, the test result must be matches it exactly if the test property is omitted or it is "===result".
 	{
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
-
 		result: {
 			"success": true,
 			"data": {
 				"formname": "trader"
 			}
 		},
+	},
+
+	{
+		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		result: {
+			"success": true,
+			"data": {
+				"formname": "trader"
+			}
+		},
+
+		// It is same as the example previously.
+		test: '===result',
 	},
 
 	{
@@ -84,6 +96,18 @@ const demos = [
 
 	{
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+
+		// Verify the value of result.success returns from server
+		test: false,
+
+		// Equal to:
+		// 		test: {
+		// 			verify: false,
+		// 		}
+	},
+
+	{
+		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		test(resultText, result) {
 
 			// Find the feature string in the result text
@@ -125,6 +149,7 @@ const demos = [
 		// api infos
 		//
 		// /////////////////////////////////////////////
+
 		api: '/bill/form/crud', // If omitted, parse from url
 		title: 'Bill - Form - Crud', // If omitted, parse from api
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
@@ -132,10 +157,10 @@ const demos = [
 
 		// /////////////////////////////////////////////
 		//
-		// io infos
-		// io: input params, output result
+		// doc infos
 		//
 		// /////////////////////////////////////////////
+
 		// Send it to server. If omitted, parse from url
 		params: {
 			formname: 'trader',
@@ -150,11 +175,6 @@ const demos = [
 		},
 
 
-		// /////////////////////////////////////////////
-		//
-		// test infos
-		//
-		// /////////////////////////////////////////////
 		// For clarity of reading, write it as the sequence below:
 		//		{beforeDo, url, getResult, afterDo, verify}
 		test: {
@@ -203,9 +223,11 @@ const demos = [
 				params: {
 					...
 				},
+
 				result: {
 					...
 				},
+
 				test: {
 					...
 				}
