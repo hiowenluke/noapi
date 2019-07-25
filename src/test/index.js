@@ -61,20 +61,21 @@ const flow = {
 					}
 
 					docInfos.forEach(docInfo => {
-						const {io, test} = docInfo;
+						const ioInfo = docInfo.io;
+						const testInfo = docInfo.test;
 
-						// No test property and result property, no need to test
-						if (!test && !io.result) return;
+						// No testInfo property and result property, no need to testInfo
+						if (!testInfo && !ioInfo.result) return;
 
-						// No verify property, can not test
-						if (!test.verify) return;
+						// No verify property, can not testInfo
+						if (!testInfo.verify) return;
 
-						test.testUrl = test.url || apiInfo.url;
-						test.getResult = test.getResult || apiInfo.url;
-						test.params = io.params;
-						test.result = io.result;
+						testInfo.testUrl = testInfo.url || apiInfo.url;
+						testInfo.getResult = testInfo.getResult || apiInfo.url;
+						testInfo.params = ioInfo.params;
+						testInfo.result = ioInfo.result;
 
-						createTestIt(apiInfo, test);
+						createTestIt(apiInfo, testInfo);
 					});
 				}
 			});
