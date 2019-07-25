@@ -45,7 +45,11 @@ const me = {
 	// The timeout (seconds) for waiting for server ready
 	serverReadyTimeout: 60,
 
-	// Is the test case legal?
+	applyUserConfig() {
+		const userConfig = require(data.testRoot + '/config');
+		Object.assign(this, userConfig);
+	},
+
 	isValidTestCase(apiTitle) {
 		const onlyTests = this.onlyTests;
 
@@ -55,7 +59,6 @@ const me = {
 		return tools.applyRuleArray(onlyTests, apiTitle);
 	},
 
-	// Is it a test case to ignore?
 	isIgnoreTest(apiTitle) {
 		const ignoreTests = this.ignoreTests;
 
@@ -64,11 +67,6 @@ const me = {
 
 		return tools.applyRuleArray(ignoreTests, apiTitle);
 	},
-
-	applyUserConfig() {
-		const userConfig = require(data.testRoot + '/config');
-		Object.assign(this, userConfig);
-	}
 };
 
 module.exports = me;
