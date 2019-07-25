@@ -52,7 +52,7 @@ const flow = {
 		expressApp.listen = () => {
 			const {serverName, port, isSilence} = options;
 			httpServer.listen(port, () => {
-				if (isSilence) return;
+				if (isSilence || data.isTestMode) return;
 				console.log('%s server listening on port %d', serverName, port);
 			});
 		};
