@@ -30,7 +30,7 @@ const me = [
 
 		// The test property is specified in this case.
 		// When testing, it will be used to validate whether the result returned from server is correct.
-		test(resultText, result) {
+		test(result, resultText) {
 
 			// Find the feature string in the result text
 			return resultText.indexOf("Cash") >= 0;
@@ -48,7 +48,7 @@ const me = [
 			}
 		},
 
-		test(resultText, result) {
+		test(result, resultText) {
 
 			// Find the specified values in the result object
 			return result.data.formname === 'goods';
