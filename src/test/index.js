@@ -111,6 +111,14 @@ const flow = {
 							// Start app server via supertest and send data to it, then get the result.
 							result = await request.do(url, params);
 
+							// If there is a getResult property, use it. For example,
+							// after deleting the data, user needs to re-acquire the data
+							// to determine whether the operation is successful.
+							if (getResult) {
+								const url = getApiUrlByTypeStr(getResult);
+								url && (result = await request.do(url));
+							}
+
 							// Use verify() to verify the result
 							const isOK = verify(result, JSON.stringify(result));
 							expect(isOK).to.be.true;
