@@ -23,7 +23,7 @@ const me = {
 	// 		the SuperTest will instantly get the service object and then immediately post
 	// 		the test data to the app. At this time, the app has not completed initialization,
 	// 		and an error will occur.
-	waitTime: 2,
+	waitTime: 0,
 
 	// The timeout (seconds) for waiting for server ready
 	serverReadyTimeout: 60,
