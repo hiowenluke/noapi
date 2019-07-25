@@ -186,7 +186,6 @@ const demos = [
 				'/bill/form/crud', // by api
 				'Bill - Form - Crud', // by title
 				'http://localhost:3000/bill/form/crud?formname=trader', // by url
-				'id@123', // by some other specified property, such as id, e.g., {id: 123, api: '/xxx', ...}
 			],
 
 			// The test url. If omitted, use the demo url.
