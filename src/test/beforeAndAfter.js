@@ -4,7 +4,7 @@ const lib = require('./__lib');
 
 const me = {
 	async do(typeStrArr) {
-		if (!typeStrArr) return;
+		if (!typeStrArr || !typeStrArr.length) return;
 
 		typeof typeStrArr === 'string' && (typeStrArr = [typeStrArr]);
 
