@@ -9,6 +9,38 @@ const request = require('./request');
 const data = require('../data');
 const apiInit = require('../api/init');
 
+// types:
+// 		'/bill/form/crud', // by api
+// 		'Bill - Form - Crud', // by title
+// 		'http://localhost:3000/bill/form/crud?formname=trader', // by url
+const getApiUrlByTypeStr = (typeStr) => {
+
+	// If the typeStr is a url, return it directly
+	if (/^http[s]*:/i.test(typeStr)) { // url
+		return typeStr;
+	}
+
+	let apiUrl;
+
+	data.sysNames.find(sysName => {
+		const defineJs = data.defineJs[sysName];
+		const {api} = defineJs;
+
+		const item = api.find(apiInfo => {
+			const {api, title, url} = apiInfo;
+
+			if (typeStr === api || typeStr === title) {
+				apiUrl = url;
+				return true;
+			}
+		});
+
+		if (!!item) return true;
+	});
+
+	return apiUrl;
+};
+
 const flow = {
 	initData({pathToCaller}) {
 		data.initForTest(pathToCaller);
@@ -77,11 +109,12 @@ const flow = {
 							// Start app server via supertest and send data to it, then get the result.
 							result = await request.do(test.url, test.params);
 
-							// If user specifies a url to get the result, use it. For example,
+							// If there is a getResult property, use it. For example,
 							// after deleting the data, user needs to re-acquire the data
 							// to determine whether the operation is successful.
 							if (test.getResult) {
-								result = await request.do(test.getResult);
+								const url = getApiUrlByTypeStr(test.getResult);
+								url && (result = await request.do(url));
 							}
 
 							// Use test.verify() to verify the result
