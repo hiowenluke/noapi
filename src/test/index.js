@@ -52,6 +52,10 @@ const flow = {
 					const apiInfo = api[i];
 					const docInfos = docs[i];
 
+					if (!config.isValidTestCase(apiInfo.title)) {
+						continue;
+					}
+
 					if (!docInfos.length) {
 						it('- No test', () => {});
 						continue;

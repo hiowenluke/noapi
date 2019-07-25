@@ -28,6 +28,31 @@ const me = {
 	// The timeout (seconds) for waiting for server ready
 	serverReadyTimeout: 60,
 
+	// Is the test case legal?
+	isValidTestCase(apiTitle) {
+		const onlyTests = this.onlyTests;
+
+		// If no onlyTests is specified, all test cases are legal
+		if (!onlyTests || !onlyTests.length) return true;
+
+		for (let i = 0; i < onlyTests.length; i ++) {
+			const rule = onlyTests[i];
+
+			// Legal if it is the specified test
+			if (rule === apiTitle) return true;
+
+			// Support for using at the end * wildcard
+			if (/\*$/.test(rule)) {
+				const testStr = rule.replace(/\*$/, '');
+
+				// Legal if it meets the specified * wildcard rule
+				if (apiTitle.substr(0, testStr.length) === testStr) return true;
+			}
+		}
+
+		return false;
+	},
+
 	applyUserConfig() {
 		const userConfig = require(data.testRoot + '/config');
 		Object.assign(this, userConfig);
