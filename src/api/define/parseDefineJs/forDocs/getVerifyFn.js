@@ -3,15 +3,14 @@ const _ = require('lodash');
 const data = require('../../../../data');
 
 const me = {
-	forMatchingResultExactly(item) {
-		return (resultText, result) => {
-			let comparisonResult = item.result;
-			let comparisonFile = item.resultComparisonFile;
+	forMatchingResultExactly(doc) {
+		return (result, resultText) => {
+			let comparisonResult = doc.result;
 
 			// If the target is a comparison file:
 			// 		"bill.form.crud" => "/path/to/user project/test/comparison/bill.form.crud.json"
-			if (typeof comparisonResult === 'string' || comparisonFile) {
-				const filename = comparisonResult || comparisonFile;
+			if (typeof comparisonResult === 'string') {
+				const filename = comparisonResult;
 				const testRoot = data.testRoot;
 
 				// Require the comparison file
@@ -24,7 +23,7 @@ const me = {
 	},
 
 	forContainingKeyValues(expectedData) {
-		return (resultText, result) => {
+		return (result, resultText) => {
 			let isOK = true;
 
 			// Result must contains the property value in expectedData
@@ -40,13 +39,13 @@ const me = {
 	},
 
 	forContainingString(expectedString) {
-		return (resultText, result) => {
+		return (result, resultText) => {
 			return resultText.indexOf(expectedString) >= 0;
 		}
 	},
 
 	forRegExp(reg) {
-		return (resultText, result) => {
+		return (result, resultText) => {
 			return reg.test(resultText);
 		}
 	}
