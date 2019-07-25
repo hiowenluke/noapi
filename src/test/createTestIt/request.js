@@ -1,7 +1,7 @@
 
 const request = require('supertest');
-const config = require('./config');
-const data = require('../data');
+const config = require('../config');
+const data = require('../../data');
 
 let req;
 
