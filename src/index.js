@@ -9,7 +9,7 @@ const noapi = (options = {}) => {
 	me.api.init();
 	me.biz.init();
 
-	return me.web.init();
+	return me.web.start();
 };
 
 noapi.test = me.test;
