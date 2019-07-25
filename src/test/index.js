@@ -52,6 +52,11 @@ const flow = {
 					const apiInfo = api[i];
 					const docInfos = docs[i];
 
+					if (!docInfos.length) {
+						it('- No test', () => {});
+						continue;
+					}
+
 					docInfos.forEach(docInfo => {
 						const {io, test} = docInfo;
 
