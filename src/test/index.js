@@ -3,94 +3,88 @@ const kdo = require('kdo');
 const caller = require('caller');
 
 const config = require('./config');
-const createTests = require('./createTests');
-const request = require('./createTests/createTest/request');
+const request = require('./request');
 
-const fn = () => {
-	const pathToCaller = caller();
-	config.fetchUserAppPath(pathToCaller);
-	config.applyUserConfig(pathToCaller);
+const data = require('../data');
+const apiInit = require('../api/init');
 
-	// Init request in describe instead of fn
-	describe('Waiting for server ready...', function() {
+const flow = {
+	initData({pathToCaller}) {
+		data.getWebServiceRoot(pathToCaller);
+		data.getTestRoot(pathToCaller);
+	},
 
-		// Only affects this describe
-		this.timeout(60 * 1000);
+	initConfig() {
+		config.applyUserConfig();
+	},
 
-		it(`Done // +${config.waitTime} second(s) delay`, async () => {
-			await request.init();
-		});
-	});
+	initApiServices() {
+		apiInit(true);
+	},
 
-	// Simulate index.js as module.filename for kdo
-	// Require the root path as an object via kdo
-	const module = {filename: config.testsRootPath + '/index.js'};
-	const testsDir = kdo.obj(module);
+	initRequest() {
 
-	// Test directory definition
-	const catalogs = config.catalogs;
+		// Init request in describe instead of fn
+		describe('Waiting for server ready...', function() {
 
-	// ----------------------------------------------------------
-	// Get the primary test directory from the test directory (root path) definition
-	// For example, the api and test directory structure in api-mms is as follows:
+			// Only affects this describe
+			this.timeout(config.serverReadyTimeout * 1000);
 
-	// /api
-	//		/calc
-	//			/bom
-	//				/form
-	//					getData.js
-	//					/saveData
-	//						...
-	//				/list
-	//		/info
-	//			/calendar
-
-	// /test
-	//		/api			<- testsDir
-	//			/calc			<- catalog
-	//				/bom			<- moduleName
-	//					/form			<- testFiles
-	//						getData.js		<- testFile
-	//						/saveData
-	//							...
-	//					/list
-	//			/info
-	//				/calendar
-	//			index.js		<- caller
-
-	// ----------------------------------------------------------
-
-	Object.keys(catalogs).forEach(catalogName => { // calc
-
-		// Modules in the current directory, such as bom
-		const catalog = testsDir[catalogName];
-		if (!catalog) return;
-
-		// Create test cases for each module
-		Object.keys(catalog).forEach(moduleName => { // bom
-
-			// The directory under the current module, such as
-			// the form directory under the bom, the list directory
-
-			// All the test files in the directory have been loaded as objects,
-			// such as bom/form/getData.js, which corresponds to testFiles.form.getData
-			const testFiles = catalog[moduleName];
-
-			// Get the module title from the module definition
-			const topic = catalogs[catalogName][moduleName]; // calc/bom => "calc - Bom"
-
-			// Create a test case set for mocha
-			describe(topic, () => {
-
-				// The root path is caller, such as .../test/api/,
-				// so the full path is .../test/api/<catalogName>/<moduleName>
-				const modulePath = `/${catalogName}/${moduleName}`;
-
-				// Create mocha test cases for each test case file in testFiles
-				createTests(testFiles, modulePath);
+			const delayStr = !config.waitTime ? '' : ` // +${config.waitTime}s delay`;
+			it(`Done${delayStr}`, async () => {
+				await request.init();
 			});
 		});
-	});
+	},
+
+	createDescribes() {
+		const serviceNames = data.serviceNames;
+
+		serviceNames.forEach(serviceName => {
+			const title = serviceName === 'default' ? 'api' : serviceName;
+			describe(title, () => {
+				const sysName = data.serviceSysNames[serviceName];
+				const defineJs = data.defineJs[sysName];
+				const {api, docs} = defineJs;
+
+				for (let i = 0; i < api.length; i ++) {
+					const apiInfo = api[i];
+					const docInfos = docs[i];
+
+					docInfos.forEach(docInfo => {
+						const {io, test} = docInfo;
+						test.url = test.url || apiInfo.url;
+						test.getResult = test.getResult || apiInfo.url;
+						test.params = io.params;
+						test.result = io.result;
+
+						it(apiInfo.title, async () => {
+							let result;
+
+							// Start app server via supertest and send data to it, then get the result.
+							result = await request.do(test.url, test.params);
+
+							// If user specifies a url to get the result, use it. For example,
+							// after deleting the data, user needs to re-acquire the data
+							// to determine whether the operation is successful.
+							if (test.getResult) {
+								result = await request.do(test.getResult);
+							}
+
+							// Use test.verify() to verify the result
+							const isOK = test.verify(result, JSON.stringify(result));
+							expect(isOK).to.be.true;
+						});
+					});
+				}
+			});
+		});
+	}
+};
+
+/** @name me.test */
+const fn = () => {
+	kdo.sync.do(flow, {pathToCaller: caller()});
 };
 
 module.exports = fn;

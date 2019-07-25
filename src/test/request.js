@@ -1,6 +1,7 @@
 
 const request = require('supertest');
-const config = require('../../config');
+const config = require('./config');
+const data = require('../data');
 
 let req;
 
@@ -16,8 +17,8 @@ const me = {
 	async init() {
 
 		// Initialize the server here instead of at the top of this file,
-		// because it is now initialized and the correct userAppPath is obtained.
-		const server = require(config.userAppPath);
+		// because it is now initialized and the correct webServiceRoot is obtained.
+		const server = require(data.webServiceRoot);
 
 		// Start the app server
 		req = request(server);
@@ -26,9 +27,7 @@ const me = {
 		config.waitTime && await wait(config.waitTime);
 	},
 
-	async do(url) {
-
-		// !req && await this.init();
+	async do(url, params) {
 
 		// http://localhost:3000/xxx => /xxx
 		url = url.replace(/(\w+):\/\/([^/:]+)(:\d*)?/, '');
@@ -36,8 +35,14 @@ const me = {
 		// Encode the url for unicode characters
 		url = encodeURI(url);
 
-		const result = await req.get(url);
-		return JSON.stringify(result.body);
+		let result;
+
+		params ?
+			result = await req.post(url).send(params) :
+			result = await req.get(url)
+		;
+
+		return result.body;
 	}
 };
 
