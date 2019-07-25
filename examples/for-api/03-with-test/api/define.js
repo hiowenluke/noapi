@@ -2,6 +2,8 @@
 // See /noapi/src/defineJs_demos.js to learn more.
 
 const me = [
+	'http://localhost:3000/bill/form/crud?formname=trader',
+
 	{
 		// Must specify the title property for testing
 		title: 'Bill - Form - Crud',
