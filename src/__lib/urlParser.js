@@ -15,7 +15,7 @@ const me = {
 
 	getTitleFromApi(api) {
 		// /bill/form/crud => 'bill - form - crud'
-		let str = api.replace(/^\//, '').replace('/', ' - ');
+		let str = api.replace(/^\//, '').replace(/\//g, ' - ');
 
 		// 'bill - form - crud' => 'Bill - Form - Crud'
 		return v.titleCase(str);
