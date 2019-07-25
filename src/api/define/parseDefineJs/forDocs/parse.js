@@ -50,8 +50,8 @@ const fn = (apiDefineArr) => {
 			// io: input params, output result
 			io = {params: doc.params, result: doc.result};
 
-			// If the test property is omitted
-			if (!doc.test) {
+			// If the test property is omitted, or it is "===result"
+			if (typeof doc.test === 'undefined' || doc.test === '===result') {
 
 				// The result returned from server must be matches the result property exactly
 				if (doc.result) {
@@ -74,7 +74,7 @@ const fn = (apiDefineArr) => {
 					// 				formname: "trader",
 					//				// verify, // without verify
 					// 		}
-					if (!test.verify) {
+					if (typeof test.verify === 'undefined') {
 						test = {
 							verify: getVerifyFn.forContainingKeyValues(test)
 						}
