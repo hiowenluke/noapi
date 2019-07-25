@@ -115,11 +115,11 @@ const dataDemo = {
 
 /** @name me.data */
 const me = {
-	isSimpleMode: true, // single api service (web service is api service)
+	isSimpleMode: true, // Single api service (the web service is api service)
 
-	webServiceRoot: '', // root path of web service
-	apiServicesRoot: '', // root path of api service(s)
-	testRoot: '', // root path of test
+	webServiceRoot: '', // The root path of web service
+	apiServicesRoot: '', // The root path of api service(s)
+	testRoot: '', // The root path of test
 
 	serverOptions: {
 		serverName: 'default',
@@ -128,18 +128,18 @@ const me = {
 	},
 
 	serviceNames: [], // ["api-forms", "api-erp", "api-mms"]
-	sysNames: [], // ["forms", "erp", "mms"] // without prefix "api-"
-	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp", "api-mms": "mms"} // for getting sysName by serviceName
+	sysNames: [], // ["forms", "erp", "mms"] // Without prefix "api-"
+	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp", "api-mms": "mms"} // For getting sysName by serviceName
 
-	core: {}, // {aha, api, biz} // see the demo of it at top of this file
-	defineJs: {}, // {default: {filename, api, io, test}} // see the demo of it at top of this file
+	core: {}, // {aha, api, biz} // See the demo of it at top of this file
+	defineJs: {}, // {default: {filename, api, io, test}} // See the demo of it at top of this file
 
-	assignRules: [], // rules of assigning
+	assignRules: [], // The rules of assigning
 
-	isSilence: false, // do not print logs if it is true
 	isTestMode: false, // If noapi is running from /test directory, then it is true.
+	isSilence: false, // Do not print logs if it is true
 
-	power: null, // the custom function to handle query
+	power: null, // The custom function to handle query
 
 	init(options) {
 		this.getWebServiceRoot(options.pathToCaller);
