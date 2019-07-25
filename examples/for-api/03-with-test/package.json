@@ -1,6 +1,6 @@
 {
   "main": "app.js",
   "scripts": {
-    "test": "cd ./test && mocha index.js"
+    "test": "cd ./test && mocha index.js --exit"
   }
 }
