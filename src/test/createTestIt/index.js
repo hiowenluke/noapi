@@ -1,6 +1,7 @@
 
 const expect = require('chai').expect;
 
+const request = require('./request');
 const baa = require('./beforeAndAfter');
 const lib = require('./__lib');
 
