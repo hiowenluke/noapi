@@ -48,6 +48,12 @@ const me = {
 		return (result, resultText) => {
 			return reg.test(resultText);
 		}
+	},
+
+	forResultState(expectedResultState) {
+		return (result, resultText) => {
+			return result.success === expectedResultState;
+		}
 	}
 };
 
