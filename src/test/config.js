@@ -3,10 +3,8 @@ const data = require('../data');
 
 const tools = {
 	applyRuleArray(rules, apiTitle) {
-
 		for (let i = 0; i < rules.length; i ++) {
 			const rule = rules[i];
-
 			if (rule === apiTitle) return true;
 
 			// Process the * at the end of rule
