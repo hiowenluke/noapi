@@ -22,7 +22,13 @@ const fn = (apiDefineArr) => {
 		// 		]
 		// }
 
-		if (!_.isPlainObject(item)) return;
+		// The item is not a plain object, there is no test
+		if (!_.isPlainObject(item)) {
+
+			// Push an empty array and keep it in the same order as apiInfos.
+			allItems.push([]);
+			return;
+		}
 
 		// {api, title, url, params, result, test} =>
 		// {api, title, url,
