@@ -87,7 +87,7 @@ const me = [
 		},
 
 		// The JSON string of the result returned from server must has the specified featured string.
-		test: `"formname":"trader"`,
+		test: `===result`,
 	},
 ];
 
