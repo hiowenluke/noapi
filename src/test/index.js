@@ -1,17 +1,13 @@
 
 const kdo = require('kdo');
 const caller = require('caller');
-const expect = require('chai').expect;
 
 const config = require('./config');
+const createTestIt = require('./createTestIt');
+const request = require('./createTestIt/request');
 
 const data = require('../data');
 const apiInit = require('../api/init');
-const lib = require('./__lib');
-const baa = require('./beforeAndAfter');
-
-const createTestIt = require('./createTestIt');
-const request = require('./createTestIt/request');
 
 const flow = {
 	initData({pathToCaller}) {
@@ -65,10 +61,10 @@ const flow = {
 						const ioInfo = docInfo.io;
 						const testInfo = docInfo.test;
 
-						// No testInfo property and result property, no need to testInfo
+						// No testInfo property and result property, no need to test
 						if (!testInfo && !ioInfo.result) return;
 
-						// No verify property, can not testInfo
+						// No verify property, can not test
 						if (!testInfo.verify) return;
 
 						testInfo.testUrl = testInfo.url || apiInfo.url;
