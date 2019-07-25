@@ -8,8 +8,7 @@ const demos = [
 
 	// ---------------------------------------------
 	// 2. With params property
-	// When testing, it will replaces the parameters in demo url which start with "?".
-	// That is, the parameters in demo url is for demo, the params property is for test.
+	// When testing, use post method to send params (if exists), or use get method to send the demo url.
 	{
 		url: 'http://localhost:3000/bill/form/crud',
 		params: {
@@ -44,9 +43,6 @@ const demos = [
 
 		// If the result is large, save it to a json file in the default directory /test/comparison.
 		result: "bill.form.crud",
-
-		// Equal to:
-		// 		resultComparisonFile: "bill.form.crud",
 	},
 
 	// ---------------------------------------------
@@ -120,11 +116,8 @@ const demos = [
 
 	// ---------------------------------------------
 	// 5. Complete definition
-	// An api corresponds to one set or multiple sets of parameters,
-	// each set of parameters has a unique return result, and a test rule.
 
-	// ---------------------------------------------
-	// 5.1 An api with a set of parameters
+	// 5.1 An api with a set of docs
 	{
 
 		// /////////////////////////////////////////////
@@ -198,13 +191,13 @@ const demos = [
 	},
 
 	// ---------------------------------------------
-	// 5.2 An api with multiple sets of parameters
+	// 5.2 An api with multiple sets of docs
 	{
 		api: '/bill/form/crud', // If omitted, parse from url
 		title: 'Bill - Form - Crud', // If omitted, parse from url
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
-		sets: [
+		docs: [
 			/*
 			{
 				params: {
