@@ -113,6 +113,52 @@ const dataDemo = {
 	}
 };
 
+const tools = {
+	getWebServiceRoot(pathToCaller) {
+
+		if (pathToCaller === '/') {
+			throw new Error('no package.json found in parent path of ' + pathToCaller);
+		}
+
+		// Find package.json in parent path
+		const parentPath = path.resolve(pathToCaller, '..');
+		const packageJson = parentPath + '/package.json';
+
+		// Found the package.json
+		if (fs.existsSync(packageJson)) {
+
+			// The parent path is the web services root directory
+			return parentPath;
+		}
+		else {
+			// Not found
+			// Recurse to Find
+			return this.getWebServiceRoot(parentPath);
+		}
+	},
+
+	getIsTestMode(webServiceRoot) {
+		let parent = module;
+		let isTestMode;
+
+		// If the ancestor's module.filename contains webServiceRoot + "/test/", then it is test.
+		const target = (webServiceRoot + '/test/').replace(/\//g, '\\/');
+
+		while (true) {
+			const reg = new RegExp(target, 'i');
+			if (reg.test(parent.filename)) {
+				isTestMode = true;
+				break;
+			}
+
+			parent = parent.parent;
+			if (!parent) break;
+		}
+
+		return isTestMode;
+	},
+};
+
 /** @name me.data */
 const me = {
 	isSimpleMode: true, // Single api service (the web service is api service)
@@ -142,8 +188,8 @@ const me = {
 	power: null, // The custom function to handle query
 
 	init(options) {
-		this.getWebServiceRoot(options.pathToCaller);
-		this.getIsTestMode();
+		this.webServiceRoot = tools.getWebServiceRoot(options.pathToCaller);
+		this.isTestMode = tools.getIsTestMode(this.webServiceRoot);
 
 		this.assignRules = options.assignRules;
 		this.power = options.power;
@@ -151,50 +197,6 @@ const me = {
 		options.serverName && (this.serverOptions.serverName = options.serverName);
 		options.http && (this.serverOptions.http = options.http);
 		options.port && (this.serverOptions.port = options.port);
-	},
-
-	getWebServiceRoot(pathToCaller) {
-
-		if (pathToCaller === '/') {
-			throw new Error('no package.json found in parent path of ' + pathToCaller);
-		}
-
-		// Find package.json in parent path
-		const parentPath = path.resolve(pathToCaller, '..');
-		const packageJson = parentPath + '/package.json';
-
-		// Found the package.json
-		if (fs.existsSync(packageJson)) {
-
-			// The parent path is the web services root directory
-			return this.webServiceRoot = parentPath;
-		}
-		else {
-			// Not found
-			// Recurse to Find
-			return this.getWebServiceRoot(parentPath);
-		}
-	},
-
-	getIsTestMode() {
-		let parent = module;
-		let isTestMode;
-
-		// If the ancestor's module.filename contains webServiceRoot + "/test/", then it is test.
-		const target = (this.webServiceRoot + '/test/').replace(/\//g, '\\/');
-
-		while (true) {
-			const reg = new RegExp(target, 'i');
-			if (reg.test(parent.filename)) {
-				isTestMode = true;
-				break;
-			}
-
-			parent = parent.parent;
-			if (!parent) break;
-		}
-
-		this.isTestMode = isTestMode;
 	},
 
 	getTestRoot(pathToCaller) {
