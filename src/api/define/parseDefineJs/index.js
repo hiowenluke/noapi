@@ -1,9 +1,8 @@
 
-const _ = require('lodash');
 const v = require('voca');
 const data = require('../../../data');
-const lib = require('../../../__lib');
-const forTest = require('kdo').obj(module, './forTest');
+const forApi = require('./forApi');
+const forDocs = require('kdo').obj(module, './forDocs');
 
 const parseDefineJs = {
 	do(type) {
@@ -29,15 +28,20 @@ const parseDefineJs = {
 		return forApi.parse(apiDefineArr);
 	},
 
+	forDocs(apiDefineArr) {
+		return forDocs.parse(apiDefineArr);
 	},
 };
 
 /** @name define.parseDefineJs */
 const me = {
+
+	// defineJs: {api}
 	forRun() {
 		parseDefineJs.do('api');
 	},
 
+	// defineJs: {api, docs}
 	forTest() {
 		parseDefineJs.do('api');
 		parseDefineJs.do('docs');
