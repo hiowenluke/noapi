@@ -29,20 +29,6 @@ const parseDefineJs = {
 		return forApi.parse(apiDefineArr);
 	},
 
-	forIo(apiDefineArr) {
-		const ioInfos = [];
-		apiDefineArr.forEach(item => {
-			if (!_.isPlainObject(item)) return;
-
-			let {params, result} = item;
-			ioInfos.push({params, result});
-		});
-
-		return ioInfos;
-	},
-
-	forTest(apiDefineArr) {
-		return forTest.parseTestInfos(apiDefineArr);
 	},
 };
 
@@ -54,8 +40,7 @@ const me = {
 
 	forTest() {
 		parseDefineJs.do('api');
-		parseDefineJs.do('io');
-		parseDefineJs.do('test');
+		parseDefineJs.do('docs');
 	},
 };
 
