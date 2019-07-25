@@ -137,6 +137,7 @@ const me = {
 	assignRules: [], // rules of assigning
 
 	isSilence: false, // do not print logs if it is true
+	isTestMode: false, // If noapi is running from /test directory, then it is true.
 
 	power: null, // the custom function to handle query
 
