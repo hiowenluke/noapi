@@ -11,8 +11,7 @@ const apiInit = require('../api/init');
 
 const flow = {
 	initData({pathToCaller}) {
-		data.getWebServiceRoot(pathToCaller);
-		data.getTestRoot(pathToCaller);
+		data.initForTest(pathToCaller);
 	},
 
 	initConfig() {
