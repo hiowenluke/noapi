@@ -199,7 +199,9 @@ const me = {
 		options.port && (this.serverOptions.port = options.port);
 	},
 
-	getTestRoot(pathToCaller) {
+	initForTest(pathToCaller) {
+		this.webServiceRoot = tools.getWebServiceRoot(pathToCaller);
+		this.isTestMode = true;
 
 		// If pathToCaller is .../test/api/index.js, then the root path of test is .../test/api
 		this.testRoot = path.resolve(pathToCaller, '../');
