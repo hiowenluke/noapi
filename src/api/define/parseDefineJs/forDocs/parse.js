@@ -96,6 +96,11 @@ const fn = (apiDefineArr) => {
 							// do nothing
 						}
 
+						// verify: true
+						if (typeof test === 'boolean') {
+							test.verify = getVerifyFn.forResultState(test.verify);
+						}
+
 						// verify: {
 						// 		formname: 'trader',
 						// }
@@ -124,6 +129,13 @@ const fn = (apiDefineArr) => {
 					if (typeof test === 'function') {
 						test = {
 							verify: test
+						}
+					}
+
+					// test: true
+					if (typeof test === 'boolean') {
+						test = {
+							verify: getVerifyFn.forResultState(test)
 						}
 					}
 
