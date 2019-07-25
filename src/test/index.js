@@ -54,6 +54,9 @@ const flow = {
 
 					docInfos.forEach(docInfo => {
 						const {io, test} = docInfo;
+
+						// No test property and result property, no need to test
+						if (!test && !io.result) return;
 						test.url = test.url || apiInfo.url;
 						test.getResult = test.getResult || apiInfo.url;
 						test.params = io.params;
