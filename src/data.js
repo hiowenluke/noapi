@@ -58,54 +58,58 @@ const dataDemo = {
 			url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		},
 
-		// io: input params, output result
-		io: {
+		docs: [
+			{
+				// io: input params, output result
+				io: {
 
-			// Send it to server. If omitted, parse from url
-			params: {
-				formname: 'trader',
-			},
+					// Send it to server. If omitted, parse from url
+					params: {
+						formname: 'trader',
+					},
 
-			// Get it from server. It can be omitted if not required for testing.
-			result: {
-				"success": true,
-				"data": {
-					"formname": "trader"
+					// Get it from server. It can be omitted if not required for testing.
+					result: {
+						"success": true,
+						"data": {
+							"formname": "trader"
+						}
+					},
+				},
+
+				test: {
+
+					// Call specific apis before do with test url if needed.
+					// E.g., insert some data to db before do with test url.
+					// The beforeDo can be an array, or an api, title, url, or some other specified property.
+					beforeDo: [
+						'/bill/form/crud', // by api
+						'Bill - Form - Crud', // by title
+						'http://localhost:3000/bill/form/crud?formname=trader', // by url
+						'id@123', // by some other specified property, such as id, e.g., {id: 123, api: '/xxx', ...}
+					],
+
+					// The test url. If omitted, use the demo url.
+					// E.g., the test url carries more parameters than the demo url for specific purposes.
+					url: undefined,
+
+					// How to get the result. If omitted, use the demo url.
+					// E.g., after deleting the data via test url, re-acquire the data to verify if it is exists.
+					// The usage is the same as beforeDo.
+					getResult: undefined,
+
+					// Call specific apis after get the test result if needed.
+					// E.g., delete the inserted data in before.
+					// The usage is the same as beforeDo.
+					afterDo: undefined,
+
+					// See above section "4. With test ..." for the usage of verify
+					verify(resultText, resultObject) {
+						return resultText.indexOf(`"formname":"trader"`) >= 0;
+					}
 				}
-			},
-		},
-
-		test: {
-
-			// Call specific apis before do with test url if needed.
-			// E.g., insert some data to db before do with test url.
-			// The beforeDo can be an array, or an api, title, url, or some other specified property.
-			beforeDo: [
-				'/bill/form/crud', // by api
-				'Bill - Form - Crud', // by title
-				'http://localhost:3000/bill/form/crud?formname=trader', // by url
-				'id@123', // by some other specified property, such as id, e.g., {id: 123, api: '/xxx', ...}
-			],
-
-			// The test url. If omitted, use the demo url.
-			// E.g., the test url carries more parameters than the demo url for specific purposes.
-			url: undefined,
-
-			// How to get the result. If omitted, use the demo url.
-			// E.g., after deleting the data via test url, re-acquire the data to verify if it is exists.
-			// The usage is the same as beforeDo.
-			getResult: undefined,
-
-			// Call specific apis after get the test result if needed.
-			// E.g., delete the inserted data in before.
-			// The usage is the same as beforeDo.
-			afterDo: undefined,
-
-			// See above section "4. With test ..." for the usage of verify
-			verify(resultText, resultObject) {
-				return resultText.indexOf(`"formname":"trader"`) >= 0;
 			}
-		}
+		]
 	}
 };
 
@@ -115,7 +119,6 @@ const me = {
 
 	webServiceRoot: '', // root path of web service
 	apiServicesRoot: '', // root path of api service(s)
-	apiDefineJsPaths: [], // path of .../api/defines.js in all api services
 	testRoot: '', // root path of test
 
 	serverOptions: {
@@ -138,7 +141,8 @@ const me = {
 	power: null, // the custom function to handle query
 
 	init(options) {
-		this.webServiceRoot = this.getWebServiceRoot(options.pathToCaller);
+		this.getWebServiceRoot(options.pathToCaller);
+
 		this.assignRules = options.assignRules;
 		this.power = options.power;
 
@@ -161,7 +165,7 @@ const me = {
 		if (fs.existsSync(packageJson)) {
 
 			// The parent path is the web services root directory
-			return parentPath;
+			return this.webServiceRoot = parentPath;
 		}
 		else {
 			// Not found
