@@ -57,6 +57,16 @@ const me = {
 		return tools.applyRuleArray(onlyTests, apiTitle);
 	},
 
+	// Is it a test case to ignore?
+	isIgnoreTest(apiTitle) {
+		const ignoreTests = this.ignoreTests;
+
+		// If no ignoreTests is specified, all test cases are legal
+		if (!ignoreTests || !ignoreTests.length) return false;
+
+		return tools.applyRuleArray(ignoreTests, apiTitle);
+	},
+
 	applyUserConfig() {
 		const userConfig = require(data.testRoot + '/config');
 		Object.assign(this, userConfig);
