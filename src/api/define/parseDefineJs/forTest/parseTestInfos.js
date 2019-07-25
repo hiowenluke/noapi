@@ -9,7 +9,11 @@ const fn = (apiDefineArr) => {
 	apiDefineArr.forEach(item => {
 		if (!_.isPlainObject(item)) return;
 
+		let io;
 		let test;
+
+		// io: input params, output result
+		io = {params: item.params, result: item.result};
 
 		// If the test property is omitted
 		if (!item.test) {
@@ -115,7 +119,7 @@ const fn = (apiDefineArr) => {
 			}
 		}
 
-		testInfos.push(test);
+		testInfos.push({io, test});
 	});
 
 	return testInfos;
