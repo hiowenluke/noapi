@@ -204,7 +204,7 @@ const demos = [
 		title: 'Bill - Form - Crud', // If omitted, parse from url
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
-		multi: [
+		sets: [
 			/*
 			{
 				params: {
