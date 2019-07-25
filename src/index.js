@@ -12,6 +12,7 @@ const noapi = (options = {}) => {
 	return me.web.init();
 };
 
+noapi.test = me.test;
 noapi.params = me.utils.params;
 noapi.url = me.utils.url;
 
