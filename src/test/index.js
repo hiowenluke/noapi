@@ -84,8 +84,8 @@ const flow = {
 							// after deleting the data, user needs to re-acquire the data
 							// to determine whether the operation is successful.
 							if (getResult) {
-								const url = getApiUrlByTypeStr(getResult);
-								url && (result = await request.do(url));
+								const apiUrl = lib.getApiUrlByTypeStr(getResult);
+								apiUrl && (result = await request.do(apiUrl));
 							}
 
 							// Use verify() to verify the result
