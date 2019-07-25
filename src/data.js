@@ -143,6 +143,7 @@ const me = {
 
 	init(options) {
 		this.getWebServiceRoot(options.pathToCaller);
+		this.getIsTestMode();
 
 		this.assignRules = options.assignRules;
 		this.power = options.power;
@@ -173,6 +174,27 @@ const me = {
 			// Recurse to Find
 			return this.getWebServiceRoot(parentPath);
 		}
+	},
+
+	getIsTestMode() {
+		let parent = module;
+		let isTestMode;
+
+		// If the ancestor's module.filename contains webServiceRoot + "/test/", then it is test.
+		const target = (this.webServiceRoot + '/test/').replace(/\//g, '\\/');
+
+		while (true) {
+			const reg = new RegExp(target, 'i');
+			if (reg.test(parent.filename)) {
+				isTestMode = true;
+				break;
+			}
+
+			parent = parent.parent;
+			if (!parent) break;
+		}
+
+		this.isTestMode = isTestMode;
 	},
 
 	getTestRoot(pathToCaller) {
