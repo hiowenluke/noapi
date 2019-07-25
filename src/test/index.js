@@ -72,10 +72,8 @@ const flow = {
 
 						testInfo.testUrl = testInfo.url || apiInfo.url;
 						testInfo.getResult = testInfo.getResult || apiInfo.url;
-						testInfo.params = ioInfo.params;
-						testInfo.result = ioInfo.result;
 
-						createTestIt(apiInfo, testInfo);
+						createTestIt(apiInfo, ioInfo, testInfo);
 					});
 				}
 			});

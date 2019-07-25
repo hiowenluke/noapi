@@ -1,6 +1,7 @@
 
-const fn = (apiInfo, test) => {
-	let {beforeDo, testUrl, params, getResult, afterDo, verify} = test;
+const fn = (apiInfo, ioInfo, testInfo) => {
+	const {beforeDo, testUrl, getResult, afterDo, verify} = testInfo;
+	const {params} = ioInfo;
 
 	it(apiInfo.title, async () => {
 		let result;
