@@ -67,18 +67,18 @@ const flow = {
 						// No verify property, can not test
 						if (!test.verify) return;
 
-						test.url = test.url || apiInfo.url;
+						test.testUrl = test.url || apiInfo.url;
 						test.getResult = test.getResult || apiInfo.url;
 						test.params = io.params;
 						test.result = io.result;
 
-						let {beforeDo, url, params, getResult, afterDo, verify} = test;
+						let {beforeDo, testUrl, params, getResult, afterDo, verify} = test;
 
 						it(apiInfo.title, async () => {
 							let result;
 
 							// Start app server via supertest and send data to it, then get the result.
-							result = await request.do(url, params);
+							result = await request.do(testUrl, params);
 
 							// If there is a getResult property, use it. For example,
 							// after deleting the data, user needs to re-acquire the data
