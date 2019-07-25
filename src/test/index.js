@@ -57,6 +57,10 @@ const flow = {
 
 						// No test property and result property, no need to test
 						if (!test && !io.result) return;
+
+						// No verify property, can not test
+						if (!test.verify) return;
+
 						test.url = test.url || apiInfo.url;
 						test.getResult = test.getResult || apiInfo.url;
 						test.params = io.params;
