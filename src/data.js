@@ -1,6 +1,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const kdo = require('kdo');
 
 const dataDemo = {
 
@@ -157,6 +158,13 @@ const tools = {
 
 		return isTestMode;
 	},
+
+	loadGlobalLib(libName, webServiceRoot) {
+		if (!libName) return;
+
+		const module = {filename: webServiceRoot + '/' + libName + '/.'};
+		global[libName] = kdo.obj(module);
+	}
 };
 
 /** @name me.data */
@@ -197,6 +205,9 @@ const me = {
 		options.serverName && (this.serverOptions.serverName = options.serverName);
 		options.http && (this.serverOptions.http = options.http);
 		options.port && (this.serverOptions.port = options.port);
+
+		// Load options.globalLib as global.lib
+		tools.loadGlobalLib(options.globalLib, this.webServiceRoot);
 	},
 
 	initForTest(pathToCaller) {
