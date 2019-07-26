@@ -9,13 +9,14 @@ const fn = () => {
 	serviceNames.forEach(serviceName => {
 		const title = serviceName === 'default' ? 'api' : serviceName;
 		const sysName = data.serviceSysNames[serviceName];
+		const defineJs = data.defineJs[sysName];
+		const {api, docs} = defineJs;
 
-		//
 		if (config.enableCatalogs) {
 
 		}
 		else {
-			createDescribe(title, sysName);
+			createDescribe(title, api, docs);
 		}
 	});
 };

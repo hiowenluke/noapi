@@ -1,12 +1,9 @@
 
 const config = require('../config');
-const data = require('../../data');
 const createTestIt = require('../createTestIt');
 
-const fn = (title, sysName) => {
+const fn = (title, api, docs) => {
 	describe(title, () => {
-		const defineJs = data.defineJs[sysName];
-		const {api, docs} = defineJs;
 
 		for (let i = 0; i < api.length; i ++) {
 			const apiInfo = api[i];
