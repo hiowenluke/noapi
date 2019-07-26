@@ -1,4 +1,7 @@
 
+const config = require('../config');
+const data = require('../../data');
+
 const createTestIt = require('../createTestIt');
 
 const fn = () => {
