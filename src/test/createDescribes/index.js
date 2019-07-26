@@ -8,14 +8,15 @@ const fn = () => {
 
 	serviceNames.forEach(serviceName => {
 		const title = serviceName === 'default' ? 'api' : serviceName;
+		const sysName = data.serviceSysNames[serviceName];
 
+		//
 		if (config.enableCatalogs) {
 
 		}
 		else {
+			createDescribe(title, sysName);
 		}
-
-		createDescribe(title, serviceName);
 	});
 };
 

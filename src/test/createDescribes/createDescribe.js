@@ -3,9 +3,8 @@ const config = require('../config');
 const data = require('../../data');
 const createTestIt = require('../createTestIt');
 
-const fn = (title, serviceName) => {
+const fn = (title, sysName) => {
 	describe(title, () => {
-		const sysName = data.serviceSysNames[serviceName];
 		const defineJs = data.defineJs[sysName];
 		const {api, docs} = defineJs;
 
