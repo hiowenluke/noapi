@@ -24,17 +24,6 @@ const flow = {
 
 	initRequest() {
 
-		// Init request in describe instead of fn
-		describe('Waiting for server ready...', function() {
-
-			// Only affects this describe
-			this.timeout(config.serverReadyTimeout * 1000);
-
-			const delayStr = !config.waitTime ? '' : ` // +${config.waitTime}s delay`;
-			it(`Done${delayStr}`, async () => {
-				await request.init();
-			});
-		});
 	},
 
 

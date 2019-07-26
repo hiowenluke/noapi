@@ -14,17 +14,32 @@ const wait = (seconds = 1) => {
 };
 
 const me = {
-	async init() {
+	init() {
 
-		// Initialize the server here instead of at the top of this file,
-		// because it is now initialized and the correct webServiceRoot is obtained.
-		const server = require(data.webServiceRoot);
+		const init = async () => {
 
-		// Start the app server
-		req = request(server);
+			// Initialize the server here instead of at the top of this file,
+			// because it is now initialized and the correct webServiceRoot is obtained.
+			const server = require(data.webServiceRoot);
 
-		// Waiting for the server to be ready before test
-		config.waitTime && await wait(config.waitTime);
+			// Start the app server
+			req = request(server);
+
+			// Waiting for the server to be ready before test
+			config.waitTime && await wait(config.waitTime);
+		};
+
+		// Init request in describe instead of fn
+		describe('Waiting for server ready...', function() {
+
+			// Only affects this describe
+			this.timeout(config.serverReadyTimeout * 1000);
+
+			const delayStr = !config.waitTime ? '' : ` // +${config.waitTime}s delay`;
+			it(`Done${delayStr}`, async () => {
+				await init();
+			});
+		});
 	},
 
 	async do(url, params) {
