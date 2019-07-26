@@ -1,3 +1,2 @@
 
-// So simple!
 require('../noapi')();
