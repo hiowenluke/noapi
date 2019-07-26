@@ -12,6 +12,22 @@ const me = {
 
 	],
 
+	catalogs: {
+		bill: {
+			form: '',
+			list: '',
+		},
+
+		info: {
+			form: '',
+			list: '',
+		},
+
+		sys: {
+
+		}
+	},
+
 	// The time to wait for the server to be ready before test.
 	// Applicable to the following situations:
 
