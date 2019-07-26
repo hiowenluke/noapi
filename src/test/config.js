@@ -1,4 +1,5 @@
 
+const fs = require('fs');
 const data = require('../data');
 
 const tools = {
@@ -49,7 +50,10 @@ const me = {
 	serverReadyTimeout: 60,
 
 	applyUserConfig() {
-		const userConfig = require(data.testRoot + '/config');
+		const filename = data.testRoot + '/config';
+		if (!fs.existsSync(filename)) return;
+
+		const userConfig = require(filename);
 		Object.assign(this, userConfig);
 	},
 
