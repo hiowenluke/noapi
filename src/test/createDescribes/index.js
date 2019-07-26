@@ -30,7 +30,7 @@ const fn = () => {
 		const sysName = data.serviceSysNames[serviceName];
 		const defineJs = data.defineJs[sysName];
 
-		if (config.enableCatalogs) {
+		if (config.catalogs) {
 			const apis = data.core[sysName].api;
 			doWithRecursive(apis, title, defineJs);
 		}

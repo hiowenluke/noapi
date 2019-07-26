@@ -31,7 +31,7 @@ const me = {
 	],
 
 	//
-	enableCatalogs: true,
+	catalogs: true,
 
 	// The time to wait for the server to be ready before test.
 	// Applicable to the following situations:
