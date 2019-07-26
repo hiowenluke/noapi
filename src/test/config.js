@@ -30,8 +30,8 @@ const me = {
 		// 'Info - Form - Crud // for goods',
 	],
 
-	//
-	catalogs: true,
+	// Categorize the test cases if it is true
+	catalogs: false,
 
 	// The time to wait for the server to be ready before test.
 	// Applicable to the following situations:
