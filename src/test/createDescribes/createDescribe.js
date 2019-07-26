@@ -1,4 +1,5 @@
 
+const v = require('voca');
 const config = require('../config');
 const createTestIt = require('../createTestIt');
 
@@ -43,7 +44,7 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 	validator.init(title, isOnlyApiPath, usedApiPaths);
 
 	const {api, docs} = defineJs;
-	describe(title, () => {
+	describe(v.titleCase(title), () => {
 
 		for (let i = 0; i < api.length; i ++) {
 			const apiInfo = api[i];
