@@ -4,8 +4,9 @@ const config = require('../config');
 const createTestIt = require('../createTestIt');
 
 const noTest = (title) => {
-	const postfix = '- No test';
-	it(title ? title + ' <' + postfix : postfix, () => {});
+	const frontGroundRed = '\x1b[31m';
+	const prefix = frontGroundRed + 'No test';
+	it(title ? prefix + ': ' + title : prefix, () => {});
 };
 
 const validator = {
