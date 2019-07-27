@@ -24,17 +24,24 @@ const me = {
 
 	forContainingKeyValues(expectedData) {
 		return (result, resultText) => {
+			let isFound;
+			let isOK = true;
 
 			// Result must contains the property value in expectedData
 			const item = Object.keys(expectedData).find(key => {
+				const value = result.data[key];
+				if (typeof value === 'undefined') return;
+
+				isFound = true;
 
 				// Compare with result.data.xxx
-				if (!_.isEqual(expectedData[key], result.data[key])) {
+				if (!_.isEqual(expectedData[key], value)) {
+					isOK = false;
 					return key;
 				}
 			});
 
-			return !!item;
+			return !isFound ? false : isOK;
 		}
 	},
 
