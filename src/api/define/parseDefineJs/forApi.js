@@ -28,7 +28,15 @@ const me = {
 					url = lib.urlParser.getUrlFromApi(api);
 				}
 
-				!title && (title = lib.urlParser.getTitleFromApi(api));
+				const apiTitle = lib.urlParser.getTitleFromApi(api);
+				if (!title) {
+					title = apiTitle;
+				}
+
+				if (title.indexOf('{apiTitle}') >= 0) {
+					title = title.replace('{apiTitle}', apiTitle);
+				}
+
 				apiInfos.push({api, title, url});
 			}
 		});
