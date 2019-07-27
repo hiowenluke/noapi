@@ -1,3 +1,0 @@
-
-// So simple!
-require('../noapi')();
