@@ -66,7 +66,12 @@ const flow = {
 /** @name me.web.start */
 const fn = () => {
 	kdo.sync.do(flow, {options: data.serverOptions});
-	return {app, server: httpServer, express};
+
+	httpServer.app = app;
+	httpServer.express = express;
+	httpServer.server = httpServer;
+
+	return httpServer;
 };
 
 module.exports = fn;
