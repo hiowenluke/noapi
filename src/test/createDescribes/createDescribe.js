@@ -75,7 +75,7 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				if (!testInfo && !ioInfo.result) return noTest();
 
 				// No verify property, can not test
-				if (!testInfo.verify) return;
+				if (!testInfo.verify) return noTest();
 
 				testInfo.testUrl = testInfo.url || apiInfo.url;
 				testInfo.getResult = testInfo.getResult || apiInfo.url;
