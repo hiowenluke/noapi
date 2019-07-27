@@ -12,7 +12,7 @@ open ./api/define.js
 Run:
 ```sh
 cd /path/to/noapi/examples/for-api/01-basic
-node app.js
+node .
 ```
 
 Test:
