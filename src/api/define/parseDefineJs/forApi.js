@@ -21,10 +21,11 @@ const me = {
 				// There must be at least one api and url.
 				if (!api && !url) return;
 
-				if (!api) { // There is a url
+				if (!api) {
 					api = lib.urlParser.getApiFromUrl(url);
 				}
-				else { // There is a api
+
+				if (!url) {
 					url = lib.urlParser.getUrlFromApi(api);
 				}
 
