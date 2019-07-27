@@ -149,11 +149,11 @@ const me = [
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
 		// Verify the value of result.success returns from server
-		test: false,
+		test: true,
 
 		// Equal to:
 		// 		test: {
-		// 			verify: false,
+		// 			verify: true,
 		// 		}
 	},
 
