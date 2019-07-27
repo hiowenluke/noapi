@@ -10,12 +10,7 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 	const {beforeDo, testUrl, getResult, afterDo, verify} = testInfo;
 	const {params} = ioInfo;
 
-	// Attach params to the title of test case if it is exits
-	let testCaseTitle = title;
-	if (url.indexOf('?') === -1 && params) {
-		testCaseTitle += ' // ' + lib.convertParamsToKeyValues(params);
-	}
-
+	const testCaseTitle = lib.attachParamsToTitle(title, url, params);
 	it(testCaseTitle, async () => {
 		let result;
 
