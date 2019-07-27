@@ -3,7 +3,7 @@ const v = require('voca');
 const config = require('../config');
 const createTestIt = require('../createTestIt');
 
-const noTest = (title) => {
+const noTest = (title, url, params) => {
 	const frontGroundRed = '\x1b[31m';
 	const prefix = frontGroundRed + 'No test';
 	it(title ? prefix + ': ' + title : prefix, () => {});
@@ -74,10 +74,10 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				const testInfo = docInfo.test;
 
 				// No testInfo property and result property, no need to test
-				if (!testInfo && !ioInfo.result) return noTest(apiInfo.title);
+				if (!testInfo && !ioInfo.result) return noTest(apiInfo.title, apiInfo.url, ioInfo.params);
 
 				// No verify property, can not test
-				if (!testInfo.verify) return noTest(apiInfo.title);
+				if (!testInfo.verify) return noTest(apiInfo.title, apiInfo.url, ioInfo.params);
 
 				testInfo.testUrl = testInfo.url || apiInfo.url;
 				testInfo.getResult = testInfo.getResult || apiInfo.url;
