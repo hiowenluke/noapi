@@ -3,6 +3,10 @@ const v = require('voca');
 const config = require('../config');
 const createTestIt = require('../createTestIt');
 
+const noTest = () => {
+	it('- No test', () => {});
+};
+
 const validator = {
 	isOnlyApiPath: false,
 	regStartWith: null,
@@ -59,7 +63,7 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 			}
 
 			if (!docInfos.length) {
-				it('- No test', () => {});
+				noTest();
 				continue;
 			}
 
