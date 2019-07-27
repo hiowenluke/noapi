@@ -23,7 +23,7 @@ const me = {
 
 	getApiTitleFromUrl(url) {
 		const api = this.getApiFromUrl(url);
-		const title = this.getTitleFromApi(api);
+		const title = this.getTitleFromUrl(url);
 		return {api, title};
 	},
 
