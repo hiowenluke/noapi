@@ -29,9 +29,8 @@ const me = {
 					url = lib.urlParser.getUrlFromApi(api);
 				}
 
-				const apiTitle = lib.urlParser.getTitleFromApi(api);
 				if (!title) {
-					title = apiTitle;
+					title = lib.urlParser.getTitleFromUrl(url);
 				}
 
 				if (title.indexOf('{apiTitle}') >= 0) {
