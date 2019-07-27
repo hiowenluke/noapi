@@ -162,7 +162,7 @@ const demos = [
 			form: {
 				crud: {
 					url: 'http://localhost:3000/bill/form/crud?formname=trader',
-					test(resultText, result) {
+					test(result, resultText) {
 
 						// Find the feature string in the result text
 						return resultText.indexOf(`"formname":"trader"`) >= 0;
@@ -170,7 +170,7 @@ const demos = [
 
 					// Equal to:
 					// 		test: {
-					// 			verify(resultText, result) {
+					// 			verify(result, resultText) {
 					// 				return resultText.indexOf(`"formname":"trader"`) >= 0;
 					// 			}
 					// 		},
@@ -184,7 +184,7 @@ const demos = [
 			form: {
 				crud: {
 					url: 'http://localhost:3000/bill/form/crud?formname=trader',
-					test(resultText, result) {
+					test(result, resultText) {
 
 						// Find the specified values in the result object
 						return result.data.formname === 'trader';
@@ -192,7 +192,7 @@ const demos = [
 
 					// Equal to:
 					// 		test: {
-					// 			verify(resultText, result) {
+					// 			verify(result, resultText) {
 					// 				return result.data.formname === 'trader';
 					// 			}
 					// 		}
@@ -267,7 +267,7 @@ const demos = [
 						afterDo: undefined,
 
 						// See above section "4. With test ..." for the usage of verify
-						verify(resultText, result) {
+						verify(result, resultText) {
 							return resultText.indexOf(`"formname":"trader"`) >= 0;
 						}
 					}

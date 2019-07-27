@@ -105,7 +105,7 @@ const dataDemo = {
 					afterDo: undefined,
 
 					// See above section "4. With test ..." for the usage of verify
-					verify(resultText, resultObject) {
+					verify(result, resultText) {
 						return resultText.indexOf(`"formname":"trader"`) >= 0;
 					}
 				}

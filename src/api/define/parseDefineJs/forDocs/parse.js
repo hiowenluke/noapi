@@ -95,7 +95,7 @@ const fn = (apiDefineArr) => {
 						// 				verify, // with verify (multiple forms)
 						// 		}
 
-						// verify(resultText, result) {
+						// verify(result, resultText) {
 						// 		...
 						// }
 						if (typeof test.verify === 'function') {
@@ -129,7 +129,7 @@ const fn = (apiDefineArr) => {
 				}
 				else {
 
-					// test(resultText, result) {
+					// test(result, resultText) {
 					// 		...
 					// }
 					if (typeof test === 'function') {
