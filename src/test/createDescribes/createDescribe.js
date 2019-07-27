@@ -2,11 +2,18 @@
 const v = require('voca');
 const config = require('../config');
 const createTestIt = require('../createTestIt');
+const lib = require('../__Lib');
 
 const noTest = (title, url, params) => {
 	const frontGroundRed = '\x1b[31m';
 	const prefix = frontGroundRed + 'No test';
-	it(title ? prefix + ': ' + title : prefix, () => {});
+
+	if (title) {
+		title = lib.attachParamsToTitle(title, url, params);
+		title = prefix + ': ' + title;
+	}
+
+	it(title || prefix, () => {});
 };
 
 const validator = {
