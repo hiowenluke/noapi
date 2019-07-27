@@ -72,7 +72,7 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				const testInfo = docInfo.test;
 
 				// No testInfo property and result property, no need to test
-				if (!testInfo && !ioInfo.result) return;
+				if (!testInfo && !ioInfo.result) return noTest();
 
 				// No verify property, can not test
 				if (!testInfo.verify) return;
