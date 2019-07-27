@@ -103,7 +103,7 @@ const fn = (apiDefineArr) => {
 						}
 
 						// verify: true
-						if (typeof test === 'boolean') {
+						if (typeof test.verify === 'boolean') {
 							test.verify = getVerifyFn.forResultState(test.verify);
 						}
 
