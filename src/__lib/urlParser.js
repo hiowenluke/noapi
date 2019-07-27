@@ -27,6 +27,13 @@ const me = {
 		return {api, title};
 	},
 
+	getTitleFromUrl(url) {
+		const api = this.getApiFromUrl(url);
+		const title = this.getTitleFromApi(api);
+		const params = url.indexOf('?') >= 0 ? url.split('?')[1].replace(/&/g, ', ') : '';
+		return params ? title + ' // ' + params : title;
+	},
+
 	getUrlFromApi(api) {
 		const {http, port} = data.serverOptions;
 		const portStr = port ? ':' + port : '';
