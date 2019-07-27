@@ -145,15 +145,6 @@ const fn = (apiDefineArr) => {
 						}
 					}
 
-					// test: {
-					// 		formname: 'trader',
-					// }
-					if (_.isPlainObject(test)) {
-						test = {
-							verify: getVerifyFn.forContainingKeyValues(test)
-						}
-					}
-
 					// test:
 					// 		`"formname":"trader"`,
 					if (typeof test === 'string') {
