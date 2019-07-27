@@ -95,6 +95,13 @@ const fn = (apiDefineArr) => {
 						// 				verify, // with verify (multiple forms)
 						// 		}
 
+						// verify: {
+						// 		formname: 'trader',
+						// }
+						if (_.isPlainObject(test.verify)) {
+							test.verify = getVerifyFn.forContainingKeyValues(test.verify);
+						}
+
 						// verify(result, resultText) {
 						// 		...
 						// }
@@ -105,13 +112,6 @@ const fn = (apiDefineArr) => {
 						// verify: true
 						if (typeof test.verify === 'boolean') {
 							test.verify = getVerifyFn.forResultState(test.verify);
-						}
-
-						// verify: {
-						// 		formname: 'trader',
-						// }
-						if (_.isPlainObject(test.verify)) {
-							test.verify = getVerifyFn.forContainingKeyValues(test.verify);
 						}
 
 						// verify:
