@@ -6,10 +6,17 @@ const baa = require('./beforeAndAfter');
 const lib = require('../__lib');
 
 const fn = (apiInfo, ioInfo, testInfo) => {
+	const {api, title, url} = apiInfo;
 	const {beforeDo, testUrl, getResult, afterDo, verify} = testInfo;
 	const {params} = ioInfo;
 
-	it(apiInfo.title, async () => {
+	// Attach params to the title of test case if it is exits
+	let testCaseTitle = title;
+	if (url.indexOf('?') === -1 && params) {
+		testCaseTitle += ' // ' + lib.convertParamsToKeyValues(params);
+	}
+
+	it(testCaseTitle, async () => {
 		let result;
 
 		// Call specific apis before do with test url if needed.
