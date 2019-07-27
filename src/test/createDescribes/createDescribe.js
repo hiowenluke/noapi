@@ -3,8 +3,9 @@ const v = require('voca');
 const config = require('../config');
 const createTestIt = require('../createTestIt');
 
-const noTest = () => {
-	it('- No test', () => {});
+const noTest = (title) => {
+	const postfix = '- No test';
+	it(title ? title + ' <' + postfix : postfix, () => {});
 };
 
 const validator = {
