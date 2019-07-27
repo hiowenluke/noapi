@@ -5,8 +5,8 @@ const createTestIt = require('../createTestIt');
 const lib = require('../__Lib');
 
 const noTest = (title, url, params) => {
-	const frontGroundRed = '\x1b[31m';
-	const prefix = frontGroundRed + 'No test';
+	const frontGroundYellow = '\x1b[33m';
+	const prefix = frontGroundYellow + 'No test';
 
 	if (title) {
 		title = lib.attachParamsToTitle(title, url, params);
