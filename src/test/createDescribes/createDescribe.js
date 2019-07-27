@@ -63,7 +63,7 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 			}
 
 			if (!docInfos.length) {
-				noTest();
+				noTest(apiInfo.title);
 				continue;
 			}
 
@@ -72,10 +72,10 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				const testInfo = docInfo.test;
 
 				// No testInfo property and result property, no need to test
-				if (!testInfo && !ioInfo.result) return noTest();
+				if (!testInfo && !ioInfo.result) return noTest(apiInfo.title);
 
 				// No verify property, can not test
-				if (!testInfo.verify) return noTest();
+				if (!testInfo.verify) return noTest(apiInfo.title);
 
 				testInfo.testUrl = testInfo.url || apiInfo.url;
 				testInfo.getResult = testInfo.getResult || apiInfo.url;
