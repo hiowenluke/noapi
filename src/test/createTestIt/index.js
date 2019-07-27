@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 
 const request = require('./request');
 const baa = require('./beforeAndAfter');
-const lib = require('./__lib');
+const lib = require('../__lib');
 
 const fn = (apiInfo, ioInfo, testInfo) => {
 	const {beforeDo, testUrl, getResult, afterDo, verify} = testInfo;
