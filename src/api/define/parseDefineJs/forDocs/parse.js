@@ -56,8 +56,8 @@ const fn = (apiDefineArr) => {
 			// io: input params, output result
 			io = {params: doc.params, result: doc.result};
 
-			// If the test property is omitted, or it is "===result"
-			if (typeof doc.test === 'undefined' || doc.test === '===result') {
+			// If the test property is omitted, or it is "===result", or test is an empty object
+			if (typeof doc.test === 'undefined' || doc.test === '===result' || !Object.keys(doc.test).length) {
 
 				// The result returned from server must be matches the result property exactly
 				if (doc.result) {
