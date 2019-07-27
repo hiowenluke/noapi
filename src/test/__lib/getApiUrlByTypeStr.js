@@ -1,5 +1,5 @@
 
-const data = require('../../../data');
+const data = require('../../data');
 
 // types:
 // 		'/bill/form/crud', // by api
