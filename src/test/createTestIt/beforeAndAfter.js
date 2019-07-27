@@ -11,7 +11,13 @@ const me = {
 		for (let i = 0; i < typeStrArr.length; i ++) {
 			const typeStr = typeStrArr[i];
 			const apiUrl = lib.getApiUrlByTypeStr(typeStr);
-			await request.do(apiUrl);
+
+			if (!apiUrl) {
+				console.log(`Can't find the url corresponding to "${typeStr}"`);
+			}
+			else {
+				await request.do(apiUrl);
+			}
 		}
 	},
 
