@@ -6,7 +6,7 @@ const me = {
 		form: {
 			crud:
 
-				// The following api definition is the same as "02-api-definition-[complete]".
+				// The following api definition is the same as "02-api-definition-[completely]".
 
 				// Note:
 				//		1. There must be a "url" or a "params", a "result" or a "test" property.

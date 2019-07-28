@@ -8,9 +8,9 @@
 //
 
 // Learn more:
-// 		02-api-definition-[complete]
-//		03-api-definition-[minimized]
-//		04-api-definition-[structured]
+// 		02-api-definition-[completely]
+//		03-api-definition-[minimally]
+//		04-api-definition-[structurally]
 
 
 const me = [
