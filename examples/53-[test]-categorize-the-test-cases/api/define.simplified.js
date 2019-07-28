@@ -1,5 +1,5 @@
 
-// See /noapi/src/defineJs_demos.js to learn more.
+// See "02-api-definition-[completely]" to learn more.
 
 const me = [
 	{
@@ -75,7 +75,6 @@ const me = [
 	},
 
 	{
-		title: 'Info - Form - Crud // for goods',
 		url: 'http://localhost:3000/info/form/crud?formname=goods',
 		result: {
 			"success": true,
@@ -104,7 +103,6 @@ const me = [
 	},
 
 	{
-		title: 'Info - Form - Crud // for employee',
 		url: 'http://localhost:3000/info/form/crud?formname=employee',
 		result: {
 			"success": true,

@@ -1,12 +1,11 @@
 
-// See /noapi/src/defineJs_demos.js to learn more.
+// See "02-api-definition-[completely]" to learn more.
 
 const me = [
 	'http://localhost:3000/bill/form/crud?formname=trader',
 
 	{
 		// Must specify the title property for testing
-		title: 'Bill - Form - Crud',
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		result: {
 			"success": true,
@@ -20,7 +19,6 @@ const me = [
 	},
 
 	{
-		title: 'Bill - DropDownList',
 		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
 		result: {
 			"success": true,
@@ -40,7 +38,6 @@ const me = [
 	},
 
 	{
-		title: 'Info - Form - Crud // for goods',
 		url: 'http://localhost:3000/info/form/crud?formname=goods',
 		result: {
 			"success": true,
@@ -58,7 +55,6 @@ const me = [
 	},
 
 	{
-		title: 'Info - Form - Crud // for employee',
 		url: 'http://localhost:3000/info/form/crud?formname=employee',
 		result: {
 			"success": true,
@@ -75,7 +71,6 @@ const me = [
 	},
 
 	{
-		title: 'Info - DropDownList',
 		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
 		result: {
 			"success": true,
