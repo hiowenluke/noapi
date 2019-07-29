@@ -36,7 +36,7 @@ const me = {
 					}
 				},
 
-			// Use an array to define multiple test cases for api "/bill/form/check".
+			// Use an array to define multiple test cases for this api.
 			check: [
 				{
 					url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
