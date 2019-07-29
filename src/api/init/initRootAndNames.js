@@ -35,33 +35,24 @@ const getApiServiceNames = (root) => {
 
 /** @name me.initRootAndNames */
 const fn = () => {
-	const options = data.serverOptions;
-	const apiServicesRelativePath = options.apiPath;
 	const webServiceRoot = data.webServiceRoot;
 
 	let apiServicesRoot;
 	let serviceNames = [];
 
-	// If the relative path of the api service is specified, use it.
-	if (apiServicesRelativePath) {
-		apiServicesRoot = path.resolve(webServiceRoot, apiServicesRelativePath);
-		serviceNames = getApiServiceNames(apiServicesRoot);
-	}
-	else {
-		// Automatically search the api services directory
-		// in current directory and parent directory
-		const searchPaths = ['./', '../'];
+	// Automatically search the api services directory
+	// in current directory and parent directory
+	const searchPaths = ['./', '../'];
 
-		for (let i = 0; i < searchPaths.length; i ++) {
-			const searchPath = searchPaths[i];
-			const root = path.resolve(webServiceRoot, searchPath);
-			const thisServiceNames = getApiServiceNames(root);
+	for (let i = 0; i < searchPaths.length; i ++) {
+		const searchPath = searchPaths[i];
+		const root = path.resolve(webServiceRoot, searchPath);
+		const thisServiceNames = getApiServiceNames(root);
 
-			if (thisServiceNames.length) {
-				apiServicesRoot = root;
-				serviceNames = thisServiceNames;
-				break;
-			}
+		if (thisServiceNames.length) {
+			apiServicesRoot = root;
+			serviceNames = thisServiceNames;
+			break;
 		}
 	}
 
