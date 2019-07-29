@@ -11,6 +11,7 @@ const fn = () => {
 
 		const defineJs = data.defineJs[sysName];
 		const apiInfos = defineJs.api;
+		if (!apiInfos) return;
 
 		const apiUrls = apiInfos.map(item => item.api);
 		apiUrls.forEach(apiUrl => { // /form:/bill/form/crud
