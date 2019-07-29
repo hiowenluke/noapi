@@ -2,7 +2,7 @@
 
 # Noapi
 
-The simplest framework for [Node](https://nodejs.org) Api app. You just need to focus on your great project, no need to care about how to manage web services, routes, multi-level directory routing, multi-api services, etc. 
+The easiest framework for [Node](https://nodejs.org) Api app. You just need to focus on your great project, no need to care about how to manage api services, web service, routes, multi-level directory routing, multi-api services, etc. 
 
 Noapi is based on [Express](https://expressjs.com/), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi)
 	
@@ -25,11 +25,11 @@ The api file has no code, just with a description(e.g., the test url). Noapi sav
 
 ## Multi-Api Services
 
-The following demo project consists of 3+ api services. Each api service is an independent project, which is maintained by different people and has a clear division of labor.
+The following demo project consists of 3+ api services. Each api service is an seperate project, which is maintained by different people and has a clear division of labor.
 
 ```
 /<Project root>
-  /api-forms             <- Independent subproject (api service "forms" subsystem)
+  /api-forms             <- seperate subproject (api service "forms" subsystem)
     /api
       /bill
         /form
@@ -43,7 +43,7 @@ The following demo project consists of 3+ api services. Each api service is an i
     index.js
     package.json
 
-  /api-erp               <- Independent subproject (api service "erp" subsystem)
+  /api-erp               <- seperate subproject (api service "erp" subsystem)
     /api
       /bill
         /mms
@@ -68,10 +68,10 @@ The following demo project consists of 3+ api services. Each api service is an i
     index.js
     package.json
 
-  /api-xxx               <- Independent subproject (api service "xxx" subsystem)
+  /api-xxx               <- seperate subproject (api service "xxx" subsystem)
     ...
 
-  /web                   <- Independent subproject (web service)
+  /web                   <- seperate subproject (web service)
     /test
     app.js
     package.json
