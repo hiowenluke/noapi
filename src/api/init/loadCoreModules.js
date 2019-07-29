@@ -6,6 +6,7 @@ const data = require('../../data');
 
 // The serviceName is the api service directory name, such as "api", "api-forms", etc.
 const loadCoreModules = (serviceName) => {
+
 	const isSimpleMode = data.isSimpleMode;
 	const folderPath = data.apiServicesRoot + (isSimpleMode ? '' : '/' + serviceName);
 
@@ -33,16 +34,14 @@ const loadCoreModules = (serviceName) => {
 					defineJsFilename = defineJsFilename_;
 				}
 				else {
-					// Simulate index.js as module.filename for kdo.
-					// Note it is required for flag isSimulatedIndexJs.
-					const module = {filename: indexJs, isSimulatedIndexJs: true};
+					const simulateIndexJs = {filename: indexJs};
 
 					if (coreModuleName === 'aha') {
 						coreModules[coreModuleName] = kdo.flow('query');
 					}
 
 					if (coreModuleName === 'api' || coreModuleName === 'biz') {
-						coreModules[coreModuleName] = kdo();
+						coreModules[coreModuleName] = kdo(simulateIndexJs);
 					}
 				}
 			}
