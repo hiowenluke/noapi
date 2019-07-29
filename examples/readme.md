@@ -29,6 +29,7 @@ npm test
 
 ### 2. Special readme files
 
-* [10-indenpendent-web-api-service/readme.md](./10-indenpendent-web-api-service/readme.md)
-* [11-multi-api-services/readme.md](./11-multi-api-services/readme.md)
+* [10-preprocess-query-parameters-with-aha/readme.md](./10-preprocess-query-parameters-with-aha/readme.md)
+* [11-indenpendent-web-api-service/readme.md](./11-indenpendent-web-api-service/readme.md)
+* [12-multi-api-services/readme.md](./12-multi-api-services/readme.md)
 

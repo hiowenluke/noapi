@@ -1,16 +1,4 @@
 
-## Directory Structure
-
-/api    
-    Api service of my-project.
-    Owner: owen@myproject.com
-
-/web    
-    Web service of my-project.
-    Owner: luke@myproject.com
-
-
-
 ## How To Run This Example
 
 In the previous examples (01 - 09), we ran the examples as follows:
