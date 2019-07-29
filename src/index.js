@@ -1,6 +1,6 @@
 
 const caller = require('caller');
-const me = require('kdo').obj(module);
+const me = require('kdo')();
 
 const noapi = (options = {}) => {
 	options.pathToCaller = caller();

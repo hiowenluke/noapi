@@ -2,7 +2,7 @@
 const v = require('voca');
 const data = require('../../../data');
 const forApi = require('./forApi');
-const forDocs = require('kdo').obj(module, './forDocs');
+const forDocs = require('kdo')('./forDocs');
 
 const parseDefineJs = {
 	do(type) {

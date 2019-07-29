@@ -38,11 +38,11 @@ const loadCoreModules = (serviceName) => {
 					const module = {filename: indexJs, isSimulatedIndexJs: true};
 
 					if (coreModuleName === 'aha') {
-						coreModules[coreModuleName] = kdo.flow(module, 'query');
+						coreModules[coreModuleName] = kdo.flow('query');
 					}
 
 					if (coreModuleName === 'api' || coreModuleName === 'biz') {
-						coreModules[coreModuleName] = kdo.obj(module);
+						coreModules[coreModuleName] = kdo();
 					}
 				}
 			}

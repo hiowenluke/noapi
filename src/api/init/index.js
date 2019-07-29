@@ -1,5 +1,5 @@
 
-const me = require('kdo').obj(module);
+const me = require('kdo')();
 const define = require('../define');
 const transfer = require('../transfer');
 

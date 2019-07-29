@@ -1,5 +1,5 @@
 
-const me = require('kdo').obj(module);
+const me = require('kdo')();
 
 /** @name me.biz.init */
 const fn = () => {

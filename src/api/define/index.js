@@ -1,2 +1,2 @@
 
-module.exports = require('kdo').obj(module);
+module.exports = require('kdo')();
