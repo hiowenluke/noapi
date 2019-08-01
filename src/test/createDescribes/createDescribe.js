@@ -57,7 +57,9 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 	validator.init(title, isOnlyApiPath, usedApiPaths);
 
 	const {api, docs} = defineJs;
-	describe(v.titleCase(title), () => {
+	describe(v.titleCase(title), function() {
+
+		this.timeout(config.timeout);
 
 		for (let i = 0; i < api.length; i ++) {
 			const apiInfo = api[i];

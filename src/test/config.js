@@ -31,6 +31,9 @@ const me = {
 		// 'Info - Form - Crud // for goods',
 	],
 
+	// The timeout of mocha
+	timeout: 2000,
+
 	// Categorize the test cases if it is true
 	catalogs: false,
 
