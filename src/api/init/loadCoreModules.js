@@ -37,7 +37,7 @@ const loadCoreModules = (serviceName) => {
 					const simulateIndexJs = {filename: indexJs};
 
 					if (coreModuleName === 'aha') {
-						coreModules[coreModuleName] = kdo.flow('query');
+						coreModules[coreModuleName] = kdo.flow(simulateIndexJs, 'query');
 					}
 
 					if (coreModuleName === 'api' || coreModuleName === 'biz') {
