@@ -6,4 +6,4 @@ const order = [
 ];
 
 // Use kdo to execute the functions in current directory with order.
-module.exports = require('kdo').flow(order);
+module.exports = require('kdo').flow(module, order);
