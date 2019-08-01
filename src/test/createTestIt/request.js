@@ -26,7 +26,7 @@ const me = {
 			req = request(server);
 
 			// Waiting for the server to be ready before test
-			config.waitTime && await wait(config.waitTime);
+			config.waitSeconds && await wait(config.waitSeconds);
 		};
 
 		// Init request in describe instead of fn
@@ -35,7 +35,7 @@ const me = {
 			// Only affects this describe
 			this.timeout(config.serverReadyTimeout * 1000);
 
-			const delayStr = !config.waitTime ? '' : ` // +${config.waitTime}s delay`;
+			const delayStr = !config.waitSeconds ? '' : ` // +${config.waitSeconds}s delay`;
 			it(`Done${delayStr}`, async () => {
 				await init();
 			});

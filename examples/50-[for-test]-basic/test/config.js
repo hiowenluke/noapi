@@ -40,7 +40,7 @@ const me = {
 	// 		and an error will occur.
 
 	// In this case, we do not need it.
-	waitTime: 0,
+	waitSeconds: 0,
 };
 
 module.exports = me;
