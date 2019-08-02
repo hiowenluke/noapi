@@ -52,12 +52,15 @@ const me = {
 	// The timeout (seconds) for waiting for server ready
 	serverReadyTimeout: 60,
 
-	applyUserConfig() {
-		const filename = data.testRoot + '/config';
-		if (!fs.existsSync(filename)) return;
+	applyUserConfig(userConfig = {}) {
+		let userConfigFile;
 
-		const userConfig = require(filename);
-		Object.assign(this, userConfig);
+		const filename = data.testRoot + '/config';
+		if (fs.existsSync(filename)) {
+			userConfigFile = require(filename);
+		}
+
+		Object.assign(this, userConfig, userConfigFile);
 	},
 
 	isValidTestCase(apiTitle) {
