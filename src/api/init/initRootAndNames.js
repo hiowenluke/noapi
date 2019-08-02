@@ -24,6 +24,8 @@ const getApiServiceNames = (root) => {
 			}
 		}
 
+		else
+
 		// If the folder name is start with "api-", then its an api service folder
 		if (/^api-/.test(folderName)) {
 			serviceNames.push(folderName);
