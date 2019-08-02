@@ -9,13 +9,13 @@ const data = require('../data');
 const apiInit = require('../api/init');
 
 /** @name me.test */
-const fn = () => {
+const fn = (userConfig) => {
 	const pathToCaller = caller();
 
 	data.initForTest(pathToCaller);
 
 	// Load user custom config file and apply it
-	config.applyUserConfig();
+	config.applyUserConfig(userConfig);
 
 	// Load api services for testing
 	apiInit(true);
