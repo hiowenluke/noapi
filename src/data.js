@@ -2,6 +2,12 @@
 const fs = require('fs');
 const path = require('path');
 
+let lib;
+
+// Use loadLibForTest() to load lib instead of require it directly to avoid the error:
+//		TypeError: lib.getApiServiceNameFromPath is not a function
+const loadLibForTest = () => lib = require('./__lib');
+
 const tools = {
 	getWebServiceRoot(pathToCaller) {
 
@@ -89,6 +95,8 @@ const me = {
 	},
 
 	initForTest(pathToCaller) {
+		loadLibForTest();
+
 		this.webServiceRoot = tools.getWebServiceRoot(pathToCaller);
 		this.isTestMode = true;
 
