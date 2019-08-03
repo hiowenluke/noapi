@@ -2,10 +2,17 @@
 const fs = require('fs');
 const path = require('path');
 const data = require('../../data');
+const lib = require('../../__lib');
 
 const getApiServiceNames = (root) => {
 	const serviceNames = [];
 	const folderNames = fs.readdirSync(root);
+	const serviceName = lib.getApiServiceNameFromPath(root);
+
+	if (serviceName === 'api' || serviceName.substr(0, 4) === 'api-') {
+		serviceNames.push(serviceName);
+		return serviceNames;
+	}
 
 	folderNames.forEach(folderName => {
 		const folderPath = root + '/' + folderName;
