@@ -80,6 +80,17 @@ const fn = () => {
 		data.isSimpleMode = true;
 		apiServicesRoot = webServiceRoot;
 		serviceNames.push('default');
+
+	if (serviceNames.length === 1) {
+		data.isSimpleMode = true;
+
+		const serviceName = serviceNames[0];
+		const reg = new RegExp('/' + serviceName + '$');
+		if (!reg.test(apiServicesRoot)) {
+			apiServicesRoot += '/' + serviceName;
+		}
+
+		serviceNames = [serviceName];
 	}
 	else {
 		// If there is only on service, then it is simple mode too.
