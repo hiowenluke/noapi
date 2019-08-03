@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "main": "app.js",
   "author": "luke@myproject.com",
+  "scripts": {
+    "test": "cd test && mocha . --exit"
+  },
   "dependencies": {
     "noapi": "^1.1.2"
   }

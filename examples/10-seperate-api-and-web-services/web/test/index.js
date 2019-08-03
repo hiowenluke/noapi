@@ -1,2 +1,4 @@
 
-// for demo
+debugger;
+const noapi = require('../../../noapi');
+noapi.test();
