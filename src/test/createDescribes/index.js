@@ -29,7 +29,7 @@ const fn = () => {
 	serviceNames.forEach(serviceName => {
 
 		// Only test the testing api service
-		if (testOptions.isFromApiService && testOptions.serviceName !== serviceName) return;
+		if (testOptions.isFromApiService && testOptions.serviceName !== serviceName && testOptions.serviceName !== 'api') return;
 
 		const title = serviceName === 'default' ? 'api' : serviceName;
 		const sysName = data.serviceSysNames[serviceName];
