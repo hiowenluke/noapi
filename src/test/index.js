@@ -17,7 +17,7 @@ const fn = (userConfig) => {
 	config.applyUserConfig(userConfig);
 
 	// Load api services for testing
-	apiInit(true);
+	apiInit();
 
 	// Waiting for server ready when starting test
 	request.init();
