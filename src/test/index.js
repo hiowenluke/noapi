@@ -11,7 +11,6 @@ const apiInit = require('../api/init');
 /** @name me.test */
 const fn = (userConfig) => {
 	const pathToCaller = caller();
-
 	data.initForTest(pathToCaller);
 
 	// Load user custom config file and apply it
