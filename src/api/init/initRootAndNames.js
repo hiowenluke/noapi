@@ -85,9 +85,8 @@ const fn = () => {
 
 	serviceNames.forEach(serviceName => {
 
-		// If there is only one service name "api" or "default", then set it as the name of subsystem.
-		// Otherwise, the name of subsystem is "xxx", which is the second part of "api-xxx".
-		const sysName = serviceName === 'api' || serviceName === 'default' ? serviceName : serviceName.split('-')[1];
+		// api-xxx => xxx
+		const sysName = serviceName.indexOf('-') >= 0 ? serviceName.split('-')[1] : serviceName;
 
 		data.sysNames.push(sysName);
 		data.serviceSysNames[serviceName] = sysName;
