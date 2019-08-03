@@ -7,8 +7,8 @@ const data = require('../../data');
 // The serviceName is the api service directory name, such as "api", "api-forms", etc.
 const loadCoreModules = (serviceName) => {
 
-	const isSimpleMode = data.isSimpleMode;
-	const folderPath = data.apiServicesRoot + (isSimpleMode ? '' : '/' + serviceName);
+	const folderName = data.isSimpleMode ? '' : '/' + serviceName;
+	const folderPath = data.apiServicesRoot + folderName;
 
 	const coreModules = {};
 	const coreModuleNames = ['aha', 'api', 'biz'];
