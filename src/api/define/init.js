@@ -1,10 +1,11 @@
 
+const data = require('../../data');
 const me = require('kdo')();
 
 /** @name define.init */
-const fn = (isTest) => {
+const fn = () => {
 
-	isTest ?
+	data.isTestMode ?
 		me.parseDefineJs.forTest() :
 		me.parseDefineJs.forRun()
 	;
