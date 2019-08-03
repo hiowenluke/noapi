@@ -60,7 +60,6 @@ const me = {
 
 	webServiceRoot: '', // The root path of web service
 	apiServicesRoot: '', // The root path of api service(s)
-	testRoot: '', // The root path of test
 
 	serverOptions: {
 		serverName: 'default',
@@ -82,6 +81,13 @@ const me = {
 
 	power: null, // The custom function to handle query
 
+	testOptions: {
+		apiServiceRoot: '', // The root path of the api service which is testing
+		testRoot: '', // The root path of the test directory
+		serviceName: '', // The name of the api service which is testing
+		isFromApiService: false, // If the serviceName is api or api-xxx, then it is true
+	},
+
 	init(options) {
 		this.webServiceRoot = tools.getWebServiceRoot(options.pathToCaller);
 		this.isTestMode = tools.getIsTestMode(this.webServiceRoot);
@@ -100,8 +106,16 @@ const me = {
 		this.webServiceRoot = tools.getWebServiceRoot(pathToCaller);
 		this.isTestMode = true;
 
-		// If pathToCaller is .../test/api/index.js, then the root path of test is .../test/api
-		this.testRoot = path.resolve(pathToCaller, '../');
+		// If pathToCaller is .../project/api/test/index.js, then:
+		// 		testRoot			.../project/api/test
+		// 		apiServiceRoot		.../project/api
+		// 		serviceName			api
+		this.testOptions.testRoot = path.resolve(pathToCaller, '../');
+		this.testOptions.apiServiceRoot = path.resolve(this.testOptions.testRoot, '../');
+
+		const serviceName = lib.getApiServiceNameFromPath(this.testOptions.apiServiceRoot);
+		this.testOptions.serviceName = serviceName;
+		this.testOptions.isFromApiService = serviceName === 'api' || serviceName.substr(0, 4) === 'api-';
 	}
 };
 
