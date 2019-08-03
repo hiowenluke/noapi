@@ -48,7 +48,7 @@ const fn = () => {
 
 	for (let i = 0; i < searchPaths.length; i ++) {
 		const searchPath = searchPaths[i];
-		const root = path.resolve(webServiceRoot, searchPath);
+		const root = path.resolve(webServiceRoot, searchPath); // .../api-xxx
 		const thisServiceNames = getApiServiceNames(root);
 
 		if (thisServiceNames.length) {
