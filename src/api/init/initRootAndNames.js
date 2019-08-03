@@ -81,7 +81,7 @@ const fn = () => {
 		apiServicesRoot = webServiceRoot;
 		serviceNames = ['default'];
 	}
-
+	else
 	if (serviceNames.length === 1) {
 		data.isSimpleMode = true;
 
