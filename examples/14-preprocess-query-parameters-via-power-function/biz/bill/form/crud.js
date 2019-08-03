@@ -1,13 +1,8 @@
 
 const fn = async (query) => {
-	return {
-		formname: query.formname,
-		tableName: query.tablename,
-		billName: query.billname,
-		infoName: query.infoname,
-		isBill: query.isBill,
-		isInfo: query.isInfo,
-	};
+
+	// The parameter in url is formName, the power() attached a lowercase of it to query.
+	return {formname: query.formname};
 };
 
 module.exports = fn;
