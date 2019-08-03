@@ -56,7 +56,7 @@ const tools = {
 
 /** @name me.data */
 const me = {
-	isSimpleMode: true, // Single api service (the web service is api service)
+	isSimpleMode: true,  // Whether the web service is api service
 
 	webServiceRoot: '', // The root path of web service
 	apiServicesRoot: '', // The root path of api service(s)
