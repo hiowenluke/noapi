@@ -79,7 +79,8 @@ const fn = () => {
 	if (!serviceNames.length) {
 		data.isSimpleMode = true;
 		apiServicesRoot = webServiceRoot;
-		serviceNames.push('default');
+		serviceNames = ['default'];
+	}
 
 	if (serviceNames.length === 1) {
 		data.isSimpleMode = true;
