@@ -32,7 +32,8 @@ app.use(async (req, res, next) => {
 });
 
 app.use(async (req, res, next) => {
-	await waitSeconds(10);
+	const seconds = app.isTest ? 0 : 10;
+	await waitSeconds(seconds);
 	next();
 });
 
