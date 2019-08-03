@@ -3,7 +3,7 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/forms:/bill/form/crud?formname=trader',
 		result: {
 			"success": true,
 			"data": {
