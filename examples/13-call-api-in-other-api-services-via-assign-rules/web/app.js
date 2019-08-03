@@ -1,9 +1,8 @@
 
 const options = {
-	public: {
-		name: '/',
-		path: './www',
-	}
+	assignRules: [
+		['erp:/report/purchase/order', 'forms:/bill/form/crud']
+	]
 };
 
 // So simple!
