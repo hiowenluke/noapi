@@ -2,6 +2,7 @@
 const express = require('express');
 const expressApp = express();
 
+const data = require('../data');
 const noapiRouter = require('../routes');
 
 const expressStack = {
@@ -49,6 +50,8 @@ const me = {
 
 		// All routes will be handled by noapi
 		expressApp.use('*', noapiRouter);
+
+		me.isTest = data.isTestMode;
 	},
 
 	use(...args) {

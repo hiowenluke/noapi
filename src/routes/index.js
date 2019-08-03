@@ -50,6 +50,10 @@ const flow = {
         query.originalUrl = req.originalUrl;
     },
 
+	forTest({req, query}) {
+		query.__.isTest = data.isTestMode;
+	},
+
 	async do({res, query}) {
 		const result = await callApi(query);
 
