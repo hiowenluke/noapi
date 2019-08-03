@@ -24,8 +24,13 @@ const doWithRecursive = (apis, path, defineJs) => {
 
 const fn = () => {
 	const serviceNames = data.serviceNames;
+	const testOptions = data.testOptions;
 
 	serviceNames.forEach(serviceName => {
+
+		// Only test the testing api service
+		if (testOptions.isFromApiService && testOptions.serviceName !== serviceName) return;
+
 		const title = serviceName === 'default' ? 'api' : serviceName;
 		const sysName = data.serviceSysNames[serviceName];
 		const defineJs = data.defineJs[sysName];

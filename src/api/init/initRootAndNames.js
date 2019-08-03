@@ -38,6 +38,8 @@ const getApiServiceNames = (root) => {
 /** @name me.initRootAndNames */
 const fn = () => {
 	const webServiceRoot = data.webServiceRoot;
+	const isTestMode = data.isTestMode;
+	const testOptions = data.testOptions;
 
 	let apiServicesRoot;
 	let serviceNames = [];
@@ -49,6 +51,12 @@ const fn = () => {
 	for (let i = 0; i < searchPaths.length; i ++) {
 		const searchPath = searchPaths[i];
 		const root = path.resolve(webServiceRoot, searchPath); // .../api-xxx
+
+		// If it is only test a separate api service, then does not load the other api services.
+		if (isTestMode && testOptions.isFromApiService) {
+			if (root !== testOptions.apiServiceRoot) continue;
+		}
+
 		const thisServiceNames = getApiServiceNames(root);
 
 		if (thisServiceNames.length) {

@@ -11,7 +11,7 @@ const me = {
 			// 		"bill.form.crud" => "/path/to/user project/test/comparison/bill.form.crud.json"
 			if (typeof comparisonResult === 'string') {
 				const filename = comparisonResult;
-				const testRoot = data.testRoot;
+				const testRoot = data.testOptions.testRoot;
 
 				// Require the comparison file
 				comparisonResult = require(testRoot + `/comparison/${filename}.json`);
