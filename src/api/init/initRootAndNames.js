@@ -75,7 +75,9 @@ const fn = () => {
 		serviceNames.push('default');
 	}
 	else {
-		data.isSimpleMode = false;
+		// If there is only on service, then it is simple mode too.
+		// E.g., only run or test the api-erp service.
+		data.isSimpleMode = serviceNames.length === 1;
 	}
 
 	data.apiServicesRoot = apiServicesRoot;
