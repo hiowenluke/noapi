@@ -1,7 +1,7 @@
 
 const options = {
 	assignRules: [
-		['erp:/report/purchase/order', 'forms:/bill/form/crud']
+		['erp:/report/purchase/order', 'forms:/bill/form/crud'],
 	]
 };
 
