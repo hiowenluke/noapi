@@ -31,7 +31,8 @@ const me = {
 		// 'Info - Form - Crud // for goods',
 	],
 
-	// The timeout of mocha
+	// The timeout of mocha. Equal to:
+	//		mocha --timeout=2000
 	timeout: 2000,
 
 	// Categorize the test cases if it is true
