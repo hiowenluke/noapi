@@ -55,7 +55,7 @@ const me = {
 	applyUserConfig(userConfig = {}) {
 		let userConfigFile;
 
-		const filename = data.testOptions.testRoot + '/config';
+		const filename = data.testOptions.testRoot + '/config.js';
 		if (fs.existsSync(filename)) {
 			userConfigFile = require(filename);
 		}
