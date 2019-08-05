@@ -1,11 +1,6 @@
 
-// See "02-api-definition-[completely]" to learn more.
-
 const me = [
-	'http://localhost:3000/bill/form/crud?formname=trader',
-
 	{
-		// Must specify the title property for testing
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		result: {
 			"success": true,
@@ -66,7 +61,7 @@ const me = [
 
 		// The Object of the result returned from server must has "formname" property, and it's value must be "trader".
 		test: {
-			formname: 'trader',
+			formname: 'employee',
 		},
 	},
 
