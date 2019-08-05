@@ -11,7 +11,6 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		title: 'a',
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		result: {
 			"success": true,
@@ -25,7 +24,6 @@ const me = [
 	},
 
 	{
-		title: 'b',
 		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
 		result: {
 			"success": true,
@@ -41,7 +39,6 @@ const me = [
 	},
 
 	{
-		title: 'c',
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
 		// If the result property is large, save it to a json file in directory /test/comparison.
@@ -58,7 +55,6 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		title: 'd',
 		url: 'http://localhost:3000/info/form/crud?formname=employee',
 
 		// The Object of the result returned from server must has "formname" property, and it's value must be "trader".
@@ -75,7 +71,6 @@ const me = [
 	},
 
 	{
-		title: 'e',
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		test: `"formname":"trader"`,
 
@@ -86,7 +81,6 @@ const me = [
 	},
 
 	{
-		title: 'f',
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		test: /(trader)|(goodsid)/,
 
@@ -97,7 +91,6 @@ const me = [
 	},
 
 	{
-		title: 'g',
 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
 
 		// Verify the value of result.success returns from server
@@ -110,7 +103,6 @@ const me = [
 	},
 
 	{
-		title: 'h',
 		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
 		result: {
 			"success": true,
@@ -130,7 +122,6 @@ const me = [
 	},
 
 	{
-		title: 'i',
 		url: 'http://localhost:3000/info/form/crud?formname=goods',
 		result: {
 			"success": true,
