@@ -1,8 +1,46 @@
 
+const _ = require('lodash');
 const v = require('voca');
 const data = require('../../../data');
 const forApi = require('./forApi');
 const forDocs = require('kdo')('./forDocs');
+
+const isApiDefinition = (obj) => {
+	return !!((obj.url || obj.params) && (obj.result || obj.test));
+};
+
+const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
+	Object.keys(obj).forEach(key => {
+		const def = obj[key];
+
+		// Multiple api definitions
+		if (Array.isArray(def)) {
+			def.forEach(item => {
+
+				// This will replace the {api} in definition.
+				item.api = apiPath + '/' + key;
+				arr.push(item);
+			});
+		}
+
+		else
+
+		// One api definition
+		if (isApiDefinition(def)) {
+
+			// This will replace the {api} in definition.
+			def.api = apiPath + '/' + key;
+			arr.push(def);
+		}
+
+		else {
+			// Structure
+			convertDefinesObjectToArray(def, arr, apiPath + '/' + key);
+		}
+	});
+
+	return arr;
+};
 
 const parseDefineJs = {
 	do(type) {
@@ -13,14 +51,35 @@ const parseDefineJs = {
 			const filename = defineJs.filename;
 			if (!filename) return;
 
-			let apiDefineArr = require(filename);
+			let apiDefines = require(filename);
 
-			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
-			if (!Array.isArray(apiDefineArr)) {
-				apiDefineArr = [apiDefineArr];
+			// {
+			//		bill: {
+			//			form: {
+			//				crud: {
+			//					url: 'http://localhost:3000/xxx',
+			//					result: {
+			//						...
+			//					}
+			//				}
+			//			}
+			//		},
+			//		...
+			// }
+			if (_.isPlainObject(apiDefines)) {
+				const result = [];
+				convertDefinesObjectToArray(apiDefines, result);
+				apiDefines = result;
 			}
 
-			defineJs[type] = this[method](apiDefineArr);
+			else
+
+			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
+			if (!Array.isArray(apiDefines)) {
+				apiDefines = [apiDefines];
+			}
+
+			defineJs[type] = this[method](apiDefines);
 		});
 	},
 
