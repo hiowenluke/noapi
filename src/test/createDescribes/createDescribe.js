@@ -73,6 +73,10 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				continue;
 			}
 
+			if (config.isIgnoreTest(apiInfo.title)) {
+				continue;
+			}
+
 			if (!docInfos.length) {
 				noTest(apiInfo.title);
 				continue;
