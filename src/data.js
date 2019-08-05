@@ -37,7 +37,11 @@ const tools = {
 		let isTestMode;
 
 		// If the ancestor's module.filename contains webServiceRoot + "/test/", then it is test.
-		const target = (webServiceRoot + '/test/').replace(/\//g, '\\/');
+		const target = (webServiceRoot + '/test/')
+			.replace(/[\[\]\/$#]/g, (match) => {
+				return '\\' + match;
+			})
+		;
 
 		while (true) {
 			const reg = new RegExp(target, 'i');
