@@ -34,7 +34,7 @@ const me = {
 				}
 
 				if (title.indexOf('{apiTitle}') >= 0) {
-					title = title.replace('{apiTitle}', lib.urlParser.getTitleFromApi(url));
+					title = title.replace('{apiTitle}', lib.urlParser.getTitleFromApi(api));
 				}
 
 				apiInfos.push({api, title, url});
