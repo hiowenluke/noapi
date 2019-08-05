@@ -73,8 +73,19 @@ const parseDefineJs = {
 			}
 
 			else
-
-			// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
+			// [
+			// 		{
+			// 			// The demo url for this api
+			// 			url: 'http://localhost:3000/bill/form/crud?formname=trader',
+			//
+			// 				// The expected result which will be returned from server in testing
+			// 				result: {
+			// 			"success": true,
+			// 				"data": {
+			// 				"formname": "trader"
+			// 			}
+			// 		},
+			// ]
 			if (!Array.isArray(apiDefines)) {
 				apiDefines = [apiDefines];
 			}
