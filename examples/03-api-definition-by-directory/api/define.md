@@ -10,5 +10,6 @@ Note:
 Learn more:
 * 01-api-definition-by-array
 * 02-api-definition-by-object
+* 04-api-definition-by-pure-directory
 * 05-api-definition-[minimally]
 * 06-api-definition-[completely]

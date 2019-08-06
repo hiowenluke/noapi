@@ -20,7 +20,12 @@
 //		   "result"		Otherwise, the returned result muse be matches the "result" property exactly.
 //
 //
-// See section "4. Complete definition" for more details.
+// Learn more:
+// 		01-api-definition-by-array
+// 		02-api-definition-by-object
+//		03-api-definition-by-directory
+//		04-api-definition-by-pure-directory
+//		05-api-definition-[minimally]
 //
 // /////////////////////////////////////////////
 
