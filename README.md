@@ -2,10 +2,11 @@
 
 # Noapi
 
-The easiest framework for [Node](https://nodejs.org) Api app. You just need to focus on your great project, no need to care about how to manage api services, web service, routes, multi-level directory routing, multi-api services, etc. 
+The easiest framework for [Node](https://nodejs.org) Api app. You can define apis and test cases in a simple way, no need to care about how to manage api services, web service, routes, multi-level routing, multi-api services, test cases, etc. 
 
 Noapi is based on [Express](https://expressjs.com/), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi)
-	
+
+
 
 ## Installation
 
@@ -13,19 +14,50 @@ Noapi is based on [Express](https://expressjs.com/), you can use all the middlew
 npm i noapi --save
 ```
 
+Test:
+```sh
+git clone https://github.com/hiowenluke/noapi
+cd noapi
+npm test
+```
+
 
 
 ## Demo
 
-The api file has no code, just with a description(e.g., the test url). Noapi saves the parameters (from url or posted data) to the "query" and calls the biz file for processing.
+### Easy Api Definition By Array
 
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo.jpg?raw=true)
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
+
+
+
+### Easy Api Definition By Object
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
+
+
+
+### Easy Api Definition By Directory
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
+
+
+
+### Easy Call
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
+
+
+
+### Easy Test
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
 ## Multi-Api Services
 
-The following demo project consists of 3+ api services. Each api service is an seperate project, which is maintained by different people and has a clear division of labor.
+The following demo project consists of 3+ api services. Each api service is a seperate project, which is maintained by different guy and has a clear division of labor.
 
 ```
 /<Project root>
