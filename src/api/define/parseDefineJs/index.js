@@ -47,11 +47,21 @@ const parseDefineJs = {
 		const method = 'for' + v.titleCase(type); // apiInfos => forApiInfos
 
 		data.sysNames.forEach(sysName => {
+			const defineObject = data.core[sysName].api;
 			const defineJs = data.defineJs[sysName];
-			const filename = defineJs.filename;
-			if (!filename) return;
 
-			let apiDefines = require(filename);
+			let apiDefines;
+
+			// If the api directory has been loaded as an api definition object, use it
+			if (defineObject) {
+				apiDefines = defineObject;
+			}
+			else {
+				// Get the api definition from define.js
+				const filename = defineJs.filename;
+				if (!filename) return;
+				apiDefines = require(filename);
+			}
 
 			// {
 			//		bill: {
