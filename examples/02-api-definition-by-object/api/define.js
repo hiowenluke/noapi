@@ -10,8 +10,8 @@
 // Learn more:
 // 		01-api-definition-by-array
 //		03-api-definition-by-directory
-//		04-api-definition-[minimally]
-//		05-api-definition-[completely]
+//		05-api-definition-[minimally]
+//		06-api-definition-[completely]
 
 const me = {
 
@@ -21,7 +21,7 @@ const me = {
 			crud:
 
 				// The following api definition is the same as "01-api-definition-by-array".
-				// See "05-api-definition-[completely]" to learn more.
+				// See "06-api-definition-[completely]" to learn more.
 
 				{
 					// The demo url for this api

@@ -10,8 +10,8 @@
 // Learn more:
 // 		02-api-definition-by-object
 //		03-api-definition-by-directory
-//		04-api-definition-[minimally]
-//		05-api-definition-[completely]
+//		05-api-definition-[minimally]
+//		06-api-definition-[completely]
 
 
 const me = [

@@ -1,5 +1,5 @@
 
-// See "05-api-definition-[completely]" to learn more.
+// See "06-api-definition-[completely]" to learn more.
 
 const me = [
 	{
