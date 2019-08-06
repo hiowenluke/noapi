@@ -5,4 +5,4 @@ const order = [
 	'f2',
 ];
 
-module.exports = require('kdo').sync.flow(module, order);
+module.exports = require('kdo').flowSync(module, order);
