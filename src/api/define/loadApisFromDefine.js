@@ -7,7 +7,10 @@ const lib = require('../../__lib');
 const fn = () => {
 	data.sysNames.forEach(sysName => {
 		const core = data.core[sysName];
-		if (!core.api) core.api = {};
+
+		// Always initialize the core.api as empty object,
+		// even though it has been loaded from the api directory.
+		core.api = {};
 
 		const defineJs = data.defineJs[sysName];
 		const apiInfos = defineJs.api;
