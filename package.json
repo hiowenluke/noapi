@@ -8,7 +8,7 @@
     "url": "https://github.com/hiowenluke/noapi.git"
   },
   "scripts": {
-    "test": "mocha --exit"
+    "test": "cd examples && sh ./test.sh"
   },
   "author": "hi.owen.luke@gmail.com",
   "license": "MIT",
