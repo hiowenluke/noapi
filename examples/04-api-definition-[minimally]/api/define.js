@@ -5,7 +5,7 @@
 // The api definition can be simplified like above when the project is just started.
 
 // It is recommended to identify the test cases ASAP to ensure that development goals do not deviate.
-// see "02-api-definition-[completely]" for more details.
+// see "05-api-definition-[completely]" for more details.
 
 const me = [
 	'http://localhost:3000/bill/form/crud?formname=trader',

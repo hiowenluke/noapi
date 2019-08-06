@@ -1,5 +1,4 @@
 
-
 const me = {
 	url: 'http://localhost:3000/bill/form/getFields?formname=trader',
 	result: {
