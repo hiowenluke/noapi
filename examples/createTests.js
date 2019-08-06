@@ -14,7 +14,6 @@ const main = () => {
 
 	folders.forEach(folderName => {
 		if (folderName.substr(0, 1) === '.') return;
-		if (folderName.substr(0, 2) === '02' || folderName.substr(0, 2) === '03') return;
 
 		const folderPath = __dirname + '/' + folderName;
 		if (!fs.statSync(folderPath).isDirectory()) return;
