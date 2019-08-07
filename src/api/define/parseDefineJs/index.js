@@ -189,8 +189,6 @@ const me = {
 
 	// defineJs: {api, docs}
 	forTest() {
-		debugger;
-
 		parseDefineJs.forApi();
 		parseDefineJs.forDocs();
 	},
