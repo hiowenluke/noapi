@@ -43,9 +43,12 @@ const tools = {
 			})
 		;
 
+		// If the ancestor's module.filename contains a test framework, then it is test mode.
+		const regTestFrameworks = /\/node_modules\/(mocha\/)|(jest\/)|(jasmine\/)|(ava\/)|(tape\/)/i;
+
 		while (true) {
 			const reg = new RegExp(target, 'i');
-			if (reg.test(parent.filename)) {
+			if (reg.test(parent.filename) || regTestFrameworks.test(parent.filename)) {
 				isTestMode = true;
 				break;
 			}
