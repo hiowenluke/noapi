@@ -91,6 +91,15 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 			arr.push(def);
 		}
 
+		else
+
+		// No api definition, e.g.:
+		// 		.../bill/form/crud.js is empty file
+		if (isEmptyObject(def)) {
+			def.api = apiPath + '/' + key;
+			arr.push(def);
+		}
+
 		else {
 			// Structure
 			convertDefinesObjectToArray(def, arr, apiPath + '/' + key);
