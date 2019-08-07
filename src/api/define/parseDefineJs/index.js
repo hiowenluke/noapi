@@ -74,7 +74,16 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 
 		else
 
-		// One api definition
+		// One api definition, e.g.:
+		// 	{
+		// 		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		// 		result: {
+		// 			"success": true,
+		// 			"data": {
+		// 				"formname": "trader"
+		// 			}
+		// 		}
+		// 	}
 		if (isApiDefinition(def)) {
 
 			// This will replace the {api} in definition.
