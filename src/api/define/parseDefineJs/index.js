@@ -6,7 +6,20 @@ const forApi = require('./forApi');
 const forDocs = require('kdo')('./forDocs');
 
 const isApiDefinition = (obj) => {
-	return !!((obj.url || obj.params) && (obj.result || obj.test));
+
+	// obj {
+	//		api: '/bill/form/crud',
+	//		url: 'http://xxx',
+	//		params: {
+	//			...
+	//		}
+	// }
+	return !!(
+		(obj.api && typeof obj.api === 'string' && obj.api.substr(0, 1) === '/') ||
+		(obj.url && typeof obj.url === 'string' && /^http(s)*:\/\//i.test(obj.url)) ||
+		(obj.params && _.isPlainObject(obj.params)) ||
+	0);
+};
 };
 
 const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
