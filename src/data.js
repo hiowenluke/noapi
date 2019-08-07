@@ -36,8 +36,8 @@ const tools = {
 		let parent = module;
 		let isTestMode;
 
-		// If the ancestor's module.filename contains webServiceRoot + "/test/", then it is test.
-		const target = (webServiceRoot + '/test/')
+		// If the ancestor's module.filename contains webServiceRoot + "/test/", then it is test mode.
+		const testDir = (webServiceRoot + '/test/')
 			.replace(/[\[\]\/$#]/g, (match) => {
 				return '\\' + match;
 			})
@@ -47,7 +47,7 @@ const tools = {
 		const regTestFrameworks = /\/node_modules\/(mocha\/)|(jest\/)|(jasmine\/)|(ava\/)|(tape\/)/i;
 
 		while (true) {
-			const reg = new RegExp(target, 'i');
+			const reg = new RegExp(testDir, 'i');
 			if (reg.test(parent.filename) || regTestFrameworks.test(parent.filename)) {
 				isTestMode = true;
 				break;
