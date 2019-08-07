@@ -36,7 +36,33 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 	Object.keys(obj).forEach(key => {
 		const def = obj[key];
 
-		// Multiple api definitions
+		// Multiple api definitions, e.g.:
+		// {
+		//		form: {
+		//			check: [
+		// 					{
+		// 						url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
+		// 						result: {
+		// 							"success": true,
+		// 							"data": {
+		// 								"billid": "123",
+		// 								"checked": true
+		// 							}
+		// 						}
+		// 					},
+		// 					{
+		// 						url: 'http://localhost:3000/bill/form/check?billid=123&act=uncheck',
+		// 						result: {
+		// 							"success": true,
+		// 							"data": {
+		// 								"billid": "123",
+		// 								"checked": false
+		// 							}
+		// 						}
+		// 					},
+		//			]
+		//		}
+		// }
 		if (Array.isArray(def)) {
 			def.forEach(item => {
 
