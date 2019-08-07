@@ -174,6 +174,8 @@ const parseDefineJs = {
 	forDocs() {
 		data.sysNames.forEach(sysName => {
 			const defineJs = data.defineJs[sysName];
+			if (!defineJs.raw) return;
+
 			defineJs.docs = forDocs.parse(defineJs.raw);
 		});
 	},
