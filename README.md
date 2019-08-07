@@ -43,15 +43,21 @@ npm test
 
 
 
-### Easy Call
+### Easy Api Definition By Pure Directory
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
 
 
-### Easy Test
+### Easy Calling
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
+
+
+
+### Easy Testing
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
 
 
