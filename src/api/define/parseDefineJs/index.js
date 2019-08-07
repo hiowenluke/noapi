@@ -20,6 +20,16 @@ const isApiDefinition = (obj) => {
 		(obj.params && _.isPlainObject(obj.params)) ||
 	0);
 };
+
+const isEmptyObject = (obj) => {
+	// obj {
+	//		form: {
+	// 				crud: {
+	//					// no property
+	// 				}
+	// 		}
+	// }
+	return _.isPlainObject(obj) && Object.keys(obj).length === 0;
 };
 
 const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
