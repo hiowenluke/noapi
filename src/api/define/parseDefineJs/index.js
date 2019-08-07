@@ -110,10 +110,9 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 };
 
 const parseDefineJs = {
-	do(type) {
-		const method = 'for' + v.titleCase(type); // apiInfos => forApiInfos
-
+	forApi() {
 		data.sysNames.forEach(sysName => {
+
 			const defineObject = data.core[sysName].api;
 			const defineJs = data.defineJs[sysName];
 
@@ -130,53 +129,53 @@ const parseDefineJs = {
 				apiDefines = require(filename);
 			}
 
-			// {
-			//		bill: {
-			//			form: {
-			//				crud: {
-			//					url: 'http://localhost:3000/xxx',
-			//					result: {
-			//						...
-			//					}
-			//				}
-			//			}
-			//		},
-			//		...
-			// }
-			if (_.isPlainObject(apiDefines)) {
-				const result = [];
-				convertDefinesObjectToArray(apiDefines, result);
-				apiDefines = result;
-			}
-
-			else
 			// [
 			// 		{
-			// 			// The demo url for this api
 			// 			url: 'http://localhost:3000/bill/form/crud?formname=trader',
-			//
-			// 				// The expected result which will be returned from server in testing
-			// 				result: {
-			// 			"success": true,
+			// 			result: {
+			// 				"success": true,
 			// 				"data": {
-			// 				"formname": "trader"
+			// 					"formname": "trader"
+			// 				}
 			// 			}
-			// 		},
+			//		},
 			// ]
 			if (!Array.isArray(apiDefines)) {
-				apiDefines = [apiDefines];
+
+				// {
+				//		bill: {
+				//			form: {
+				//				crud: {
+				//					url: 'http://localhost:3000/xxx',
+				//					result: {
+				//						...
+				//					}
+				//				}
+				//			}
+				//		},
+				//		...
+				// }
+				if (_.isPlainObject(apiDefines)) {
+					const result = [];
+					convertDefinesObjectToArray(apiDefines, result);
+					apiDefines = result;
+				}
+				else {
+					// 'http://localhost:3000/xxx' => ['http://localhost:3000/xxx']
+					apiDefines = [apiDefines];
+				}
 			}
 
-			defineJs[type] = this[method](apiDefines);
+			defineJs.api = forApi.parse(apiDefines);
+			defineJs.raw = apiDefines;
 		});
 	},
 
-	forApi(apiDefineArr) {
-		return forApi.parse(apiDefineArr);
-	},
-
-	forDocs(apiDefineArr) {
-		return forDocs.parse(apiDefineArr);
+	forDocs() {
+		data.sysNames.forEach(sysName => {
+			const defineJs = data.defineJs[sysName];
+			defineJs.docs = forDocs.parse(defineJs.raw);
+		});
 	},
 };
 
@@ -185,13 +184,15 @@ const me = {
 
 	// defineJs: {api}
 	forRun() {
-		parseDefineJs.do('api');
+		parseDefineJs.forApi();
 	},
 
 	// defineJs: {api, docs}
 	forTest() {
-		parseDefineJs.do('api');
-		parseDefineJs.do('docs');
+		debugger;
+
+		parseDefineJs.forApi();
+		parseDefineJs.forDocs();
 	},
 };
 
