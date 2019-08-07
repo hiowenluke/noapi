@@ -38,7 +38,10 @@ sh ./test.sh
 
 ### 3. Special Readme Files
 
-* [10-preprocess-query-parameters-with-aha/readme.md](./10-preprocess-query-parameters-with-aha/readme.md)
-* [11-indenpendent-web-api-service/readme.md](./11-indenpendent-web-api-service/readme.md)
+* [11-seperate-api-and-web-services/readme.md](./11-seperate-api-and-web-services/readme.md)
 * [12-multi-api-services/readme.md](./12-multi-api-services/readme.md)
-
+* [13-call-the-api-which-is-in-other-api-services/readme.md](./13-call-the-api-which-is-in-other-api-services/readme.md)
+* [14-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md](./14-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md)
+* [15-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md](./15-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md)
+* [16-[for-all-api-services]-preprocess-query-via-power-function/readme.md](./16-[for-all-api-services]-preprocess-query-via-power-function/readme.md)
+* [17-[for-all-api-services]-use-assign-rules-and-power-function-advancedly/readme.md](./17-[for-all-api-services]-use-assign-rules-and-power-function-advancedly/readme.md)
