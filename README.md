@@ -49,15 +49,27 @@ npm test
 
 
 
-### Easy Calling
+### Easy Api Definition Minimally (Without Test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### Easy Testing
+### Easy Api Definition Completely (With Full Test Properties)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
+
+
+
+### Easy Calling
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
+
+
+
+### Easy Testing
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
 
 
 
@@ -66,7 +78,7 @@ npm test
 The following demo project consists of 3+ api services. Each api service is a seperate project, which is maintained by different guy and has a clear division of labor.
 
 ```
-/<Project root>
+/<Demo Project root>
   /api-forms             <- seperate subproject (api service "forms" subsystem)
     /api
       /bill
