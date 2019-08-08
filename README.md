@@ -43,7 +43,7 @@ npm test
 
 
 
-### Easy Api Definition By Pure Directory
+### Easy Api Definition By Pure Directory (Without Test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
