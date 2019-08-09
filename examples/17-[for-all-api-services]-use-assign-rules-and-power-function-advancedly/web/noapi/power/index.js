@@ -1,5 +1,5 @@
 
-const noapi = require('../../../../noapi');
+const noapi = require('../../../../..');
 const flow = require('./flow');
 
 const fn = (query, req, res) => {

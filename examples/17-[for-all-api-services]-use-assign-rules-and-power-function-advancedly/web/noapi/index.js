@@ -1,5 +1,5 @@
 
-const noapi = require('../../../noapi');
+const noapi = require('../../../..');
 const power = require('./power');
 const assignRules = require('./assignRules');
 

@@ -9,7 +9,7 @@
 
 // The app is an express app.
 // The express is the express self.
-const {app, server, express} = require('../noapi')();
+const {app, server, express} = require('../..')();
 
 const router = express.Router();
 router.use('/test', (req, res, next) => {

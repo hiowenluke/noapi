@@ -1,3 +1,3 @@
 
-const noapi = require('../../../noapi');
+const noapi = require('../../../..');
 noapi.test();

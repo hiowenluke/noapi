@@ -1,5 +1,5 @@
 
-const noapi = require('../noapi');
+const noapi = require('../..');
 
 const options = {
 	power(query, req, res) {

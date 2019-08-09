@@ -16,7 +16,7 @@
 * */
 
 // The app is an express app
-const {app, server, express} = require('../noapi')();
+const {app, server, express} = require('../..')();
 
 const waitSeconds = (seconds) => {
 	return new Promise(resolve => {
