@@ -13,11 +13,15 @@ const me = {
 				options.public.name = 'public';
 			}
 
+			else
+
 			// Use the root folder of project as public folder
 			if (options.public.name === '/') {
 				options.public.name = '';
 			}
 		}
+
+		else
 
 		// If options.public is string, it is a path to public
 		if (typeof options.public === 'string') {
