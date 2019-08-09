@@ -73,6 +73,20 @@ npm test
 
 
 
+### Easy Before Do And After Do In Testing
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
+
+
+
+
+### Easy Multiple Test Cases For One Api
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
+
+
+
+
 ## Multi-Api Services
 
 The following demo project consists of 3+ api services. Each api service is a seperate project, which is maintained by different guy and has a clear division of labor.
