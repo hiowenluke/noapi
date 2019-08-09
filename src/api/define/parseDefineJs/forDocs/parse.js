@@ -2,6 +2,10 @@
 const _ = require('lodash');
 const getVerifyFn = require('./getVerifyFn');
 
+const isStandardTestObject = (test) => {
+	return test.beforeDo || test.getResult || test.afterDo || test.verify;
+};
+
 /** @name forDocs.parse */
 const fn = (apiDefineArr) => {
 	const allItems = [];
@@ -82,6 +86,7 @@ const fn = (apiDefineArr) => {
 					//				// verify, // without verify
 					// 		}
 					if (typeof test.verify === 'undefined') {
+					if (!isStandardTestObject(test)) {
 						test = {
 							verify: getVerifyFn.forContainingKeyValues(test)
 						}
