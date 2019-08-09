@@ -2,6 +2,8 @@
 const noapi = require('../..');
 
 const options = {
+
+	// The custom function to handle query
 	power(query, req, res) {
 
 		// Since the database field names are usually not case sensitive,

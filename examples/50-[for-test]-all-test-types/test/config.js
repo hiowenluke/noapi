@@ -18,7 +18,7 @@ const me = {
 	//		mocha --timeout=2000
 	timeout: 2000,
 
-	// The time to wait for the server to be ready before test.
+	// The time to wait for the server to be ready before testing.
 	// Applicable to the following situations:
 
 	// 		When the app starts, it needs to perform asynchronous operations,
@@ -30,7 +30,7 @@ const me = {
 	// 		and an error will occur.
 	waitSeconds: 0,
 
-	// The timeout (seconds) for waiting for server ready
+	// The timeout (seconds) of mocha for waiting for server ready
 	serverReadyTimeout: 60,
 };
 
