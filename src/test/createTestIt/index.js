@@ -27,7 +27,7 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 		// If there is a getResult property, use it. For example,
 		// after deleting the data, user needs to re-acquire the data
 		// to determine whether the operation is successful.
-		
+
 		// Note that the getResult can not be api, title, or url, otherwise
 		// the getResult will cause repeat do the url, and maybe get a wrong result.
 		if (getResult && (getResult !== api && getResult !== title && getResult !== url)) {
