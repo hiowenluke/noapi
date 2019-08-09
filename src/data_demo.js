@@ -47,7 +47,7 @@ const me = {
 
 	// The demo of data.defineJs
 	defineJs: {
-		filename: "/path/to/user project/api/define.js", // Refer /noapi/src/defineJs_demos.js
+		filename: "/path/to/user project/api/define.js",
 
 		api: {
 			api: '/bill/form/crud', // If omitted, parse from url
