@@ -3,7 +3,7 @@ const _ = require('lodash');
 const v = require('voca');
 const data = require('../../../data');
 const forApi = require('./forApi');
-const forDocs = require('kdo')('./forDocs');
+const forTests = require('kdo')('./forTests');
 
 const isApiDefinition = (obj) => {
 
@@ -171,12 +171,12 @@ const parseDefineJs = {
 		});
 	},
 
-	forDocs() {
+	forTests() {
 		data.sysNames.forEach(sysName => {
 			const defineJs = data.defineJs[sysName];
 			if (!defineJs.raw) return;
 
-			defineJs.docs = forDocs.parse(defineJs.raw);
+			defineJs.tests = forTests.parse(defineJs.raw);
 		});
 	},
 };
@@ -189,10 +189,10 @@ const me = {
 		parseDefineJs.forApi();
 	},
 
-	// defineJs: {api, docs}
+	// defineJs: {api, tests}
 	forTest() {
 		parseDefineJs.forApi();
-		parseDefineJs.forDocs();
+		parseDefineJs.forTests();
 	},
 };
 

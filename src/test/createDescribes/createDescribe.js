@@ -56,14 +56,14 @@ const validator = {
 const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 	validator.init(title, isOnlyApiPath, usedApiPaths);
 
-	const {api, docs} = defineJs;
+	const {api, tests} = defineJs;
 	describe(v.titleCase(title), function() {
 
 		this.timeout(config.timeout);
 
 		for (let i = 0; i < api.length; i ++) {
 			const apiInfo = api[i];
-			const docInfos = docs[i];
+			const testInfos = tests[i];
 
 			if (!validator.check(apiInfo.api)) {
 				continue;
@@ -77,14 +77,14 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				continue;
 			}
 
-			if (!docInfos.length) {
+			if (!testInfos.length) {
 				noTest(apiInfo.title);
 				continue;
 			}
 
-			docInfos.forEach(docInfo => {
-				const ioInfo = docInfo.io;
-				const testInfo = docInfo.test;
+			testInfos.forEach(info => {
+				const ioInfo = info.io;
+				const testInfo = info.test;
 
 				// No testInfo property and result property, no need to test
 				if (!testInfo && !ioInfo.result) return noTest(apiInfo.title, apiInfo.url, ioInfo.params);

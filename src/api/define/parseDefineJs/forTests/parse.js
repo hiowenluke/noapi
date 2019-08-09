@@ -6,7 +6,7 @@ const isStandardTestObject = (test) => {
 	return test.beforeDo || test.getResult || test.afterDo || test.verify;
 };
 
-/** @name forDocs.parse */
+/** @name forTests.parse */
 const fn = (apiDefineArr) => {
 	const allItems = [];
 
@@ -17,7 +17,7 @@ const fn = (apiDefineArr) => {
 		// 		title,
 		// 		url,
 		//
-		// 		docs: [
+		// 		tests: [
 		// 			{
 		// 				params,
 		// 				result,
@@ -36,17 +36,17 @@ const fn = (apiDefineArr) => {
 
 		// {api, title, url, params, result, test} =>
 		// {api, title, url,
-		// 					docs: [
+		// 					tests: [
 		// 						{params, result, test}
 		// 					]
 		// }
-		if (!item.docs) {
+		if (!item.tests) {
 			const {params, result, test} = item;
-			item.docs = [{params, result, test}];
+			item.tests = [{params, result, test}];
 		}
 
-		const docs = [];
-		item.docs.forEach(doc => {
+		const tests = [];
+		item.tests.forEach(doc => {
 
 			// doc {
 			//		params,
@@ -192,10 +192,10 @@ const fn = (apiDefineArr) => {
 				}
 			}
 
-			docs.push({io, test});
+			tests.push({io, test});
 		});
 
-		allItems.push(docs);
+		allItems.push(tests);
 	});
 
 	return allItems;
