@@ -83,9 +83,12 @@ const fn = (apiDefineArr) => {
 					// A simple object:
 					// 		test: {
 					// 				formname: "trader",
-					//				// verify, // without verify
+					//				// beforeDo
+					//				// getResult
+					//				// afterDo
+					//				// verify
 					// 		}
-					if (typeof test.verify === 'undefined') {
+
 					if (!isStandardTestObject(test)) {
 						test = {
 							verify: getVerifyFn.forContainingKeyValues(test)
@@ -105,12 +108,16 @@ const fn = (apiDefineArr) => {
 							test.verify = getVerifyFn.forMatchingResultExactly(doc);
 						}
 
+						else
+
 						// verify: {
 						// 		formname: 'trader',
 						// }
 						if (_.isPlainObject(test.verify)) {
 							test.verify = getVerifyFn.forContainingKeyValues(test.verify);
 						}
+
+						else
 
 						// verify(result, resultText) {
 						// 		...
@@ -119,16 +126,22 @@ const fn = (apiDefineArr) => {
 							// do nothing
 						}
 
+						else
+
 						// verify: true
 						if (typeof test.verify === 'boolean') {
 							test.verify = getVerifyFn.forResultState(test.verify);
 						}
+
+						else
 
 						// verify:
 						// 		`"formname":"trader"`,
 						if (typeof test.verify === 'string') {
 							test.verify = getVerifyFn.forContainingString(test.verify);
 						}
+
+						else
 
 						// verify:
 						// 		/(traderid)|(goodsid)/,
@@ -148,12 +161,16 @@ const fn = (apiDefineArr) => {
 						}
 					}
 
+					else
+
 					// test: true
 					if (typeof test === 'boolean') {
 						test = {
 							verify: getVerifyFn.forResultState(test)
 						}
 					}
+
+					else
 
 					// test:
 					// 		`"formname":"trader"`,
@@ -162,6 +179,8 @@ const fn = (apiDefineArr) => {
 							verify: getVerifyFn.forContainingString(test)
 						};
 					}
+
+					else
 
 					// test:
 					// 		/(traderid)|(goodsid)/,
