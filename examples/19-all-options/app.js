@@ -7,7 +7,7 @@ const options = {
 	port: '9000',
 
 	// See "08-public" for more details
-	public: 'web',
+	public: './web',
 
 	// See "14-call-the-api-which-is-in-other-api-services-via-assign-rules" for more details
 	assignRules: [],
