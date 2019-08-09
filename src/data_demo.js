@@ -55,7 +55,7 @@ const me = {
 			url: 'http://localhost:3000/bill/form/crud?formname=trader',
 		},
 
-		docs: [
+		Tests: [
 			{
 				// io: input params, output result
 				io: {

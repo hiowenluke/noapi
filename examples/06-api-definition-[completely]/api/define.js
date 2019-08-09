@@ -193,15 +193,15 @@ const me = [
 	//    We call the properties "api", "title", "url" collectively as api info, like below:
 	//			api info: {api, title, url}
 	//
-	//    and the properties "params", "result", "test" collectively as doc info, like below:
-	//			doc info: {params, result, test}
+	//    and the properties "params", "result", "test" collectively as test info, like below:
+	//			test info: {params, result, test}
 	//
 	// /////////////////////////////////////////////
 	{
 
 		// .............................................
 		//
-		// api info
+		// Api Info
 		//
 		// .............................................
 
@@ -217,16 +217,16 @@ const me = [
 
 		// .............................................
 		//
-		// doc info
+		// Test Info
 		//
 		// .............................................
 
-		// Send it to server. If omitted, parse from url.
+		// Input (send it to server). If omitted, parse from url.
 		params: {
 			formname: 'trader',
 		},
 
-		// Get it from server. It can be omitted if not required for testing.
+		// Output (get it from server). It can be omitted if not required for testing.
 		result: {
 			"success": true,
 			"data": {
@@ -272,7 +272,7 @@ const me = [
 
 	// /////////////////////////////////////////////
 	//
-	// 5. An api with multiple sets of doc info
+	// 5. An api with multiple sets of test info
 	//
 	// See "57-[for-test]-multiple-test-cases-for-one-api" for more details.
 	//
@@ -280,7 +280,7 @@ const me = [
 	{
 		// .............................................
 		//
-		// api info
+		// Api Info
 		//
 		// .............................................
 
@@ -291,16 +291,16 @@ const me = [
 
 		// .............................................
 		//
-		// multiple sets of doc info
+		// Multiple Sets Of Test Info
 		//
 		// .............................................
 
-		docs: [
+		tests: [
 			/*
 
 			// .............................................
 			//
-			// doc info
+			// Test Info
 			//
 			// .............................................
 
