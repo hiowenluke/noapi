@@ -32,7 +32,7 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 		// the getResult will cause repeat do the url, and maybe get a wrong result.
 		if (getResult && (getResult !== api && getResult !== title && getResult !== url)) {
 			const apiUrl = lib.getApiUrlByTypeStr(getResult);
-			apiUrl && (result = await request.do(apiUrl));
+			apiUrl && (result = await request.do(apiUrl, params));
 		}
 
 		// Call specific apis after get the test result if needed.
