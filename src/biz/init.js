@@ -13,7 +13,8 @@ const fn = () => {
 	global.biz.do = me.do;
 
 	// Use data.global.biz instead of global.biz in noapi to improve performance.
-	data.global.biz = {do: me.do};
+	data.global.biz = {};
+	data.global.biz.do = me.do;
 };
 
 module.exports = fn;

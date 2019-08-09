@@ -14,7 +14,8 @@ const fn = () => {
 	global.api.do = transfer;
 
 	// Use data.global.api instead of global.api in noapi to improve performance.
-	data.global.api = {do: transfer};
+	data.global.api = {};
+	data.global.api.do = transfer;
 
 	me.initRootAndNames();
 	me.loadCoreModules();
