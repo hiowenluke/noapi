@@ -102,12 +102,11 @@ const getRulesFromSysName = (rulesFromApiPath) => {
 };
 
 const tryToGetResult = async (apiPath, query) => {
-
 	if (!apiPath) return;
 
 	// Since other subsystems maybe modify the value of query, a copy of query is passed here
 	const q = Object.create(query);
-	const result = await global.api.do(apiPath, q);
+	const result = await data.global.api.do(apiPath, q);
 
 	// If a valid value (object or array) is returned, it is used directly
 	if (result && typeof result === 'object') return result;

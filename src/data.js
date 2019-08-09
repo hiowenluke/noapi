@@ -88,6 +88,8 @@ const me = {
 
 	power: null, // The custom function to handle query
 
+	global: {}, // {api, biz}
+
 	testOptions: {
 		apiServiceRoot: '', // The root path of the api service which is testing
 		testRoot: '', // The root path of the test directory

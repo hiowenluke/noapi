@@ -5,7 +5,7 @@ const data = require('../../data');
 // If the user writes his own api function, he needs to be aware that he must
 // passes the parameter query when calling global.biz.do()
 const apiFn = async (query) => {
-	return await global.biz.do(query);
+	return await data.global.biz.do(query);
 };
 
 const handle = (apis) => {
