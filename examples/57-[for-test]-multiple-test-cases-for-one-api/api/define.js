@@ -6,7 +6,7 @@ const me = [
 
 	{
 		url: 'http://localhost:3000/user/add',
-		Tests: [
+		tests: [
 			{
 				params: {
 					username: "CaptainAmerica",
