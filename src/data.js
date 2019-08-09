@@ -97,8 +97,8 @@ const me = {
 		isFromApiService: false, // If the serviceName is api or api-xxx, then it is true
 	},
 
-	init(options) {
-		this.webServiceRoot = tools.getWebServiceRoot(options.pathToCaller);
+	init(pathToCaller, options) {
+		this.webServiceRoot = tools.getWebServiceRoot(pathToCaller);
 		this.isTestMode = tools.getIsTestMode(this.webServiceRoot);
 
 		this.assignRules = options.assignRules;

@@ -9,9 +9,7 @@ const createNoapiDo = () => {
 };
 
 const noapi = (options = {}) => {
-	options.pathToCaller = caller();
-	me.data.init(options);
-
+	me.data.init(caller(), options);
 	me.api.init();
 	me.biz.init();
 
@@ -21,8 +19,7 @@ const noapi = (options = {}) => {
 };
 
 noapi.test = (userConfig) => {
-	const pathToCaller = caller();
-	data.initForTest(pathToCaller);
+	data.initForTest(caller());
 
 	const test = require('./test');
 	test(userConfig);
