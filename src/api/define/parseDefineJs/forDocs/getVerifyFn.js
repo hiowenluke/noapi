@@ -8,7 +8,7 @@ const me = {
 			let comparisonResult = doc.result;
 
 			// If the target is a comparison file:
-			// 		"bill.form.crud" => "/path/to/user project/test/comparison/bill.form.crud.json"
+			// 		"bill.form.crud" => "/path/to/<user project>/test/comparison/bill.form.crud.json"
 			if (typeof comparisonResult === 'string') {
 				const filename = comparisonResult;
 				const testRoot = data.testOptions.testRoot;
