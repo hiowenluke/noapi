@@ -70,7 +70,7 @@ const me = {
 
 	serverOptions: {
 		serverName: 'default',
-		http: 'localhost',
+		host: 'localhost',
 		port: '3000',
 	},
 
@@ -105,7 +105,7 @@ const me = {
 		this.power = options.power;
 
 		options.serverName && (this.serverOptions.serverName = options.serverName);
-		options.http && (this.serverOptions.http = options.http);
+		options.host && (this.serverOptions.host = options.host);
 		options.port && (this.serverOptions.port = options.port);
 	},
 

@@ -35,9 +35,9 @@ const me = {
 	},
 
 	getUrlFromApi(api) {
-		const {http, port} = data.serverOptions;
+		const {host, port} = data.serverOptions;
 		const portStr = port ? ':' + port : '';
-		return `http://${http}${portStr}${api}`;
+		return `http://${host}${portStr}${api}`;
 	},
 
 	getApiTitleUrlFromString(str) {

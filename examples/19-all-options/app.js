@@ -3,7 +3,7 @@ const options = {
 
 	// See terminal logs for more details
 	serverName: 'MyApi',
-	http: 'localhost',
+	host: 'localhost',
 	port: '9000',
 
 	// See "08-public" for more details
