@@ -188,7 +188,7 @@ const me = [
 	//
 	// 4. Complete definition
 	//
-	//	  Each api can have multiple sets of parameters, and each set of parameters has a test case.
+	//	  Each api can has multiple sets of parameters, and each set of parameters has a test case.
 	//
 	//    We call the properties "api", "title", "url" collectively as api info, like below:
 	//			api info: {api, title, url}
