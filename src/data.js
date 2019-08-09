@@ -107,6 +107,7 @@ const me = {
 		options.serverName && (this.serverOptions.serverName = options.serverName);
 		options.host && (this.serverOptions.host = options.host);
 		options.port && (this.serverOptions.port = options.port);
+		options.public && (this.serverOptions.public = options.public);
 	},
 
 	initForTest(pathToCaller) {
