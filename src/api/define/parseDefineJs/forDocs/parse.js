@@ -101,6 +101,10 @@ const fn = (apiDefineArr) => {
 						// 				verify, // with verify (multiple forms)
 						// 		}
 
+						if (!test.verify) {
+							test.verify = getVerifyFn.forMatchingResultExactly(doc);
+						}
+
 						// verify: {
 						// 		formname: 'trader',
 						// }
