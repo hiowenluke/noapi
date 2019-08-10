@@ -23,6 +23,35 @@ npm test
 
 
 
+## Quick Start
+
+See [01-api-definition-by-array](./examples/01-api-definition-by-array) for more details.
+
+
+### 1. Define apis
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
+
+
+
+### 2. Write business code
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true)
+
+
+
+### 3. Run
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
+
+
+
+### 4. Test
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
+
+
+
 ## Demo
 
 ### Easy Api Definition By Array
@@ -61,7 +90,7 @@ npm test
 
 
 
-### Easy Calling
+### Easy Starting
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
 
@@ -287,7 +316,7 @@ See the below examples to learn more:
 
 ## Api
 
-| Api | Describe | Example |
+| Api | description | Example |
 | -- | -- | -- |
 | noapi() | Start the api service | [Example](./examples/01-api-definition-by-array/app.js) |
 | noapi(options) | Start the api service with custom options | [Example](./examples/19-all-options/app.js) |
@@ -299,7 +328,7 @@ See the below examples to learn more:
 
 ## Noapi(options)
 
-| Property | Describe | Example |
+| Property | description | Example |
 | -- | -- | -- |
 | options.serverName | The server name | [Example](./examples/19-all-options/app.js) |
 | options.host | The host name | [Example](./examples/19-all-options/app.js) |
@@ -312,7 +341,7 @@ See the below examples to learn more:
 
 ## Noapi.test(config)
 
-| Property | Describe | Example |
+| Property | description | Example |
 | -- | -- | -- |
 | config.onlyTests | Only run test cases with a title of the following value | [Example](./examples/51-[for-test]-[config.onlyTests]-run-only-the-specified-test-cases/test/config.js)|
 | config.ignoreTests | Ignore test cases whose title is the following value | [Example](./examples/52-[for-test]-[config.ignoreTests]-ignore-the-specified-test-cases/test/config.js)|
