@@ -6,6 +6,8 @@ The easiest framework for [Node](https://nodejs.org) Api app. You can define api
 
 Noapi is based on [Express](https://expressjs.com/), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi needs Node 7.6+ for async/await.
 
+Start up a Node.js api app in 5 minutes via [noapi](https://github.com/hiowenluke/create-a-noapi-app).
+
 
 
 ## Installation
