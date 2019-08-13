@@ -10,6 +10,13 @@
   "scripts": {
     "test": "cd examples && sh ./test.sh"
   },
+  "keywords": [
+    "node.js",
+    "express",
+    "api",
+    "test",
+    "test case"
+  ],
   "author": "hi.owen.luke@gmail.com",
   "license": "MIT",
   "bugs": {
