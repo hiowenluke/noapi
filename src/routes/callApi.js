@@ -35,7 +35,7 @@ const fn = async (query, isFromTransfer) => {
 	// Note that this is done here, not in ./index.js, because ./api/transfer.js will also call this function.
 	// However, transfer.js does not parse the url, causing query.originalUrl and api path
 	// to be inconsistent, resulting in an error.
-	let {sysName, apiPath} = lib.apiParser.parseApiUrlToSysNameAndApiPath(query.originalUrl);
+	let {sysName, apiPath} = lib.apiParser.apiUrlToSysNameAndApiPath(query.originalUrl);
 
 	// /ProjectRoot
 	// 		/api

@@ -18,8 +18,8 @@ const fn = () => {
 
 		const apiUrls = apiInfos.map(item => item.api);
 		apiUrls.forEach(apiUrl => { // /form:/bill/form/crud
-			const {apiPath} = lib.apiParser.parseApiUrlToSysNameAndApiPath(apiUrl); // /bill/form/crud
-			const apiObject = lib.apiParser.parseApiPathToObject(apiPath); // {bill: {form: {crud: {}}}}
+			const {apiPath} = lib.apiParser.apiUrlToSysNameAndApiPath(apiUrl); // /bill/form/crud
+			const apiObject = lib.apiParser.apiPathToObject(apiPath); // {bill: {form: {crud: {}}}}
 			core.api = _.merge(core.api, apiObject);
 		});
 	});

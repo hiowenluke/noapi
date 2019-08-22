@@ -2,8 +2,6 @@
 /** @name lib.apiParser */
 const me = {
 
-	// "/bill/form/crud" => {bill: {form: crud: {}}}
-	parseApiPathToObject(apiPath) {
 	// {bill: {form: {crud: {}}}} => "/bill/form/crud"
 	objectToApiPaths(obj, path = '', arr = []) {
 		Object.keys(obj).forEach(key => {
@@ -23,6 +21,8 @@ const me = {
 		return arr;
 	},
 
+	// "/bill/form/crud" => {bill: {form: {crud: {}}}}
+	apiPathToObject(apiPath) {
 		const obj = {};
 		let parent = obj;
 
@@ -45,7 +45,7 @@ const me = {
 
 	// 		2. If the request comes from api, then the url is like below:
 	// 	  	   forms:/bill/dropDownList
-	parseApiUrlToSysNameAndApiPath(apiUrl) {
+	apiUrlToSysNameAndApiPath(apiUrl) {
 
 		// apiPath = "/forms:/bill/dropDownList"
 		let apiPath = apiUrl.split('?')[0];
@@ -61,7 +61,8 @@ const me = {
 		}
 
 		return {sysName, apiPath};
-	}
+	},
+
 };
 
 module.exports = me;
