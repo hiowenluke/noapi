@@ -42,20 +42,10 @@
 	-------------------------------------------
 */
 
-// "/bom/form/getData" => {bom.form.getData}
-const pathToJson = (path, splitter, result) => {
-	const nodes = path.split(splitter);
-	let obj = result.data;
-
-	nodes.forEach(node => {
-		if (!node) return;
-		if (!obj[node]) obj[node] = {};
-		obj = obj[node];
-	});
-};
+const utils = require('..');
 
 /** @name noapi.url.pathsToJson */
-const fn = (paths, splitter = '/') => {
+const fn = (paths, splitter) => {
 
 	typeof paths === 'string' && (paths = [paths]);
 
@@ -63,7 +53,7 @@ const fn = (paths, splitter = '/') => {
 	const result = {data: {}};
 
 	paths.forEach(path => { // "/bom/form/getData"
-		pathToJson(path, splitter, result); // {bom.form.getData}
+		utils.url.pathToJson(path, splitter, result); // {bom.form.getData}
 	});
 
 	// console.log(JSON.stringify(result.data, null, 4));
