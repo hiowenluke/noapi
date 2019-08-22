@@ -22,8 +22,16 @@ const fn = async (query) => {
 	// for example: data.core.mms.biz.bill.mnf.manuPlan
 	const sysBizFn = lib.getSysApiFn(sysName, apiPath, sysBizs);
 
-	const result = await sysBizFn(query);
-	return result;
+	// If there is no params, or just only one parameter named "query", pass the whole query
+	const params = data.bizParams[sysName][apiPath];
+	if (!params || params.length === 1 && params[0] === 'query') {
+		return await sysBizFn(query);
+	}
+	else {
+		// Otherwise, pass query[paramName]
+		const args = params.map(paramName => query[paramName]);
+		return await sysBizFn(...args);
+	}
 };
 
 module.exports = fn;
