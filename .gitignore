@@ -3,6 +3,4 @@ module_test/
 coverage/
 .DS_Store
 .idea
-__logs/
-test/__count/__log.txt
 package-lock.json
