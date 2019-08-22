@@ -319,9 +319,9 @@ See the below examples to learn more:
 | Api | description | Example |
 | -- | -- | -- |
 | noapi() | Start the api service | [Example](./examples/01-api-definition-by-array/app.js) |
-| noapi(options) | Start the api service with custom options | [Example](./examples/19-all-options/app.js) |
+| noapi(options) | Start the api service with custom options | [Example](./examples/16-all-options/app.js) |
 | noapi.test() | Start to test the api service| [Example](./examples/50-[test]-all-kinds-of-test/test/index.js) |
-| noapi.test(config) | Start to test the api service with custom configurations| [Example](./examples/09-using-express-middleware/test/index.js) |
+| noapi.test(config) | Start to test the api service with custom configurations| [Example](./examples/12-use-express-middleware/test/index.js) |
 | config.js | Start to test the api service with config.js file| [Example](./examples/50-[test]-all-kinds-of-test/test/config.js) |
 
 
@@ -330,10 +330,10 @@ See the below examples to learn more:
 
 | Property | description | Example |
 | -- | -- | -- |
-| options.serverName | The server name | [Example](./examples/19-all-options/app.js) |
-| options.host | The host name | [Example](./examples/19-all-options/app.js) |
-| options.port | The port number | [Example](./examples/19-all-options/app.js) |
-| options.public | The web public options  | [Example](./examples/19-all-options/app.js) |
+| options.serverName | The server name | [Example](./examples/16-all-options/app.js) |
+| options.host | The host name | [Example](./examples/16-all-options/app.js) |
+| options.port | The port number | [Example](./examples/16-all-options/app.js) |
+| options.public | The web public options  | [Example](./examples/16-all-options/app.js) |
 | options.assignRules | Transfer some requests to other api services | [Example](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) |
 | options.power | The custom function to handle query | [Example](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js) |
 
@@ -346,7 +346,7 @@ See the below examples to learn more:
 | config.onlyTests | Only run test cases with a title of the following value | [Example](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases/test/config.js)|
 | config.ignoreTests | Ignore test cases whose title is the following value | [Example](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases/test/config.js)|
 | config.catalogs | Categorize the test cases | [Example](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases/test/config.js)|
-| config.timeout | The timeout of mocha | [Example](./examples/09-using-express-middleware/test/index.js)|
+| config.timeout | The timeout of mocha | [Example](./examples/12-use-express-middleware/test/index.js)|
 | config.serverReadyTimeout | The timeout (seconds) of mocha for waiting for server ready | |
 | config.waitSeconds | The time to wait for the server to be ready before testing | |
 
