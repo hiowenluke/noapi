@@ -4,8 +4,11 @@ const me = require('kdo')({exclude: 'test'});
 const data = require('./data');
 
 const createNoapiDo = () => {
-	// Add shortcut for data.global.api.do
+
+	// Add shortcuts for data.global.xxx
 	noapi.do = data.global.api.do;
+	noapi.api = data.global.api.do;
+	noapi.biz = data.global.biz.do;
 };
 
 const noapi = (options = {}) => {
