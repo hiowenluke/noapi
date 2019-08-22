@@ -98,9 +98,6 @@ const fn = () => {
 		isSimpleMode = false;
 	}
 
-	data.apiServicesRoot = apiServicesRoot;
-	data.serviceNames = serviceNames; // ["api", "api-xxx", ...]
-
 	serviceNames.forEach(serviceName => {
 
 		// api-xxx => xxx
@@ -108,6 +105,9 @@ const fn = () => {
 
 		data.sysNames.push(sysName);
 		data.serviceSysNames[serviceName] = sysName;
+
+		const folderName = isSimpleMode ? '' : '/' + serviceName;
+		data.apiServicesRoot[serviceName] = apiServicesRoot + folderName;
 	});
 
 	data.isSimpleMode = isSimpleMode;

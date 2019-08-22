@@ -66,7 +66,7 @@ const me = {
 	isSimpleMode: true,  // Whether the web service is api service
 
 	webServiceRoot: '', // The root path of web service
-	apiServicesRoot: '', // The root path of api service(s)
+	apiServicesRoot: {}, // The root path of api service(s)
 
 	serverOptions: {
 		serverName: 'default',

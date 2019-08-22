@@ -6,16 +6,14 @@ const data = require('../data');
 
 // The serviceName is the api service directory name, such as "api", "api-forms", etc.
 const loadCoreModules = (serviceName) => {
-
-	const folderName = data.isSimpleMode ? '' : '/' + serviceName;
-	const folderPath = data.apiServicesRoot + folderName;
+	const apiServiceRoot = data.apiServicesRoot[serviceName];
 
 	const coreModules = {};
 	const coreModuleNames = ['aha', 'api', 'biz'];
 	let defineJsFilename;
 
 	coreModuleNames.forEach(coreModuleName => {
-		const coreFolderPath = path.resolve(folderPath + '/' + coreModuleName);
+		const coreFolderPath = path.resolve(apiServiceRoot + '/' + coreModuleName);
 
 		// There is .../aha or .../api or .../biz directory
 		if (fs.existsSync(coreFolderPath)) {
