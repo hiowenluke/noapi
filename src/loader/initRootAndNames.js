@@ -50,6 +50,7 @@ const fn = () => {
 
 	let apiServicesRoot;
 	let serviceNames = [];
+	let isSimpleMode;
 
 	// Automatically search the api services directory
 	// in current directory and parent directory
@@ -77,13 +78,13 @@ const fn = () => {
 	// the current web service directory is the api service directory,
 	// then set the service name to "default".
 	if (!serviceNames.length) {
-		data.isSimpleMode = true;
+		isSimpleMode = true;
 		apiServicesRoot = webServiceRoot;
 		serviceNames = ['default'];
 	}
 	else
 	if (serviceNames.length === 1) {
-		data.isSimpleMode = true;
+		isSimpleMode = true;
 
 		const serviceName = serviceNames[0];
 		const reg = new RegExp('/' + serviceName + '$');
@@ -94,7 +95,7 @@ const fn = () => {
 		serviceNames = [serviceName];
 	}
 	else {
-		data.isSimpleMode = false;
+		isSimpleMode = false;
 	}
 
 	data.apiServicesRoot = apiServicesRoot;
@@ -108,6 +109,9 @@ const fn = () => {
 		data.sysNames.push(sysName);
 		data.serviceSysNames[serviceName] = sysName;
 	});
+
+	data.isSimpleMode = isSimpleMode;
+	data.serviceNames = serviceNames; // ["api", "api-xxx", ...]
 };
 
 module.exports = fn;
