@@ -113,9 +113,18 @@ const data = {
 		},
 	},
 
-
-		api: {
+	// The demo of data.bizParams (the top level key is sysName)
+	bizParams: {
+		default: {
+			'/bill/form/crud': [ 'query' ],
 		},
 
+		api: {
+			// ...
+		},
+
+		forms: {
+			// ...
+		},
 	}
 };

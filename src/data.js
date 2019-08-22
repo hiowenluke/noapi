@@ -80,6 +80,7 @@ const me = {
 
 	core: {/*sysName*/}, // {default: {aha, api, biz}} // See "data_demo.js" to learn more
 	defineJs: {/*sysName*/}, // {default: {filename, api, io, test}} // See "data_demo.js" to learn more
+	bizParams: {/*sysName*/}, // {default: {"/bill/form/crud": ["query"]}}
 
 	assignRules: [], // The rules of assigning
 
