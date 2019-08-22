@@ -1,4 +1,4 @@
 
 // For test
-const server = require('../../..')();
+const server = require('../../noapi')();
 module.exports = server;

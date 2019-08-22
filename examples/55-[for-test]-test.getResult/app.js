@@ -1,4 +1,4 @@
 
 // Exports server for testing
-const {server} = require('../..')();
+const {server} = require('../noapi')();
 module.exports = server;

@@ -1,5 +1,5 @@
 
-const noapi = require('../..');
+const noapi = require('../noapi');
 
 const options = {
 
