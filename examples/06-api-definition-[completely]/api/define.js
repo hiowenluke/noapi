@@ -274,7 +274,7 @@ const me = [
 	//
 	// 5. An api with multiple sets of test info
 	//
-	// See "57-[for-test]-multiple-test-cases-for-one-api" for more details.
+	// See "57-[test]-multiple-test-cases-for-one-api" for more details.
 	//
 	// /////////////////////////////////////////////
 	{

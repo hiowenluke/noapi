@@ -9,10 +9,10 @@ const options = {
 	// See "08-public" for more details
 	public: './web',
 
-	// See "14-call-the-api-which-is-in-other-api-services-via-assign-rules" for more details
+	// See "23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules" for more details
 	assignRules: [],
 
-	// See "16-[for-all-api-services]-preprocess-query-via-power-function" for more details
+	// See "25-[multi]-[for-all-api-services]-preprocess-query-via-power-function" for more details
 	power() {},
 };
 
