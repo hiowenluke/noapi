@@ -78,8 +78,8 @@ const me = {
 	sysNames: [], // ["forms", "erp", "mms"] // Without prefix "api-"
 	serviceSysNames: {}, // {"api-forms": "forms", "api-erp": "erp", "api-mms": "mms"} // For getting sysName by serviceName
 
-	core: {}, // {aha, api, biz} // See "data_demo.js" to learn more
-	defineJs: {}, // {default: {filename, api, io, test}} // See "data_demo.js" to learn more
+	core: {/*sysName*/}, // {default: {aha, api, biz}} // See "data_demo.js" to learn more
+	defineJs: {/*sysName*/}, // {default: {filename, api, io, test}} // See "data_demo.js" to learn more
 
 	assignRules: [], // The rules of assigning
 
