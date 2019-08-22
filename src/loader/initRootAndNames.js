@@ -1,8 +1,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const data = require('../../data');
-const lib = require('../../__lib');
+const data = require('../data');
+const lib = require('../__lib');
 
 const getApiServiceNames = (root) => {
 	const serviceNames = [];

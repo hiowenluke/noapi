@@ -17,9 +17,6 @@ const fn = () => {
 	data.global.api = {};
 	data.global.api.do = transfer;
 
-	me.initRootAndNames();
-	me.loadCoreModules();
-
 	// Load /api/define.js (if exists)
 	define.init();
 

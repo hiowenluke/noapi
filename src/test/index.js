@@ -4,7 +4,7 @@ const config = require('./config');
 
 const createDescribes = require('./createDescribes');
 const request = require('./createTestIt/request');
-const apiInit = require('../api/init');
+const noapi = require('kdo')('..');
 
 /** @name me.test */
 const fn = (userConfig) => {
@@ -12,8 +12,10 @@ const fn = (userConfig) => {
 	// Load user custom config file and apply it
 	config.applyUserConfig(userConfig);
 
-	// Load api services for testing
-	apiInit();
+	// Init noapi
+	noapi.loader.init();
+	noapi.api.init();
+	noapi.biz.init();
 
 	// Waiting for server ready when starting test
 	request.init();

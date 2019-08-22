@@ -10,6 +10,8 @@ const createNoapiDo = () => {
 
 const noapi = (options = {}) => {
 	me.data.init(caller(), options);
+
+	me.loader.init();
 	me.api.init();
 	me.biz.init();
 
