@@ -6,7 +6,7 @@ const options = {
 	host: 'localhost',
 	port: '9000',
 
-	// See "14-set-public-folder" for more details
+	// See "15-set-public-folder" for more details
 	public: './web',
 
 	// See "23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules" for more details
