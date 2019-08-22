@@ -1,4 +1,5 @@
 
+const me = require('kdo')();
 const bizDo = require('../do');
 const data = require('../../data');
 
@@ -15,6 +16,8 @@ const fn = () => {
 	// Use data.global.biz instead of global.biz in noapi to improve performance.
 	data.global.biz = {};
 	data.global.biz.do = bizDo;
+
+	me.parseParams();
 };
 
 module.exports = fn;
