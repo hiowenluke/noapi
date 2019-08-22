@@ -4,7 +4,6 @@ const fn = async (query) => {
 		return {error: 'The formname must be employee'};
 	}
 	else {
-		// do something
 		return {formname: query.formname};
 	}
 };
