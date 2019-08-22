@@ -4,6 +4,25 @@ const me = {
 
 	// "/bill/form/crud" => {bill: {form: crud: {}}}
 	parseApiPathToObject(apiPath) {
+	// {bill: {form: {crud: {}}}} => "/bill/form/crud"
+	objectToApiPaths(obj, path = '', arr = []) {
+		Object.keys(obj).forEach(key => {
+			const o = obj[key];
+			const subPath = path + '/' + key;
+
+			if (Object.keys(o).length === 0) {
+				arr.push(subPath);
+			}
+			else {
+				if (typeof o === 'object') {
+					me.objectToApiPaths(o, subPath, arr);
+				}
+			}
+		});
+
+		return arr;
+	},
+
 		const obj = {};
 		let parent = obj;
 
