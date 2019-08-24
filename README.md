@@ -2,9 +2,9 @@
 
 # Noapi
 
-The easiest framework for API app, [create api app in 5 min](https://github.com/hiowenluke/create-api-app-in-5-min). You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc. 
+The easiest framework for [Node.js]((https://nodejs.org)) API application, [create one in under 5 minutes](https://github.com/hiowenluke/create-api-app-in-5-min). You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc. 
 
-Noapi is based on [Node](https://nodejs.org) and [Express](https://expressjs.com/), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi needs Node 7.6+ for async/await.
+Noapi is based on [Express](https://expressjs.com), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi needs Node 7.6+ for async/await.
 
 
 
