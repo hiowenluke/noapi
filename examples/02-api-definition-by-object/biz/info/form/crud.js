@@ -2,12 +2,12 @@
 const fn = async (query) => {
 	let isShowBom = false;
 
-	if (query.formname === 'goods') {
+	if (query.formName === 'goods') {
 		isShowBom = true;
 	}
 
 	return {
-		formname: query.formname,
+		formName: query.formName,
 		isShowBom: isShowBom,
 	};
 };

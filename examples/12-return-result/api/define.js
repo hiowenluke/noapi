@@ -3,20 +3,20 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=employee',
+		url: 'http://localhost:3000/bill/form/crud?formName=employee',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "employee"
+				"formName": "employee"
 			}
 		}
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": false,
-			"error": "The formname must be employee"
+			"error": "The formName must be employee"
 		}
 	},
 

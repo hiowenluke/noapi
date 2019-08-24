@@ -1,6 +1,6 @@
 
-const fn = async (query) => {
-	return {goodsid: query.goodsid};
+const fn = async (goodsid) => {
+	return {goodsid};
 };
 
 module.exports = fn;

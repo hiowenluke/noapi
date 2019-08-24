@@ -6,7 +6,7 @@
 	For example:
 
 	Visit the test url:
-		http://localhost:3000/bill/form/crud?formname=trader
+		http://localhost:3000/bill/form/crud?formName=trader
 
 	You will see:
 		1. The browser is waiting for response from server;

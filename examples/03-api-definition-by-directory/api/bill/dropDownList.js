@@ -1,6 +1,6 @@
 
 const me = {
-	url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
+	url: 'http://localhost:3000/bill/dropdownlist?formName=paymethod',
 	result: {
 		"success": true,
 		"data": [

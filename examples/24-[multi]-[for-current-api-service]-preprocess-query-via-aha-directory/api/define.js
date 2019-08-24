@@ -3,21 +3,21 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader",
+				"formName": "trader",
 				"tableName": "tbl_trader",
 				"billName": "trader",
-				"isBill": true,
-				"isInfo": false
+				"isbill": true,
+				"isinfo": false
 			}
 		}
 	},
 
 	{
-		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
+		url: 'http://localhost:3000/bill/dropdownlist?formName=paymethod',
 		result: {
 			"success": true,
 			"data": [
@@ -28,37 +28,37 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=goods',
+		url: 'http://localhost:3000/info/form/crud?formName=goods',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "goods",
+				"formName": "goods",
 				"tableName": "tbl_goods",
 				"infoName": "goods",
-				"isBill": false,
-				"isInfo": true,
+				"isbill": false,
+				"isinfo": true,
 				"isShowBom": true
 			}
 		}
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=employee',
+		url: 'http://localhost:3000/info/form/crud?formName=employee',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "employee",
+				"formName": "employee",
 				"tableName": "tbl_employee",
 				"infoName": "employee",
-				"isBill": false,
-				"isInfo": true,
+				"isbill": false,
+				"isinfo": true,
 				"isShowBom": false
 			}
 		}
 	},
 
 	{
-		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
+		url: 'http://localhost:3000/info/dropdownlist?formName=employee',
 		result: {
 			"success": true,
 			"data": [

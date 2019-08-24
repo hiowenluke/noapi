@@ -14,24 +14,24 @@
 
 
 const me = [
-	'http://localhost:3000/bill/form/crud?formname=trader',
-	'http://localhost:3000/info/form/crud?formname=goods',
-	'http://localhost:3000/info/form/crud?formname=employee',
+	'http://localhost:3000/bill/form/crud?formName=trader',
+	'http://localhost:3000/info/form/crud?formName=goods',
+	'http://localhost:3000/info/form/crud?formName=employee',
 ];
 
 // Equal to:
 //		const me = [
 //
 //			{
-//				url: 'http://localhost:3000/bill/form/crud?formname=trader',
+//				url: 'http://localhost:3000/bill/form/crud?formName=trader',
 //			},
 //
 //			{
-//				url: 'http://localhost:3000/info/form/crud?formname=goods',
+//				url: 'http://localhost:3000/info/form/crud?formName=goods',
 //			},
 //
 //			{
-//				url: 'http://localhost:3000/info/form/crud?formname=employee',
+//				url: 'http://localhost:3000/info/form/crud?formName=employee',
 //			},
 //
 //		];

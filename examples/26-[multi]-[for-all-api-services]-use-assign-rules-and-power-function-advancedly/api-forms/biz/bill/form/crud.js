@@ -1,6 +1,6 @@
 
 const fn = async (query) => {
-	if (query.formname === 'abc') {
+	if (query.formName === 'abc') {
 		return {
 			str: query.str,
 			msg: 'do something for form abc by api-forms'
@@ -9,7 +9,7 @@ const fn = async (query) => {
 
 	return {
 		str: query.str,
-		formname: query.formname,
+		formName: query.formName,
 	};
 };
 

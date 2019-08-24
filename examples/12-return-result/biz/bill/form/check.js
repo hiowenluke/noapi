@@ -1,8 +1,8 @@
 
-const fn = async (query) => {
+const fn = async (billid, act) => {
 	return {
-		billid: query.billid,
-		checked: query.act === 'check' ? true : query.act === 'uncheck' ? false : 'unknown',
+		billid,
+		checked: act === 'check' ? true : act === 'uncheck' ? false : 'unknown',
 	};
 };
 

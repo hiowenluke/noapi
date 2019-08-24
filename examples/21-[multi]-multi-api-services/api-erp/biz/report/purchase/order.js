@@ -1,6 +1,6 @@
 
-const fn = async (query) => {
-	return {billid: query.billid};
+const fn = async (billid) => {
+	return {billid};
 };
 
 module.exports = fn;

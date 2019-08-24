@@ -1,6 +1,6 @@
 
 const fn = ({query}) => {
-	if (!query.isBill) return;
+	if (!query.isbill) return;
 
 	query.billname = query.formname;
 };

@@ -1,12 +1,12 @@
 
 const fn = async (query) => {
 	return {
-		formname: query.formname,
+		formName: query.formname,
 		tableName: query.tablename,
 		billName: query.billname,
 		infoName: query.infoname,
-		isBill: query.isBill,
-		isInfo: query.isInfo,
+		isbill: query.isbill,
+		isinfo: query.isinfo,
 	};
 };
 

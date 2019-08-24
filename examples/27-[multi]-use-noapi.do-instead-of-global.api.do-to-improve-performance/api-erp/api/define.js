@@ -8,7 +8,7 @@ const me = [
 			"success": true,
 			"data": {
 				"billid": "1",
-				"formname": "trader"
+				"formName": "trader"
 			}
 		}
 	}

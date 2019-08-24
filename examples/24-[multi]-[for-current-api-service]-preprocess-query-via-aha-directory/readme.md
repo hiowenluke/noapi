@@ -1,7 +1,7 @@
 
 Sometimes we need to preprocess the apis of different paths, for example:
 
-* Add lowercase for all query parameters. E.g., add query.formname for query.formName;
+* Add lowercase for all query parameters. E.g., query.formname for query.formName;
 * If the api path is starting with "/bill/*", set query.isbill to true;
 * If the api path is starting with "/info/*", set query.infoname to some string;
 

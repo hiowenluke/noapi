@@ -44,14 +44,14 @@ const me = [
 	{
 		url: 'http://localhost:3000/bill/form/crud',
 		params: {
-			formname: 'trader',
+			formName: 'trader',
 		},
 
 		// Equal to:
 		// 		{
-		// 			url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		// 			url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		// 			params: {
-		// 				formname: 'trader',
+		// 				formName: 'trader',
 		// 			},
 		// 		},
 	},
@@ -67,21 +67,21 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		},
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		},
 
@@ -90,7 +90,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 		// If the result property is large, save it to a json file in directory /test/comparison.
 		// In this case, just open "/test/comparison/bill.form.crud.json" to learn more.
@@ -106,31 +106,31 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		test: {
-			formname: 'trader',
+			formName: 'trader',
 		},
 
 		// Equal to:
 		// 		test: {
 		// 			verify: {
-		// 				formname: 'trader',
+		// 				formName: 'trader',
 		// 			}
 		// 		}
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
-		test: `"formname":"trader"`,
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
+		test: `"formName":"trader"`,
 
 		// Equal to:
 		// 		test: {
-		// 			verify: `"formname":"trader"`,
+		// 			verify: `"formName":"trader"`,
 		// 		}
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		test: /(trader)|(goodsid)/,
 
 		// Equal to:
@@ -140,7 +140,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 		// Verify the value of result.success returns from server
 		test: true,
@@ -152,33 +152,33 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		test(result, resultText) {
 
 			// Find the feature string in the result text
-			return resultText.indexOf(`"formname":"trader"`) >= 0;
+			return resultText.indexOf(`"formName":"trader"`) >= 0;
 		},
 
 		// Equal to:
 		// 		test: {
 		// 			verify(result, resultText) {
-		// 				return resultText.indexOf(`"formname":"trader"`) >= 0;
+		// 				return resultText.indexOf(`"formName":"trader"`) >= 0;
 		// 			}
 		// 		},
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		test(result, resultText) {
 
 			// Find the specified values in the result object
-			return result.data.formname === 'trader';
+			return result.data.formName === 'trader';
 		},
 
 		// Equal to:
 		// 		test: {
 		// 			verify(result, resultText) {
-		// 				return result.data.formname === 'trader';
+		// 				return result.data.formName === 'trader';
 		// 			}
 		// 		}
 	},
@@ -212,7 +212,7 @@ const me = [
 		title: 'The title of this api',
 
 		// The demo url for this api
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 
 		// .............................................
@@ -223,14 +223,14 @@ const me = [
 
 		// Input (send it to server). If omitted, parse from url.
 		params: {
-			formname: 'trader',
+			formName: 'trader',
 		},
 
 		// Output (get it from server). It can be omitted if not required for testing.
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		},
 
@@ -246,7 +246,7 @@ const me = [
 			beforeDo: [
 				'/bill/form/crud', // by api
 				'Bill - Form - Crud', // by title
-				'http://localhost:3000/bill/form/crud?formname=trader', // by url
+				'http://localhost:3000/bill/form/crud?formName=trader', // by url
 			],
 
 			// The test url. If omitted, use the demo url.
@@ -265,7 +265,7 @@ const me = [
 
 			// See above section "4. With test ..." for the usage of verify
 			verify(result, resultText) {
-				return resultText.indexOf(`"formname":"trader"`) >= 0;
+				return resultText.indexOf(`"formName":"trader"`) >= 0;
 			}
 		}
 	},
@@ -286,7 +286,7 @@ const me = [
 
 		api: '/bill/form/crud',
 		title: 'Bill - Form - Crud',
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 
 		// .............................................

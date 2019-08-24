@@ -4,7 +4,7 @@
 
 	Try the test urls:
 		http://localhost:3000/v1/test
-		http://localhost:3000/bill/form/crud?formname=trader
+		http://localhost:3000/bill/form/crud?formName=trader
  * */
 
 // The app is an express app.

@@ -1,6 +1,6 @@
 
 const me = {
-	url: 'http://localhost:3000/info/dropdownlist?formname=employee',
+	url: 'http://localhost:3000/info/dropdownlist?formName=employee',
 	result: {
 		"success": true,
 		"data": [

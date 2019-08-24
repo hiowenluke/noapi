@@ -1,6 +1,6 @@
 
 const fn = ({query}) => {
-	if (!query.isInfo) return;
+	if (!query.isinfo) return;
 
 	query.infoname = query.formname;
 };

@@ -3,12 +3,12 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/forms:/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/forms:/bill/form/crud?formName=trader',
 		result: {
 			"success": true,
 			"data": {
 				"str": "abcd",
-				"formname": "trader"
+				"formName": "trader"
 			}
 		}
 	}

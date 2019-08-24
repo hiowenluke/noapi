@@ -11,11 +11,11 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		},
 
@@ -24,7 +24,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
+		url: 'http://localhost:3000/info/dropdownlist?formName=employee',
 		result: {
 			"success": true,
 			"data": [
@@ -39,7 +39,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 		// If the result property is large, save it to a json file in directory /test/comparison.
 		// In this case, just open "/test/comparison/bill.form.crud.json" to learn more.
@@ -55,33 +55,33 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=employee',
+		url: 'http://localhost:3000/info/form/crud?formName=employee',
 
-		// The Object of the result returned from server must has "formname" property, and it's value must be "trader".
+		// The Object of the result returned from server must has "formName" property, and it's value must be "trader".
 		test: {
-			formname: 'employee',
+			formName: 'employee',
 		},
 
 		// Equal to:
 		// 		test: {
 		// 			verify: {
-		// 				formname: 'trader',
+		// 				formName: 'trader',
 		// 			}
 		// 		}
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
-		test: `"formname":"trader"`,
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
+		test: `"formName":"trader"`,
 
 		// Equal to:
 		// 		test: {
-		// 			verify: `"formname":"trader"`,
+		// 			verify: `"formName":"trader"`,
 		// 		}
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		test: /(trader)|(goodsid)/,
 
 		// Equal to:
@@ -91,7 +91,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 		// Verify the value of result.success returns from server
 		test: true,
@@ -103,7 +103,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
+		url: 'http://localhost:3000/bill/dropdownlist?formName=paymethod',
 		result: {
 			"success": true,
 			"data": [
@@ -122,11 +122,11 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=goods',
+		url: 'http://localhost:3000/info/form/crud?formName=goods',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "goods",
+				"formName": "goods",
 				"isShowBom": true,
 			}
 		},
@@ -134,7 +134,7 @@ const me = [
 		test(result, resultText) {
 
 			// Find the specified values in the result object
-			return result.data.formname === 'goods';
+			return result.data.formName === 'goods';
 		},
 	},
 ];

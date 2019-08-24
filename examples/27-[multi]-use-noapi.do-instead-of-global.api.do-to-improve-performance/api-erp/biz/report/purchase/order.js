@@ -3,10 +3,10 @@
 const noapi = require('../../../../../noapi');
 
 const fn = async (query) => {
-	const formResult = await noapi.do('forms:/bill/form/crud?formname=trader', query);
+	const formResult = await noapi.do('forms:/bill/form/crud?formName=trader', query);
 	return {
 		billid: query.billid,
-		formname: formResult.formname,
+		formName: formResult.formName,
 	};
 };
 

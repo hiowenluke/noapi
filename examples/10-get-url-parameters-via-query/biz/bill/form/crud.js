@@ -1,10 +1,10 @@
 
 // Note that the name of parameter must be "query"
 const fn = async (query) => {
-	const formname = query.formname;
+	const formName = query.formName;
 	const obj = JSON.parse(query.obj);
 	const arr = JSON.parse(query.arr);
-	return {formname, obj, arr};
+	return {formName, obj, arr};
 };
 
 module.exports = fn;

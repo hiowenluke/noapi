@@ -1,6 +1,6 @@
 
 const me = {
-	url: 'http://localhost:3000/bill/list/getData?formname=trader',
+	url: 'http://localhost:3000/bill/list/getData?formName=trader',
 	result: {
 		"success": true,
 		"data": [

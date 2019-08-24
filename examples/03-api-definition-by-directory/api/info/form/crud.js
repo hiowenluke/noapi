@@ -1,21 +1,21 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=goods',
+		url: 'http://localhost:3000/info/form/crud?formName=goods',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "goods",
+				"formName": "goods",
 				"isShowBom": true
 			}
 		}
 	},
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=employee',
+		url: 'http://localhost:3000/info/form/crud?formName=employee',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "employee",
+				"formName": "employee",
 				"isShowBom": false
 			}
 		}

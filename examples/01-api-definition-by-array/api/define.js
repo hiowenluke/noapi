@@ -18,13 +18,13 @@
 const me = [
 	{
 		// The demo url for this api
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 		// The expected result which will be returned from server in testing
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		}
 	},
@@ -52,7 +52,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/form/getFields?formname=trader',
+		url: 'http://localhost:3000/bill/form/getFields?formName=trader',
 		result: {
 			"success": true,
 			"data": [
@@ -69,7 +69,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/list/getData?formname=trader',
+		url: 'http://localhost:3000/bill/list/getData?formName=trader',
 		result: {
 			"success": true,
 			"data": [
@@ -86,7 +86,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/list/getFields?formname=trader',
+		url: 'http://localhost:3000/bill/list/getFields?formName=trader',
 		result: {
 			"success": true,
 			"data": [
@@ -103,7 +103,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
+		url: 'http://localhost:3000/bill/dropdownlist?formName=paymethod',
 		result: {
 			"success": true,
 			"data": [
@@ -114,18 +114,18 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=goods',
+		url: 'http://localhost:3000/info/form/crud?formName=goods',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "goods",
+				"formName": "goods",
 				"isShowBom": true
 			}
 		}
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/getFields?formname=goods',
+		url: 'http://localhost:3000/info/form/getFields?formName=goods',
 		result: {
 			"success": true,
 			"data": [
@@ -142,18 +142,18 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=employee',
+		url: 'http://localhost:3000/info/form/crud?formName=employee',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "employee",
+				"formName": "employee",
 				"isShowBom": false
 			}
 		}
 	},
 
 	{
-		url: 'http://localhost:3000/info/list/getData?formname=goods',
+		url: 'http://localhost:3000/info/list/getData?formName=goods',
 		result: {
 			"success": true,
 			"data": [
@@ -170,7 +170,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/list/getFields?formname=goods',
+		url: 'http://localhost:3000/info/list/getFields?formName=goods',
 		result: {
 			"success": true,
 			"data": [
@@ -187,7 +187,7 @@ const me = [
 	},
 
 	{
-		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
+		url: 'http://localhost:3000/info/dropdownlist?formName=employee',
 		result: {
 			"success": true,
 			"data": [

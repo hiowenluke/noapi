@@ -3,7 +3,7 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/erp:/report/purchase/order?billid=1&formname=abc',
+		url: 'http://localhost:3000/erp:/report/purchase/order?billid=1&formName=abc',
 		result: {
 			"success": true,
 			"data": {

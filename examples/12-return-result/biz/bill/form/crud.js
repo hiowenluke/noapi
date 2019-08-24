@@ -1,10 +1,10 @@
 
-const fn = async (query) => {
-	if (query.formname !== 'employee') {
-		return {error: 'The formname must be employee'};
+const fn = async (formName) => {
+	if (formName !== 'employee') {
+		return {error: 'The formName must be employee'};
 	}
 	else {
-		return {formname: query.formname};
+		return {formName};
 	}
 };
 

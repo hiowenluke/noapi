@@ -3,8 +3,8 @@
 // to specify the test cases to run, the title property will be used:
 
 //		1. Automatically generated from url, e.g.:
-//				If the url is "http://localhost:3000/bill/form/crud?formname=trader",
-//				then the title will be "Bill - Form - Crud // formname=trader".
+//				If the url is "http://localhost:3000/bill/form/crud?formName=trader",
+//				then the title will be "Bill - Form - Crud // formName=trader".
 
 //		2. Specified via a string such as 'ha ha'.
 
@@ -14,11 +14,11 @@
 
 const me = [
 	{
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		},
 
@@ -29,7 +29,7 @@ const me = [
 	{
 		title: 'ha ha',
 
-		url: 'http://localhost:3000/bill/dropdownlist?formname=paymethod',
+		url: 'http://localhost:3000/bill/dropdownlist?formName=paymethod',
 		result: {
 			"success": true,
 			"data": [
@@ -49,11 +49,11 @@ const me = [
 
 	{
 		title: '{apiTitle} // for goods',
-		url: 'http://localhost:3000/info/form/crud?formname=goods',
+		url: 'http://localhost:3000/info/form/crud?formName=goods',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "goods",
+				"formName": "goods",
 				"isShowBom": true,
 			}
 		},
@@ -61,28 +61,28 @@ const me = [
 		test(result, resultText) {
 
 			// Find the specified values in the result object
-			return result.data.formname === 'goods';
+			return result.data.formName === 'goods';
 		},
 	},
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formname=employee',
+		url: 'http://localhost:3000/info/form/crud?formName=employee',
 		result: {
 			"success": true,
 			"data": {
-				"formname": "employee",
+				"formName": "employee",
 				"isShowBom": false,
 			}
 		},
 
-		// The Object of the result returned from server must has "formname" property, and it's value must be "trader".
+		// The Object of the result returned from server must has "formName" property, and it's value must be "trader".
 		test: {
-			formname: 'employee',
+			formName: 'employee',
 		},
 	},
 
 	{
-		url: 'http://localhost:3000/info/dropdownlist?formname=employee',
+		url: 'http://localhost:3000/info/dropdownlist?formName=employee',
 		result: {
 			"success": true,
 			"data": [

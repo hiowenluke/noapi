@@ -1,6 +1,6 @@
 
 const me = {
-	url: 'http://localhost:3000/info/list/getFields?formname=goods',
+	url: 'http://localhost:3000/info/list/getFields?formName=goods',
 	result: {
 		"success": true,
 		"data": [

@@ -10,13 +10,13 @@ const me =
 
 	{
 		// The demo url for this api
-		url: 'http://localhost:3000/bill/form/crud?formname=trader',
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
 		// The expected result which will be returned from server in testing
 		result: {
 			"success": true,
 			"data": {
-				"formname": "trader"
+				"formName": "trader"
 			}
 		}
 	};
