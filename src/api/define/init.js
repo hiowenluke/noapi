@@ -6,8 +6,8 @@ const me = require('kdo')();
 const fn = () => {
 
 	data.isTestMode ?
-		me.parseDefineJs.forTest() :
-		me.parseDefineJs.forRun()
+		me.parseDefineJs.forTesting() :
+		me.parseDefineJs.forRunning()
 	;
 
 	me.loadApisFromDefine();

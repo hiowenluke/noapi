@@ -185,12 +185,12 @@ const parseDefineJs = {
 const me = {
 
 	// defineJs: {api}
-	forRun() {
+	forRunning() {
 		parseDefineJs.forApi();
 	},
 
 	// defineJs: {api, tests}
-	forTest() {
+	forTesting() {
 		parseDefineJs.forApi();
 		parseDefineJs.forTests();
 	},
