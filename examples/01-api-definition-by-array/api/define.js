@@ -42,7 +42,7 @@ const me = [
 		url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
 
 		// Noapi will automatically parses the api and params from the demo url,
-		// so the "api" property and "params" property are omitted in this case.
+		// so the "api" property and "params" property are omitted in this case, like below:
 		// 		api: '/bill/form/check',
 		// 		params: {
 		//			billid: 123,
