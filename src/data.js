@@ -72,6 +72,7 @@ const me = {
 		serverName: 'default',
 		host: 'localhost',
 		port: '3000',
+		protocol: 'http',
 	},
 
 	serviceNames: [], // ["api-forms", "api-erp", "api-mms"]
