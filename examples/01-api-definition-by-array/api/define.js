@@ -16,6 +16,8 @@
 
 
 const me = [
+
+	// Define an api
 	{
 		// The api
 		api: '/bill/form/crud',
@@ -39,24 +41,19 @@ const me = [
 		}
 	},
 
+	// Define another api
 	{
 		// You can just specify a demo url including the api and parameters,
-		// then click it in your editor and view the result in your browser.
-		url: 'http://localhost:3000/bill/form/crud?formName=trader',
+		// click it in your editor and view the result in your browser, so convenient.
+		url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
 
 		// Noapi will automatically parses the api and params from the demo url,
 		// so the "api" property and "params" property are omitted in this case.
 
-		result: {
-			"success": true,
-			"data": {
-				"formName": "trader"
-			}
-		}
-	},
+		// 'Cause the demo url is just a demo, so you can omit "http://localhost:3000",
+		// but that will loses the meaning of the demo and the convenience mentioned above.
 
-	{
-		url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
+
 		result: {
 			"success": true,
 			"data": {
@@ -66,6 +63,7 @@ const me = [
 		}
 	},
 
+	// Define more apis
 	{
 		url: 'http://localhost:3000/bill/form/check?billid=123&act=uncheck',
 		result: {
