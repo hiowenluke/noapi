@@ -19,23 +19,17 @@ const me = [
 
 	// Define an api
 	{
-		// The api
 		api: '/bill/form/crud',
 
 		// The parameters which this api accepted.
-		// "formName" is the name of a parameter, "trader" is a demo value of it.
 		params: {
-			formName: 'trader',
+			formName: 'trader', // "trader" is a demo value
 		},
 
 		// The expected result which will be returned from server in testing.
 		result: {
-
-			// The state of the result
-			"success": true,
-
-			// The data of the result
-			"data": {
+			"success": true, // The state of the result
+			"data": {		 // The data of the result
 				"formName": "trader"
 			}
 		}
@@ -49,6 +43,11 @@ const me = [
 
 		// Noapi will automatically parses the api and params from the demo url,
 		// so the "api" property and "params" property are omitted in this case.
+		// 		api: '/bill/form/check',
+		// 		params: {
+		//			billid: 123,
+		//			act: 'check'
+		// 		}
 
 		// 'Cause the demo url is just a demo, so you can omit "http://localhost:3000",
 		// but that will loses the meaning of the demo and the convenience mentioned above.
