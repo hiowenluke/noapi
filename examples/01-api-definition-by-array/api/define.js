@@ -17,10 +17,36 @@
 
 const me = [
 	{
-		// The demo url for this api
+		// The api
+		api: '/bill/form/crud',
+
+		// The parameters which this api accepted.
+		// "formName" is the name of a parameter, "trader" is a demo value of it.
+		params: {
+			formName: 'trader',
+		},
+
+		// The expected result which will be returned from server in testing.
+		result: {
+
+			// The state of the result
+			"success": true,
+
+			// The data of the result
+			"data": {
+				"formName": "trader"
+			}
+		}
+	},
+
+	{
+		// You can just specify a demo url including the api and parameters,
+		// then click it in your editor and view the result in your browser.
 		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
-		// The expected result which will be returned from server in testing
+		// Noapi will automatically parses the api and params from the demo url,
+		// so the "api" property and "params" property are omitted in this case.
+
 		result: {
 			"success": true,
 			"data": {
