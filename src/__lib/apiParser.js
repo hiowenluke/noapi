@@ -1,10 +1,25 @@
 
+const getValidKeys = (obj) => {
+	let keys = Object.keys(obj);
+	if (keys.length === 0) {
+		keys = Object.keys(obj.__proto__);
+	}
+
+	if (keys.length === 0) return;
+	if (keys.indexOf('constructor') >= 0) return;
+
+	return keys;
+};
+
 /** @name lib.apiParser */
 const me = {
 
 	// {bill: {form: {crud: {}}}} => "/bill/form/crud"
 	objectToApiPaths(obj, path = '', arr = []) {
-		Object.keys(obj).forEach(key => {
+		const keys = getValidKeys(obj);
+		if (!keys) return arr;
+
+		keys.forEach(key => {
 			const o = obj[key];
 			const subPath = path + '/' + key;
 
