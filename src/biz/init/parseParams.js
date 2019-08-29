@@ -16,18 +16,20 @@ const parseBiz = (serviceName) => {
 	const apiServiceRoot = data.apiServicesRoot[serviceName];
 	const sysName = data.serviceSysNames[serviceName];
 
+	const bizParams = {};
 	const biz = data.core[sysName].biz;
 
-	// {bill: form: crud: {}} => "/bill/form/crud"
-	const bizPaths = lib.apiParser.objectToApiPaths(biz);
+	if (biz) {
+		// {bill: form: crud: {}} => "/bill/form/crud"
+		const bizPaths = lib.apiParser.objectToApiPaths(biz);
 
-	const bizParams = {};
-	bizPaths.forEach(bizPath => {
-		const bizFile = require(apiServiceRoot + '/biz' + bizPath);
-		const content = bizFile.toString(); // "(a, b = '', c) => {}"
-		const params = parseParams(content);
-		bizParams[bizPath] = params;
-	});
+		bizPaths.forEach(bizPath => {
+			const bizFile = require(apiServiceRoot + '/biz' + bizPath);
+			const content = bizFile.toString(); // "(a, b = '', c) => {}"
+			const params = parseParams(content);
+			bizParams[bizPath] = params;
+		});
+	}
 
 	data.bizParams[sysName] = bizParams;
 };
