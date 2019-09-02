@@ -69,11 +69,11 @@ const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
 				continue;
 			}
 
-			if (!config.isValidTestCase(apiInfo.title)) {
+			if (!config.isValidTestCase(apiInfo)) {
 				continue;
 			}
 
-			if (config.isIgnoreTest(apiInfo.title)) {
+			if (config.isIgnoreTest(apiInfo)) {
 				continue;
 			}
 

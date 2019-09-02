@@ -3,15 +3,16 @@ const fs = require('fs');
 const data = require('../data');
 
 const tools = {
-	applyRuleArray(rules, apiTitle) {
+	applyRuleArray(rules, apiInfo) {
 		for (let i = 0; i < rules.length; i ++) {
 			const rule = rules[i];
-			if (rule === apiTitle) return true;
+			const {api, title} = apiInfo;
+			if (rule === api || rule === title) return true;
 
 			// Process the * at the end of rule
 			if (/\*$/.test(rule)) {
 				const testStr = rule.replace(/\*$/, '');
-				if (apiTitle.substr(0, testStr.length) === testStr) return true;
+				if (api.substr(0, testStr.length) === testStr || title.substr(0, testStr.length) === testStr) return true;
 			}
 		}
 
@@ -21,14 +22,16 @@ const tools = {
 
 const me = {
 
-	// Only run test cases with a title of the following values
+	// Only run test cases which the api or title is the following values
 	onlyTests: [
-		// 'Bill - Form - Crud',
+		// '/bill/form/crud', // <- verifying api
+		// 'Bill - Form - Crud', // <- verifying title
 	],
 
-	// Ignore test cases whose title is the following value
+	// Ignore test cases which the api or title is the following values
 	ignoreTests: [
-		// 'Info - Form - Crud // for goods',
+		// '/info/form/crud', // <- verifying api
+		// 'Info - Form - Crud // for goods', // <- verifying title
 	],
 
 	// The timeout of mocha. Equal to:
@@ -64,22 +67,22 @@ const me = {
 		Object.assign(this, userConfig, userConfigFile);
 	},
 
-	isValidTestCase(apiTitle) {
+	isValidTestCase(apiInfo) {
 		const onlyTests = this.onlyTests;
 
 		// If no onlyTests is specified, all test cases are legal
 		if (!onlyTests || !onlyTests.length) return true;
 
-		return tools.applyRuleArray(onlyTests, apiTitle);
+		return tools.applyRuleArray(onlyTests, apiInfo);
 	},
 
-	isIgnoreTest(apiTitle) {
+	isIgnoreTest(apiInfo) {
 		const ignoreTests = this.ignoreTests;
 
 		// If no ignoreTests is specified, all test cases are legal
 		if (!ignoreTests || !ignoreTests.length) return false;
 
-		return tools.applyRuleArray(ignoreTests, apiTitle);
+		return tools.applyRuleArray(ignoreTests, apiInfo);
 	},
 };
 
