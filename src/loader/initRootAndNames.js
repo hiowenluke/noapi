@@ -9,11 +9,15 @@ const getApiServiceNames = (root) => {
 	const folderNames = fs.readdirSync(root);
 	const serviceName = lib.getApiServiceNameFromPath(root);
 
+	// For ".../api", e.g.:
+	// 		01-api-definition-by-array/api
 	if (serviceName === 'api' || serviceName.substr(0, 4) === 'api-') {
 		serviceNames.push(serviceName);
 		return serviceNames;
 	}
 
+	// For ".../api/api", e.g.:
+	//		20-[multi]-seperate-api-and-web-services/api/api
 	folderNames.forEach(folderName => {
 		const folderPath = root + '/' + folderName;
 		if (!fs.statSync(folderPath).isDirectory()) return;
