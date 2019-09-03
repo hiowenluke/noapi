@@ -3,21 +3,20 @@ const config = require('../config');
 const data = require('../../data');
 const createDescribe = require('./createDescribe');
 
-const usedApiPaths = [];
+const usedApis = [];
 
 const doWithRecursive = (apis, path, defineJs) => {
 	Object.keys(apis).forEach(key => {
 		const item = apis[key];
 
 		if (Object.keys(item).length) {
-			const apiPath = path + ' / ' + key;
-			doWithRecursive(item, apiPath, defineJs);
+			doWithRecursive(item, path + ' / ' + key, defineJs);
 		}
 		else {
-			if (usedApiPaths.indexOf(path) >= 0) return;
+			if (usedApis.indexOf(path) >= 0) return;
 
-			createDescribe(path, defineJs, {isOnlyApiPath: true, usedApiPaths});
-			usedApiPaths.push(path);
+			createDescribe(path, defineJs, {isOnlyApi: true, usedApis});
+			usedApis.push(path);
 		}
 	});
 };

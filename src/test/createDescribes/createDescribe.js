@@ -17,25 +17,25 @@ const noTest = (title, url, params) => {
 };
 
 const validator = {
-	isOnlyApiPath: false,
+	isOnlyApi: false,
 	regStartWith: null,
 	regExclude: null,
 
-	init(title, isOnlyApiPath, usedApiPaths = []) {
-		this.isOnlyApiPath = isOnlyApiPath;
-		if (!isOnlyApiPath) return;
+	init(title, isOnlyApi, usedApis = []) {
+		this.isOnlyApi = isOnlyApi;
+		if (!isOnlyApi) return;
 
 		if (title) {
-			const startWithApiPath = this.formatRegStr(title);
-			this.regStartWith = new RegExp('^' + startWithApiPath, 'i');
+			const startWithApi = this.formatRegStr(title);
+			this.regStartWith = new RegExp('^' + startWithApi, 'i');
 		}
 
-		if (usedApiPaths.length) {
-			const excludeApiPaths = usedApiPaths.map(usedApiPath => {
-				return this.formatRegStr(usedApiPath);
+		if (usedApis.length) {
+			const excludeApis = usedApis.map(usedApi => {
+				return this.formatRegStr(usedApi);
 			});
-			const excludeApiPathsStr = '(' + excludeApiPaths.join(')|(') + ')';
-			this.regExclude = new RegExp('^' + excludeApiPathsStr, 'i');
+			const excludeApisStr = '(' + excludeApis.join(')|(') + ')';
+			this.regExclude = new RegExp('^' + excludeApisStr, 'i');
 		}
 	},
 
@@ -47,14 +47,14 @@ const validator = {
 		;
 	},
 
-	check(apiPath) {
-		if (!this.isOnlyApiPath) return true;
-		return this.regStartWith.test(apiPath) && (!this.regExclude || !this.regExclude.test(apiPath));
+	check(api) {
+		if (!this.isOnlyApi) return true;
+		return this.regStartWith.test(api) && (!this.regExclude || !this.regExclude.test(api));
 	}
 };
 
-const fn = (title, defineJs, {isOnlyApiPath, usedApiPaths} = {}) => {
-	validator.init(title, isOnlyApiPath, usedApiPaths);
+const fn = (title, defineJs, {isOnlyApi, usedApis} = {}) => {
+	validator.init(title, isOnlyApi, usedApis);
 
 	const {api, tests} = defineJs;
 	describe(v.titleCase(title), function() {

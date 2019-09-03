@@ -3,7 +3,7 @@ const caller = require('caller');
 const config = require('./config');
 
 const createDescribes = require('./createDescribes');
-const request = require('./createTestIt/request');
+const request = require('./runTestCase/request');
 const noapi = require('kdo')('..');
 
 /** @name me.test */
