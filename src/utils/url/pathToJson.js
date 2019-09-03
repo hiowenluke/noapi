@@ -1,5 +1,5 @@
 
-// The difference with lib.apiParser.apiPathToObject() :
+// The difference with lib.apiParser.apiToObject() :
 // 		the latter only supports parsing of a single path.
 
 // "/bom/form/crud" => {bom: form: crud: {}}
