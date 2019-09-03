@@ -21,7 +21,7 @@ const parseBiz = (serviceName) => {
 
 	if (biz) {
 		// {bill: form: crud: {}} => "/bill/form/crud"
-		const bizPaths = lib.apiParser.objectToApiPaths(biz);
+		const bizPaths = lib.apiParser.objectToApis(biz);
 
 		bizPaths.forEach(bizPath => {
 			const bizFile = require(apiServiceRoot + '/biz' + bizPath);

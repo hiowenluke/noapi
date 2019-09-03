@@ -41,25 +41,25 @@ const getSysApiByApiPath = (pathNodes, sysApis) => {
 };
 
 // -------------------------------------------------------
-// Get api function based on sysName, apiPath, sysApis
+// Get api function based on sysName, api, sysApis
 // -------------------------------------------------------
 // Input:
 // 		sysName = "forms"
-// 		apiPath = "/bill/dropdownlist"
+// 		api = "/bill/dropdownlist"
 // 		sysApis = data.core.forms.api
 
 // Output:
 //		data.core.forms.api.bill.dropDownList
 // -------------------------------------------------------
 // Notice:
-// 		The "dropdownlist" in apiPath is lowercase and can also match to "dropDownList"
+// 		The "dropdownlist" in api is lowercase and can also match to "dropDownList"
 // -------------------------------------------------------
 
 /** @name lib.getSysApiFn */
-const fn = (sysName, apiPath, sysApis) => {
+const fn = (sysName, api, sysApis) => {
 
 	// "/info/dropdownlist/" => ['info', 'dropdownlist']
-	const apiPathNodes = apiPath.replace(/(^\/)|(\/$)/g, '').split('/');
+	const apiPathNodes = api.replace(/(^\/)|(\/$)/g, '').split('/');
 
 	// ['info', 'dropdownlist'] => .info.dropdownlist;
 	const sysApi = getSysApiByApiPath(apiPathNodes, sysApis);

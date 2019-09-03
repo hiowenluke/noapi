@@ -32,7 +32,7 @@ const isEmptyObject = (obj) => {
 	return _.isPlainObject(obj) && Object.keys(obj).length === 0;
 };
 
-const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
+const convertDefinesObjectToArray = (obj, arr = [], api = '') => {
 	Object.keys(obj).forEach(key => {
 		const def = obj[key];
 
@@ -67,7 +67,7 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 			def.forEach(item => {
 
 				// This will replace the {api} in definition.
-				item.api = apiPath + '/' + key;
+				item.api = api + '/' + key;
 				arr.push(item);
 			});
 		}
@@ -87,7 +87,7 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 		if (isApiDefinition(def)) {
 
 			// This will replace the {api} in definition.
-			def.api = apiPath + '/' + key;
+			def.api = api + '/' + key;
 			arr.push(def);
 		}
 
@@ -96,13 +96,13 @@ const convertDefinesObjectToArray = (obj, arr = [], apiPath = '') => {
 		// No api definition, e.g.:
 		// 		.../bill/form/crud.js is empty file
 		if (isEmptyObject(def)) {
-			def.api = apiPath + '/' + key;
+			def.api = api + '/' + key;
 			arr.push(def);
 		}
 
 		else {
 			// Structure
-			convertDefinesObjectToArray(def, arr, apiPath + '/' + key);
+			convertDefinesObjectToArray(def, arr, api + '/' + key);
 		}
 	});
 

@@ -4,14 +4,14 @@ const queryString = require('querystring');
 
 // Call another api in the form of route forwarding, for example:
 // await global.api.do('forms:/info/dropdownlist', query);
-const fn = async (apiPath, query) => {
+const fn = async (api, query) => {
 
-	// Save the apiPath as query.originalUrl, which is important
-	query.originalUrl = apiPath;
+	// Save the api as query.originalUrl, which is important
+	query.originalUrl = api;
 
-	// Append the url parameter in apiPath to the query.
+	// Append the url parameter in api to the query.
 	// For example, "kind:/dropdownlist?kindname=traderlevel status" with parameter "kindname"
-	const paramsStr = apiPath.split('?')[1];
+	const paramsStr = api.split('?')[1];
 
 	// If there is a url parameter (eg "kindname=traderlevel")
 	if (paramsStr) {

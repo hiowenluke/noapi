@@ -18,9 +18,9 @@ const isValidResult = (result) => {
 	return result && (result.error || typeof result === 'object');
 };
 
-const saveToPrivateNameSpace = (query, {sysName, apiPath}) => {
+const saveToPrivateNameSpace = (query, {sysName, api}) => {
 	query.__.sysName = sysName;
-	query.__.apiPath = apiPath;
+	query.__.api = api;
 };
 
 /** @name me.callApi */
@@ -30,12 +30,12 @@ const fn = async (query, isFromTransfer) => {
 	// 		/forms:/bill/dropDownList?formname=purchaseOrder&listname=trader
 	// Result:
 	// 		sysName = "forms"
-	// 		apiPath = "/bill/dropdownlist"
+	// 		api = "/bill/dropdownlist"
 
 	// Note that this is done here, not in ./index.js, because ./api/transfer.js will also call this function.
 	// However, transfer.js does not parse the url, causing query.originalUrl and api path
 	// to be inconsistent, resulting in an error.
-	let {sysName, apiPath} = lib.apiParser.apiUrlToSysNameAndApiPath(query.originalUrl);
+	let {sysName, api} = lib.apiParser.apiUrlToSysNameAndApi(query.originalUrl);
 
 	// /ProjectRoot
 	// 		/api
@@ -60,15 +60,15 @@ const fn = async (query, isFromTransfer) => {
 	const sysAhaFn = data.core[sysName].aha;
 
 	// Save to query._ for use by other modules
-	saveToPrivateNameSpace(query, {sysName, apiPath});
+	saveToPrivateNameSpace(query, {sysName, api});
 
-	// Get the api function based on sysName, apiPath, sysApis, for example:
+	// Get the api function based on sysName, api, sysApis, for example:
 	// 		data.core.forms.api.bill.dropDownList
 	// Note:
-	// 		Although "dropdownlist" in apiPath is lowercase, it can also match "dropDownList"
-	const sysApiFn = lib.getSysApiFn(sysName, apiPath, sysApis);
+	// 		Although "dropdownlist" in api is lowercase, it can also match "dropDownList"
+	const sysApiFn = lib.getSysApiFn(sysName, api, sysApis);
 
-	// If the sysApiFn corresponding to apiPath is not found, it is wrong apiPath
+	// If the sysApiFn corresponding to api is not found, it is wrong api
 	if (!sysApiFn) {
 
 		// If it is from internal forwarding, then simply returns undefined
@@ -87,9 +87,9 @@ const fn = async (query, isFromTransfer) => {
 
 	// Remove the originalUrl subsystem name prefix, like "/forms:" (from url request), "forms:" (from api call)
 	// Note:
-	// 		There is no direct use of apiPath because the req.originalUrl for express also contains
-	// 		the url parameter (eg "?formname=xxx"), which is not available in apiPath.
-	// 		So here's the originalUrl again, instead of using apiPath directly
+	// 		There is no direct use of api because the req.originalUrl for express also contains
+	// 		the url parameter (eg "?formname=xxx"), which is not available in api.
+	// 		So here's the originalUrl again, instead of using api directly
 	const reg = new RegExp(`^\\/*${sysName}:\\/`, 'i');
 	query.originalUrl = query.originalUrl.replace(reg, '/');
 
@@ -105,7 +105,7 @@ const fn = async (query, isFromTransfer) => {
 
 	// If it is a transfer call, then query.__ is not the current subsystem information,
 	// it is easy to cause misunderstanding, so restore settings here
-	saveToPrivateNameSpace(query, {sysName, apiPath});
+	saveToPrivateNameSpace(query, {sysName, api});
 
 	// If there is no problem with preprocessing, execute the api
 	result = await sysApiFn(query);

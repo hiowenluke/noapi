@@ -15,7 +15,7 @@ const getValidKeys = (obj) => {
 const me = {
 
 	// {bill: {form: {crud: {}}}} => "/bill/form/crud"
-	objectToApiPaths(obj, path = '', arr = []) {
+	objectToApis(obj, path = '', arr = []) {
 		const keys = getValidKeys(obj);
 		if (!keys) return arr;
 
@@ -28,7 +28,7 @@ const me = {
 			}
 			else {
 				if (typeof o === 'object') {
-					me.objectToApiPaths(o, subPath, arr);
+					me.objectToApis(o, subPath, arr);
 				}
 			}
 		});
@@ -37,11 +37,11 @@ const me = {
 	},
 
 	// "/bill/form/crud" => {bill: {form: {crud: {}}}}
-	apiPathToObject(apiPath) {
+	apiToObject(api) {
 		const obj = {};
 		let parent = obj;
 
-		const nodes = apiPath.split('/'); // ['', 'bill', 'form', 'crud']
+		const nodes = api.split('/'); // ['', 'bill', 'form', 'crud']
 		while (nodes.length) {
 			const node = nodes.shift();
 			if (node === '') continue;
@@ -60,22 +60,22 @@ const me = {
 
 	// 		2. If the request comes from api, then the url is like below:
 	// 	  	   forms:/bill/dropDownList
-	apiUrlToSysNameAndApiPath(apiUrl) {
+	apiUrlToSysNameAndApi(url) {
 
-		// apiPath = "/forms:/bill/dropDownList"
-		let apiPath = apiUrl.split('?')[0];
+		// api = "/forms:/bill/dropDownList"
+		let api = url.split('?')[0];
 		let sysName;
 
-		if (apiPath.indexOf(':') === -1) { // "/bill/dropDownList" without "/forms:"
+		if (api.indexOf(':') === -1) { // "/bill/dropDownList" without "/forms:"
 			sysName = 'default';
 		}
 		else {
-			const temp = apiPath.split(':'); // '/forms:/info/dropdownlist'
+			const temp = api.split(':'); // '/forms:/info/dropdownlist'
 			sysName = temp[0].replace("/", ''); // 'forms'
-			apiPath = temp[1]; // '/info/dropdownlist'
+			api = temp[1]; // '/info/dropdownlist'
 		}
 
-		return {sysName, apiPath};
+		return {sysName, api};
 	},
 
 };

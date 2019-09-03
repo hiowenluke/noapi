@@ -11,19 +11,19 @@ const fn = async (query) => {
 
 	// Fetch sysName and api path from query.__
 	//		sysName: "mms"
-	//		apiPath: "bill.mnf.manuPlan"
-	const {sysName, apiPath} = query.__;
+	//		api: "bill.mnf.manuPlan"
+	const {sysName, api} = query.__;
 
 	// Get the biz object of the current subsystem,
 	// for example: data.core.mms.biz
 	const sysBizs = data.core[sysName].biz;
 
-	// Get biz functions based on sysName, apiPath, sysBizs,
+	// Get biz functions based on sysName, api, sysBizs,
 	// for example: data.core.mms.biz.bill.mnf.manuPlan
-	const sysBizFn = lib.getSysApiFn(sysName, apiPath, sysBizs);
+	const sysBizFn = lib.getSysApiFn(sysName, api, sysBizs);
 
 	// If there is no params, or just only one parameter named "query", pass the whole query
-	const params = data.bizParams[sysName][apiPath];
+	const params = data.bizParams[sysName][api];
 	if (!params || params.length === 1 && params[0] === 'query') {
 		return await sysBizFn(query);
 	}
