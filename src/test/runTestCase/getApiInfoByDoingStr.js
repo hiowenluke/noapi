@@ -6,7 +6,7 @@ const data = require('../../data');
 // 		'Bill - Form - Crud', // by title
 // 		'http://localhost:3000/bill/form/crud?formname=trader', // by url
 
-const fn = (typeStr) => {
+const fn = (doingStr) => {
 	let result;
 
 	data.sysNames.find(sysName => {
@@ -17,7 +17,7 @@ const fn = (typeStr) => {
 			const {api, title, url} = apiInfo;
 
 			// If found, save it to result and break
-			if (typeStr === api || typeStr === title || typeStr === url) {
+			if (doingStr === api || doingStr === title || doingStr === url) {
 				result = apiInfo;
 				return true;
 			}
