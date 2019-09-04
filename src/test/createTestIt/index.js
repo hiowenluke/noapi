@@ -5,7 +5,7 @@ const lib = require('../__lib');
 const runTestCase = require('../runTestCase');
 
 const fn = (apiInfo, ioInfo, testInfo) => {
-	const {api, title, url} = apiInfo;
+	const {title, url} = apiInfo;
 	const {verify} = testInfo;
 	const {params} = ioInfo;
 
