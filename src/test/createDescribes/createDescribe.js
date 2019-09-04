@@ -92,9 +92,6 @@ const fn = (title, defineJs, {isOnlyApi, usedApis} = {}) => {
 				// No verify property, can not test
 				if (!testInfo.verify) return noTest(apiInfo.title, apiInfo.url, ioInfo.params);
 
-				testInfo.testUrl = testInfo.url || apiInfo.url;
-				testInfo.getResult = testInfo.getResult || apiInfo.url;
-
 				createTestIt(apiInfo, ioInfo, testInfo);
 			});
 		}
