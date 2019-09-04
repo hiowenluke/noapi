@@ -32,8 +32,12 @@
 // 	}
 
 const fn = async (formName, obj, arr) => {
-	obj = JSON.parse(obj);
-	arr = JSON.parse(arr);
+
+	// If the request is a "get" action, then the obj is a string.
+	// If the request is a "post" action, then the obj is an object.
+	if (typeof obj === 'string') obj = JSON.parse(obj);
+	if (typeof arr === 'string') arr = JSON.parse(arr);
+
 	return {formName, obj, arr};
 };
 
