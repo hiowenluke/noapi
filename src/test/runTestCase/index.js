@@ -39,7 +39,9 @@ const me = {
 			// the getResult will cause repeat do the url, and maybe get a wrong result.
 			if (getResult && (getResult !== api && getResult !== title && getResult !== url)) {
 				const url = parseDoingStr.forTestUrl(getResult);
-				url && (result = await request.do(url, params));
+				if (url) {
+					result = await request.do(url, params)
+				}
 			}
 
 			// Call specific apis after get the test result if needed.
