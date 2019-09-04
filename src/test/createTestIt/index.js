@@ -14,6 +14,8 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 	it(testCaseTitle, async () => {
 		const result = await runTestCase.do(apiInfo, ioInfo, testInfo);
 		const isOK = verify(result, JSON.stringify(result));
+
+		!isOK && console.log('Result:', result);
 		expect(isOK).to.be.true;
 	});
 };
