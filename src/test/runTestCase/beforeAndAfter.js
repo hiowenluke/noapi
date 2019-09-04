@@ -1,6 +1,8 @@
 
 const runTestCase = require('.');
 const parseDoingStr = require('./parseDoingStr');
+const request = require('./request');
+const config = require('../config');
 
 const me = {
 	async do(doingStrArr) {
@@ -13,8 +15,18 @@ const me = {
 			const apiDefinition = parseDoingStr.forApiDefinition(doingStr);
 
 			if (apiDefinition) {
-				const {apiInfo, ioInfo, testInfo} =  apiDefinition;
-				await runTestCase.do(apiInfo, ioInfo, testInfo);
+				const {apiInfo, ioInfo = {}, testInfo = {}} =  apiDefinition;
+
+				// Call another test case (including executing its beforeDo and afterDo).
+				if (config.enableTestsLink) {
+					await runTestCase.do(apiInfo, ioInfo, testInfo);
+				}
+				else {
+					// Just request the test url with params.
+					const testUrl = testInfo.url || apiInfo.url;
+					const params = ioInfo.params;
+					await request.do(testUrl, params);
+				}
 			}
 			else {
 				throw new Error(`Can't find apiInfo corresponding to "${doingStr}"`);

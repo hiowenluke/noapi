@@ -34,6 +34,10 @@ const me = {
 		// 'Info - Form - Crud // for goods', // <- verifying title
 	],
 
+	// If it is true, call other test cases which referred by beforeDo and afterDo.
+	// Otherwise, just request the test url with params.
+	enableTestsLink: false,
+
 	// The timeout of mocha. Equal to:
 	//		mocha --timeout=2000
 	timeout: 2000,
