@@ -125,9 +125,16 @@ const me = {
 		this.testOptions.testRoot = path.resolve(pathToCaller, '../');
 		this.testOptions.apiServiceRoot = path.resolve(this.testOptions.testRoot, '../');
 
-		const serviceName = lib.getApiServiceNameFromPath(this.testOptions.apiServiceRoot);
+		// "01-api-definition-by-array" => "default"
+		let serviceName = lib.getApiServiceNameFromPath(this.testOptions.apiServiceRoot);
+		let isLegalApiServiceName = lib.isLegalApiServiceName(serviceName);
+
+		if (!isLegalApiServiceName) {
+			serviceName = 'default';
+		}
+
 		this.testOptions.serviceName = serviceName;
-		this.testOptions.isFromApiService = serviceName === 'api' || serviceName.substr(0, 4) === 'api-';
+		this.testOptions.isFromApiService = isLegalApiServiceName;
 	}
 };
 

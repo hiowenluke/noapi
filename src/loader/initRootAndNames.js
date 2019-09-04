@@ -11,7 +11,7 @@ const getApiServiceNames = (root) => {
 
 	// For ".../api", e.g.:
 	// 		01-api-definition-by-array/api
-	if (serviceName === 'api' || serviceName.substr(0, 4) === 'api-') {
+	if (lib.isLegalApiServiceName(serviceName)) {
 		serviceNames.push(serviceName);
 		return serviceNames;
 	}
