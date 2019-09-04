@@ -12,7 +12,7 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 	const testCaseTitle = lib.attachParamsToTitle(title, url, params);
 
 	it(testCaseTitle, async () => {
-		const result = runTestCase.do(api);
+		const result = await runTestCase.do(apiInfo, ioInfo, testInfo);
 		const isOK = verify(result, JSON.stringify(result));
 		expect(isOK).to.be.true;
 	});
