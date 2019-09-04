@@ -18,7 +18,7 @@ const me = {
 				const {apiInfo, ioInfo = {}, testInfo = {}} =  apiDefinition;
 
 				// Call another test case (including executing its beforeDo and afterDo).
-				if (config.enableTestsLink) {
+				if (config.enableTestsChain) {
 					await runTestCase.do(apiInfo, ioInfo, testInfo);
 				}
 				else {
