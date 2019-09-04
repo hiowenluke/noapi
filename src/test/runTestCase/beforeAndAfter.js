@@ -1,6 +1,6 @@
 
 const runTestCase = require('.');
-const getApiInfoByDoingStr = require('./getApiInfoByDoingStr');
+const parseDoingStr = require('./parseDoingStr');
 
 const me = {
 	async do(doingStrArr) {
@@ -10,13 +10,14 @@ const me = {
 
 		for (let i = 0; i < doingStrArr.length; i ++) {
 			const doingStr = doingStrArr[i];
-			const {api} = getApiInfoByDoingStr(doingStr);
+			const apiDefinition = parseDoingStr.forApiDefinition(doingStr);
 
-			if (!api) {
-				console.log(`Can't find the api corresponding to "${doingStr}"`);
+			if (apiDefinition) {
+				const {apiInfo, ioInfo, testInfo} =  apiDefinition;
+				await runTestCase.do(apiInfo, ioInfo, testInfo);
 			}
 			else {
-				await runTestCase.do(api);
+				throw new Error(`Can't find apiInfo corresponding to "${doingStr}"`);
 			}
 		}
 	},

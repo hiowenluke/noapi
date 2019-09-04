@@ -1,17 +1,22 @@
 
 const request = require('./request');
 const baa = require('./beforeAndAfter');
-const getApiDefineByApi = require('./getApiDefineByApi');
-const getApiInfoByDoingStr = require('./getApiInfoByDoingStr');
+const parseDoingStr = require('./parseDoingStr');
 
+// Two Forms:
+// 		runTestCase.do(api) <= Calls from beforeDo and afterDo
+//		runTestCase.do(apiInfo, ioInfo, testInfo) <= Calls from createTestIt
 /** @name runTestCase */
 const me = {
-	async do(api) {
+	async do(apiInfo, ioInfo = {}, testInfo = {}) {
 		try {
-			const {apiInfo, ioInfo, testInfo} = getApiDefineByApi(api);
+
+			// Set the default value of "testUrl" and "getResult" properties with url
+			testInfo.testUrl = testInfo.url || apiInfo.url;
+			testInfo.getResult = testInfo.getResult || apiInfo.url;
 
 			const {title, url} = apiInfo;
-			const {beforeDo, testUrl, getResult, afterDo, verify} = testInfo;
+			const {beforeDo, testUrl, getResult, afterDo} = testInfo;
 			const {params} = ioInfo;
 
 			let result;
@@ -33,7 +38,7 @@ const me = {
 			// Note that the getResult can not be api, title, or url, otherwise
 			// the getResult will cause repeat do the url, and maybe get a wrong result.
 			if (getResult && (getResult !== api && getResult !== title && getResult !== url)) {
-				const {url} = getApiInfoByDoingStr(getResult);
+				const url = parseDoingStr.forTestUrl(getResult);
 				url && (result = await request.do(url, params));
 			}
 
@@ -47,7 +52,7 @@ const me = {
 			return result;
 		}
 		catch(e) {
-			console.log(e)
+			console.log(e);
 		}
 	}
 };
