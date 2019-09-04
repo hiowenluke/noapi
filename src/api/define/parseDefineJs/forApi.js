@@ -3,9 +3,9 @@ const _ = require('lodash');
 const lib = require('../../../__lib');
 
 const me = {
-	parse(apiDefineArr) {
+	parse(apiDefinitionArr) {
 		const apiInfos = [];
-		apiDefineArr.forEach(item => {
+		apiDefinitionArr.forEach(item => {
 
 			// api: /bill/form/crud
 			// url: http://localhost:3000/bill/form/crud?formname=trader

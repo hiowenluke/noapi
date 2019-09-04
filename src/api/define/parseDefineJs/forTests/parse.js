@@ -7,10 +7,10 @@ const isStandardTestObject = (test) => {
 };
 
 /** @name forTests.parse */
-const fn = (apiDefineArr) => {
+const fn = (apiDefinitionArr) => {
 	const allItems = [];
 
-	apiDefineArr.forEach(item => {
+	apiDefinitionArr.forEach(item => {
 
 		// item {
 		// 		api,
