@@ -1,6 +1,7 @@
 
 const _ = require('lodash');
-const lib = require('../../../__lib');
+const lib = require('../../../../__lib');
+const converter = require('./converter');
 
 const me = {
 	parse(apiDefinitionArr) {
@@ -42,6 +43,10 @@ const me = {
 		});
 
 		return apiInfos;
+	},
+
+	convertDefinitionsObjectToArray(...args) {
+		return converter.definitionsObjectToArray(...args);
 	}
 };
 
