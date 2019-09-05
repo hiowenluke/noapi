@@ -20,5 +20,4 @@ const fn = (config) => {
 	}
 };
 
-fn(configDemo);
 module.exports = fn;

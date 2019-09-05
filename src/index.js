@@ -32,5 +32,6 @@ noapi.test = (userConfig) => {
 
 noapi.params = me.utils.params;
 noapi.url = me.utils.url;
+noapi.tools = me.utils.tools;
 
 module.exports = noapi;
