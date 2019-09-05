@@ -1,4 +1,6 @@
 
+const _ = require('lodash');
+
 const getValidKeys = (obj) => {
 	let keys = Object.keys(obj);
 	if (keys.length === 0) {
@@ -53,6 +55,16 @@ const me = {
 		return obj;
 	},
 
+	// ["/bill/form/crud", "/bill/form/getFields"] => {bill: {form: {crud: {}, getFields: {}}}}
+	apisToObject(apisArray) {
+		const obj = {};
+		apisArray.forEach(api => {
+			const branch = this.apiToObject(api);
+			_.merge(obj, branch);
+		});
+
+		return obj;
+	},
 
 	// Parse api url:
 	// 		1. If the request comes from web, then the url is like below:
