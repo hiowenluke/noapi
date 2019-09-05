@@ -1,7 +1,7 @@
 {
   "name": "noapi",
   "version": "1.5.10",
-  "description": "The easiest framework for API app, create api app in 5 min. You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc.",
+  "description": "The easiest framework for API app, create an api app in under 5 minutes. You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -28,9 +28,11 @@
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "fs-extra": "^8.1.0",
     "kdo": "^1.7.3",
     "lodash": "^4.17.15",
     "multer": "^1.4.1",
+    "shelljs": "^0.8.3",
     "voca": "^1.4.0"
   },
   "devDependencies": {
