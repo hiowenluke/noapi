@@ -10,19 +10,41 @@ const convertApiToKeyPath = (api) => {
 const fn = (definitionsArr) => {
 	const object = {};
 
-	definitionsArr.forEach(item => {
-		let {api, url} = item;
+	definitionsArr.forEach(definition => {
+		let {api, url} = definition;
 		if (!api) {
 			// http://localhost:3000/bill/form/crud?formname=trader => /bill/form/crud
 			api = lib.urlParser.getApiFromUrl(url);
 		}
 
-		// "/bill/form/crud" => {bill: {form: {crud: {}}}}
-		const branchObj = lib.apiParser.apiToObject(api);
 		const apiPath = convertApiToKeyPath(api);
-		_.set(branchObj, apiPath, item);
+		const defObj = _.get(object, apiPath);
 
-		_.merge(object, branchObj);
+		// If the definition object corresponds to apiPath is already exists,
+		if (defObj) {
+
+			// If it is array, then push the new one into it.
+			if (Array.isArray(defObj)) {
+				const arr = defObj;
+				arr.push(definition);
+				_.set(object, apiPath, arr);
+			}
+			else {
+
+				// If it is object, then combine it and the new one to an array.
+				const arr = [defObj, definition];
+				_.set(object, apiPath, arr);
+			}
+		}
+		else {
+
+			// "/bill/form/crud" => {bill: {form: {crud: {}}}}
+			const branchObj = lib.apiParser.apiToObject(api);
+			_.set(branchObj, apiPath, definition);
+
+			_.merge(object, branchObj);
+		}
+
 	});
 
 	return object;
