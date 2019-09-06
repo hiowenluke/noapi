@@ -1,5 +1,5 @@
 
-isBreakOnError=0
+isBreakOnError=$1
 node createTests.js $isBreakOnError
 
 chmod +x ./.test.temp.sh

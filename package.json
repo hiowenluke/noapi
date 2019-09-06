@@ -8,7 +8,7 @@
     "url": "https://github.com/hiowenluke/noapi.git"
   },
   "scripts": {
-    "test": "cd examples && sh ./test.sh"
+    "test": "cd examples && sh ./test.sh 1"
   },
   "keywords": [
     "node.js",
