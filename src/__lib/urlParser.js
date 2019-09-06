@@ -6,18 +6,23 @@ const data = require('../data');
 const me = {
 	getApiFromUrl(url) {
 
-		// http://localhost:3000/bill/form/crud?formname=trader => /bill/form/crud?formname=trader
+		// http://localhost:3000/forms:/bill/form/crud?formname=trader => /forms:/bill/form/crud?formname=trader
 		url = url.replace(/(\w+):\/\/([^/:]+)(:\d*)?/, '');
 
-		// /bill/form/crud?formname=trader => /bill/form/crud
-		return url.split('?')[0];
+		// /forms:/bill/form/crud?formname=trader => /forms:/bill/form/crud
+		url = url.split('?')[0];
+
+		// /forms:/bill/form/crud => /bill/form/crud
+		url = url.replace(/^\/\w+?:/, '');
+
+		return url;
 	},
 
 	getTitleFromApi(api) {
 
 		// 'forms:/bill/form/crud' => 'bill - form - crud'
 		let str = api
-			.replace(/^\S*?:/, '')
+			.replace(/^\w+?:/, '')
 			.replace(/^\//, '')
 			.replace(/\//g, ' - ')
 		;
