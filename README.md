@@ -117,7 +117,7 @@ See [01-api-definition-by-array](./examples/01-api-definition-by-array) for more
 
 ## Convert the definition mode
 
-As shown above, wee can define the apis in three modes, array, object and directory. And, we can convert it between the three modes via package "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
+As shown above, we can define the apis in three modes, array, object and directory. And, we can convert it between the three modes via package "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
 
 
 
