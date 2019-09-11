@@ -20,7 +20,7 @@ const fn = (definitionsArr) => {
 		const apiPath = convertApiToKeyPath(api);
 		const defObj = _.get(object, apiPath);
 
-		// If the definition object corresponds to apiPath is already exists,
+		// If the definition object corresponding to apiPath is already exists,
 		if (defObj) {
 
 			// If it is array, then push the new one into it.

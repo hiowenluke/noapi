@@ -21,6 +21,9 @@ const fn = async (query) => {
 	// Get biz functions based on sysName, api, sysBizs,
 	// for example: data.core.mms.biz.bill.mnf.manuPlan
 	const sysBizFn = lib.getSysApiFn(sysName, api, sysBizs);
+	if (typeof sysBizFn !== 'function') {
+		return {error: `The biz function corresponding to api '${api}' does not exists.`};
+	}
 
 	// If there is no params, or just only one parameter named "query", pass the whole query
 	const params = data.bizParams[sysName][api];
