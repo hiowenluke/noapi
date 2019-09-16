@@ -4,7 +4,8 @@ const fs = require('fs');
 // process.argv []:
 // 		0		1				2
 // 		node	createTests.js	$isBreakOnError
-const isBreakOnError = process.argv[2];
+const argv2 = process.argv[2];
+const isBreakOnError = argv2 === '0' || argv2 === 'false' ? 0 : 1;
 
 const main = () => {
 	const folders = fs.readdirSync(__dirname);
