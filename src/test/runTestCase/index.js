@@ -38,9 +38,23 @@ const me = {
 			// Note that the getResult can not be api, title, or url, otherwise
 			// the getResult will cause repeat do the url, and maybe get a wrong result.
 			if (getResult && (getResult !== api && getResult !== title && getResult !== url)) {
-				const url = parseDoingStr.forTestUrl(getResult);
-				if (url) {
-					result = await request.do(url, params)
+				if (!Array.isArray(getResult)) {
+					const url = parseDoingStr.forTestUrl(getResult);
+					result = await request.do(url, params);
+				}
+				else {
+					result = [];
+
+					for (let i = 0; i < getResult.length; i ++) {
+						const url = parseDoingStr.forTestUrl(getResult[i]);
+						if (url) {
+							const thisResult = await request.do(url, params);
+							result.push(thisResult);
+						}
+						else {
+							result.push(undefined);
+						}
+					}
 				}
 			}
 

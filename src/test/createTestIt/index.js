@@ -13,10 +13,11 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 
 	it(testCaseTitle, async () => {
 		const result = await runTestCase.do(apiInfo, ioInfo, testInfo);
-		const isOK = verify(result, JSON.stringify(result));
+		const extraData = Array.isArray(result) ? result.map(item => item.data) : JSON.stringify(result);
+		const isOK = verify(result, extraData);
 
 		!isOK && console.log('Result:', result);
-		expect(isOK).to.be.true;
+		expect(!!isOK).to.be.true;
 	});
 };
 
