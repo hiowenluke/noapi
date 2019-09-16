@@ -3,7 +3,7 @@
 
 const me = [
 	{
-		title: 'Add User // Captain America',
+		title: 'Add User',
 		url: 'http://localhost:3000/user/add?username=CaptainAmerica',
 		result: {
 			"success": true,
@@ -12,7 +12,7 @@ const me = [
 	},
 
 	{
-		title: 'Get User // Captain America',
+		title: 'Get User',
 		url: 'http://localhost:3000/user/get?username=CaptainAmerica',
 		result: {
 			"success": true,
@@ -24,7 +24,7 @@ const me = [
 	},
 
 	{
-		title: 'Del User // Captain America',
+		title: 'Del User',
 		url: 'http://localhost:3000/user/del?username=CaptainAmerica',
 		result: {
 			"success": true,
@@ -33,7 +33,7 @@ const me = [
 	},
 
 	{
-		title: 'Add User // Thanos',
+		title: 'Add User // One result',
 		url: 'http://localhost:3000/user/add?username=Thanos',
 		result: {
 			"success": true,
@@ -45,7 +45,7 @@ const me = [
 
 		test: {
 			beforeDo: [
-				'Add User // Captain America',
+				'Add User',
 				'http://localhost:3000/user/add?username=IronMan',
 				'http://localhost:3000/user/add?username=Thor',
 			],
@@ -66,8 +66,53 @@ const me = [
 				'http://localhost:3000/user/del?username=Thanos',
 				'http://localhost:3000/user/del?username=Thor',
 				'http://localhost:3000/user/del?username=IronMan',
-				'Del User // Captain America',
+				'Del User',
 			]
+		}
+	},
+
+	{
+		title: 'Add User // Multi results',
+		url: 'http://localhost:3000/user/add?username=Thanos',
+		result: {
+			"success": true,
+			"data": {
+				"id": 6,
+				"username": "Thanos",
+			}
+		},
+
+		test: {
+			beforeDo: [
+				'Add User',
+				'http://localhost:3000/user/add?username=IronMan',
+				'http://localhost:3000/user/add?username=Thor',
+			],
+
+			// Each url corresponds to a result
+			getResult: [
+				'http://localhost:3000/user/get?username=Thanos',
+				'http://localhost:3000/user/get?username=Thanos',
+			],
+
+			afterDo: [
+				'http://localhost:3000/user/del?username=Thanos',
+				'http://localhost:3000/user/del?username=Thor',
+				'http://localhost:3000/user/del?username=IronMan',
+				'Del User',
+			],
+
+			// The resultArr is an array:
+			// 		1. Each element corresponds to a url in getResult
+			// 		2. Fetch the data of each result via resultArr[i].data or dataArr[i]
+			verify(resultArr, dataArr) {
+
+				// dataArr[i] === result[i].data
+				return 1 &&
+					resultArr[0].data.username === 'Thanos' && resultArr[1].data.username === 'Thanos' &&
+					dataArr[0].username === 'Thanos' && dataArr[1].username === 'Thanos' &&
+				1;
+			}
 		}
 	},
 ];
