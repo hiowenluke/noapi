@@ -7,6 +7,6 @@
     "test": "cd test && mocha . --exit"
   },
   "dependencies": {
-    "noapi": "^1.1.2"
+    "noapi": "^1.5.16"
   }
 }
