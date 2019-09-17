@@ -1,10 +1,30 @@
 
+const fs = require('fs');
 const data = require('../data');
+
+const getPublicPath = () => {
+	const publicPath = data.webServiceRoot + '/public';
+	return fs.existsSync(publicPath) ? publicPath : null;
+};
 
 const me = {
 	init(express, expressApp) {
 		const options = data.serverOptions;
-		if (!options.public) return;
+
+		if (!options.public) {
+			const publicPath = getPublicPath();
+			if (publicPath) {
+				options.public = {
+					name: 'public',
+					path: publicPath,
+				}
+			}
+			else {
+				return;
+			}
+		}
+
+		else
 
 		if (typeof options.public === 'object') {
 
@@ -18,6 +38,9 @@ const me = {
 			// Use the root folder of project as public folder
 			if (options.public.name === '/') {
 				options.public.name = '';
+			}
+			else {
+				// do nothing
 			}
 		}
 
