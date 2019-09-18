@@ -23,32 +23,34 @@ npm test
 
 
 
-## Quick Start
+## Quick Start (in Under 5 minutes)
 
-See [01-api-definition-by-array](./examples/01-api-definition-by-array) for more details.
+### 1. Download The Template Repo
 
-
-### 1. Define apis
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
-
-
-
-### 2. Write business code
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true)
+```sh
+git clone https://github.com/hiowenluke/create-api-app-in-5-min
+cd create-api-app-in-5-min
+npm install
+```
 
 
 
-### 3. Run
+### 2. Experience
 
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
+1) Run: `node .`
+2) Open api/define.js, copy and past the urls to your browser to view the result.
+3) Automatically test in your terminal: `npm test`
 
 
 
-### 4. Test
+### 3. DIY
 
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
+1) Modify the api/define.js to define your apis.
+2) Write your business code in biz folder to start up your great project. 
+
+Enjoy!
+
+See [Noapi examples](https://github.com/hiowenluke/noapi/tree/master/examples) to learn more.
 
 
 
@@ -115,7 +117,7 @@ See [01-api-definition-by-array](./examples/01-api-definition-by-array) for more
 
 
 
-## Convert the definition mode
+## Convert The Definition Mode
 
 As shown above, we can define the apis in three modes, array, object and directory. And, we can convert it between the three modes via package "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
 
@@ -323,11 +325,8 @@ See the below examples to learn more:
 
 | Api | description | Example |
 | -- | -- | -- |
-| noapi() | Start the api service | [Example](./examples/01-api-definition-by-array/app.js) |
-| noapi(options) | Start the api service with custom options | [Example](./examples/16-all-options/app.js) |
-| noapi.test() | Start to test the api service| [Example](./examples/50-[test]-all-kinds-of-test/test/index.js) |
-| noapi.test(config) | Start to test the api service with custom configurations| [Example](./examples/12-use-express-middleware/test/index.js) |
-| config.js | Start to test the api service with config.js file| [Example](./examples/50-[test]-all-kinds-of-test/test/config.js) |
+| noapi(options) | Start the api service | [Example](./examples/16-all-options/app.js) |
+| noapi.test(config) | Start to test the api service | [Example](./examples/12-use-express-middleware/test/index.js) |
 
 
 
