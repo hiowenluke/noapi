@@ -1,6 +1,6 @@
 {
   "name": "noapi",
-  "version": "1.5.17",
+  "version": "1.5.18",
   "description": "The easiest framework for API app, create an api app in under 5 minutes. You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc.",
   "main": "index.js",
   "repository": {
