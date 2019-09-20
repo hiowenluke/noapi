@@ -88,6 +88,10 @@ const me = {
 	isTestMode: false, // If noapi is running from /test directory, then it is true.
 	isSilence: false, // Do not print logs if it is true
 
+	queryOptions: {
+		isParseJsonStr: true, // If the value of query parameter is json str, then convert it to object
+	},
+
 	power: null, // The custom function to handle query
 
 	global: {}, // {api, biz}
@@ -110,6 +114,9 @@ const me = {
 		options.host && (this.serverOptions.host = options.host);
 		options.port && (this.serverOptions.port = options.port);
 		options.public && (this.serverOptions.public = options.public);
+
+		// Accept options.queryOptions and options.query
+		Object.assign(this.queryOptions, options.queryOptions, options.query);
 	},
 
 	initForTest(pathToCaller) {
