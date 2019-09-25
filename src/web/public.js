@@ -2,9 +2,9 @@
 const fs = require('fs');
 const data = require('../data');
 
-const getPublicPath = () => {
-	const publicPath = data.webServiceRoot + '/public';
-	return fs.existsSync(publicPath) ? publicPath : null;
+const getPublicFolder = () => {
+	const publicFolder = data.webServiceRoot + '/public';
+	return fs.existsSync(publicFolder) ? publicFolder : null;
 };
 
 const me = {
@@ -12,11 +12,11 @@ const me = {
 		const options = data.serverOptions;
 
 		if (!options.public) {
-			const publicPath = getPublicPath();
-			if (publicPath) {
+			const publicFolder = getPublicFolder();
+			if (publicFolder) {
 				options.public = {
-					name: 'public',
-					path: publicPath,
+					path: '/',
+					folder: publicFolder,
 				}
 			}
 			else {
@@ -28,16 +28,11 @@ const me = {
 
 		if (typeof options.public === 'object') {
 
-			// options.public = {path}, without name
-			if (!options.public.name) {
-				options.public.name = 'public';
-			}
+			// options.public = {folder}, without path
+			if (!options.public.path) {
 
-			else
-
-			// Use the root folder of project as public folder
-			if (options.public.name === '/') {
-				options.public.name = '';
+				// Use the root path of project as public path
+				options.public.path = '/';
 			}
 			else {
 				// do nothing
@@ -46,16 +41,24 @@ const me = {
 
 		else
 
-		// If options.public is string, it is a path to public
+		// If options.public is string, it is a public folder
 		if (typeof options.public === 'string') {
 			const pathToPublic = options.public;
 			options.public = {
-				name: 'public',
-				path: pathToPublic,
+				path: '/',
+				folder: pathToPublic,
 			}
 		}
 
-		expressApp.use('/' + (options.public.name || ''), express.static(options.public.path));
+		if (options.public.path === '/') {
+			options.public.path = '';
+		}
+
+		if (!/^[.\/]/.test(options.public.folder)) {
+			options.public.folder = './' + options.public.folder;
+		}
+
+		expressApp.use('/' + (options.public.path || ''), express.static(options.public.folder));
 	}
 };
 
