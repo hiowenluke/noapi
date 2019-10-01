@@ -1,6 +1,6 @@
 {
   "name": "noapi",
-  "version": "1.5.21",
+  "version": "1.5.22",
   "description": "The easiest API framework for Node.js, easily api definition, easily input and output. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.",
   "main": "index.js",
   "repository": {
