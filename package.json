@@ -1,7 +1,7 @@
 {
   "name": "noapi",
   "version": "1.5.20",
-  "description": "The easiest framework for Node.js API application, create one in under 5 minutes. You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc.",
+  "description": "The easiest API framework for Node.js, easily api definition, easily input and output. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.",
   "main": "index.js",
   "repository": {
     "type": "git",
