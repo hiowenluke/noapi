@@ -1,8 +1,13 @@
+![](https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png)
+
 
 
 # Noapi
 
-The easiest framework for [Node.js](https://nodejs.org) API application, [create one in under 5 minutes](https://github.com/hiowenluke/create-api-app-in-5-min). You can define apis and test cases in a simple way, focus on your great project, no need to care about how to manage api services, web service, routes, test cases, etc. 
+The easiest API framework for [Node.js](https://nodejs.org), easily api definition, easily input and output. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true)
+
+
 
 Noapi is based on [Express](https://expressjs.com), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi requires Node 7.6+ for async/await.
 
@@ -25,7 +30,7 @@ npm test
 
 ## Quick Start (in Under 5 minutes)
 
-### 1. Download The Template Repo
+### 1. Download The [Template Repo](https://github.com/hiowenluke/create-api-app-in-5-min)
 
 ```sh
 git clone https://github.com/hiowenluke/create-api-app-in-5-min
@@ -50,7 +55,9 @@ npm install
 
 Enjoy!
 
-See [Noapi examples](https://github.com/hiowenluke/noapi/tree/master/examples) to learn more.
+
+
+See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to learn more.
 
 
 
@@ -117,207 +124,67 @@ See [Noapi examples](https://github.com/hiowenluke/noapi/tree/master/examples) t
 
 
 
-## Convert The Definition Mode
-
-As shown above, we can define the apis in three modes, array, object and directory. And, we can convert it between the three modes via package "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
-
-
-
-## Multi-Api Services
-
-The following demo project consists of 3+ api services. Each api service is a seperate project, which is maintained by different guy and has a clear division of labor.
-
-```
-/<Demo Project root>
-  /api-forms             <- seperate subproject (api service "forms" subsystem)
-    /api
-      /bill
-        /form
-          crud.js           http://localhost:3000/forms:/bill/form/crud
-          new.js            http://localhost:3000/forms:/bill/form/new
-        dropDownList.js     http://localhost:3000/forms:/bill/dropdownlist
-      index.js
-          
-    /biz
-      ...
-    index.js
-    package.json
-
-  /api-erp               <- seperate subproject (api service "erp" subsystem)
-    /api
-      /bill
-        /mms
-          /mnf
-            manuPlan.js     http://localhost:3000/erp:/bill/mms/mnf/manuplan
-        /purchase
-          plan.js           http://localhost:3000/erp:/bill/purchase/plan
-          order.js          http://localhost:3000/erp:/bill/purchase/order
-
-        /sales
-          plan.js           http://localhost:3000/erp:/bill/sales/plan
-          order.js          http://localhost:3000/erp:/bill/sales/order
-
-      /report
-        /mms
-          /mnf
-            /manuPlan
-              summary.js    http://localhost:3000/erp:/report/mms/mnf/manuplan/summary
-              detail.js     http://localhost:3000/erp:/report/mms/mnf/manuplan/detail
-    /biz
-      ...
-    index.js
-    package.json
-
-  /api-xxx               <- seperate subproject (api service "xxx" subsystem)
-    ...
-
-  /web                   <- seperate subproject (web service)
-    /test
-    app.js
-    package.json
-
-  README.md
-```
-
-
-
 ## Examples
+
+### Define api
+
+* [01-api-definition-by-array](./examples/01-api-definition-by-array)
+* [02-api-definition-by-object](./examples/02-api-definition-by-object)
+* [03-api-definition-by-directory](./examples/03-api-definition-by-directory)
+* [04-api-definition-by-pure-directory](./examples/04-api-definition-by-pure-directory)
+* [05-api-definition-[minimally]](./examples/05-api-definition-[minimally])
+* [06-api-definition-[completely]](./examples/06-api-definition-[completely])
+
+
+
+### Single api services
+
+* [10-get-url-parameters-via-query](./examples/10-get-url-parameters-via-query)
+* [11-get-url-parameters-via-name](./examples/11-get-url-parameters-via-name)
+* [12-return-result](./examples/12-return-result)
+* [13-use-express-middleware](./examples/13-use-express-middleware)
+* [14-custom-express-route](./examples/14-custom-express-route)
+* [15-public-folder](./examples/15-public-folder)
+* [16-set-public-folder](./examples/16-set-public-folder)
+* [17-all-options](./examples/17-all-options)
+
+
+
+### Multiple api services
+
+* [20-[multi]-seperate-api-and-web-services](./examples/20-[multi]-seperate-api-and-web-services)
+* [21-[multi]-multi-api-services](./examples/21-[multi]-multi-api-services)
+* [22-[multi]-call-the-api-which-is-in-other-api-services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services)
+* [23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules)
+* [24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory)
+* [25-[multi]-[for-all-api-services]-preprocess-query-via-power-function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function)
+* [26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly](./examples/26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly)
+* [27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance)
+* [28-[multi]-public-folder](./examples/28-[multi]-public-folder)
+* [50-[test]-all-kinds-of-test](./examples/50-[test]-all-kinds-of-test)
+
+
+
+### For test
+
+* [51-[test]-[config.onlyTests]-run-only-the-specified-test-cases](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases)
+* [52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases)
+* [53-[test]-[config.catalogs]-categorize-the-test-cases](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases)
+* [54-[test]-test.beforeDo-and-test.afterDo](./examples/54-[test]-test.beforeDo-and-test.afterDo)
+* [55-[test]-test.getResult](./examples/55-[test]-test.getResult)
+* [56-[test]-test.verify](./examples/56-[test]-test.verify)
+* [57-[test]-multiple-test-cases-for-one-api](./examples/57-[test]-multiple-test-cases-for-one-api)
+
+
 
 See [examples](./examples) to learn more.
 
 
 
-## The Api Definitions
+## Convert The Definition Mode
 
-See the below examples to learn more:
-* [01-api-definition-by-array](./examples/01-api-definition-by-array/api/define.js)
-* [02-api-definition-by-object](./examples/02-api-definition-by-object/api/define.js)
-* [03-api-definition-by-directory](./examples/03-api-definition-by-directory/api)
-* [04-api-definition-by-pure-directory](./examples/04-api-definition-by-pure-directory/api)
-* [05-api-definition-[minimally]](./examples/05-api-definition-[minimally]/api/define.js)
-* [06-api-definition-[completely]](./examples/06-api-definition-[completely]/api/define.js)
+As shown above, we can define the apis in three modes, array, object and directory. And, we can convert it between these three modes any time via "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
 
-
-
-**1. The complete api definitions**
-
-```js
-{
-    // .............................................
-    //
-    // Api Info
-    //
-    // .............................................
-
-    // If omitted, parse from "url"
-    api: '/bill/form/crud',
-
-    // If omitted, parse from "api" (such as "Bill - Form - Crud").
-    title: 'The title of this api',
-
-    // The demo url for this api
-    url: 'http://localhost:3000/bill/form/crud?formname=trader',
-
-    // .............................................
-    //
-    // Test Info
-    //
-    // .............................................
-
-    // Input (send it to server). If omitted, parse from url.
-    params: {
-        formname: 'trader',
-    },
-
-    // Output (get it from server). It can be omitted if not required for testing.
-    result: {
-        "success": true,
-        "data": {
-            "formname": "trader"
-        }
-    },
-
-    // The test case
-    //     For clarity of reading, write it as the sequence below:
-    //        {beforeDo, url, getResult, afterDo, verify}
-    test: {
-
-        // Call the specific apis before do with test url if needed.
-        //     E.g., insert some data to db before do with test url.
-        //     The beforeDo can be an array, an api, a title, or a url.
-        beforeDo: [
-            '/bill/form/crud', // by api
-            'Bill - Form - Crud', // by title
-            'http://localhost:3000/bill/form/crud?formname=trader', // by url
-        ],
-
-        // The test url. If omitted, use the demo url.
-        //     E.g., the test url carries more parameters than the demo url for specific purposes.
-        url: undefined,
-
-        // Explaining how to get the result. If omitted, use the demo url.
-        //     E.g., after deleting the data via test url, re-acquire the data to verify if it is exists.
-        //     The usage is the same as beforeDo.
-        getResult: undefined,
-
-        // Call the specific apis after get the returned result if needed.
-        //     E.g., delete the inserted data in before.
-        //     The usage is the same as beforeDo.
-        afterDo: undefined,
-
-        // See above section "4. With test ..." for the usage of verify
-        verify(result, resultText) {
-            return resultText.indexOf(`"formname":"trader"`) >= 0;
-        }
-    }
-}
-```
-
-
-
-**2. The complete api definitions for multiple test cases of one api**
-
-```js
-{
-    // .............................................
-    //
-    // Api Info
-    //
-    // .............................................
-
-    api: '/bill/form/crud',
-    title: 'Bill - Form - Crud',
-    url: 'http://localhost:3000/bill/form/crud?formname=trader',
-
-    // .............................................
-    //
-    // Multiple Sets Of Test Info
-    //
-    // .............................................
-
-    tests: [
-      
-        // .............................................
-        //
-        // Test Info
-        //
-        // .............................................
-        {
-            params: {
-                ...
-            },
-
-            result: {
-                ...
-            },
-
-            test: {
-                ...
-            }
-        }
-    ],
-}
-```
 
 
 
