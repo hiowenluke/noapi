@@ -1,7 +1,7 @@
 
 // Note:
 //		1. There must be a "url" or a "params", a "result" or a "test" property.
-// 		2. The "api" property will be ignored ('cause it will be parsed from the directory path).
+// 		2. The "api" property will be ignored ('cause it will be parsed from the file path).
 
 const me =
 
