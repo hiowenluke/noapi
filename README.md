@@ -130,8 +130,8 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 * [01-api-definition-by-array](./examples/01-api-definition-by-array)
 * [02-api-definition-by-object](./examples/02-api-definition-by-object)
-* [03-api-definition-by-directory](./examples/03-api-definition-by-directory)
-* [04-api-definition-by-pure-directory](./examples/04-api-definition-by-pure-directory)
+* [03-api-definition-by-file](./examples/03-api-definition-by-file)
+* [04-api-definition-by-empty-file](./examples/04-api-definition-by-empty-file)
 * [05-api-definition-[minimally]](./examples/05-api-definition-[minimally])
 * [06-api-definition-[completely]](./examples/06-api-definition-[completely])
 
