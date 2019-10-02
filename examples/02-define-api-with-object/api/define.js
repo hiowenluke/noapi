@@ -8,11 +8,11 @@
 //
 
 // Learn more:
-// 		01-api-definition-by-array
-//		03-api-definition-by-file
-//		04-api-definition-by-empty-file
-//		05-api-definition-[minimally]
-//		06-api-definition-[completely]
+// 		01-define-api-with-array
+//		03-define-api-with-file
+//		04-define-api-with-empty-file
+//		05-define-api-[minimally]
+//		06-define-api-[completely]
 
 const me = {
 
@@ -21,8 +21,8 @@ const me = {
 		form: {
 			crud:
 
-				// The following api definition is the same as "01-api-definition-by-array".
-				// See "06-api-definition-[completely]" to learn more.
+				// The following api definition is the same as "01-define-api-with-array".
+				// See "06-define-api-[completely]" to learn more.
 
 				{
 					// The demo url for this api
