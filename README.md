@@ -181,7 +181,7 @@ See [examples](./examples) to learn more.
 
 ## Convert The Definition Mode
 
-As shown above, we can define the apis in three modes, array, object and directory. And, we can convert it between these three modes any time via "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
+As shown above, we can define the apis in three modes, array, object and file. And, we can convert it between these three modes any time via "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
 
 
 
