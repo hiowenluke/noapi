@@ -3,7 +3,7 @@
 
 # Noapi
 
-Noapi is the easiest API framework for [Node.js](https://nodejs.org), easily define apis, test cases and I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
+Noapi is the easiest API framework for [Node.js](https://nodejs.org), easily define api and test cases, easily I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true)
 
 
@@ -62,37 +62,37 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Demo
 
-### Define apis with array
+### Define api with array
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
 
 
 
-### Define apis with object
+### Define api with object
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
 
 
 
-### Define apis with file
+### Define api with file
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
 
 
 
-### Define apis with empty file (without test)
+### Define api with empty file (without test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
 
 
-### Define apis Minimally (without test)
+### Define api Minimally (without test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### Define apis completely (with full test properties)
+### Define api completely (with full test properties)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
