@@ -1,5 +1,5 @@
 
-// See "06-api-definition-[completely]" to learn more.
+// See "06-define-api-[completely]" to learn more.
 
 const me = [
 	'http://localhost:3000/user/get',
