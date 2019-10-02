@@ -3,7 +3,7 @@
 
 # Noapi
 
-Noapi is the easiest API framework for [Node.js](https://nodejs.org), easily define api and test cases, easily I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
+Noapi is a light API framework for [Node.js](https://nodejs.org), easily define api and test case, easily I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true)
 
 
