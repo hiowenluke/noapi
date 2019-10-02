@@ -27,9 +27,9 @@ npm test
 
 
 
-## Quick Start (in Under 5 minutes)
+## Quick Start (in Under 5 Minutes)
 
-### 1. Download The [Template Repo](https://github.com/hiowenluke/create-api-app-in-5-min)
+### 1. Download the [template repo](https://github.com/hiowenluke/create-api-app-in-5-min)
 
 ```sh
 git clone https://github.com/hiowenluke/create-api-app-in-5-min
@@ -62,62 +62,61 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Demo
 
-### Easy Api Definition By Array
+### Define apis with array
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
 
 
 
-### Easy Api Definition By Object
+### Define apis with object
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
 
 
 
-### Easy Api Definition By Directory
+### Define apis with file
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
 
 
 
-### Easy Api Definition By Pure Directory (Without Test)
+### Define apis with empty file (without test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
 
 
-### Easy Api Definition Minimally (Without Test)
+### Define apis Minimally (without test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### Easy Api Definition Completely (With Full Test Properties)
+### Define apis completely (with full test properties)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
 
 
-### Easy Starting
+### Easy starting
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
 
 
 
-### Easy Testing
+### Easy testing
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
 
 
 
-### Easy Before Do And After Do In Testing
+### Easy before do and after do in testing
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
 
 
 
-
-### Easy Multiple Test Cases For One Api
+### Easy multiple test cases for one api
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
 
@@ -127,12 +126,12 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ### Define api
 
-* [01-api-definition-by-array](./examples/01-api-definition-by-array)
-* [02-api-definition-by-object](./examples/02-api-definition-by-object)
-* [03-api-definition-by-file](./examples/03-api-definition-by-file)
-* [04-api-definition-by-empty-file](./examples/04-api-definition-by-empty-file)
-* [05-api-definition-[minimally]](./examples/05-api-definition-[minimally])
-* [06-api-definition-[completely]](./examples/06-api-definition-[completely])
+* [01-define-api-with-array](./examples/01-define-api-with-array)
+* [02-define-api-with-object](./examples/02-define-api-with-object)
+* [03-define-api-with-file](./examples/03-define-api-with-file)
+* [04-define-api-with-empty-file](./examples/04-define-api-with-empty-file)
+* [05-define-api-[minimally]](./examples/05-define-api-[minimally])
+* [06-define-api-[completely]](./examples/06-define-api-[completely])
 
 
 
