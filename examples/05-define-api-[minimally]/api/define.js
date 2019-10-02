@@ -6,11 +6,11 @@
 
 // It is recommended to identify the test cases ASAP to ensure that development goals do not deviate.
 // Learn more:
-// 		01-api-definition-by-array
-// 		02-api-definition-by-object
-//		03-api-definition-by-file
-//		04-api-definition-by-empty-file
-//		06-api-definition-[completely]
+// 		01-define-api-with-array
+// 		02-define-api-with-object
+//		03-define-api-with-file
+//		04-define-api-with-empty-file
+//		06-define-api-[completely]
 
 
 const me = [
