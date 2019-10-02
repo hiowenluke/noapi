@@ -1,6 +1,6 @@
 
-Each of directory path is an api path.
-E.g., the directory path "/bill/form/check" is the api path "/bill/form/check".
+A file path corresponds to an api path.
+E.g., the file path "/bill/form/check.js" corresponds to the api path "/bill/form/check".
 
 Note:
     1. The api definition object in js file must has a "url" or a "params".
@@ -10,6 +10,6 @@ Note:
 Learn more:
 * 01-api-definition-by-array
 * 02-api-definition-by-object
-* 03-api-definition-by-directory
+* 03-api-definition-by-file
 * 05-api-definition-[minimally]
 * 06-api-definition-[completely]
