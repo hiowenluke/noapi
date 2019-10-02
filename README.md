@@ -86,13 +86,13 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 
 
-### Define api Minimally (without test)
+### Define api minimally (without test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### Define api completely (with full test properties)
+### Define api completely (with full test options)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
