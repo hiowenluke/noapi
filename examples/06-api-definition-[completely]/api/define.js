@@ -23,8 +23,8 @@
 // Learn more:
 // 		01-api-definition-by-array
 // 		02-api-definition-by-object
-//		03-api-definition-by-directory
-//		04-api-definition-by-pure-directory
+//		03-api-definition-by-file
+//		04-api-definition-by-empty-file
 //		05-api-definition-[minimally]
 //
 // /////////////////////////////////////////////

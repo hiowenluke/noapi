@@ -9,8 +9,8 @@
 
 // Learn more:
 // 		01-api-definition-by-array
-//		03-api-definition-by-directory
-//		04-api-definition-by-pure-directory
+//		03-api-definition-by-file
+//		04-api-definition-by-empty-file
 //		05-api-definition-[minimally]
 //		06-api-definition-[completely]
 
