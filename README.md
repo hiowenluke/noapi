@@ -1,10 +1,9 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
 
 
-
 # Noapi
 
-Noapi is the easiest API framework for [Node.js](https://nodejs.org), easily api definition, easily input and output. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
+Noapi is the easiest API framework for [Node.js](https://nodejs.org), easily define apis, test cases and I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true)
 
 
