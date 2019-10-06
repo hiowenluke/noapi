@@ -128,10 +128,10 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 * [01 define apis and test cases with array](./examples/01-define-apis-and-test-cases-with-array/api/define.js)
 * [02 define apis and test cases with object](./examples/02-define-apis-and-test-cases-with-object/api/define.js)
-* [03 define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file)
+* [03 define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file/api)
 * [04 define apis and test cases [completely]](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
 * [05 define apis [minimally]](./examples/05-define-apis-[minimally]/api/define.js)
-* [06 define apis with empty file](./examples/06-define-apis-with-empty-file)
+* [06 define apis with empty file](./examples/06-define-apis-with-empty-file/api)
 
 
 
