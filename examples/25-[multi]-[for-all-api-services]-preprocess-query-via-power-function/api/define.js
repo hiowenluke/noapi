@@ -1,5 +1,5 @@
 
-// See "06-define-api-[completely]" to learn more.
+// See "06-define-apis-and-test-cases-[completely]" to learn more.
 
 const me = [
 	{
