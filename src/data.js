@@ -132,7 +132,7 @@ const me = {
 		this.testOptions.testRoot = path.resolve(pathToCaller, '../');
 		this.testOptions.apiServiceRoot = path.resolve(this.testOptions.testRoot, '../');
 
-		// "01-define-api-with-array" => "default"
+		// "01-define-apis-and-test-cases-with-array" => "default"
 		let serviceName = lib.getApiServiceNameFromPath(this.testOptions.apiServiceRoot);
 		let isLegalApiServiceName = lib.isLegalApiServiceName(serviceName);
 
