@@ -126,52 +126,52 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ### Define api
 
-* [01-define-api-with-array](./examples/01-define-api-with-array)
-* [02-define-api-with-object](./examples/02-define-api-with-object)
-* [03-define-api-with-file](./examples/03-define-api-with-file)
-* [04-define-api-with-empty-file](./examples/04-define-api-with-empty-file)
-* [05-define-api-[minimally]](./examples/05-define-api-[minimally])
-* [06-define-api-[completely]](./examples/06-define-api-[completely])
+* [01 define api with array](./examples/01-define-api-with-array)
+* [02 define api with object](./examples/02-define-api-with-object)
+* [03 define api with file](./examples/03-define-api-with-file)
+* [04 define api with empty file](./examples/04-define-api-with-empty-file)
+* [05 define api [minimally]](./examples/05-define-api-[minimally])
+* [06 define api [completely]](./examples/06-define-api-[completely])
 
 
 
 ### Single api services
 
-* [10-get-url-parameters-via-query](./examples/10-get-url-parameters-via-query)
-* [11-get-url-parameters-via-name](./examples/11-get-url-parameters-via-name)
-* [12-return-result](./examples/12-return-result)
-* [13-use-express-middleware](./examples/13-use-express-middleware)
-* [14-custom-express-route](./examples/14-custom-express-route)
-* [15-public-folder](./examples/15-public-folder)
-* [16-set-public-folder](./examples/16-set-public-folder)
-* [17-all-options](./examples/17-all-options)
+* [10 get url parameters via query](./examples/10-get-url-parameters-via-query)
+* [11 get url parameters via name](./examples/11-get-url-parameters-via-name)
+* [12 return result](./examples/12-return-result)
+* [13 use express middleware](./examples/13-use-express-middleware)
+* [14 custom express route](./examples/14-custom-express-route)
+* [15 public folder](./examples/15-public-folder)
+* [16 set public folder](./examples/16-set-public-folder)
+* [17 all options](./examples/17-all-options)
 
 
 
 ### Multiple api services
 
-* [20-[multi]-seperate-api-and-web-services](./examples/20-[multi]-seperate-api-and-web-services)
-* [21-[multi]-multi-api-services](./examples/21-[multi]-multi-api-services)
-* [22-[multi]-call-the-api-which-is-in-other-api-services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services)
-* [23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules)
-* [24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory)
-* [25-[multi]-[for-all-api-services]-preprocess-query-via-power-function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function)
-* [26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly](./examples/26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly)
-* [27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance)
-* [28-[multi]-public-folder](./examples/28-[multi]-public-folder)
-* [50-[test]-all-kinds-of-test](./examples/50-[test]-all-kinds-of-test)
+* [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services)
+* [21 [multi] multi api services](./examples/21-[multi]-multi-api-services)
+* [22 [multi] call the api which is in other api services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services)
+* [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules)
+* [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory)
+* [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function)
+* [26 [multi] [for all api services] use assign rules and power function advancedly](./examples/26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly)
+* [27 [multi] use noapi.do instead of global.api.do to improve performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance)
+* [28 [multi] public folder](./examples/28-[multi]-public-folder)
+* [50 [test] all kinds of test](./examples/50-[test]-all-kinds-of-test)
 
 
 
 ### For test
 
-* [51-[test]-[config.onlyTests]-run-only-the-specified-test-cases](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases)
-* [52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases)
-* [53-[test]-[config.catalogs]-categorize-the-test-cases](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases)
-* [54-[test]-test.beforeDo-and-test.afterDo](./examples/54-[test]-test.beforeDo-and-test.afterDo)
-* [55-[test]-test.getResult](./examples/55-[test]-test.getResult)
-* [56-[test]-test.verify](./examples/56-[test]-test.verify)
-* [57-[test]-multiple-test-cases-for-one-api](./examples/57-[test]-multiple-test-cases-for-one-api)
+* [51 [test] [config.onlyTests] run only the specified test cases](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases)
+* [52 [test] [config.ignoreTests] ignore the specified test cases](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases)
+* [53 [test] [config.catalogs] categorize the test cases](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases)
+* [54 [test] test.beforeDo and test.afterDo](./examples/54-[test]-test.beforeDo-and-test.afterDo)
+* [55 [test] test.getResult](./examples/55-[test]-test.getResult)
+* [56 [test] test.verify](./examples/56-[test]-test.verify)
+* [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api)
 
 
 
