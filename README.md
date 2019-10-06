@@ -3,7 +3,7 @@
 
 # Noapi
 
-Noapi is a light API framework for [Node.js](https://nodejs.org), easily define api and test case, easily I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
+Noapi is a light API framework for [Node.js](https://nodejs.org), easily define apis and test cases, easily I/O. You can focus on the business code, no need to care about how to manage api services, web service, routes, test cases, etc., improve your efficiency, save your time.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
 
 
@@ -62,39 +62,39 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Demo
 
-### Define api with array
+### Define apis and test cases with array
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
 
 
 
-### Define api with object
+### Define apis and test cases with object
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
 
 
 
-### Define api with file
+### Define apis and test cases with file
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
 
 
 
-### Define api with empty file (without test)
+### Define apis and test cases completely (with full test options)
 
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
 
 
-### Define api minimally (without test)
+### Define apis minimally (without test)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### Define api completely (with full test options)
+### Define apis with empty file (without test)
 
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
 
 
@@ -124,14 +124,14 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Examples
 
-### Define api
+### Define apis
 
-* [01 define api with array](./examples/01-define-api-with-array)
-* [02 define api with object](./examples/02-define-api-with-object)
-* [03 define api with file](./examples/03-define-api-with-file)
-* [04 define api with empty file](./examples/04-define-api-with-empty-file)
-* [05 define api [minimally]](./examples/05-define-api-[minimally])
-* [06 define api [completely]](./examples/06-define-api-[completely])
+* [01 define apis and test cases with array](./examples/01-define-apis-and-test-cases-with-array)
+* [02 define apis and test cases with object](./examples/02-define-apis-and-test-cases-with-object)
+* [03 define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file)
+* [04 define apis and test cases [completely]](./examples/04-define-apis-and-test-cases-[completely])
+* [05 define apis [minimally]](./examples/05-define-apis-[minimally])
+* [06 define apis with empty file](./examples/06-define-apis-with-empty-file)
 
 
 
@@ -156,7 +156,7 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 * [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules)
 * [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory)
 * [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function)
-* [26 [multi] [for all api services] use assign rules and power function advancedly](./examples/26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly)
+* [26 [multi] [for all api services] use advanced assign rules and power function](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function)
 * [27 [multi] use noapi.do instead of global.api.do to improve performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance)
 * [28 [multi] public folder](./examples/28-[multi]-public-folder)
 * [50 [test] all kinds of test](./examples/50-[test]-all-kinds-of-test)
@@ -190,8 +190,8 @@ As shown above, we can define the apis in three modes, array, object and file. A
 
 | Api | description | Example |
 | -- | -- | -- |
-| noapi(options) | Start the api service | [Example](./examples/16-all-options/app.js) |
-| noapi.test(config) | Start to test the api service | [Example](./examples/12-use-express-middleware/test/index.js) |
+| noapi(options) | Start the api service | [Example](./examples/17-all-options/app.js) |
+| noapi.test(config) | Start to test the api service | [Example](./examples/13-use-express-middleware/test/index.js) |
 
 
 
@@ -199,10 +199,10 @@ As shown above, we can define the apis in three modes, array, object and file. A
 
 | Property | description | Example |
 | -- | -- | -- |
-| options.serverName | The server name | [Example](./examples/16-all-options/app.js) |
-| options.host | The host name | [Example](./examples/16-all-options/app.js) |
-| options.port | The port number | [Example](./examples/16-all-options/app.js) |
-| options.public | The web public options  | [Example](./examples/16-all-options/app.js) |
+| options.serverName | The server name | [Example](./examples/17-all-options/app.js) |
+| options.host | The host name | [Example](./examples/17-all-options/app.js) |
+| options.port | The port number | [Example](./examples/17-all-options/app.js) |
+| options.public | The web public options  | [Example](./examples/17-all-options/app.js) |
 | options.assignRules | Transfer some requests to other api services | [Example](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) |
 | options.power | The custom function to handle query | [Example](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js) |
 
@@ -215,7 +215,7 @@ As shown above, we can define the apis in three modes, array, object and file. A
 | config.onlyTests | Only run test cases with a title of the following value | [Example](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases/test/config.js)|
 | config.ignoreTests | Ignore test cases whose title is the following value | [Example](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases/test/config.js)|
 | config.catalogs | Categorize the test cases | [Example](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases/test/config.js)|
-| config.timeout | The timeout of mocha | [Example](./examples/12-use-express-middleware/test/index.js)|
+| config.timeout | The timeout of mocha | [Example](./examples/13-use-express-middleware/test/index.js)|
 | config.serverReadyTimeout | The timeout (seconds) of mocha for waiting for server ready | |
 | config.waitSeconds | The time to wait for the server to be ready before testing | |
 
