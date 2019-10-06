@@ -74,7 +74,7 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 
 
-### [Define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file/api)
+### [Define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file/api/bill/form/crud.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
 
@@ -92,7 +92,7 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 
 
-### [Define apis with empty file (without test)](./examples/06-define-apis-with-empty-file/api)
+### [Define apis with empty file (without test)](./examples/06-define-apis-with-empty-file/api/bill/form/crud.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
