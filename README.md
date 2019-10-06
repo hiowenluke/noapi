@@ -62,61 +62,61 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Demo
 
-### Define apis and test cases with array
+### [Define apis and test cases with array](./examples/01-define-apis-and-test-cases-with-array/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
 
 
 
-### Define apis and test cases with object
+### [Define apis and test cases with object](./examples/02-define-apis-and-test-cases-with-object/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
 
 
 
-### Define apis and test cases with file
+### [Define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file/api)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
 
 
 
-### Define apis and test cases completely (with full test options)
+### [Define apis and test cases completely (with full test options)](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
 
 
-### Define apis minimally (without test)
+### [Define apis minimally (without test)](./examples/05-define-apis-[minimally]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### Define apis with empty file (without test)
+### [Define apis with empty file (without test)](./examples/06-define-apis-with-empty-file/api)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
 
 
-### Easy starting
+### [Easy starting](./examples/01-define-apis-and-test-cases-with-array/app.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
 
 
 
-### Easy testing
+### [Easy testing](./examples/01-define-apis-and-test-cases-with-array/test/index.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
 
 
 
-### Easy before do and after do in testing
+### [Easy before do and after do in testing](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
 
 
 
-### Easy multiple test cases for one api
+### [Easy multiple test cases for one api](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
 
