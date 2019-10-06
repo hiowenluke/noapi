@@ -6,7 +6,7 @@
 const me =
 
 	// The following api definition is the same as "01-define-apis-and-test-cases-with-array".
-	// See "06-define-apis-and-test-cases-[completely]" to learn more.
+	// See "04-define-apis-and-test-cases-[completely]" to learn more.
 
 	{
 		// The demo url for this api

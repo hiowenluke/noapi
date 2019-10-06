@@ -9,8 +9,8 @@
 // 		01-define-apis-and-test-cases-with-array
 // 		02-define-apis-and-test-cases-with-object
 //		03-define-apis-and-test-cases-with-file
-//		04-define-apis-with-empty-file
-//		06-define-apis-and-test-cases-[completely]
+//		06-define-apis-with-empty-file
+//		04-define-apis-and-test-cases-[completely]
 
 
 const me = [

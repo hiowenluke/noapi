@@ -10,9 +10,9 @@
 // Learn more:
 // 		01-define-apis-and-test-cases-with-array
 //		03-define-apis-and-test-cases-with-file
-//		04-define-apis-with-empty-file
+//		06-define-apis-with-empty-file
 //		05-define-apis-[minimally]
-//		06-define-apis-and-test-cases-[completely]
+//		04-define-apis-and-test-cases-[completely]
 
 const me = {
 
@@ -22,7 +22,7 @@ const me = {
 			crud:
 
 				// The following api definition is the same as "01-define-apis-and-test-cases-with-array".
-				// See "06-define-apis-and-test-cases-[completely]" to learn more.
+				// See "04-define-apis-and-test-cases-[completely]" to learn more.
 
 				{
 					// The demo url for this api

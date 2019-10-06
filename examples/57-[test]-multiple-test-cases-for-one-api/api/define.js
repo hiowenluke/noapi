@@ -1,5 +1,5 @@
 
-// See "06-define-apis-and-test-cases-[completely]" to learn more.
+// See "04-define-apis-and-test-cases-[completely]" to learn more.
 
 const me = [
 	'http://localhost:3000/user/get',
