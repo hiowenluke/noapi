@@ -55,11 +55,11 @@ const me = [
 	// /////////////////////////////////////////////
 
 	{
-		url: 'http://localhost:3000/info/form/crud?formName=employee',
+		url: 'http://localhost:3000/info/form/crud?formName=trader',
 
 		// The Object of the result returned from server must has "formName" property, and it's value must be "trader".
 		test: {
-			formName: 'employee',
+			formName: 'trader',
 		},
 
 		// Equal to:
