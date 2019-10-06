@@ -21,11 +21,11 @@
 //
 //
 // Learn more:
-// 		01-define-api-with-array
-// 		02-define-api-with-object
-//		03-define-api-with-file
-//		04-define-api-with-empty-file
-//		05-define-api-[minimally]
+// 		01-define-apis-and-test-cases-with-array
+// 		02-define-apis-and-test-cases-with-object
+//		03-define-apis-and-test-cases-with-file
+//		04-define-apis-with-empty-file
+//		05-define-apis-[minimally]
 //
 // /////////////////////////////////////////////
 
