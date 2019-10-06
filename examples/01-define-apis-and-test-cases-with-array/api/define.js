@@ -8,11 +8,11 @@
 //
 
 // Learn more:
-// 		02-define-api-with-object
-//		03-define-api-with-file
-//		04-define-api-with-empty-file
-//		05-define-api-[minimally]
-//		06-define-api-[completely]
+// 		02-define-apis-and-test-cases-with-object
+//		03-define-apis-and-test-cases-with-file
+//		04-define-apis-with-empty-file
+//		05-define-apis-[minimally]
+//		06-define-apis-and-test-cases-[completely]
 
 
 const me = [
