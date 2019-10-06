@@ -1,6 +1,6 @@
 {
   "name": "noapi",
-  "version": "1.5.29",
+  "version": "1.6.0",
   "description": "Noapi is a light API framework for Node.js, easily define apis and test cases, easily I/O. You can focus on the business code, no need to care about how to manage web service, api services, routes, test cases, etc., improve your efficiency, save your time.",
   "main": "index.js",
   "repository": {
