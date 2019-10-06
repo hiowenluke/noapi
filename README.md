@@ -110,13 +110,13 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 
 
-### [Easy before do and after do in testing](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
+### [Easy before do and after do in testing](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-apis-and-test-cases-%5Bcompletely%5D/api/define.js#L238)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
 
 
 
-### [Easy multiple test cases for one api](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
+### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-apis-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
 
@@ -137,41 +137,41 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ### Single api services
 
-* [10 get url parameters via query](./examples/10-get-url-parameters-via-query)
-* [11 get url parameters via name](./examples/11-get-url-parameters-via-name)
-* [12 return result](./examples/12-return-result)
-* [13 use express middleware](./examples/13-use-express-middleware)
-* [14 custom express route](./examples/14-custom-express-route)
-* [15 public folder](./examples/15-public-folder)
-* [16 set public folder](./examples/16-set-public-folder)
-* [17 all options](./examples/17-all-options)
+* [10 get url parameters via query](./examples/10-get-url-parameters-via-query/biz/bill/form/crud.js)
+* [11 get url parameters via name](./examples/11-get-url-parameters-via-name/biz/bill/form/crud.js)
+* [12 return result](./examples/12-return-result/biz/bill/form/crud.js)
+* [13 use express middleware](./examples/13-use-express-middleware/app.js)
+* [14 custom express route](./examples/14-custom-express-route/app.js)
+* [15 public folder](./examples/15-public-folder/app.js)
+* [16 set public folder](./examples/16-set-public-folder/app.js)
+* [17 all options](./examples/17-all-options/app.js)
 
 
 
 ### Multiple api services
 
-* [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services)
-* [21 [multi] multi api services](./examples/21-[multi]-multi-api-services)
-* [22 [multi] call the api which is in other api services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services)
-* [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules)
-* [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory)
-* [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function)
-* [26 [multi] [for all api services] use advanced assign rules and power function](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function)
-* [27 [multi] use noapi.do instead of global.api.do to improve performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance)
-* [28 [multi] public folder](./examples/28-[multi]-public-folder)
-* [50 [test] all kinds of test](./examples/50-[test]-all-kinds-of-test)
+* [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
+* [21 [multi] multi api services](./examples/21-[multi]-multi-api-services/readme.md)
+* [22 [multi] call the api which is in other api services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/api-erp/biz/report/purchase/order.js)
+* [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js)
+* [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/aha)
+* [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js)
+* [26 [multi] [for all api services] use advanced assign rules and power function](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/web/noapi/index.js)
+* [27 [multi] use noapi.do instead of global.api.do to improve performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance/api-erp/biz/report/purchase/order.js)
+* [28 [multi] public folder](./examples/28-[multi]-public-folder/web/app.js)
 
 
 
 ### For test
 
-* [51 [test] [config.onlyTests] run only the specified test cases](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases)
-* [52 [test] [config.ignoreTests] ignore the specified test cases](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases)
-* [53 [test] [config.catalogs] categorize the test cases](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases)
-* [54 [test] test.beforeDo and test.afterDo](./examples/54-[test]-test.beforeDo-and-test.afterDo)
-* [55 [test] test.getResult](./examples/55-[test]-test.getResult)
-* [56 [test] test.verify](./examples/56-[test]-test.verify)
-* [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api)
+* [50 [test] all kinds of test](./examples/50-[test]-all-kinds-of-test/api/define.js)
+* [51 [test] [config.onlyTests] run only the specified test cases](./examples/51-[test]-[config.onlyTests]-run-only-the-specified-test-cases/test/config.js)
+* [52 [test] [config.ignoreTests] ignore the specified test cases](./examples/52-[test]-[config.ignoreTests]-ignore-the-specified-test-cases/test/config.js)
+* [53 [test] [config.catalogs] categorize the test cases](./examples/53-[test]-[config.catalogs]-categorize-the-test-cases/test/config.js)
+* [54 [test] test.beforeDo and test.afterDo](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/54-%5Btest%5D-test.beforeDo-and-test.afterDo/api/define.js#L46)
+* [55 [test] test.getResult](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/55-%5Btest%5D-test.getResult/api/define.js#L85)
+* [56 [test] test.verify](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/56-%5Btest%5D-test.verify/api/define.js#L46)
+* [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api/api/define.js)
 
 
 
