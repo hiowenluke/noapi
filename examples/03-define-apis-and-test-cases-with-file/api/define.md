@@ -10,6 +10,6 @@ Note:
 Learn more:
 * 01-define-apis-and-test-cases-with-array
 * 02-define-apis-and-test-cases-with-object
-* 06-define-apis-with-empty-file
-* 05-define-apis-[minimally]
 * 04-define-apis-and-test-cases-[completely]
+* 05-define-apis-[minimally]
+* 06-define-apis-with-empty-file
