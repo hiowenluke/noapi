@@ -93,7 +93,7 @@ const me = [
 	{
 		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 
-		// Verify the value of result.success returns from server
+		// Verify the state of result (the value of result.success) returned from server
 		test: true,
 
 		// Equal to:
@@ -116,7 +116,7 @@ const me = [
 		// When testing, it will be used to validate whether the result returned from server is correct.
 		test(result, resultText) {
 
-			// Find the feature string in the result text
+			// Find the feature string in the result text (the JSON string of result)
 			return resultText.indexOf("Cash") >= 0;
 		},
 	},
@@ -133,7 +133,7 @@ const me = [
 
 		test(result, resultText) {
 
-			// Find the specified values in the result object
+			// Find the specified value in the result object
 			return result.data.formName === 'goods';
 		},
 	},
