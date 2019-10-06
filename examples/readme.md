@@ -44,4 +44,4 @@ sh ./test.sh
 * [23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md](./23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md)
 * [24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md](./24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md)
 * [25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md](./25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md)
-* [26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly/readme.md](./26-[multi]-[for-all-api-services]-use-assign-rules-and-power-function-advancedly/readme.md)
+* [26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md](./26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md)
