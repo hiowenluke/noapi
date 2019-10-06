@@ -26,10 +26,27 @@ const me = [
 			formName: 'trader', // "trader" is a demo value
 		},
 
-		// The expected result which will be returned from server in testing.
+		// Test case (the expected result which will be returned from server in testing)
 		result: {
 			"success": true, // The state of the result
-			"data": {		 // The data of the result
+			"data": {		 	// The data of the result
+				"formName": "trader"
+			}
+		}
+	},
+
+	// Define an api with demo url
+	{
+		// You can just specify a demo url including the api and parameters,
+		// click it in your editor and view the result in your browser, so convenient.
+		url: "http://localhost:3000/bill/form/crud?formName=trader",
+
+		// 'Cause the demo url is just a demo, so maybe you wanna to omit "http://localhost:3000",
+		// but that will loses the meaning of the demo and the convenience mentioned above.
+
+		result: {
+			"success": true,
+			"data": {
 				"formName": "trader"
 			}
 		}
@@ -37,21 +54,7 @@ const me = [
 
 	// Define another api
 	{
-		// You can just specify a demo url including the api and parameters,
-		// click it in your editor and view the result in your browser, so convenient.
 		url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
-
-		// Noapi automatically parses the api and params in the demo url,
-		// so the "api" and "params" properties are omitted in this case:
-		// 		api: '/bill/form/check',
-		// 		params: {
-		//			billid: 123,
-		//			act: 'check'
-		// 		}
-
-		// 'Cause the demo url is just a demo, so you can omit "http://localhost:3000",
-		// but that will loses the meaning of the demo and the convenience mentioned above.
-
 
 		result: {
 			"success": true,
