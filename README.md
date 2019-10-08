@@ -86,13 +86,13 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 
 
-### [Define apis minimally (without test)](./examples/05-define-apis-[minimally]/api/define.js)
+### [Define apis minimally (without test cases)](./examples/05-define-apis-[minimally]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### [Define apis with empty file (without test)](./examples/06-define-apis-with-empty-file/api/bill/form/crud.js)
+### [Define apis with empty file (without test cases)](./examples/06-define-apis-with-empty-file/api/bill/form/crud.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
