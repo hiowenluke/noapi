@@ -2,7 +2,7 @@
 
 # Noapi
 
-Noapi is a light API framework for [Node.js](https://nodejs.org), easily define, I/O and test. You can focus on the business code, no need to care about how to manage web service, api services, routes, test cases, etc., improve your efficiency, save your time.
+Noapi is a light API framework for [Node.js](https://nodejs.org), easily define API and test cases, easily input/output and test. You can focus on the business code, no need to care about how to manage web service, api services, routes, test cases, etc., improve your efficiency, save your time.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
 
 
@@ -62,61 +62,61 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Demo
 
-### [Define apis and test cases with array](./examples/01-define-apis-and-test-cases-with-array/api/define.js)
+### [Define API and test cases with array](./examples/01-define-API-and-test-cases-with-array/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
 
 
 
-### [Define apis and test cases with object](./examples/02-define-apis-and-test-cases-with-object/api/define.js)
+### [Define API and test cases with object](./examples/02-define-API-and-test-cases-with-object/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
 
 
 
-### [Define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file/api/bill/form/crud.js)
+### [Define API and test cases with file](./examples/03-define-API-and-test-cases-with-file/api/bill/form/crud.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
 
 
 
-### [Define apis and test cases completely (with full test options)](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
+### [Define API and test cases completely (with full test options)](./examples/04-define-API-and-test-cases-[completely]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
 
 
 
-### [Define apis minimally (without test cases)](./examples/05-define-apis-[minimally]/api/define.js)
+### [Define API minimally (without test cases)](./examples/05-define-API-[minimally]/api/define.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
 
 
 
-### [Define apis with empty file (without test cases)](./examples/06-define-apis-with-empty-file/api/bill/form/crud.js)
+### [Define API with empty file (without test cases)](./examples/06-define-API-with-empty-file/api/bill/form/crud.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
 
 
 
-### [Easy starting](./examples/01-define-apis-and-test-cases-with-array/app.js)
+### [Easy starting](./examples/01-define-API-and-test-cases-with-array/app.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
 
 
 
-### [Easy testing](./examples/01-define-apis-and-test-cases-with-array/test/index.js)
+### [Easy testing](./examples/01-define-API-and-test-cases-with-array/test/index.js)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
 
 
 
-### [Easy before do and after do in testing](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-apis-and-test-cases-%5Bcompletely%5D/api/define.js#L238)
+### [Easy before do and after do in testing](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L238)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
 
 
 
-### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-apis-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
+### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
 
@@ -124,18 +124,18 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Examples
 
-### Define apis
+### Define API ans test cases
 
-* [01 define apis and test cases with array](./examples/01-define-apis-and-test-cases-with-array/api/define.js)
-* [02 define apis and test cases with object](./examples/02-define-apis-and-test-cases-with-object/api/define.js)
-* [03 define apis and test cases with file](./examples/03-define-apis-and-test-cases-with-file/api)
-* [04 define apis and test cases [completely]](./examples/04-define-apis-and-test-cases-[completely]/api/define.js)
-* [05 define apis [minimally]](./examples/05-define-apis-[minimally]/api/define.js)
-* [06 define apis with empty file](./examples/06-define-apis-with-empty-file/api)
+* [01 Define API and test cases with array](./examples/01-define-API-and-test-cases-with-array/api/define.js)
+* [02 Define API and test cases with object](./examples/02-define-API-and-test-cases-with-object/api/define.js)
+* [03 Define API and test cases with file](./examples/03-define-API-and-test-cases-with-file/api)
+* [04 Define API and test cases [completely]](./examples/04-define-API-and-test-cases-[completely]/api/define.js)
+* [05 Define API [minimally]](./examples/05-define-API-[minimally]/api/define.js)
+* [06 Define API with empty file](./examples/06-define-API-with-empty-file/api)
 
 
 
-### Single api services
+### Single API services
 
 * [10 get url parameters via query](./examples/10-get-url-parameters-via-query/biz/bill/form/crud.js)
 * [11 get url parameters via name](./examples/11-get-url-parameters-via-name/biz/bill/form/crud.js)
@@ -148,7 +148,7 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 
 
-### Multiple api services
+### Multiple API services
 
 * [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
 * [21 [multi] multi api services](./examples/21-[multi]-multi-api-services/readme.md)
@@ -181,17 +181,17 @@ See [examples](./examples) to learn more.
 
 ## Convert The Definition Mode
 
-As shown above, we can define the apis in three modes, array, object and file. And, we can convert it between these three modes any time via "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
+As shown above, we can define API in three modes, array, object and file. And, we can convert it between these three modes any time via "[noapi-definejs-converter](https://github.com/hiowenluke/noapi-definejs-converter)".
 
 
 
 
-## Api
+## API
 
-| Api | description | Example |
+| API | description | Example |
 | -- | -- | -- |
-| noapi(options) | Start the api service | [Example](./examples/17-all-options/app.js) |
-| noapi.test(config) | Start to test the api service | [Example](./examples/13-use-express-middleware/test/index.js) |
+| noapi(options) | Start the API service | [Example](./examples/17-all-options/app.js) |
+| noapi.test(config) | Start to test the API service | [Example](./examples/13-use-express-middleware/test/index.js) |
 
 
 
@@ -203,7 +203,7 @@ As shown above, we can define the apis in three modes, array, object and file. A
 | options.host | The host name | [Example](./examples/17-all-options/app.js) |
 | options.port | The port number | [Example](./examples/17-all-options/app.js) |
 | options.public | The web public options  | [Example](./examples/17-all-options/app.js) |
-| options.assignRules | Transfer some requests to other api services | [Example](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) |
+| options.assignRules | Transfer some requests to other API services | [Example](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) |
 | options.power | The custom function to handle query | [Example](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js) |
 
 
