@@ -10,7 +10,7 @@ const getApiServiceNames = (root) => {
 	const serviceName = lib.getApiServiceNameFromPath(root);
 
 	// For ".../api", e.g.:
-	// 		01-define-apis-and-test-cases-with-array/api
+	// 		01-define-API-and-test-cases-with-array/api
 	if (lib.isLegalApiServiceName(serviceName)) {
 		serviceNames.push(serviceName);
 		return serviceNames;
