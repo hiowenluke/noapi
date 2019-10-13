@@ -8,8 +8,8 @@ Note:
     3. Use an array to define multiple test cases for one api.
     
 Learn more:
-* 01-define-apis-and-test-cases-with-array
-* 02-define-apis-and-test-cases-with-object
-* 04-define-apis-and-test-cases-[completely]
-* 05-define-apis-[minimally]
-* 06-define-apis-with-empty-file
+* 01-define-API-and-test-cases-with-array
+* 02-define-API-and-test-cases-with-object
+* 04-define-API-and-test-cases-[completely]
+* 05-define-API-[minimally]
+* 06-define-API-with-empty-file

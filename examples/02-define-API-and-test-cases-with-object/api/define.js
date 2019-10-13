@@ -8,11 +8,11 @@
 //
 
 // Learn more:
-// 		01-define-apis-and-test-cases-with-array
-//		03-define-apis-and-test-cases-with-file
-//		04-define-apis-and-test-cases-[completely]
-//		05-define-apis-[minimally]
-//		06-define-apis-with-empty-file
+// 		01-define-API-and-test-cases-with-array
+//		03-define-API-and-test-cases-with-file
+//		04-define-API-and-test-cases-[completely]
+//		05-define-API-[minimally]
+//		06-define-API-with-empty-file
 
 const me = {
 
@@ -21,8 +21,8 @@ const me = {
 		form: {
 			crud:
 
-				// The following api definition is the same as "01-define-apis-and-test-cases-with-array".
-				// See "04-define-apis-and-test-cases-[completely]" to learn more.
+				// The following api definition is the same as "01-define-API-and-test-cases-with-array".
+				// See "04-define-API-and-test-cases-[completely]" to learn more.
 
 				{
 					// The demo url for this api

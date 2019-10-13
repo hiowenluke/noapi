@@ -6,7 +6,7 @@
 Take example 01 as an example:
 
 ```sh
-cd /path/to/noapi/examples/01-define-apis-and-test-cases-with-array
+cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 ```
 
 Read define.js:
