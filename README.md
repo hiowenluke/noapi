@@ -28,6 +28,19 @@ npm test
 
 
 
+## Using api.js and define.js
+The "api.js" and "define.js" are blanket terms for the two main components of a noapi instance that will be referenced to below.
+
+### api.js
+The api.js defines the data and site structure of the noapi instance. It can listen for and respond to API calls, which uses expressjs internally.
+express> ``app.listen``
+
+### define.js
+The define.js defines the "active" agent for a noapi instance. It sends API calls to the api.js and then read it's response. You can think of this as the API's client or accessor.
+express> ``app.get``
+
+
+
 ## Quick Start (in Under 5 Minutes)
 
 ### 1. Download the [template repo](https://github.com/hiowenluke/create-api-app-in-5-min)
