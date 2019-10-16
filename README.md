@@ -124,7 +124,7 @@ See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to lear
 
 ## Examples
 
-### Define API ans test cases
+### Define API and test cases
 
 * [01 Define API and test cases with array](./examples/01-define-API-and-test-cases-with-array/api/define.js)
 * [02 Define API and test cases with object](./examples/02-define-API-and-test-cases-with-object/api/define.js)
