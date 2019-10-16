@@ -29,16 +29,16 @@ npm test
 
 
 ## Using api.js and define.js
-The "api.js" and "define.js" are blanket terms for the two main components of a noapi instance that will be referenced to below.
+The "api.js" and "define.js" are the two main components of a noapi instance that will be referenced to below.
 
-### api.js
-The api.js defines the data and site structure of the noapi instance. It can listen for and respond to API calls, which uses expressjs internally.
-express> ``app.listen``
+### api.js ``app.get``
+The api.js defines the "active" agent for a noapi instance. It manages the API calls and can listen for and respond to the API calls set out in the define.js. This contains the parameters for the expressjs backends.
 
-### define.js
-The define.js defines the "active" agent for a noapi instance. It sends API calls to the api.js and then read it's response. You can think of this as the API's client or accessor.
-express> ``app.get``
+### define.js ``app.listen``
+The api.js defines the data and site structure of the noapi instance.
 
+#### ./biz/
+Once your api.js and define.js are set up appropriately, noapi allows you to focus on your functional business code. See more below...
 
 
 ## Quick Start (in Under 5 Minutes)
@@ -64,7 +64,7 @@ npm install
 ### 3. DIY
 
 1) Modify the api/define.js to define your apis.
-2) Write your business code in biz folder to start up your great project. 
+2) Write your business code in the biz folder to start up your great project. 
 
 Enjoy!
 
