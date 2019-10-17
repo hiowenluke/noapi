@@ -29,16 +29,16 @@ npm test
 
 
 ## Using api.js and define.js
-The "api.js" and "define.js" are the two main components of a noapi instance that will be referenced to below.
+The "app.js" and "define.js" are the two main components of a noapi instance that will be referenced to below.
 
-### api.js ``app.get``
-The api.js defines the "active" agent for a noapi instance. It manages the API calls and can listen for and respond to the API calls set out in the define.js. This contains the parameters for the expressjs backends.
+### app.js ``app.get``
+The app.js defines the "active" agent for a noapi instance. It manages the API calls and can listen for and respond to the API calls set out in the define.js. This contains the parameters for the expressjs backends.
 
 ### define.js ``app.listen``
-The api.js defines the data and site structure of the noapi instance.
+The define.js defines the data and site structure of the noapi instance.
 
 #### ./biz/
-Once your api.js and define.js are set up appropriately, noapi allows you to focus on your functional business code. See more below...
+Once your app.js and define.js are set up appropriately, noapi allows you to focus on your functional business code. See more below...
 
 
 ## Quick Start (in Under 5 Minutes)
