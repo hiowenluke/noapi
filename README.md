@@ -48,10 +48,9 @@ npm install
 
 1) Modify the api/define.js to define your apis.
 2) Write your business code in the biz folder to start up your great project. 
-
-Enjoy!
 <p><br/></p>
 
+Enjoy!
 See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to learn more.
 <p><br/></p>
 
