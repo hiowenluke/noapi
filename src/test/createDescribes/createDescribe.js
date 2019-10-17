@@ -2,7 +2,7 @@
 const v = require('voca');
 const config = require('../config');
 const createTestIt = require('../createTestIt');
-const lib = require('../__Lib');
+const lib = require('../__lib');
 
 const noTest = (title, url, params) => {
 	const frontGroundYellow = '\x1b[33m';
