@@ -28,19 +28,6 @@ npm test
 
 
 
-## Using app.js and define.js
-The "app.js" and "define.js" are the two main components of a noapi instance that will be referenced to below.
-
-### app.js ``app.get``
-The app.js defines the "active" agent for a noapi instance. It manages the API calls and can listen for and respond to the API calls set out in the define.js. This contains the parameters for the expressjs backends.
-
-### define.js ``app.listen``
-The define.js defines the data and site structure of the noapi instance.
-
-#### ./biz/
-Once your app.js and define.js are set up appropriately, noapi allows you to focus on your functional business code. See more below...
-
-
 ## Quick Start (in Under 5 Minutes)
 
 ### 1. Download the [template repo](https://github.com/hiowenluke/create-api-app-in-5-min)
