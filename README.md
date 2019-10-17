@@ -28,7 +28,7 @@ npm test
 
 
 
-## Using api.js and define.js
+## Using app.js and define.js
 The "app.js" and "define.js" are the two main components of a noapi instance that will be referenced to below.
 
 ### app.js ``app.get``
