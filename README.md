@@ -12,7 +12,7 @@ Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and e
 <p><br/></p>
 
 ## Installation
-(Make sure to precede npm with "sudo" on linux and specifically debian hosts.)
+(Make sure to precede npm with "sudo" on Linux and specifically debian hosts.)
 
 ```sh
 npm i noapi --save
@@ -41,7 +41,7 @@ npm install
 
 1) Run: `node .`
 2) Open api/define.js, then copy and paste the urls to your browser to view the result.
-3) Run: `npm test` to automatically test in terminal
+3) Run: `npm test` to automatically test in terminal.
 <p><br/></p>
 
 ### 3. DIY
