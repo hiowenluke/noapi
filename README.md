@@ -2,17 +2,18 @@
 
 # Noapi
 
-Noapi is a light API framework for [Node.js](https://nodejs.org), easily define API and test cases, easily input/output and test. You can focus on the business code, no need to care about how to manage web service, api services, routes, test cases, etc., improve your efficiency, save your time.
+Noapi is a light API framework for [Node.js](https://nodejs.org). It can easily define APIs and test cases, as well as easily read inputs/outputs and test them. Noapi takes care of the required web services, api services, routes, test cases, and etcetera to help you focus on functional code, improve your efficiency, and save your time.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
 
 
-Noapi is based on [Express](https://expressjs.com), you can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi requires Node 7.6+ for async/await.
+Noapi is based on [Express](https://expressjs.com). You can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi requires Node 7.6+ for async/await.
 
-Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear, easy to read and maintain, highly recommend you give it a try.
+Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It is highly recommended that you give it a try.
 
 
 
 ## Installation
+(Make sure to precede npm with "sudo" on linux and specifically debian hosts.)
 
 ```sh
 npm i noapi --save
@@ -25,6 +26,19 @@ cd noapi
 npm test
 ```
 
+
+
+## Using app.js and define.js
+The "app.js" and "define.js" are the two main components of a noapi instance that will be referenced to below.
+
+### app.js ``app.get``
+The app.js defines the "active" agent for a noapi instance. It manages the API calls and can listen for and respond to the API calls set out in the define.js. This contains the parameters for the expressjs backends.
+
+### define.js ``app.listen``
+The define.js defines the data and site structure of the noapi instance.
+
+#### ./biz/
+Once your app.js and define.js are set up appropriately, noapi allows you to focus on your functional business code. See more below...
 
 
 ## Quick Start (in Under 5 Minutes)
@@ -42,15 +56,15 @@ npm install
 ### 2. Experience
 
 1) Run: `node .`
-2) Open api/define.js, copy and past the urls to your browser to view the result.
-3) Automatically test in your terminal: `npm test`
+2) Open api/define.js, then copy and paste the urls to your browser to view the result.
+3) Run: `npm test` to automatically test in terminal
 
 
 
 ### 3. DIY
 
 1) Modify the api/define.js to define your apis.
-2) Write your business code in biz folder to start up your great project. 
+2) Write your business code in the biz folder to start up your great project. 
 
 Enjoy!
 
