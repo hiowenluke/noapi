@@ -5,53 +5,9 @@
 Noapi is a light API framework for [Node.js](https://nodejs.org). It can be used to easily define APIs, manage inputs and outputs, and create test cases. Noapi takes care of the underlying web services, api services, routing, and testing to help you focus on <b>writing functional code</b>, <b>improving your efficiency</b>, and <b>saving you time</b>.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
 
-## Installation
-
-Installing noapi is easy with npm. If you're new to node.js and npm, don't worry! It's easy to get started.
-
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
-### Install requirements
-
-Noapi is based on [Express](https://expressjs.com). You can use all the middleware of Express or write your own middleware and custom routes. (All of them will be executed before noapi). Noapi requires Node 7.6+ for async/await.
-
-If you're familiar with node.js and express.js then skip this section.
-
-#### Install node.js and npm (Required)
-
-NOTE: Don't forget to run put [sudo](https://www.sudo.ws/intro.html) at the beginning of a command if you get a permissions error (ex: `sudo apt-get install nodejs npm`).
-
-Debian, Mint, Ubuntu:
-```sh
-apt-get install nodejs npm
-```
-
-Fedora:
-```sh
-dnf install nodejs npm
-```
-
-More info [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
-#### Install express.js (Required)
-
-Within your project directory:
-```sh
-npm init
-```
-
-You'll be prompted for a bunch of different parameters here. You can just hit ENTER to skip any parameter and leave it as default. However, <b>make sure you provide `app.js` as the `entry point`!</b>
-
-Now to install express.js just run:
-```sh
-npm install express --save
-```
-
-More info [here](https://expressjs.com/en/starter/installing.html)
-
-### Install noapi with npm
-
-NOTE: You need to have node.js and npm setup from the previous section for these commands to work.
+## Installation
 
 ```sh
 npm i noapi --save
