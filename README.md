@@ -7,8 +7,6 @@ Noapi is a light API framework for [Node.js](https://nodejs.org). It can be used
 
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
-New users, please checkout the [tutorial](https://github.com/hiowenluke/noapi/tree/master/doc/tutorial.md).
-
 ## Installation
 
 ```sh
@@ -62,6 +60,12 @@ Enjoy!
 
 See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to learn more.
 
+
+## Tutorials
+
+### Noapi and node.js Tutorial for Beginners
+
+New users, please checkout this [tutorial](https://github.com/CollinEMac/noapi/wiki/Noapi-and-node.js-Tutorial-for-Beginners).
 
 ## Examples
 
