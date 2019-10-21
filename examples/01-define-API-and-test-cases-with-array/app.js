@@ -7,5 +7,4 @@ module.exports = server;
 
 // For node.js veteran:
 // 		The server is an instance of http.server.
-// 		See below documentations to learn more:
-//		https://nodejs.org/api/http.html#http_class_http_server
+// 		See https://nodejs.org/api/http.html#http_class_http_server to learn more.
