@@ -15,7 +15,9 @@
 		4. When times'up, the server will responses a result to the browser.
 * */
 
-// The app is an express app
+// The app is an instance of express.
+// The express is expressJs itself.
+// The server is an instance of http.server.
 const {app, server, express} = require('../noapi')();
 
 const waitSeconds = (seconds) => {
