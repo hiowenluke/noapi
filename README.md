@@ -92,7 +92,7 @@ See [Tutorials](#tutorials) and [examples](#examples) to learn more.
 #### For Beginners of node.js
 
 * [Starting with template project(**recommend**)](https://github.com/CollinEMac/noapi/wiki/Noapi-and-node.js-Tutorial-for-Beginners)
-* [Starting with a blank project](https://github.com/dashritwik/noapi-tutorial)
+* Starting with a blank project (waiting for you to add)
 
 ## Examples
 
