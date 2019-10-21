@@ -107,25 +107,14 @@ sh ./test.sh
 
 **2. Run a single example**
 
-Take example 01 as an example:
+Take example #1 as an example:
 ```sh
 cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 ```
 
-1) Read define.js:
-```sh
-open ./api/define.js
-```
-
-2) Run:
-```sh
-node .
-```
-
-3) Test:
-```sh
-npm test
-```
+1) Read **define.js**: `open ./api/define.js`
+2) Run: `node .`
+3) Test: `npm test`
 
 #### Define API and test cases
 
