@@ -96,8 +96,6 @@ See [Tutorials](#tutorials) and [examples](#examples) to learn more.
 
 ## Examples
 
-#### How to use
-
 **1. Run all examples**
 
 ```sh
@@ -107,14 +105,14 @@ sh ./test.sh
 
 **2. Run a single example**
 
-Take example #1 as an example:
+Take **example #1** as an example:
 ```sh
 cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 ```
 
-1) Read **define.js**: `open ./api/define.js`
-2) Run: `node .`
-3) Test: `npm test`
+1) Test: `npm test`
+2) Read **./api/define.js** and files in **./biz** to learn details.
+3) Run `node .` first, then copy url from **define.js** and past to your browser to experience.
 
 #### Define API and test cases
 
@@ -138,13 +136,13 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 
 #### Multiple API services
 
-* [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
-* [21 [multi] multi api services](./examples/21-[multi]-multi-api-services/readme.md)
-* [22 [multi] call the api which is in other api services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/api-erp/biz/report/purchase/order.js)
-* [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js)
-* [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/aha)
-* [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js)
-* [26 [multi] [for all api services] use advanced assign rules and power function](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/web/noapi/index.js)
+* [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services) [**[readme]**](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
+* [21 [multi] multi api services](./examples/21-[multi]-multi-api-services) [**[readme]**](./examples/21-[multi]-multi-api-services/readme.md)
+* [22 [multi] call the api which is in other api services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/api-erp/biz/report/purchase/order.js) [**[readme]**](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/readme.md)
+* [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) [**[readme]**](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md)
+* [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/aha) [**[readme]**](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md)
+* [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js) [**[readme]**](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md)
+* [26 [multi] [for all api services] use advanced assign rules and power function](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/web/noapi/index.js) [**[readme]**](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md)
 * [27 [multi] use noapi.do instead of global.api.do to improve performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance/api-erp/biz/report/purchase/order.js)
 * [28 [multi] public folder](./examples/28-[multi]-public-folder/web/app.js)
 
@@ -158,16 +156,6 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 * [55 [test] test.getResult](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/55-%5Btest%5D-test.getResult/api/define.js#L85)
 * [56 [test] test.verify](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/56-%5Btest%5D-test.verify/api/define.js#L46)
 * [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api/api/define.js)
-
-#### See special README to learn more
-
-* [20-[multi]-seperate-api-and-web-services/readme.md](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
-* [21-[multi]-multi-api-services/readme.md](./examples/21-[multi]-multi-api-services/readme.md)
-* [22-[multi]-call-the-api-which-is-in-other-api-services/readme.md](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/readme.md)
-* [23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md)
-* [24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md)
-* [25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md)
-* [26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md)
 
 ## Changing Definition Mode
 
