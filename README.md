@@ -138,7 +138,7 @@ See [Tutorials](#tutorials) and [examples](#examples) to learn more.
 * [56 [test] test.verify](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/56-%5Btest%5D-test.verify/api/define.js#L46)
 * [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api/api/define.js)
 
-See [examples](./examples) to learn more.
+See [Readme of Examples](./examples) to learn more.
 
 ## Changing Definition Mode
 
