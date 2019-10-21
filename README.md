@@ -13,14 +13,12 @@ Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and e
 npm i noapi --save
 ```
 
-To run the automated testing suite:
+Test:
 ```sh
 git clone https://github.com/hiowenluke/noapi
 cd noapi
 npm test
 ```
-
-If that passes then congratulations! You've installed noapi!
 
 ## Quick Start (in Under 5 Minutes)
 
@@ -91,12 +89,43 @@ See [Tutorials](#tutorials) and [examples](#examples) to learn more.
 
 ## Tutorials
 
-#### Noapi and node.js Tutorial for Beginners
+#### For Beginners of node.js
 
 * [Starting with template project(**recommend**)](https://github.com/CollinEMac/noapi/wiki/Noapi-and-node.js-Tutorial-for-Beginners)
 * [Starting with a blank project](https://github.com/dashritwik/noapi-tutorial)
 
 ## Examples
+
+#### How to use
+
+**1. Run all examples**
+
+```sh
+cd /path/to/noapi/examples
+sh ./test.sh
+```
+
+**2. Run a single example**
+
+Take example 01 as an example:
+```sh
+cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
+```
+
+1) Read define.js:
+```sh
+open ./api/define.js
+```
+
+2) Run:
+```sh
+node .
+```
+
+3) Test:
+```sh
+npm test
+```
 
 #### Define API and test cases
 
@@ -141,7 +170,15 @@ See [Tutorials](#tutorials) and [examples](#examples) to learn more.
 * [56 [test] test.verify](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/56-%5Btest%5D-test.verify/api/define.js#L46)
 * [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api/api/define.js)
 
-See [Readme of Examples](./examples) to learn more.
+#### See special README to learn more
+
+* [20-[multi]-seperate-api-and-web-services/readme.md](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
+* [21-[multi]-multi-api-services/readme.md](./examples/21-[multi]-multi-api-services/readme.md)
+* [22-[multi]-call-the-api-which-is-in-other-api-services/readme.md](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/readme.md)
+* [23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md)
+* [24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md)
+* [25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md)
+* [26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md)
 
 ## Changing Definition Mode
 
