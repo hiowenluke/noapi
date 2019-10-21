@@ -22,19 +22,6 @@ npm test
 
 If that passes then congratulations! You've installed noapi!
 
-## The main components of noapi
-The `app.js` and `define.js` are the two main components of a noapi instance.
-
-### ./api/define.js ``app.listen``
-The `define.js` defines the data and site structure of the noapi instance.
-
-### ./app.js ``app.get``
-The `app.js` defines the "active" agent for a noapi instance. It manages the API calls and can listen for and respond to the API calls set out in the define.js. This contains the parameters for the expressjs backends.
-
-#### ./biz/
-Once `app.js` and `define.js` are defined you can focus on the good stuff -- the business code for your application! All of that code lives here, in the /biz/ directory.
-
-
 ## Quick Start (in Under 5 Minutes)
 
 ### 1. Download the [template repo](https://github.com/hiowenluke/create-api-app-in-5-min)
@@ -60,12 +47,51 @@ Enjoy!
 
 See [examples](https://github.com/hiowenluke/noapi/tree/master/examples) to learn more.
 
+## Demos
+
+### [Define API and test cases with array](./examples/01-define-API-and-test-cases-with-array/api/define.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
+
+### [Define API and test cases with object](./examples/02-define-API-and-test-cases-with-object/api/define.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
+
+### [Define API and test cases with file](./examples/03-define-API-and-test-cases-with-file/api/bill/form/crud.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
+
+### [Define API and test cases completely (with full test options)](./examples/04-define-API-and-test-cases-[completely]/api/define.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
+
+### [Define API minimally (without test cases)](./examples/05-define-API-[minimally]/api/define.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
+
+### [Define API with empty file (without test cases)](./examples/06-define-API-with-empty-file/api/bill/form/crud.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
+
+### [Easy starting](./examples/01-define-API-and-test-cases-with-array/app.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
+
+### [Easy testing](./examples/01-define-API-and-test-cases-with-array/test/index.js)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
+
+### [Easy before do and after do in testing](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L238)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
+
+### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
+
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
 
 ## Tutorials
 
-### Noapi and node.js Tutorial for Beginners
-
-New users, please checkout this [tutorial](https://github.com/CollinEMac/noapi/wiki/Noapi-and-node.js-Tutorial-for-Beginners).
+* [Noapi and node.js Tutorial for Beginners](https://github.com/CollinEMac/noapi/wiki/Noapi-and-node.js-Tutorial-for-Beginners)
 
 ## Examples
 
@@ -113,48 +139,6 @@ New users, please checkout this [tutorial](https://github.com/CollinEMac/noapi/w
 * [57 [test] multiple test cases for one api](./examples/57-[test]-multiple-test-cases-for-one-api/api/define.js)
 
 See [examples](./examples) to learn more.
-
-## Demos
-
-### [Define API and test cases with array](./examples/01-define-API-and-test-cases-with-array/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
-
-### [Define API and test cases with object](./examples/02-define-API-and-test-cases-with-object/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
-
-### [Define API and test cases with file](./examples/03-define-API-and-test-cases-with-file/api/bill/form/crud.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
-
-### [Define API and test cases completely (with full test options)](./examples/04-define-API-and-test-cases-[completely]/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
-
-### [Define API minimally (without test cases)](./examples/05-define-API-[minimally]/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
-
-### [Define API with empty file (without test cases)](./examples/06-define-API-with-empty-file/api/bill/form/crud.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
-
-### [Easy starting](./examples/01-define-API-and-test-cases-with-array/app.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
-
-### [Easy testing](./examples/01-define-API-and-test-cases-with-array/test/index.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
-
-### [Easy before do and after do in testing](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L238)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
-
-### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
 
 ## Changing Definition Mode
 
