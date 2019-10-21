@@ -13,9 +13,9 @@ module.exports = server;
 // Further more, we can get app, server, express like below:
 // 		const {app, server, express} = require('../noapi')();
 
-// 		The app is an instance of express.
+// 		The app is an instance of express, "app = express()".
+//		The server is an instance of http.server, "server = http.createServer(...)".
 //		The express is expressJs itself.
-//		The server is an instance of http.server.
 
 //		See below examples to learn more:
 //		./examples/13-use-express-middleware/app.js
