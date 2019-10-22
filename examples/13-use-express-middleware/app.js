@@ -39,5 +39,5 @@ app.use(async (req, res, next) => {
 	next();
 });
 
-// Exports the http server for testing via supertest
+// Exports the http server for automatically testing via supertest
 module.exports = server;

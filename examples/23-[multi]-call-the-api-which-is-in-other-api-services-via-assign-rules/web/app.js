@@ -17,5 +17,5 @@ const options = {
 // So simple!
 const server = require('../../noapi')(options);
 
-// Exports the http server for testing via supertest
+// Exports the http server for automatically testing via supertest
 module.exports = server;
