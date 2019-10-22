@@ -32,7 +32,7 @@ const fn = async (query) => {
 	// for example: data.core.mms.biz.bill.mnf.manuPlan
 	const sysBizFn = lib.getSysApiFn(sysName, api, sysBizs);
 	if (typeof sysBizFn !== 'function') {
-		return {error: `The biz function corresponding to api '${api}' does not exists.`};
+		return {error: `The handler ./biz${api}.js does not exists.`};
 	}
 
 	// Automatically parse json string if needed
