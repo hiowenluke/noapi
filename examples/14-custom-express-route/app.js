@@ -8,7 +8,7 @@
  * */
 
 // The app is an instance of express, "app = express()".
-// The server is an instance of http.server, "server = http.createServer(...)".
+// The server is an instance of HTTP server, "server = http.Server(...)".
 // The express is expressJs itself.
 const {app, server, express} = require('../noapi')();
 
