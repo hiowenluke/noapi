@@ -87,6 +87,13 @@ const fixFolders = {
 		if (!fs.existsSync(testPath)) {
 			const templatePath = paths.getTemplatePath();
 			fx.copySync(templatePath + '/test', testPath);
+
+			// Remove the comments in index.js
+			// 		The require('noapi') in index.js was commented to avoid error.
+			const indexJs = testPath + '/index.js';
+			let content = fs.readFileSync(indexJs);
+			content = content.replace(/\/\/ /g, '');
+			fs.writeFileSync(indexJs, content, 'UTF-8');
 		}
 	}
 };
