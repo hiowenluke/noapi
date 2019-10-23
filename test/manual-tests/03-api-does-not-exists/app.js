@@ -12,5 +12,5 @@ const options = {
 	`,
 };
 
-const server = require('../../../src')(options);
+const server = require('../noapi')(options);
 module.exports = server;
