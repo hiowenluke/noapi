@@ -8,7 +8,6 @@ const me = [
 	// 		That is, the biz file path rule is "/<project>/biz" + api.
 	// 		Please read "/<project>/biz/do/say/hi.js" to learn more.
 	{
-
 		// Define the API (it is so simple even if it is a multi-level api path)
 		api: '/do/say/hi',
 
@@ -96,79 +95,7 @@ const me = [
 		}
 	},
 
-	// 6. Define an API with full test options
-	{
-		// .............................................
-		//
-		// Api Info
-		//
-		// .............................................
-
-		// If omitted, parse from "url"
-		api: '/do/hellWorld',
-
-		// If omitted, parse from "api" (such as "Do - HelloWorld")
-		title: 'The title of this api',
-
-		// The demo url for this api
-		url: 'http://localhost:3000/do/helloWorld?name=Owen',
-
-
-		// .............................................
-		//
-		// Test Info
-		//
-		// .............................................
-
-		// Input (send it to server). If omitted, parse from url.
-		params: {
-			name: 'Owen',
-		},
-
-		// Output (get it from server). It can be omitted if not required for testing.
-		result: {
-			"success": true,
-			"data": "Hello world! I am Owen."
-		},
-
-
-		// The test case
-		// 		For clarity of reading, write it as the sequence below:
-		//			{beforeDo, url, getResult, afterDo, verify}
-		test: {
-
-			// Call the specific apis before do with test url if needed.
-			// 		E.g., insert some data to db before do with test url.
-			// 		The beforeDo can be an array, an api, a title, or a url.
-			beforeDo: [
-				'/do/hellWorld', // by api
-				'Do - HelloWorld', // by title
-				'http://localhost:3000/do/helloWorld?name=Owen', // by url
-			],
-
-			// The test url. If omitted, use the demo url.
-			// 		E.g., the test url carries more parameters than the demo url for specific purposes.
-			url: undefined,
-
-			// Explaining how to get the result. If omitted, use the demo url.
-			// 		E.g., after deleting the data via test url, re-acquire the data to verify if it is exists.
-			// 		The usage is the same as beforeDo.
-			getResult: undefined,
-
-			// Call the specific apis after get the returned result if needed.
-			// 		E.g., delete the inserted data in before.
-			// 		The usage is the same as beforeDo.
-			afterDo: undefined,
-
-			// See below to learn more about the usage of verify:
-			//		https://github.com/hiowenluke/noapi/tree/master/examples/04-define-API-and-test-cases-[completely]/api/define.js
-			verify(result, resultText) {
-				return result.data.indexOf(`Hello world`) >= 0;
-			}
-		}
-	},
-
-	// 7. Define a simple API
+	// 6. Define a simple API
 	{
 		url: 'http://localhost:3000/about',
 		result: {
