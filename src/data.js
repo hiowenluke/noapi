@@ -73,6 +73,16 @@ const me = {
 		host: 'localhost',
 		port: '3000',
 		protocol: 'http',
+
+		// Show some tips in terminal if needed after started
+		// prompt: {
+		// 	tips: `
+		// 		---------------------------------
+		// 		Show some tips if needed.
+		// 		---------------------------------
+		// 	`,
+		// 	isKeepIndentation: false,
+		// },
 	},
 
 	serviceNames: [], // ["api-forms", "api-erp", "api-mms"]
@@ -114,6 +124,7 @@ const me = {
 		options.host && (this.serverOptions.host = options.host);
 		options.port && (this.serverOptions.port = options.port);
 		options.public && (this.serverOptions.public = options.public);
+		options.prompt && (this.serverOptions.prompt = options.prompt);
 
 		// Accept options.queryOptions and options.query
 		Object.assign(this.queryOptions, options.queryOptions, options.query);
