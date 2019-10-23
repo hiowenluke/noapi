@@ -88,11 +88,16 @@ const fixFolders = {
 			const templatePath = paths.getTemplatePath();
 			fx.copySync(templatePath + '/test', testPath);
 
+			const indexJs = testPath + '/index.js';
+			let content = fs.readFileSync(indexJs, 'UTF-8');
+
 			// Remove the comments in index.js
 			// 		The require('noapi') in index.js was commented to avoid error.
-			const indexJs = testPath + '/index.js';
-			let content = fs.readFileSync(indexJs);
-			content = content.replace(/\/\/ /g, '');
+			content = content
+				.replace('// const noapi', 'const noapi')
+				.replace('// noapi.', 'noapi.')
+			;
+
 			fs.writeFileSync(indexJs, content, 'UTF-8');
 		}
 	}
