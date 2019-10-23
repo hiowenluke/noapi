@@ -15,16 +15,6 @@ const loadCoreModules = (serviceName) => {
 	coreModuleNames.forEach(coreModuleName => {
 		const coreFolderPath = path.resolve(apiServiceRoot + '/' + coreModuleName);
 
-		if (!fs.existsSync(coreFolderPath)) {
-
-			// If there is no .../api or .../biz directory
-			if (coreModuleName === 'api' || coreModuleName === 'biz') {
-
-				// Automatically create it
-				fs.mkdirSync(coreFolderPath);
-			}
-		}
-
 		// There is .../aha or .../api or .../biz directory
 		if (fs.existsSync(coreFolderPath)) {
 
@@ -65,7 +55,9 @@ const loadCoreModules = (serviceName) => {
 /** @name me.loadCoreModules */
 const fn = () => {
 	const serviceNames = data.serviceNames;
-	serviceNames.forEach(serviceName => loadCoreModules(serviceName));
+	serviceNames.forEach(serviceName => {
+		loadCoreModules(serviceName);
+	});
 };
 
 module.exports = fn;
