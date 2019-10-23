@@ -6,6 +6,28 @@ const options = {
 	host: 'localhost',
 	port: '9000',
 
+	// -------------------------------------------
+	// Show some tips in terminal if needed after started
+	prompt: {
+		tips: `
+			---------------------------------
+			Show some tips if needed.
+				indent line
+			---------------------------------
+		`,
+		isKeepIndentation: false,
+	},
+
+	// The default value of options.prompt.isKeepIndentation is false.
+	// If we omit it, then the demo options.prompt above is equivalents to below:
+	// 		prompt: `
+	// 			---------------------------------
+	// 			Show some tips if needed.
+	// 			---------------------------------
+	// 		`,
+
+	// -------------------------------------------
+
 	// See "15-public-folder" and "16-set-public-folder" for more details
 	public: './web',
 
