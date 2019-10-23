@@ -49,11 +49,59 @@ const flow = {
 	},
 
 	setListen({options}) {
+		const showSomeTipsIfNeeded = () => {
+			const prompt = data.serverOptions.prompt;
+			if (!prompt) return;
+
+			let tips;
+			let isKeepIndentation;
+
+			if (typeof prompt === 'string')  {
+				tips = prompt;
+			}
+			else {
+				({tips, isKeepIndentation} = prompt);
+			}
+
+			// Remove redundant tabs if isKeepIndentation is false
+
+			// E.g.:
+			// 				`
+			// 					---------------------------------
+			// 					Show some tips if needed.
+			// 					---------------------------------
+			// 				`
+
+			// To:
+			// ---------------------------------
+			// Show some tips if needed.
+			// ---------------------------------
+
+			if (!isKeepIndentation) {
+				let redundantTabs = tips.match(/\n(\t+)(?=\S)/);
+				if (redundantTabs) {
+					redundantTabs = redundantTabs[1];
+
+					const reg = new RegExp('\n' + redundantTabs, 'g');
+					tips = tips
+						.replace(reg, '\n')
+						.replace(/^\s*\n/, '')
+						.replace(/\n\t*$/, '')
+						.replace(/\t/g, ' '.repeat(4))
+					;
+				}
+			}
+
+			console.log(tips);
+		};
+
 		expressApp.listen = () => {
 			const {serverName, port, isSilence} = options;
 			httpServer.listen(port, () => {
+				debugger;
 				if (isSilence || data.isTestMode) return;
 				console.log('%s server listening on port %d', serverName, port);
+				showSomeTipsIfNeeded();
 			});
 		};
 	},
