@@ -16,7 +16,7 @@ const promptForNewUser = `
 	Please do the follow steps to experience Noapi.
 	
 	1. Run
-	   1) Copy the url "http://localhost:3000/do/say/hi?name=Owen&age=100".
+	   1) Copy the url http://localhost:3000/do/say/hi?name=Owen&age=100
 	   2) Past it to your favorite browser, then press Enter.
 	   3) Then the server will returns result like below:
 		  {
@@ -34,7 +34,7 @@ const promptForNewUser = `
 	3. Test
 	   1) Press Ctrl + C to quit the demo project first.
 	   2) Execute the below command to install packages which test required:
-	   	  npm install chai mocha supertest --save-dev
+		  npm install chai mocha supertest --save-dev
 	   	  
 	   3) Execute the below command to automatically run tests:
 		  npm test
