@@ -7,43 +7,34 @@ Noapi is a light API framework for [Node.js](https://nodejs.org). It can be used
 
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
-## Installation
+
+## Quick Start
+
+**1. Init project**
 
 ```sh
-npm i noapi --save
+npm init -y
+npm install noapi --save
 ```
 
-Test:
+**2. Create index.js**
+
+```js
+const server = require('noapi')();
+module.exports = server;
+```
+
+**3. Run it**
+
 ```sh
-git clone https://github.com/hiowenluke/noapi
-cd noapi
-npm test
+node .
 ```
 
-## Quick Start (in Under 5 Minutes)
+Because we created an empty project (only index.js), Noapi will runs a demo project and prompt us how to experience noapi like below. We just follow the prompts.
 
-#### 1. Download the [template repo](https://github.com/hiowenluke/create-api-app-in-5-min)
+![](https://github.com/hiowenluke/noapi/blob/master/doc/images/prompt-for-new-user.jpg?raw=true)
 
-```sh
-git clone https://github.com/hiowenluke/create-api-app-in-5-min
-cd create-api-app-in-5-min
-npm install
-```
-
-#### 2. Check out how it works.
-
-1) Run: `node .`
-2) Open api/define.js, then copy and paste each url to your browser to view the result.
-3) Run: `npm test` to automatically test in terminal.
-
-#### 3. Tinker with things and make it your own!
-
-1) Modify the api/define.js to define your apis.
-2) Write your business code in the biz folder to start up your great project.
-
-Enjoy!
-
-See [Tutorials](#tutorials) and [examples](#examples) to learn more.
+See [examples](#examples) to learn more.
 
 ## Demos
 
@@ -86,13 +77,6 @@ See [Tutorials](#tutorials) and [examples](#examples) to learn more.
 #### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
 
 ![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
-
-## Tutorials
-
-#### For Beginners of node.js
-
-* [Starting with template project (**recommend**)](https://github.com/CollinEMac/noapi/wiki/Noapi-and-node.js-Tutorial-for-Beginners)
-* Starting with a blank project (waiting for you to add)
 
 ## Examples
 
