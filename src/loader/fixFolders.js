@@ -52,7 +52,8 @@ const cloneApiBizFromTemplate = () => {
 	}
 
 	// Show some tips for new user
-	data.serverOptions.prompt = data.promptForNewUser;
+	const prompt = require(templatePath + '/readme');
+	data.serverOptions.prompt = prompt;
 };
 
 const fixFolders = {
