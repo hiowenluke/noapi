@@ -30,9 +30,7 @@ module.exports = server;
 node .
 ```
 
-Because we created an empty project (only index.js), Noapi will runs a demo project and prompt us how to experience noapi like below. We just follow the prompts.
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/prompt-for-new-user.jpg?raw=true)
+Because we created an empty project (only index.js), Noapi will runs a demo project and prompt us how to experience Noapi. Please just follow the prompts.
 
 See [examples](#examples) to learn more.
 
