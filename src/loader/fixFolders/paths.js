@@ -9,7 +9,7 @@ const me = {
 	},
 
 	getTemplatePath() {
-		return path.resolve(__dirname, '../__template');
+		return path.resolve(__dirname, '../../__template');
 	},
 
 	getApiPath() {
