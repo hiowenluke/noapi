@@ -13,14 +13,12 @@ cd /path/to/noapi/examples
 sh ./test.sh
 ```
 
-## About Manual Tests
+## About Special Tests
 
-Test cases in this directory are used to detect if a particular issue has been fixed.
-Regarding to how to test manually, for example:
+Test cases in "special" directory are used to detect if a particular issue has been fixed.
+Regarding to how to run them, for example:
 
 ```sh
-cd /path/to/noapi/test/manual-tests/01-no-api-folder
-node .
+cd /path/to/noapi/test/special/01-empty-project-[automatically-clone-from-template]
+npm test
 ```
-
-Then follow the information output in the terminal to complete the test.
