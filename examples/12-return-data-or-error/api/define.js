@@ -8,21 +8,11 @@ const me = [
 		url: 'http://localhost:3000/bill/form/crud?formName=trader',
 		result: {
 			"success": false,
-			"error": "The formName must be employee"
+			"error": "Something is wrong"
 		}
 	},
 
 	// Return data
-	{
-		url: 'http://localhost:3000/bill/form/crud?formName=employee',
-		result: {
-			"success": true,
-			"data": {
-				"formName": "employee"
-			}
-		}
-	},
-
 	{
 		url: 'http://localhost:3000/bill/form/check?billid=123&act=check',
 		result: {
