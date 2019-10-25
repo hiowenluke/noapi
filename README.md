@@ -1,36 +1,90 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
-
 # Noapi
 
 Noapi is a light API framework for [Node.js](https://nodejs.org). It can be used to easily define APIs, manage inputs and outputs, and create test cases. Noapi takes care of the underlying web services, api services, routing, and testing to help you focus on <b>writing functional code</b>, <b>improving your efficiency</b>, and <b>saving you time</b>.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
-
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
 
 ## Quick Start
 
-**1. Init project**
+#### 1. Init project
 
+Run the following commands in your terminal:
 ```sh
 npm init -y
 npm install noapi --save
 ```
 
-**2. Create index.js**
+#### 2. Create index.js
 
+Create index.js in your code editor:
 ```js
-const server = require('noapi')();
-module.exports = server;
+// Create a web server
+require('noapi')();
 ```
 
-**3. Run it**
+#### 3. Run it
 
+Start the web server:
 ```sh
 node .
 ```
 
-Because we created an empty project (only index.js), Noapi will runs a demo project and prompt us how to experience Noapi. Please just follow the prompts.
+Noapi automatically copys **api**, **biz** and **test** folders from template if the current project is empty (only index.js), run it as a demo project. 
+
+Visit <http://localhost:3000/do/say/hi?name=Owen&age=100>, the server should returns below result:
+
+```js
+{
+    // The state of result
+    "success": true,
+    
+    // The data of result
+    "data": {
+        "msg": "Hi, I'm Owen, 100 years old.",
+        "name": "Owen",
+        "age": 100
+    }
+}
+```
+
+#### 4. Test it
+
+Press Ctrl + C to quit the project above in your terminal, then modify the index.js:
+```js
+// Create a web server
+const server = require('noapi')();
+
+// Export the web server, the supertest used by Noapi's automated tests requires it.
+module.exports = server;
+```
+
+Install the dependencies for testing:
+```sh
+npm install chai mocha supertest --save-dev
+```
+
+Now run test:
+```sh
+npm test
+```
+
+#### 5. Learn
+
+1) Open **./api/define.js**, you can see the api **/do/say/hi** is defined in it.
+2) Open **./biz/do/say/hi.js**, this biz file is the handler of api **/do/say/hi**.
+3) Read the **biz** files  (js file under **biz** folder), learn how Noapi works.
+
+#### 6. DIY
+
+Its time to startup your great project now. Tinker with things and make it your own:
+
+1) Modify the **./api/define.js** to define your APIs (and test cases).
+2) Create the **biz** files to corresponds to your APIs.
+3) Write your business code in the **biz** files.
+
+Enjoy!
 
 See [examples](#examples) to learn more.
 
