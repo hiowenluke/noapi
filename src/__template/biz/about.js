@@ -3,14 +3,12 @@
 // Demo url: http://localhost:3000/about
 
 const fn = async (query) => {
-    return {author: 'Owen Luke'};
+    return `Author: Owen Luke`;
 
 	// Output to client:
 	// 		{
 	// 			"success": true,
-	// 			"data": {
-	//				"author": "Owen Luke"
-	// 			}
+	// 			"data": "Author: Owen Luke"
 	// 		}
 };
 
