@@ -2,6 +2,7 @@
 const fs = require('fs');
 const fx = require('fs-extra');
 const paths = require('./paths');
+const data = require('../../data');
 
 const me = {
 	apiAndBiz(apiPath, bizPath) {
