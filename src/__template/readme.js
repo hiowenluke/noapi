@@ -11,18 +11,23 @@ const me = `
 	   2) The server will returns result like below:
 		  {"success": true, "data": {"msg": "Hi, I'm Owen, 100 years old.", "name": "Owen", "age": 100}}
 	
-	2. Learn
-	   1) Open ./api/define.js, you can see the api "/do/say/hi" is defined in it.
-	   2) Open ./biz/do/say/hi.js, this biz file is the handler of api "/do/say/hi".
-	   3) Read the biz files, learn how Noapi works.
-	
-	3. Test
+	2. Test
 	   1) Press Ctrl + C to quit the demo project.
-	   2) Execute the below command to install packages which test required:
+	   2) Modify index.js as below:
+	      const server = require('noapi')();
+	      module.exports = server;
+	      
+	   3) Install packages which test required:
 		  npm install chai mocha supertest --save-dev
 	   	  
-	   3) Execute the below command to automatically run tests:
+	   4) Run tests:
 		  npm test
+
+	3. Learn
+	   1) Open ./api/define.js, you can see the api "/do/say/hi" is defined in it.
+	   2) Open ./biz/do/say/hi.js, this biz file is the handler of api "/do/say/hi".
+	   3) Read the biz files (js file under biz folder), learn how Noapi works.
+	
 	
 	---------------------------------------
 	Startup your great project
@@ -30,7 +35,7 @@ const me = `
 	Tinker with things and make it your own:
 	
 	1. Modify the ./api/define.js to define your APIs (and test cases).
-	2. Create the biz files to corresponds to the APIs.
+	2. Create the biz files to corresponds to your APIs.
 	3. Write your business code in the biz files.
 	
 	Enjoy!
