@@ -109,7 +109,7 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 
 * [10 get url parameters via query](./examples/10-get-url-parameters-via-query/biz/bill/form/crud.js)
 * [11 get url parameters via name](./examples/11-get-url-parameters-via-name/biz/bill/form/crud.js)
-* [12 return result](./examples/12-return-result/biz/bill/form/crud.js)
+* [12 return data or error](./examples/12-return-data-or-error/biz/bill/form/crud.js)
 * [13 use express middleware](./examples/13-use-express-middleware/app.js)
 * [14 custom express route](./examples/14-custom-express-route/app.js)
 * [15 public folder](./examples/15-public-folder/app.js)
