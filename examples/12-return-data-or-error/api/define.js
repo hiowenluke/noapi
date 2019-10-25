@@ -2,6 +2,17 @@
 // See "04-define-API-and-test-cases-[completely]" to learn more.
 
 const me = [
+
+	// Return error
+	{
+		url: 'http://localhost:3000/bill/form/crud?formName=trader',
+		result: {
+			"success": false,
+			"error": "The formName must be employee"
+		}
+	},
+
+	// Return data
 	{
 		url: 'http://localhost:3000/bill/form/crud?formName=employee',
 		result: {
@@ -9,14 +20,6 @@ const me = [
 			"data": {
 				"formName": "employee"
 			}
-		}
-	},
-
-	{
-		url: 'http://localhost:3000/bill/form/crud?formName=trader',
-		result: {
-			"success": false,
-			"error": "The formName must be employee"
 		}
 	},
 
