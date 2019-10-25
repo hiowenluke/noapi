@@ -31,9 +31,7 @@ Start the web server:
 node .
 ```
 
-Noapi automatically copys **api**, **biz** and **test** folders from template if the current project is empty (only index.js), run it as a demo project. 
-
-Visit <http://localhost:3000/do/say/hi?name=Owen&age=100>, the server should returns below result:
+Noapi automatically copys **api**, **biz** and **test** folders from template if the current project is empty (only index.js), run it as a demo project. Visit <http://localhost:3000/do/say/hi?name=Owen&age=100>, the server should returns below result:
 
 ```js
 {
