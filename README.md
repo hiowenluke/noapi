@@ -9,7 +9,7 @@ Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and e
 
 ## Quick Start
 
-#### 1. Init project
+### 1. Init project
 
 Run the following commands in your terminal:
 ```sh
@@ -17,14 +17,14 @@ npm init -y
 npm install noapi --save
 ```
 
-#### 2. Create index.js
+### 2. Create index.js
 
 ```js
 // Create a web server
 require('noapi')();
 ```
 
-#### 3. Run
+### 3. Run
 
 Run the following command in your terminal:
 ```sh
@@ -47,7 +47,7 @@ Noapi automatically copies **api**, **biz** and **test** folders from template i
 }
 ```
 
-#### 4. Learn
+### 4. Learn
 
 Press Ctrl + C to quit the project above in your terminal, then:
 
@@ -55,7 +55,7 @@ Press Ctrl + C to quit the project above in your terminal, then:
 2) Open **./biz/do/say/hi.js**, this biz file is the handler of api **/do/say/hi**.
 3) Read the **biz** files  (js file under **biz** folder), learn how Noapi works.
 
-#### 5. Test
+### 5. Test
 
 1) Modify **index.js** as below:
 
@@ -86,7 +86,7 @@ npm test
 ```
 
 
-#### 6. Startup your great project
+### 6. Startup your great project
 
 Tinker with things and make it your own:
 
