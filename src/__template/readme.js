@@ -11,24 +11,26 @@ const me = `
 	   2) The server will returns result like below:
 		  {"success": true, "data": {"msg": "Hi, I'm Owen, 100 years old.", "name": "Owen", "age": 100}}
 	
-	2. Test
-	   1) Press Ctrl + C to quit the demo project.
-	   2) Modify index.js as below:
+	2. Learn
+	   Press Ctrl + C to quit the demo project, then:
+	   1) Open ./api/define.js, you can see the api "/do/say/hi" is defined in it.
+	   2) Open ./biz/do/say/hi.js, this biz file is the handler of api "/do/say/hi".
+	   3) Read the biz files (js file under biz folder), learn how Noapi works.
+
+	3. Test
+	   1) Modify index.js as below:
 	      const server = require('noapi')();
 	      module.exports = server;
-	      
-	   3) Install packages which test required:
+	   
+	   2) Modify package.json, change "test" as below:
+	      "test": "cd test && mocha . --exit"
+	         
+	   3) Install the dependencies for testing:
 		  npm install chai mocha supertest --save-dev
 	   	  
 	   4) Run tests:
 		  npm test
 
-	3. Learn
-	   1) Open ./api/define.js, you can see the api "/do/say/hi" is defined in it.
-	   2) Open ./biz/do/say/hi.js, this biz file is the handler of api "/do/say/hi".
-	   3) Read the biz files (js file under biz folder), learn how Noapi works.
-	
-	
 	---------------------------------------
 	Startup your great project
 	---------------------------------------
