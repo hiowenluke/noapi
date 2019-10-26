@@ -23,10 +23,6 @@ const me = {
 	getTestPath() {
 		return path.resolve(this.apiServiceRoot + '/test');
 	},
-
-	getPackageJson() {
-		return path.resolve(this.apiServiceRoot + '/package.json');
-	}
 };
 
 module.exports = me;

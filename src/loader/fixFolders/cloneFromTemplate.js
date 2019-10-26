@@ -11,16 +11,6 @@ const me = {
 		fx.copySync(templatePath + '/api', apiPath);
 		fx.copySync(templatePath + '/biz', bizPath);
 
-		// Update scripts.test in package.json
-		const pkgJson = paths.getPackageJson();
-		const pkg = require(pkgJson);
-		if (pkg.scripts.test.indexOf('no test specified') >= 0) {
-			pkg.scripts.test = "cd test && mocha . --exit";
-
-			const content = JSON.stringify(pkg, null, 2);
-			fs.writeFileSync(pkgJson, content, 'UTF-8');
-		}
-
 		// Show some tips for new user
 		const prompt = require(templatePath + '/readme');
 		data.serverOptions.prompt = prompt;
