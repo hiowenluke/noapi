@@ -18,20 +18,19 @@ npm install noapi --save
 
 #### 2. Create index.js
 
-Create index.js in your code editor:
 ```js
 // Create a web server
 require('noapi')();
 ```
 
-#### 3. Run it
+#### 3. Run
 
-Start the web server:
+Run the following command in your terminal:
 ```sh
 node .
 ```
 
-Noapi automatically copies **api**, **biz** and **test** folders from template if the current project is empty (only index.js), runs it as a demo project. Visit <http://localhost:3000/do/say/hi?name=Owen&age=100>, the server should returns below result:
+Noapi automatically copies **api**, **biz** and **test** folders from template if the current project is empty (only index.js), runs it as a demo project. Plese visit <http://localhost:3000/do/say/hi?name=Owen&age=100> in your browser, the server should returns below result:
 
 ```js
 {
@@ -47,36 +46,48 @@ Noapi automatically copies **api**, **biz** and **test** folders from template i
 }
 ```
 
-#### 4. Test it
+#### 4. Learn
 
-Press Ctrl + C to quit the project above in your terminal, then modify the index.js:
-```js
-// Create a web server
-const server = require('noapi')();
-
-// Export the web server, the supertest used by Noapi's automated tests requires it.
-module.exports = server;
-```
-
-Install the dependencies for testing:
-```sh
-npm install chai mocha supertest --save-dev
-```
-
-Now run test:
-```sh
-npm test
-```
-
-#### 5. Learn
+Press Ctrl + C to quit the project above in your terminal, then:
 
 1) Open **./api/define.js**, you can see the api **/do/say/hi** is defined in it.
 2) Open **./biz/do/say/hi.js**, this biz file is the handler of api **/do/say/hi**.
 3) Read the **biz** files  (js file under **biz** folder), learn how Noapi works.
 
-#### 6. DIY
+#### 5. Test
 
-Its time to startup your great project now. Tinker with things and make it your own:
+1) Modify **index.js** as below:
+
+```js
+// Create a web server
+const server = require('noapi')();
+
+// Export the web server for supertest which used by Noapi's automated tests.
+module.exports = server;
+```
+
+2) Modify **package.json**, change "**test**" as below:
+
+```json
+"test": "cd test && mocha . --exit"
+```
+
+3) Install the dependencies for testing:
+
+```sh
+npm install chai mocha supertest --save-dev
+```
+
+4) Run tests:
+
+```sh
+npm test
+```
+
+
+#### 6. Startup your great project
+
+Tinker with things and make it your own:
 
 1) Modify the **./api/define.js** to define your APIs (and test cases).
 2) Create the **biz** files to corresponds to your APIs.
