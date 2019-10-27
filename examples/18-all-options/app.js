@@ -28,7 +28,7 @@ const options = {
 
 	// -------------------------------------------
 
-	// See "15-public-folder" and "16-set-public-folder" for more details
+	// See "15-default-public-folder" and "16-set-public-folder" for more details
 	public: './web',
 
 	// See "23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules" for more details
