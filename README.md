@@ -176,9 +176,9 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 * [12 return error](./examples/12-return-error/biz/bill/form/crud.js)
 * [13 use express middleware](./examples/13-use-express-middleware/app.js)
 * [14 custom express route](./examples/14-custom-express-route/app.js)
-* [15 public folder](./examples/15-public-folder/app.js)
+* [15 default public folder](./examples/15-default-public-folder/app.js)
 * [16 set public folder](./examples/16-set-public-folder/app.js)
-* [17 all options](./examples/17-all-options/app.js)
+* [18 all options](./examples/18-all-options/app.js)
 
 #### Multiple API services
 
@@ -211,17 +211,17 @@ As shown above, we can define API in three modes: <b>array</b>, <b>object</b> an
 
 | API | description | Example |
 | -- | -- | -- |
-| noapi(options) | Start the API service | [Example](./examples/17-all-options/app.js) |
+| noapi(options) | Start the API service | [Example](./examples/18-all-options/app.js) |
 | noapi.test(config) | Start to test the API service | [Example](./examples/13-use-express-middleware/test/index.js) |
 
 ## Noapi Options
 
 | Property | description | Example |
 | -- | -- | -- |
-| options.serverName | The server name | [Example](./examples/17-all-options/app.js) |
-| options.host | The host name | [Example](./examples/17-all-options/app.js) |
-| options.port | The port number | [Example](./examples/17-all-options/app.js) |
-| options.public | The web public options  | [Example](./examples/17-all-options/app.js) |
+| options.serverName | The server name | [Example](./examples/18-all-options/app.js) |
+| options.host | The host name | [Example](./examples/18-all-options/app.js) |
+| options.port | The port number | [Example](./examples/18-all-options/app.js) |
+| options.public | The web public options  | [Example](./examples/18-all-options/app.js) |
 | options.assignRules | Transfer some requests to other API services | [Example](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) |
 | options.power | The custom function to handle query | [Example](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js) |
 
