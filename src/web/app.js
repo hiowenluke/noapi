@@ -48,7 +48,7 @@ const me = {
 		// Save the current state of the stack
 		expressStack.init();
 
-		// All routes will be handled by noapi
+		// All routes including .get() or .post() will be handled by noapi
 		expressApp.use('*', noapiRouter);
 
 		me.isTest = data.isTestMode;
