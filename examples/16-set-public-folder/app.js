@@ -43,7 +43,7 @@ const options4 = {
 	}
 };
 
-// So simple!
+// Please remove options4 (or replace it with others) to see different results
 const server = require('../noapi')(options4);
 
 // Exports the http server for automatically testing via supertest
