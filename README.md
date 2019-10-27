@@ -178,6 +178,7 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 * [14 custom express route](./examples/14-custom-express-route/app.js)
 * [15 default public folder](./examples/15-default-public-folder/app.js)
 * [16 set public folder](./examples/16-set-public-folder/app.js)
+* [17 post data](./examples/17-post-data/api/define.js)
 * [18 all options](./examples/18-all-options/app.js)
 
 #### Multiple API services
