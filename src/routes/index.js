@@ -58,6 +58,7 @@ const flow = {
 		const result = await callApi(query);
 
 		if (result && typeof result === 'object' && result.error) {
+			if (!data.isSilence) console.log(result.error);
 			res.send({success: false, error: result.error});
 		}
 		else {
