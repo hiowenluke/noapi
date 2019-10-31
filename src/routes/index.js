@@ -2,6 +2,7 @@
 const kdo = require('kdo');
 const callApi = require('./callApi');
 const data = require('../data');
+const lib = require('../__lib');
 
 const flow = {
 	validateUrl({req}) {
@@ -58,8 +59,14 @@ const flow = {
 		const result = await callApi(query);
 
 		if (result && typeof result === 'object' && result.error) {
-			if (!data.isSilence) console.log(result.error);
-			res.send({success: false, error: result.error});
+			let error = result.error;
+
+			if (!data.isSilence) {
+				error = lib.removeRedundantTabs(error);
+				console.log(error);
+			}
+
+			res.send({success: false, error: error});
 		}
 		else {
 			res.send({success: true, data: result});
