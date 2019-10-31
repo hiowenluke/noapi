@@ -6,6 +6,7 @@ const http = require('http');
 const httpServer = http.Server(expressApp);
 const pub = require('./public');
 const data = require('../data');
+const lib = require('../__lib');
 
 const flow = {
 	setCors() {
@@ -63,33 +64,8 @@ const flow = {
 				({tips, isKeepIndentation} = prompt);
 			}
 
-			// Remove redundant tabs if isKeepIndentation is false
-
-			// E.g.:
-			// 				`
-			// 					---------------------------------
-			// 					Show some tips if needed.
-			// 					---------------------------------
-			// 				`
-
-			// To:
-			// ---------------------------------
-			// Show some tips if needed.
-			// ---------------------------------
-
 			if (!isKeepIndentation) {
-				let redundantTabs = tips.match(/\n(\t+)(?=\S)/);
-				if (redundantTabs) {
-					redundantTabs = redundantTabs[1];
-
-					const reg = new RegExp('\n' + redundantTabs, 'g');
-					tips = tips
-						.replace(reg, '\n')
-						.replace(/^\s*\n/, '')
-						.replace(/\n\t*$/, '')
-						.replace(/\t/g, ' '.repeat(4))
-					;
-				}
+				tips = lib.removeRedundantTabs(tips);
 			}
 
 			console.log(tips);
