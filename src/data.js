@@ -111,6 +111,7 @@ const me = {
 		testRoot: '', // The root path of the test directory
 		serviceName: '', // The name of the api service which is testing
 		isFromApiService: false, // If the serviceName is api or api-xxx, then it is true
+		port: 26739, // The port number dedicated to the test.
 	},
 
 	init(pathToCaller, options) {

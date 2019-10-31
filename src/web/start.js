@@ -72,12 +72,18 @@ const flow = {
 		};
 
 		expressApp.listen = () => {
-			const {serverName, port, isSilence} = options;
-			httpServer.listen(port, () => {
-				if (isSilence || data.isTestMode) return;
-				console.log('%s server listening on port %d', serverName, port);
-				showSomeTipsIfNeeded();
-			});
+			if (data.isTestMode) {
+				const port = data.testOptions.port;
+				httpServer.listen(port);
+			}
+			else {
+				const {serverName, port, isSilence} = options;
+				httpServer.listen(port, () => {
+					if (isSilence) return;
+					console.log('%s server listening on port %d', serverName, port);
+					showSomeTipsIfNeeded();
+				});
+			}
 		};
 	},
 
