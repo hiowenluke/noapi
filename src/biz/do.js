@@ -2,14 +2,29 @@
 const data = require('../data');
 const lib = require('../__lib');
 
-const tryParseJSON = (jsonString) => {
-	try {
-		const o = JSON.parse(jsonString);
+const tryParseJsonString = {
+	do(jsonString) {
+		const o = this.eval(jsonString) || this.parse(jsonString);
 		if (o && typeof o === "object") {
 			return o;
 		}
+	},
+
+	eval(jsonString) {
+		try {
+			let o;
+			eval('o = ' + jsonString);
+			return o;
+		}
+		catch (e) {}
+	},
+
+	parse(jsonString) {
+		try {
+			return JSON.parse(jsonString);
+		}
+		catch (e) {}
 	}
-	catch (e) {}
 };
 
 // Convenient api quick calls to its biz method
@@ -38,7 +53,7 @@ const fn = async (query) => {
 	// Automatically parse json string if needed
 	if (data.queryOptions.isParseJsonStr) {
 		Object.keys(query).forEach(key => {
-			const o = tryParseJSON(query[key]);
+			const o = tryParseJsonString.do(query[key]);
 			if (o) {
 				query[key] = o;
 			}
