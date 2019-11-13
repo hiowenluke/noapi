@@ -1,4 +1,5 @@
 
+const fs = require('fs');
 const data = require('../../data');
 const lib = require('../../__lib');
 
@@ -24,7 +25,10 @@ const parseBiz = (serviceName) => {
 		const bizPaths = lib.apiParser.objectToApis(biz);
 
 		bizPaths.forEach(bizPath => {
-			const bizFile = require(apiServiceRoot + '/biz' + bizPath);
+			const filePath = apiServiceRoot + '/biz' + bizPath;
+			if (!fs.existsSync(filePath)) return;
+
+			const bizFile = require(filePath);
 			const content = bizFile.toString(); // "(a, b = '', c) => {}"
 			const params = parseParams(content);
 			bizParams[bizPath] = params;
