@@ -25,7 +25,7 @@ const parseBiz = (serviceName) => {
 		const bizPaths = lib.apiParser.objectToApis(biz);
 
 		bizPaths.forEach(bizPath => {
-			const filePath = apiServiceRoot + '/biz' + bizPath;
+			const filePath = apiServiceRoot + '/biz' + bizPath + '.js';
 			if (!fs.existsSync(filePath)) return;
 
 			const bizFile = require(filePath);
