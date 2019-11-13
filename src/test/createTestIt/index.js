@@ -16,7 +16,7 @@ const fn = (apiInfo, ioInfo, testInfo) => {
 		const extraData = Array.isArray(result) ? result.map(item => item.data) : JSON.stringify(result);
 		const isOK = verify(result, extraData);
 
-		!isOK && console.log('Result:', result);
+		!isOK && console.log('Result:', JSON.stringify(result, null, 4));
 		expect(!!isOK).to.be.true;
 	});
 };
