@@ -52,7 +52,13 @@ const fn = async (query) => {
 
 	// Automatically parse json string if needed
 	if (data.queryOptions.isParseJsonStr) {
-		Object.keys(query).forEach(key => {
+		const allKeys = Object.keys(query);
+
+		// Remove keys created by noapi
+		const ignoreKeys = ['__', 'originalUrl'];
+		const keys = allKeys.filter(item => ignoreKeys.indexOf(item) === -1);
+
+		keys.forEach(key => {
 			const o = tryParseJsonString.do(query[key]);
 			if (o) {
 				query[key] = o;
