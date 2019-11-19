@@ -71,7 +71,7 @@ const me = {
 	serverOptions: {
 		serverName: 'default',
 		host: 'localhost',
-		port: '3000',
+		port: 3000,
 		protocol: 'http',
 
 		// Show some tips in terminal if needed after started
