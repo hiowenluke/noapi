@@ -12,6 +12,10 @@ const createNoapiDo = () => {
 };
 
 const noapi = (options = {}) => {
+	if (typeof options === 'number') {
+		options = {port: options};
+	}
+
 	me.data.init(caller(), options);
 
 	me.loader.init();
