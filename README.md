@@ -1,17 +1,15 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
-
 # Noapi
 
-Noapi is a light API framework for [Node.js](https://nodejs.org). It can be used to easily define APIs and test cases, manage inputs and outputs, and automatically test them. Noapi takes care of the underlying web services, api services, routing, and testing to help you focus on <b>writing functional code</b>, <b>improving your efficiency</b>, and <b>saving you time</b>.
+A light API framework for [Node.js](https://nodejs.org). Easily define APIs and test cases, manage inputs and outputs, and automatically test them. Noapi takes care of the underlying web services, api services, routing, and testing to help you focus on <b>writing functional code</b>, <b>improving your efficiency</b>, and <b>saving you time</b>.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
-
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
 ## Installation
 
-Install:
-```
-See below section "Quick Start".
+See below section "Quick Start" to learn more.
+```sh
+npm install noapi --save
 ```
 
 Test:
@@ -43,7 +41,7 @@ require('noapi')();
 
 Run the following command in your terminal:
 ```sh
-node .
+node index.js
 ```
 
 Noapi automatically copies **api**, **biz** and **test** folders from template if the current project is empty (only index.js), runs it as a demo project. Plese visit <http://localhost:3000/do/say/hi?name=Owen&age=100> in your browser, the server should returns below result:
@@ -62,7 +60,7 @@ Noapi automatically copies **api**, **biz** and **test** folders from template i
 }
 ```
 
-### 4. Learn
+### 4. Read
 
 Press Ctrl + C to quit the project above in your terminal, then:
 
@@ -72,8 +70,7 @@ Press Ctrl + C to quit the project above in your terminal, then:
 
 ### 5. Test
 
-1) Modify **index.js** as below:
-
+1\) Modify **index.js** as below:
 ```js
 // Create a web server
 const server = require('noapi')();
@@ -82,98 +79,50 @@ const server = require('noapi')();
 module.exports = server;
 ```
 
-2) Modify **package.json**, change "**test**" as below:
-
+2\) Modify **package.json**, change "**test**" as below:
 ```json
 "test": "cd test && mocha . --exit"
 ```
 
-3) Install the dependencies for testing:
-
+3\) Install the dependencies for testing:
 ```sh
 npm install chai mocha supertest --save-dev
 ```
 
-4) Run tests:
-
+4\) Run tests:
 ```sh
 npm test
 ```
 
-
 ### 6. Startup your great project
 
-Tinker with things and make it your own:
+Tinker with things and make it your own:  
 
-1) Modify the **./api/define.js** to define your APIs (and test cases).
-2) Create the **biz** files to corresponds to your APIs.
-3) Write your business code in the **biz** files.
+1\) Modify the **./api/define.js** to define your APIs (and test cases).  
+2\) Create the **biz** files to corresponds to your APIs.  
+3\) Write your business code in the **biz** files.  
 
 Enjoy!
 
 See [examples](#examples) to learn more.
 
-## Demos
-
-#### [Define API and test cases with array](./examples/01-define-API-and-test-cases-with-array/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo1.jpg?raw=true)
-
-#### [Define API and test cases with object](./examples/02-define-API-and-test-cases-with-object/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo2.jpg?raw=true)
-
-#### [Define API and test cases with file](./examples/03-define-API-and-test-cases-with-file/api/bill/form/crud.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo3.jpg?raw=true)
-
-#### [Define API and test cases completely (with full test options)](./examples/04-define-API-and-test-cases-[completely]/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo6.jpg?raw=true)
-
-#### [Define API minimally (without test cases)](./examples/05-define-API-[minimally]/api/define.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo5.jpg?raw=true)
-
-#### [Define API with empty file (without test cases)](./examples/06-define-API-with-empty-file/api/bill/form/crud.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo4.jpg?raw=true)
-
-#### [Easy starting](./examples/01-define-API-and-test-cases-with-array/app.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo7.jpg?raw=true)
-
-#### [Easy testing](./examples/01-define-API-and-test-cases-with-array/test/index.js)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo8.jpg?raw=true)
-
-#### [Easy before do and after do in testing](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L238)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo9.jpg?raw=true)
-
-#### [Easy multiple test cases for one api](https://github.com/hiowenluke/noapi/blob/27b2a37f5bd59d2267feac7fc7935b9d2a977733/examples/04-define-API-and-test-cases-%5Bcompletely%5D/api/define.js#L273)
-
-![](https://github.com/hiowenluke/noapi/blob/master/doc/images/demo10.jpg?raw=true)
-
 ## Examples
 
 **1. Run all examples**
-
 ```sh
 cd /path/to/noapi/examples
 sh ./test.sh
 ```
 
 **2. Run a single example**
-
 Take **example #1** as an example:
 ```sh
 cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 ```
 
-1) Test: `npm test`
-2) Read **./api/define.js** and files in **./biz** to learn details.
-3) Run `node .` first, then copy url from **define.js** and past to your browser to experience.
+1\) Test: `npm test`  
+2\) Read **./api/define.js** and files in **./biz** to learn details.  
+3\) Run `node .` first, then copy url from **define.js** and past to your browser to experience.  
 
 #### Define API and test cases
 
@@ -184,7 +133,7 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 * [05 Define API [minimally]](./examples/05-define-API-[minimally]/api/define.js)
 * [06 Define API with empty file](./examples/06-define-API-with-empty-file/api)
 
-#### Single API services
+#### Use API services
 
 * [10 get url parameters via query](./examples/10-get-url-parameters-via-query/biz/bill/form/crud.js)
 * [11 get url parameters via name](./examples/11-get-url-parameters-via-name/biz/bill/form/crud.js)
@@ -195,18 +144,6 @@ cd /path/to/noapi/examples/01-define-API-and-test-cases-with-array
 * [16 set public folder](./examples/16-set-public-folder/app.js)
 * [17 post data](./examples/17-post-data/api/define.js)
 * [18 all options](./examples/18-all-options/app.js)
-
-#### Multiple API services
-
-* [20 [multi] seperate api and web services](./examples/20-[multi]-seperate-api-and-web-services) [**[readme]**](./examples/20-[multi]-seperate-api-and-web-services/readme.md)
-* [21 [multi] multi api services](./examples/21-[multi]-multi-api-services) [**[readme]**](./examples/21-[multi]-multi-api-services/readme.md)
-* [22 [multi] call the api which is in other api services](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/api-erp/biz/report/purchase/order.js) [**[readme]**](./examples/22-[multi]-call-the-api-which-is-in-other-api-services/readme.md)
-* [23 [multi] call the api which is in other api services via assign rules](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/web/app.js) [**[readme]**](./examples/23-[multi]-call-the-api-which-is-in-other-api-services-via-assign-rules/readme.md)
-* [24 [multi] [for current api service] preprocess query via aha directory](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/aha) [**[readme]**](./examples/24-[multi]-[for-current-api-service]-preprocess-query-via-aha-directory/readme.md)
-* [25 [multi] [for all api services] preprocess query via power function](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/app.js) [**[readme]**](./examples/25-[multi]-[for-all-api-services]-preprocess-query-via-power-function/readme.md)
-* [26 [multi] [for all api services] use advanced assign rules and power function](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/web/noapi/index.js) [**[readme]**](./examples/26-[multi]-[for-all-api-services]-use-advanced-assign-rules-and-power-function/readme.md)
-* [27 [multi] use noapi.do instead of global.api.do to improve performance](./examples/27-[multi]-use-noapi.do-instead-of-global.api.do-to-improve-performance/api-erp/biz/report/purchase/order.js)
-* [28 [multi] public folder](./examples/28-[multi]-public-folder/web/app.js)
 
 #### For testing
 
