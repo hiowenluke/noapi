@@ -1,6 +1,0 @@
-{
-  "main": "index.js",
-  "scripts": {
-    "test": "cd api-forms/test && mocha . --exit && cd ../.. && cd web/test && mocha . --exit"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "name": "my-project-api-erp",
-  "version": "0.1.0",
-  "main": "index.js",
-  "author": "captain.ameria@theavengers.com",
-  "dependencies": {
-    "kdo": "^1.5.8"
-  }
-}
