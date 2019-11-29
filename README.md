@@ -7,6 +7,20 @@ Noapi is a light API framework for [Node.js](https://nodejs.org). It can be used
 
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
+## Installation
+
+Install:
+```
+See below section "Quick Start".
+```
+
+Test:
+```sh
+git clone https://github.com/hiowenluke/noapi
+cd noapi
+npm install
+npm test
+```
 
 ## Quick Start
 
