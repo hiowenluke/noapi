@@ -1,8 +1,10 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
+
 # Noapi
 
 A light API framework for [Node.js](https://nodejs.org). Easily define APIs and test cases, manage inputs and outputs, and automatically test them. Noapi takes care of the underlying web services, api services, routing, and testing to help you focus on <b>writing functional code</b>, <b>improving your efficiency</b>, and <b>saving you time</b>.
 <p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
+
 Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
 
 ## Installation
