@@ -22,7 +22,6 @@ const getSysApiByApiPath = (pathNodes, sysApis) => {
 		// Try looking for keys in sysApis and sysApis.__proto__.
 		// Because sysApis has the following condition, the property dropDownList is in __proto__ :
 		// 		bom: {
-		//			isIndexJs: true
 		//			__proto__: {
 		//				dropDownList: f()
 		//			}
