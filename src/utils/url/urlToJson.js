@@ -1,5 +1,5 @@
 
-const utils = require('..');
+const pathsToJson = require('./pathsToJson');
 
 // Convert url to json object
 // "/mms/bom/form/getData?goodsid=10" => {mms.bom.form.getData}
@@ -11,7 +11,7 @@ const fn = (url) => {
 	url = (url + '?').split('?')[0];
 
 	// "/mms/bom/form/getData" => {mms.bom.form.getData}
-	return utils.url.pathsToJson(url);
+	return pathsToJson(url);
 };
 
 module.exports = fn;

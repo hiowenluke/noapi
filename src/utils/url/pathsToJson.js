@@ -42,7 +42,7 @@
 	-------------------------------------------
 */
 
-const utils = require('..');
+const pathToJson = require('./pathToJson');
 
 /** @name noapi.url.pathsToJson */
 const fn = (paths, splitter) => {
@@ -53,7 +53,7 @@ const fn = (paths, splitter) => {
 	const result = {data: {}};
 
 	paths.forEach(path => { // "/bom/form/getData"
-		utils.url.pathToJson(path, splitter, result); // {bom.form.getData}
+		pathToJson(path, splitter, result); // {bom.form.getData}
 	});
 
 	// console.log(JSON.stringify(result.data, null, 4));

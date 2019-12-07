@@ -1,5 +1,5 @@
 
-const utils = require('..');
+const isStartWith = require('./isStartWith');
 
 // Check if the url is the specified path
 //		url:		/mms/bom/form/saveData/detail?billid=123&act=delete
@@ -10,7 +10,7 @@ const fn = (url, pathStr) => {
 
 	// Append '?' at the end of pathStr
 	// /mms/bom/form/saveData/detail => /mms/bom/form/saveData/detail?
-	return utils.url.isStartWith(url, pathStr + '?');
+	return isStartWith(url, pathStr + '?');
 };
 
 module.exports = fn;
