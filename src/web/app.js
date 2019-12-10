@@ -50,8 +50,6 @@ const me = {
 
 		// All routes including .get() or .post() will be handled by noapi
 		expressApp.use('*', noapiRouter);
-
-		me.isTest = data.isTestMode;
 	},
 
 	use(...args) {

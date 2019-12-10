@@ -4,6 +4,7 @@ const {express, expressApp, app} = require('./app');
 
 const http = require('http');
 const httpServer = http.Server(expressApp);
+
 const pub = require('./public');
 const data = require('../data');
 const lib = require('../__lib');
@@ -50,40 +51,12 @@ const flow = {
 	},
 
 	setListen({options}) {
-		const showSomeTipsIfNeeded = () => {
-			const prompt = data.serverOptions.prompt;
-			if (!prompt) return;
-
-			let tips;
-			let isKeepIndentation;
-
-			if (typeof prompt === 'string')  {
-				tips = prompt;
-			}
-			else {
-				({tips, isKeepIndentation} = prompt);
-			}
-
-			if (!isKeepIndentation) {
-				tips = lib.removeRedundantTabs(tips);
-			}
-
-			console.log(tips);
-		};
-
 		expressApp.listen = () => {
-			if (data.isTestMode) {
-				const port = data.testOptions.port;
-				httpServer.listen(port);
-			}
-			else {
-				const {serverName, port, isSilence} = options;
-				httpServer.listen(port, () => {
-					if (isSilence) return;
-					console.log('%s server listening on port %d', serverName, port);
-					showSomeTipsIfNeeded();
-				});
-			}
+			const {name, port, isSilence} = options;
+			httpServer.listen(port, () => {
+				if (isSilence) return;
+				console.log('Server %s is listening on port %d', name, port);
+			});
 		};
 	},
 

@@ -40,10 +40,9 @@ const getSysApiByApiPath = (pathNodes, sysApis) => {
 };
 
 // -------------------------------------------------------
-// Get api function based on sysName, api, sysApis
+// Get api function based on api, sysApis
 // -------------------------------------------------------
 // Input:
-// 		sysName = "forms"
 // 		api = "/bill/dropdownlist"
 // 		sysApis = data.core.forms.api
 
@@ -55,7 +54,7 @@ const getSysApiByApiPath = (pathNodes, sysApis) => {
 // -------------------------------------------------------
 
 /** @name lib.getSysApiFn */
-const fn = (sysName, api, sysApis) => {
+const fn = (api, sysApis) => {
 
 	// "/info/dropdownlist/" => ['info', 'dropdownlist']
 	const apiPathNodes = api.replace(/(^\/)|(\/$)/g, '').split('/');
