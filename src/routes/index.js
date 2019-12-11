@@ -36,11 +36,15 @@ const flow = {
         query.originalUrl = req.originalUrl;
     },
 
-	async do({res, query}) {
+	async do({res, query, next}) {
 		const result = await callApi(query);
 
 		if (result && typeof result === 'object' && result.error) {
 			let error = result.error;
+
+			if (error === 404) {
+				return next();
+			}
 
 			if (!data.serverOptions.isSilence) {
 				error = lib.removeRedundantTabs(error);
@@ -56,9 +60,9 @@ const flow = {
 };
 
 /** @name me.routes */
-const fn = async (req, res) => {
+const fn = async (req, res, next) => {
 	try {
-		await kdo.do(flow, {req, res});
+		await kdo.do(flow, {req, res, next});
 	}
 	catch(e) {
 		console.log(e);

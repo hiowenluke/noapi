@@ -13,7 +13,7 @@ const fn = async (query) => {
 	const sysApiFn = lib.getSysApiFn(api, sysApis);
 
 	if (!sysApiFn) {
-		return {error: 'No api corresponds to ' + api};
+		return {error: 404};
 	}
 
 	const result = await sysApiFn(query);
