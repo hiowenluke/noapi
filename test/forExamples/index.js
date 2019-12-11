@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const spawn = require('child_process').spawn;
 const request = require('request');
+const tryParseJsonStr = require('../../src/__lib/tryParseJsonStr');
 
 const data = require('./data');
 
@@ -13,20 +14,6 @@ const wait = (ms = 1000) => {
 			resolve();
 		}, ms);
 	})
-};
-
-const toParamsStr = (obj) => {
-	const arr = [];
-
-	Object.keys(obj).forEach(key => {
-		let val = obj[key];
-		if (typeof val === 'object' || Array.isArray(val)) {
-			val = JSON.stringify(val);
-		}
-		arr.push(key + '=' + val);
-	});
-
-	return arr.join('&');
 };
 
 const serverPaths = ({
@@ -54,24 +41,31 @@ const serverPaths = ({
 
 }).init();
 
-const fn = async (num, api, params) => {
+const fn = async (num, api, params, {method = 'post'} = {}) => {
 	const serverPath = serverPaths.getByNumber(num);
 	const cp = spawn('node', [serverPath]);
-	await wait();
+	await wait(500);
 
-	const paramsStr = toParamsStr(params);
-	const url = 'http://localhost:3000' + api + '?' + paramsStr;
+	const url = 'http://localhost:3000' + api;
+	const postData = {url, form: params};
 
 	return new Promise(resolve => {
-		request(url, (error, response, body) => {
+		request[method](postData, (error, response, body) => {
 			process.kill(cp.pid, 'SIGTERM');
 
-			const result = JSON.parse(body);
+			const result = tryParseJsonStr.do(body) || body;
 			const expect = data[api];
-			const isOK = _.isEqual(result, expect);
+
+			const isExpectFunction = typeof expect === 'function';
+			const isOK = isExpectFunction ?
+				expect(result) :
+				_.isEqual(result, expect)
+			;
 
 			if (!isOK) {
 				console.log('result', JSON.stringify(result, null, 4));
+
+				!isExpectFunction &&
 				console.log('expect', JSON.stringify(expect, null, 4));
 			}
 
