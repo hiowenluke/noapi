@@ -9,10 +9,10 @@ const noapi = (options = {}) => {
 	}
 
 	me.data.init(caller(), options);
+	me.loadFolders();
 
-	me.loadCore();
-	me.biz.init();
 	me.api.init();
+	me.biz.init();
 
 	noapi.biz = data.global.biz.do;
 	return me.web.start();
