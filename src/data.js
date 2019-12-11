@@ -12,7 +12,6 @@ const me = {
 
 		isSilence: false, // Do not print logs if it is true
 		err404: undefined,
-		err500: undefined,
 	},
 
 	core: {}, // {api, biz}
