@@ -40,15 +40,6 @@ const getBizParams = () => {
 };
 
 const fn = () => {
-
-	global.biz = {};
-
-	// Add global.biz.do to convenient api quick calls to its biz method
-	// 		complete: 		data.core.do.basic.say.hi(query)
-	// 		Shorthand: 		global.biz.do(query)
-	global.biz.do = bizDo;
-
-	// Use data.global.biz instead of global.biz in noapi to improve performance.
 	data.global.biz = {};
 	data.global.biz.do = bizDo;
 
