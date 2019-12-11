@@ -4,5 +4,4 @@ const options = {
 	port: 3001,
 };
 
-// So simple!
 require('../noapi')(options);
