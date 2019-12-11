@@ -26,6 +26,11 @@ const fn = () => {
 		}
 	});
 
+	if (!coreModules.api) {
+		// {say: hi: {}} => "/say/hi"
+		coreModules.api = lib.apiParser.objectToApis(coreModules.biz);
+	}
+
 	data.core = coreModules;
 };
 
