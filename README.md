@@ -1,9 +1,10 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
+
 # Noapi
 
-A light API framework for [Node.js](https://nodejs.org). Easily define APIs, manage inputs and outputs. Noapi takes care of the underlying web services, api services and routings to help you focus on <b>writing functional code</b>, <b>improving your efficiency</b>, and <b>saving you time</b>.
-<p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo0.jpg?raw=true" /></p>
-Noapi uses [Kdo](https://github.com/hiowenluke/kdo) to make the code clear and easy to read and maintain. It's not required but it is highly recommended that you give it a try.
+A web microservices framework for [Node.js](https://nodejs.org), load a directory as a web service. With Noapi, we can clearly define api routes, organize business code structures, and focus on writing functional code.
+
+<p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo.jpg?raw=true" /></p>
 
 ## Install
 
@@ -24,21 +25,20 @@ npm test
 ### 0. Prepare
 
 ```sh
-mkdir -p ./path/to/noapi-demo
-cd ./path/to/noapi-demo
+mkdir ./noapi-demo && cd ./noapi-demo
 npm init -y
 npm install noapi --save
 ```
 
-### 1. Define apis
+Create the core folder "**biz**"
 
-1\) Create **API** folder: `mkdir api`.
-2\) Create an empty file **./api/say/hi.js** to define an api: `/say/hi`.
+```sh
+mkdir biz
+```
 
-### 2. Write business code
+### 1. Create business file
 
-1\) Create **BIZ** folder: `mkdir biz`.
-2\) Create a file **./biz/say/hi.js** to handle the api `/say/hi`:
+Create file "./say/hi.js" under the folder biz. It defines an api `/say/hi` and handles it.
 
 ```js
 module.exports = async (query) => {
@@ -46,26 +46,24 @@ module.exports = async (query) => {
 };
 ```
 
-### 3. Create index.js
+### 2. Create index.js
 
 ```js
 require('noapi')();
 ```
 
-### 4. Run it
+### 3. Run
 
 ```sh
 node index.js
 Server default is listening on port 3000
 ```
 
-### 5. Test it
-
-Open your favorite browser, visit the url `http://localhost:3000/say/hi?name=owen&age=100`, the result will be like below:
+Visit [http://localhost:3000/say/hi?name=owen&age=100]() to see the result:
 ```
 {
-    "success": true, // The state of the result
-    "data": {        // The data of the result
+    "success": true,
+    "data": {
         "msg": "Hi, I'm owen, 100 years old."
     }
 }
