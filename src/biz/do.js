@@ -2,31 +2,6 @@
 const data = require('../data');
 const lib = require('../__lib');
 
-const tryParseJsonString = {
-	do(jsonString) {
-		const o = this.eval(jsonString) || this.parse(jsonString);
-		if (o && typeof o === "object") {
-			return o;
-		}
-	},
-
-	eval(jsonString) {
-		try {
-			let o;
-			eval('o = ' + jsonString);
-			return o;
-		}
-		catch (e) {}
-	},
-
-	parse(jsonString) {
-		try {
-			return JSON.parse(jsonString);
-		}
-		catch (e) {}
-	}
-};
-
 // Convenient api quick calls to its biz method
 // 		complete: 		data.core.do.basic.say.hi(query)
 // 		Shorthand: 		noapi.biz(query)
@@ -49,7 +24,7 @@ const fn = async (query) => {
 		const keys = allKeys.filter(item => ignoreKeys.indexOf(item) === -1);
 
 		keys.forEach(key => {
-			const o = tryParseJsonString.do(query[key]);
+			const o = lib.tryParseJsonStr.do(query[key]);
 			if (o) {
 				query[key] = o;
 			}
