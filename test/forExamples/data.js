@@ -27,10 +27,10 @@ const me = {
 				"date": "2019-05-01"
 			},
 			"arr": [
-				1,
+				"1",
 				"abc",
 				{
-					"tel": 12345678
+					"tel": "12345678"
 				}
 			]
 		}
@@ -41,7 +41,17 @@ const me = {
 		error: "something is wrong"
 	},
 
-	'/': ""
+	'/': function(result) {
+		return result.indexOf('hi') >= 0;
+	},
+
+	'/user/register': {
+		success: true,
+		data: {
+			"username": "owen",
+			"password": "123456"
+		}
+	}
 };
 
 module.exports = me;
