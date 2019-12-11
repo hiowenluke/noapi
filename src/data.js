@@ -8,6 +8,7 @@ const me = {
 	serverOptions: {
 		name: 'default',
 		port: 3000,
+		public: './public',
 		isSilence: false, // Do not print logs if it is true
 	},
 
