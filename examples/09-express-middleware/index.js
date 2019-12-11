@@ -11,6 +11,6 @@ app.use(async (req, res, next) => {
 // This is because the browser sent another request asking for a favicon.
 
 // You could easily check this by making request using curl:
-// 		curl http://localhost:3000
+// $ curl http://localhost:3000
 //
 // Then the middleware will only run once.
