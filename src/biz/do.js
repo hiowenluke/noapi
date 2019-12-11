@@ -29,7 +29,7 @@ const tryParseJsonString = {
 
 // Convenient api quick calls to its biz method
 // 		complete: 		data.core.do.basic.say.hi(query)
-// 		Shorthand: 		global.biz.do(query)
+// 		Shorthand: 		noapi.biz(query)
 const fn = async (query) => {
 
 	const api = query.originalUrl.split('?')[0];
