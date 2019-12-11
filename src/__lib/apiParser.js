@@ -36,7 +36,35 @@ const me = {
 		});
 
 		return arr;
-	}
+	},
+
+	// "/say/hi" => {say: hi: {}}
+	apiToObject(api) {
+		const obj = {};
+		let parent = obj;
+
+		const nodes = api.split('/'); // ['', 'say', 'hi']
+		while (nodes.length) {
+			const node = nodes.shift();
+			if (node === '') continue;
+
+			parent[node] = {};
+			parent = parent[node];
+		}
+
+		return obj;
+	},
+
+	// ["/say/hi", "/about"] => {say: hi: {}, about: {}}
+	apisToObject(apisArray) {
+		const obj = {};
+		apisArray.forEach(api => {
+			const branch = this.apiToObject(api);
+			_.merge(obj, branch);
+		});
+
+		return obj;
+	},
 };
 
 module.exports = me;
