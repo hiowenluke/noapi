@@ -50,6 +50,30 @@ const flow = {
 		app.loadRoutes();
 	},
 
+	set404({options}) {
+		const fn = (req, res, next) => {
+			res.status(404);
+
+			if (req.accepts('json')) {
+				res.send({ error: 'Not found' });
+			}
+			else {
+				res.type('txt').send('Not found');
+			}
+		};
+
+		expressApp.use(options.err404 || fn);
+	},
+
+	set500({options}) {
+		const fn = (err, req, res, next) => {
+			res.status(500);
+			res.send('Internal Server Error');
+		};
+
+		expressApp.use(options.err500 || fn);
+	},
+
 	setListen({options}) {
 		expressApp.listen = () => {
 			const {name, port, isSilence} = options;
