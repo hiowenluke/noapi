@@ -1,4 +1,5 @@
 
+const path = require('path');
 const kdo = require('kdo');
 const {express, expressApp, app} = require('./app');
 
@@ -51,7 +52,7 @@ const flow = {
 	},
 
 	set404({options}) {
-		const fn = (req, res, next) => {
+		expressApp.use((req, res, next) => {
 			res.status(404);
 
 			if (req.accepts('json')) {
@@ -60,9 +61,7 @@ const flow = {
 			else {
 				res.type('txt').send('Not found');
 			}
-		};
-
-		expressApp.use(options.err404 || fn);
+		});
 	},
 
 	set500() {
