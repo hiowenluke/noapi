@@ -34,7 +34,13 @@ describe('Noapi', () => {
 	});
 
 	it('examples/06-public-folder', async () => {
-		const result = await example(6, '/');
+		const result = await example(6, '/', null, {method: 'get'});
+		expect(result).to.be.true;
+	});
+
+	it('examples/07-post-data', async () => {
+		const params = {username: 'owen', password: '123456'};
+		const result = await example(7, '/user/register', params);
 		expect(result).to.be.true;
 	});
 });
