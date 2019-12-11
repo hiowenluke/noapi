@@ -65,13 +65,11 @@ const flow = {
 		expressApp.use(options.err404 || fn);
 	},
 
-	set500({options}) {
-		const fn = (err, req, res, next) => {
+	set500() {
+		expressApp.use((err, req, res, next) => {
 			res.status(500);
 			res.send('Internal Server Error');
-		};
-
-		expressApp.use(options.err500 || fn);
+		});
 	},
 
 	setListen({options}) {
