@@ -5,7 +5,7 @@ const data = require('../data');
 
 // If the api js file content is empty, it will be automatically replaced with the following apiFn.
 // If the user writes his own api function, he needs to be aware that he must
-// passes the parameter query when calling global.biz.do()
+// passes the parameters when calling noapi.biz.do()
 const apiFn = async (...args) => {
 	return await data.global.biz.do(...args);
 };
