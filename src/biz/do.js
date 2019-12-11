@@ -28,7 +28,7 @@ const tryParseJsonString = {
 };
 
 // Convenient api quick calls to its biz method
-// 		complete: 		data.core.mms.biz.bill.mnf.manuPlan(query)
+// 		complete: 		data.core.do.basic.say.hi(query)
 // 		Shorthand: 		global.biz.do(query)
 const fn = async (query) => {
 

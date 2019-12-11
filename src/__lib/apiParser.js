@@ -16,7 +16,7 @@ const getValidKeys = (obj) => {
 /** @name lib.apiParser */
 const me = {
 
-	// {bill: {form: {crud: {}}}} => "/bill/form/crud"
+	// {say: hi: {}} => "/say/hi"
 	objectToApis(obj, path = '', arr = []) {
 		const keys = getValidKeys(obj);
 		if (!keys) return arr;

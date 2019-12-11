@@ -11,8 +11,8 @@ const noapi = (options = {}) => {
 	me.data.init(caller(), options);
 
 	me.loadCore();
-	me.api.init();
 	me.biz.init();
+	me.api.init();
 
 	noapi.biz = data.global.biz.do;
 	return me.web.start();

@@ -6,17 +6,17 @@ const tryToGetKey = (sysApis, pp) => {
 };
 
 // Find the corresponding api from sysApis based on pathNodes
-// ['info', 'dropdownlist'] => .info.dropdownlist
+// ['say', 'hi'] => .say.hi
 const getSysApiByApiPath = (pathNodes, sysApis) => {
 	let sysApi;
 
-	// ['info', 'dropdownlist']
+	// ['say', 'hi']
 	if (pathNodes.length) {
-		const p = pathNodes.shift(); // p = 'info', pathNodes = ['dropdownlist']
+		const p = pathNodes.shift(); // p = 'say', pathNodes = ['hi']
 
-		// Because the name of the api is a camel name (such as dropDownList),
-		// and the string in path may be all lowercase (such as dropdownlist),
-		// we need to convert to lowercase and then look up to make dropdownlist match dropDownList.
+		// Because the name of the api is a camel name (such as "dropDownList"),
+		// and the string in path may be all lowercase (such as "dropdownlist"),
+		// we need to convert to lowercase and then look up to make "dropdownlist" match "dropDownList".
 		const pp = p.toLowerCase();
 
 		// Try looking for keys in sysApis and sysApis.__proto__.
@@ -43,23 +43,23 @@ const getSysApiByApiPath = (pathNodes, sysApis) => {
 // Get api function based on api, sysApis
 // -------------------------------------------------------
 // Input:
-// 		api = "/bill/dropdownlist"
-// 		sysApis = data.core.forms.api
+// 		api = "/say/hi"
+// 		sysApis = data.core.api
 
 // Output:
-//		data.core.forms.api.bill.dropDownList
+//		data.core.api.say.hi
 // -------------------------------------------------------
 // Notice:
-// 		The "dropdownlist" in api is lowercase and can also match to "dropDownList"
+// 		The "hi" in api is lowercase and can also match to "HI" or "Hi" or "hI"
 // -------------------------------------------------------
 
 /** @name lib.getSysApiFn */
 const fn = (api, sysApis) => {
 
-	// "/info/dropdownlist/" => ['info', 'dropdownlist']
+	// "/say/hi" => ['say', 'hi']
 	const apiPathNodes = api.replace(/(^\/)|(\/$)/g, '').split('/');
 
-	// ['info', 'dropdownlist'] => .info.dropdownlist;
+	// ['say', 'hi'] => .say.hi;
 	const sysApi = getSysApiByApiPath(apiPathNodes, sysApis);
 	return sysApi;
 };

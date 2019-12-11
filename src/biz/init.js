@@ -21,7 +21,7 @@ const getBizParams = () => {
 	const biz = data.core.biz;
 
 	if (biz) {
-		// {bill: form: crud: {}} => "/bill/form/crud"
+		// {say: hi: {}} => "/say/hi"
 		const bizPaths = lib.apiParser.objectToApis(biz);
 
 		bizPaths.forEach(bizPath => {
@@ -44,7 +44,7 @@ const fn = () => {
 	global.biz = {};
 
 	// Add global.biz.do to convenient api quick calls to its biz method
-	// 		complete: 		data.core.mms.biz.bill.mnf.manuPlan(query)
+	// 		complete: 		data.core.do.basic.say.hi(query)
 	// 		Shorthand: 		global.biz.do(query)
 	global.biz.do = bizDo;
 
