@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const kdo = require('kdo');
 const data = require('./data');
+const lib = require('./__lib');
 
 const folders = ['api', 'biz'];
 
@@ -26,9 +27,11 @@ const fn = () => {
 		}
 	});
 
+	// If there is no api folder, then fetch it via parsing biz folder
 	if (!coreModules.api) {
-		// {say: hi: {}} => "/say/hi"
-		coreModules.api = lib.apiParser.objectToApis(coreModules.biz);
+		const apiPaths = lib.apiParser.objectToApis(coreModules.biz);
+		const apiObject = lib.apiParser.apisToObject(apiPaths);
+		coreModules.api = apiObject;
 	}
 
 	data.core = coreModules;
