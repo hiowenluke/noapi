@@ -79,8 +79,8 @@ See "[examples](./examples)" to learn more.
 
 ```js
 const options = {
-	name: 'myApi',
-	port: 3001,
+    name: 'myApi',
+    port: 3001,
 };
 
 require('noapi')(options);
