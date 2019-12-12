@@ -8,7 +8,7 @@
     "url": "https://github.com/hiowenluke/noapi.git"
   },
   "scripts": {
-    "test": "cd test && mocha . --bail --exit"
+    "test": "cd test && mocha . --exit"
   },
   "keywords": [
     "node.js",
