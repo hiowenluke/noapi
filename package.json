@@ -3,10 +3,6 @@
   "version": "2.0.3",
   "description": "An API microservices framework for Node.js, load biz folder to be an API service. With Noapi, you can easily define api routes, clearly organize business code structures, and focus on writing business function code. \n\nNoapi has only this feature, no any other features. That is, you don't need to learn Noapi, just take it \"out of the box\" and start using it immediately.",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hiowenluke/noapi.git"
-  },
   "scripts": {
     "test": "cd test && mocha . --exit"
   },
@@ -18,10 +14,6 @@
   ],
   "author": "hi.owen.luke@gmail.com",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hiowenluke/noapi/issues"
-  },
-  "homepage": "https://github.com/hiowenluke/noapi#readme",
   "dependencies": {
     "caller": "^1.0.1",
     "cookie-parser": "^1.4.3",
@@ -36,5 +28,13 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "request": "^2.88.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiowenluke/noapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hiowenluke/noapi/issues"
+  },
+  "homepage": "https://github.com/hiowenluke/noapi#readme"
 }
