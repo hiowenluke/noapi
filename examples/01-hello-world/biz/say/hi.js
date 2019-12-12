@@ -1,8 +1,8 @@
 
-// Test url
-// 		http://localhost:3000/say/hi?name=owen&age=100
+// Test
+// http://localhost:3000/say/hi?name=owen&age=100
 
-// Expected result
+// Result
 // 		{
 // 			"success": true,
 // 			"data": {
@@ -10,8 +10,8 @@
 // 			}
 // 		}
 
-const fn = async (query) => {
-	return {msg: `Hi, I'm ${query.name}, ${query.age} years old.`};
+const fn = async (name, age) => {
+	return {msg: `Hi, I'm ${name}, ${age} years old.`};
 };
 
 module.exports = fn;
