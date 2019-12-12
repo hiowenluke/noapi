@@ -1,10 +1,9 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
-
 # Noapi
 
-A web microservices framework for [Node.js](https://nodejs.org), load a directory as a web service. With Noapi, we can clearly define api routes, organize business code structures, and focus on writing functional code.
+An API microservices framework for [Node.js](https://nodejs.org), load biz folder to be an API service. With Noapi, you can easily define api routes, clearly organize business code structures, and focus on writing business function code. 
 
-<p align="center"><img width="100%" src="https://github.com/hiowenluke/noapi/blob/master/doc/images/demo.jpg?raw=true" /></p>
+Noapi has only this feature, no any other features. That is, you don't need to learn Noapi, just take it "out of the box" and start using it immediately.
 
 ## Install
 
@@ -20,9 +19,9 @@ npm install
 npm test
 ```
 
-## Quick Start
+## TRY IT! (in under 3 minutes)
 
-### 0. Prepare
+### 0. Init a demo project
 
 ```sh
 mkdir ./noapi-demo && cd ./noapi-demo
@@ -36,13 +35,13 @@ Create the core folder "**biz**"
 mkdir biz
 ```
 
-### 1. Create business file
+### 1. Create an api
 
-Create file "./say/hi.js" under the folder biz. It defines an api `/say/hi` and handles it.
+Create file "./say/hi.js" under the biz folder. It defines an api `/say/hi` and handles it.
 
 ```js
-module.exports = async (query) => {
-    return {msg: `Hi, I'm ${query.name}, ${query.age} years old.`};
+module.exports = async (name, age) => {
+    return {msg: `Hi, I'm ${name}, ${age} years old.`};
 };
 ```
 
@@ -69,13 +68,30 @@ Visit [http://localhost:3000/say/hi?name=owen&age=100]() to see the result:
 }
 ```
 
-## Usage
-
-
+See "[examples/01-hello-world](./examples/01-hello-world)" to learn more.
 
 ## Examples
 
-See [examples](#examples) to learn more.
+See "[examples](./examples)" to learn more.
+
+## Options
+
+```js
+const options = {
+	name: 'myApi',
+	port: 3001,
+};
+
+require('noapi')(options);
+```
+
+See "[examples/99-options](./examples/99-options)" to learn more.
+
+## Api folder
+
+If there are many tool-type function files under the biz folder, they are not APIs, only used internally. This will prevent us from clearly seeing the api definitions in the biz folder, then you should use the **api folder**.
+
+See "[examples/06-api-folder](./examples/06-api-folder)" to learn about it.
 
 ## License
 
