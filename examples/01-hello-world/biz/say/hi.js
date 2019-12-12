@@ -6,12 +6,12 @@
 // 		{
 // 			"success": true,
 // 			"data": {
-// 				"msg": "Hi, I'm owen, 100 years old."
+// 				"msg": "Hi, I am owen, 100 years old."
 // 			}
 // 		}
 
 const fn = async (name, age) => {
-	return {msg: `Hi, I'm ${name}, ${age} years old.`};
+	return {msg: `Hi, I am ${name}, ${age} years old.`};
 };
 
 module.exports = fn;
