@@ -42,7 +42,7 @@ Create file "./say/hi.js" under the biz folder. It defines an api `/say/hi` and 
 
 ```js
 module.exports = async (name, age) => {
-    return {msg: `Hi, I'm ${name}, ${age} years old.`};
+    return {msg: `Hi, I am ${name}, ${age} years old.`};
 };
 ```
 
@@ -64,7 +64,7 @@ Visit [http://localhost:3000/say/hi?name=owen&age=100]() to see the result:
 {
     "success": true,
     "data": {
-        "msg": "Hi, I'm owen, 100 years old."
+        "msg": "Hi, I am owen, 100 years old."
     }
 }
 ```
