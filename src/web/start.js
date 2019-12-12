@@ -51,16 +51,10 @@ const flow = {
 		app.loadRoutes();
 	},
 
-	set404({options}) {
+	set404() {
 		expressApp.use((req, res, next) => {
 			res.status(404);
-
-			if (req.accepts('json')) {
-				res.send({ error: 'Not found' });
-			}
-			else {
-				res.type('txt').send('Not found');
-			}
+			res.send({error: 'Not found'});
 		});
 	},
 
