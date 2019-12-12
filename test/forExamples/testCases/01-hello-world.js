@@ -9,7 +9,7 @@ const me = {
 		result: {
 			success: true,
 				data: {
-				msg: "Hi, I'm owen, 100 years old."
+				msg: "Hi, I am owen, 100 years old."
 			}
 		}
 	},
