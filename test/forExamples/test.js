@@ -4,7 +4,6 @@ const path = require('path');
 const spawn = require('child_process').spawn;
 const request = require('request');
 const expect = require('chai').expect;
-const tryParseJsonStr = require('../../src/__lib/tryParseJsonStr');
 
 const wait = (ms = 1000) => {
 	return new Promise(resolve => {
@@ -47,9 +46,25 @@ const compare = (result, testCase) => {
 	return isOK;
 };
 
+const parse = (str) => {
+	let result = str;
+
+	if (!/[[{]/.test(result)) {
+		return result;
+	}
+
+	try {
+		result = JSON.parse(str);
+	}
+	catch(e) {}
+
+	return result;
+};
+
 const test = async (serverInfo, api, testCase) => {
 	let {method, params} = testCase;
 	method = fixMethod(api, method);
+	method = 'get';
 
 	const cp = spawn('node', [serverInfo.path]);
 	await wait(500);
@@ -62,7 +77,7 @@ const test = async (serverInfo, api, testCase) => {
 		request[method](postData, (error, response, body) => {
 			process.kill(cp.pid, 'SIGTERM');
 
-			const result = tryParseJsonStr.do(body) || body;
+			const result = parse(body);
 			const isOK = compare(result, testCase);
 
 			resolve(isOK);
