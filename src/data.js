@@ -1,33 +1,57 @@
 
+const fs = require('fs');
 const path = require('path');
+const kdo = require('kdo');
 
-/** @name me.data */
+const config = require('./config');
+const keyPaths = require('keypaths');
+
+const loadFolders = () => {
+	const root = config.webServiceRoot;
+	const core = {};
+
+	const folders = ['api', 'biz'];
+	folders.forEach(folder => {
+		const folderPath = path.resolve(root + '/' + folder);
+
+		if (fs.existsSync(folderPath)) {
+			const indexJs = folderPath + '/index.js';
+
+			if (fs.existsSync(indexJs)) {
+				core[folder] = require(folderPath);
+			}
+			else {
+				const simulateIndexJs = {filename: indexJs};
+				core[folder] = kdo(simulateIndexJs);
+			}
+		}
+	});
+
+	const obj = core.api || core.biz;
+	const apiPaths = keyPaths.toPaths(obj); // ["say.hi"]
+
+	// "say.hi" => "/say/hi"
+	const apis = apiPaths.map(item => '/' + item.replace(/\./g, '/'));
+
+	const apisX = {};
+
+	// {"/say/hi": "say.hi"}
+	apis.forEach((api, index) => {apisX[api] = apiPaths[index]});
+
+	return {apis, apisX, handlers: core.biz};
+};
+
 const me = {
-	webServiceRoot: '', // The root path of web service
+	apis: [], // ["/say/hi"]
+	aha: {}, // {"/say/hi": "say.hi"}
+	handlers: {}, // {say: {hi: f()}}
 
-	serverOptions: {
-		name: 'default',
-		port: 3000,
-		public: './public',
+	init() {
+		const {apis, apisX, handlers} = loadFolders();
 
-		isSilence: false, // Do not print logs if it is true
-		err404: undefined,
-	},
-
-	core: {}, // {api, biz}
-	bizParams: {}, // {"/say/hi": ["name", "age"]}
-
-	queryOptions: {
-		isParseJsonStr: true, // If the value of query parameter is json str, then convert it to object
-	},
-
-	global: {}, // {api, biz}
-
-	init(pathToCaller, options = {}) {
-		this.webServiceRoot = path.resolve(pathToCaller, '..');
-
-		Object.assign(this.serverOptions, options);
-		Object.assign(this.queryOptions, options.queryOptions, options.query);
+		this.apis = apis;
+		this.apisX = apisX;
+		this.handlers = handlers;
 	},
 };
 

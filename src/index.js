@@ -1,21 +1,18 @@
 
 const caller = require('caller');
-const me = require('kdo')();
+const config = require('./config');
+
 const data = require('./data');
+const biz = require('./biz');
+const server = require('./server');
 
-const noapi = (options = {}) => {
-	if (typeof options === 'number') {
-		options = {port: options};
-	}
+const fn = (...args) => {
+	config.init(caller(), args);
 
-	me.data.init(caller(), options);
-	me.loadFolders();
+	data.init();
+	biz.init();
 
-	me.api.init();
-	me.biz.init();
-
-	noapi.biz = data.global.biz.do;
-	return me.web.start();
+	server.start();
 };
 
-module.exports = noapi;
+module.exports = fn;

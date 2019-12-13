@@ -1,46 +1,32 @@
 
+const paramsCache = require('./paramsCache');
 const data = require('../data');
-const lib = require('../__lib');
+const keyPaths = require('keypaths');
 
-// Convenient api quick calls to its biz method
-// 		complete: 		data.core.do.basic.say.hi(query)
-// 		Shorthand: 		noapi.biz(query)
-const fn = async (query) => {
+const fn = async (api, query) => {
 
-	const api = query.originalUrl.split('?')[0];
-	const sysBizs = data.core.biz;
-	const sysBizFn = lib.getSysApiFn(api, sysBizs);
+	const isApiExists = data.apis.indexOf(api) >= 0;
+	if (!isApiExists) {
+		if (api === '/') {
+			return 'Welcome to Noapi!';
+		}
+		else {
+			return {error: `${api} not found`};
+		}
+	}
 
-	if (typeof sysBizFn !== 'function') {
+	const apiX = data.apisX[api]; // "/say/hi" => "say.hi"
+	const func = keyPaths.get(data.handlers, apiX); // say.hi()
+
+	if (typeof func !== 'function') {
 		return {error: `The handler ./biz${api}.js does not exists.`};
 	}
 
-	// Automatically parse json string if needed
-	if (data.queryOptions.isParseJsonStr) {
-		const allKeys = Object.keys(query);
+	const names = paramsCache.getByApi(api);
+	const args = names.map(name => query[name]);
 
-		// Remove keys created by noapi
-		const ignoreKeys = ['__', 'originalUrl'];
-		const keys = allKeys.filter(item => ignoreKeys.indexOf(item) === -1);
-
-		keys.forEach(key => {
-			const o = lib.tryParseJsonStr.do(query[key]);
-			if (o) {
-				query[key] = o;
-			}
-		});
-	}
-
-	// If there is no params, or just only one parameter named "query", pass the whole query
-	const params = data.bizParams[api];
-	if (!params || params.length === 1 && params[0] === 'query') {
-		return await sysBizFn(query);
-	}
-	else {
-		// Otherwise, pass query[paramName]
-		const args = params.map(paramName => query[paramName]);
-		return await sysBizFn(...args);
-	}
+	const result = await func(...args);
+	return result;
 };
 
 module.exports = fn;
