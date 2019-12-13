@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Benchmarking..."
+
+cd ./noapi
+sh ./run
+
+cd ../native
+sh ./run
