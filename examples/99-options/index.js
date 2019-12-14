@@ -1,5 +1,5 @@
 
-const noapi = require('..');
+const noapi = require('../noapi');
 
 const name = 'myApi'; // the default value is "default"
 const port = 3001; // the default value is 3000
