@@ -27,7 +27,7 @@ const loadFolders = () => {
 		}
 	});
 
-	const obj = core.api || core.biz;
+	const obj = core.api || core.biz || {};
 	const apiPaths = keyPaths.toPaths(obj); // ["say.hi"]
 
 	// "say.hi" => "/say/hi"
