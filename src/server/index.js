@@ -18,21 +18,43 @@ const done = (res, result) => {
 	res.end();
 };
 
+const getQueryStr = (req) => {
+	return new Promise(resolve => {
+		let str = '';
+
+		req.on('data', (chunk) => {
+			str += chunk;
+		});
+
+		req.on('end',()=>{
+			resolve(str);
+		});
+	})
+};
+
 const me = {
 	start() {
 		const server = new http.Server();
 		server.on('request',async (req, res) => {
 			const url = req.url;
+			const method = req.method.toLowerCase();
+			let [api, queryStr] = url.split('?');
+			let query;
 
-			const query = queryCache.getByUrl(url);
+			if (method === 'post' || !queryStr) {
+				queryStr = await getQueryStr(req);
+			}
+
+			query = queryCache.get(queryStr);
+
 			if (query && query.error) {
 				done(res, query);
 			}
 
-			const api = url.split('?')[0];
 			const result = await routes(api, query);
 			done(res, result);
 		});
+
 
 		const {name, port, isSilence} = config;
 		server.listen(port, () => {
