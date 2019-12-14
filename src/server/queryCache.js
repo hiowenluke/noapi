@@ -1,29 +1,19 @@
 
-const parse  = require('url').parse;
+const qs = require('qs');
 
 const parseQueryStr = (queryStr) => {
 
 	// Simulate a complete url so that we can use url.parse to parse it
-	const url = '/?' + queryStr;
-	let query = parse(url, true).query;
+	// const url = '/?' + queryStr;
+	// let query = parse(url, true).query;
 
-	let errArg = '';
+	let query;
 
 	try {
-		// Convert the json string in query to object
-		const keys = Object.keys(query);
-		keys.forEach(key => {
-			const val = query[key];
-			if (!/[[{]/.test(val)) return;
-
-			errArg = key;
-
-			// Processes only standard json strings, regardless of object.
-			query[key] = JSON.parse(val);
-		});
+		query = qs.parse(queryStr);
 	}
 	catch(e) {
-		query = {error: `${errArg} is not a standard json string.`}
+		query = {error: `The data sent to the server contains an illegal json string.`}
 	}
 
 	return query;
