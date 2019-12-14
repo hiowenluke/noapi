@@ -1,6 +1,6 @@
 {
   "name": "noapi",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "An API microservices framework for Node.js, load biz folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accept GET and POST data. Noapi is simple enough that you just take it \"out of the box\".",
   "main": "index.js",
   "scripts": {
