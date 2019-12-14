@@ -1,10 +1,7 @@
-<p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/noapi/master/doc/images/logo.png" alt="Noapi logo" /></p>
 
 # Noapi
 
-An API microservices framework for [Node.js](https://nodejs.org), load biz folder to be an API service. With Noapi, you can easily define api routes, clearly organize business code structures, and focus on writing business function code. 
-
-Noapi has only this feature, no any other features. That is, you don't need to learn Noapi, just take it "out of the box" and start using it immediately.
+An API microservices framework for [Node.js](https://nodejs.org), load biz folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accept GET and POST data. Noapi is simple enough that you just take it "out of the box".
 
 ## Install
 
@@ -28,9 +25,9 @@ Create the core folder "**biz**"
 mkdir biz
 ```
 
-### 1. Create a function file
+### 1. Create an api
 
-Create file "./say/hi.js" under the biz folder. It defines an api `/say/hi` and handles it.
+Create file "./biz/say/hi.js". It defines an api `/say/hi` and handles it. 
 
 ```js
 module.exports = async (name, age) => {
@@ -48,8 +45,6 @@ require('noapi')();
 
 ```sh
 node index.js
-```
-```sh
 Server default is listening on port 3000
 ```
 
@@ -65,24 +60,36 @@ Visit [http://localhost:3000/say/hi?name=owen&age=100]() to see the result:
 
 ## Examples
 
-See "[examples](./examples)" to learn more.
+* [01-hello-world](./examples/01-hello-world)
+* [02-complex-url-params](./examples/02-complex-url-params)
+* [03-return-error](./examples/03-return-error)
+* [04-api-folder](./examples/04-api-folder)
+* [99-options](./examples/99-options)
 
 ## Options
 
 ```js
-const options = {
-    name: 'myApi',
-    port: 3001,
-};
+const noapi = require('noapi');
 
-require('noapi')(options);
+const name = 'myApi'; // the default value is "default"
+const port = 3001; // the default value is 3000
+const isSilence = true; // the default value is false
+
+// The order of the parameters can be arbitrary
+noapi(name, port, isSilence);
 ```
+
+See "[examples/99-options](./examples/99-options)" to learn about it.
 
 ## Api folder
 
-If there are many tool-type function files under the biz folder, they are not APIs, only used internally. This will prevent us from clearly seeing the api definitions in the biz folder, then you should use the **api folder**.
+Each file in the biz folder corresponds to an API. If there are some tool-type function files under the biz folder (not APIs, which can only be used internally), this will make the APIs list unclear, then you should use a separate **api folder**.
 
-See "[examples/06-api-folder](./examples/06-api-folder)" to learn about it.
+See "[examples/04-api-folder](./examples/04-api-folder)" to learn about it.
+
+## Benchmark
+
+Noapi is based on native http server, as fast as it. See [Benchmark](https://github.com/hiowenluke/noapi-benchmark).
 
 ## Test
 
