@@ -1,9 +1,7 @@
 
 const _ = require('lodash');
-const path = require('path');
 const spawn = require('child_process').spawn;
 const request = require('request');
-const expect = require('chai').expect;
 
 const wait = (ms = 1000) => {
 	return new Promise(resolve => {
@@ -11,10 +9,6 @@ const wait = (ms = 1000) => {
 			resolve();
 		}, ms);
 	})
-};
-
-const getServerPath = (exampleName) => {
-	return path.resolve(__dirname, '../../examples/' + exampleName);
 };
 
 const fixMethod = (api, method) => {
@@ -61,14 +55,14 @@ const parse = (str) => {
 	return result;
 };
 
-const test = async (serverInfo, api, testCase) => {
+const fn = async (serverInfo, api, testCase) => {
 	let {method, params} = testCase;
 	method = fixMethod(api, method);
 
 	const cp = spawn('node', [serverInfo.path]);
 	await wait(500);
 
-	const {host, port} = serverInfo;
+	const {host = 'localhost', port = 3000} = serverInfo;
 	const url = `http://${host}:${port}` + api;
 	const postData = {url, form: params};
 
@@ -84,23 +78,4 @@ const test = async (serverInfo, api, testCase) => {
 	})
 };
 
-const createTests = (exampleName, testCases) => {
-	const apis = Object.keys(testCases).filter(key => key.substr(0, 1) === '/');
-	const serverInfo = {
-		host: testCases.host || 'localhost',
-		port: testCases.port || 3000,
-		path: getServerPath(exampleName),
-	};
-
-	for (let i = 0; i < apis.length; i ++) {
-		const api = apis[i];
-		const testCase = testCases[api];
-
-		it(api, async () => {
-			const result = await test(serverInfo, api, testCase);
-			expect(result).to.be.true;
-		});
-	}
-};
-
-module.exports = createTests;
+module.exports = fn;

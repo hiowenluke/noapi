@@ -1,2 +1,3 @@
 
 require('./forExamples');
+require('./tests');
