@@ -3,7 +3,12 @@ const http = require('http');
 
 const config = require('../config');
 const routes = require('./routes');
-const queryCache = require('./queryCache');
+const parseQueryStr = require('./parseQueryStr');
+
+const welcome = (res) => {
+	res.write('Welcome to Noapi.');
+	res.end();
+};
 
 const done = (res, result) => {
 	if (result.error) {
@@ -37,18 +42,23 @@ const me = {
 		const server = new http.Server();
 		server.on('request',async (req, res) => {
 			const url = req.url;
-			const method = req.method.toLowerCase();
+
+			if (url === '/') {
+				return welcome(res);
+			}
+
 			let [api, queryStr] = url.split('?');
 			let query;
 
+			const method = req.method.toLowerCase();
 			if (method === 'post' || !queryStr) {
 				queryStr = await getQueryStr(req);
 			}
 
-			query = queryCache.get(queryStr);
+			query = parseQueryStr.do(queryStr);
 
 			if (query && query.error) {
-				done(res, query);
+				return done(res, query);
 			}
 
 			const result = await routes(api, query);
