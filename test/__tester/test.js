@@ -2,6 +2,7 @@
 const _ = require('lodash');
 const spawn = require('child_process').spawn;
 const request = require('request');
+const qs = require('qs');
 
 const wait = (ms = 1000) => {
 	return new Promise(resolve => {
@@ -21,7 +22,7 @@ const fixMethod = (api, method) => {
 		}
 	}
 
-	return method.toLowerCase();
+	return method;
 };
 
 const compare = (result, testCase) => {
@@ -56,18 +57,29 @@ const parse = (str) => {
 };
 
 const fn = async (serverInfo, api, testCase) => {
-	let {method, params} = testCase;
+	let {method, params = {}} = testCase;
+
 	method = fixMethod(api, method);
+	method = method.toLowerCase();
 
 	const cp = spawn('node', [serverInfo.path]);
 	await wait(500);
 
 	const {host = 'localhost', port = 3000} = serverInfo;
-	const url = `http://${host}:${port}` + api;
-	const postData = {url, form: params};
+
+	let url, data;
+
+	if (method === 'get') {
+		url = `http://${host}:${port}` + api + '?' + qs.stringify(params);
+		data = {url};
+	}
+	else {
+		url = `http://${host}:${port}` + api;
+		data = {url, form: params};
+	}
 
 	return new Promise(resolve => {
-		request[method](postData, (error, response, body) => {
+		request[method](data, (error, response, body) => {
 			process.kill(cp.pid, 'SIGTERM');
 
 			const result = parse(body);
