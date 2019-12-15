@@ -64,7 +64,6 @@ const parse = (str) => {
 const test = async (serverInfo, api, testCase) => {
 	let {method, params} = testCase;
 	method = fixMethod(api, method);
-	method = 'get';
 
 	const cp = spawn('node', [serverInfo.path]);
 	await wait(500);
