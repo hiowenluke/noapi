@@ -1,7 +1,7 @@
 
 # Noapi
 
-An API microservices framework for [Node.js](https://nodejs.org), load biz folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accept GET and POST data. Noapi is simple enough that you just take it "out of the box".
+An API microservices framework for [Node.js](https://nodejs.org), load a folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it "out of the box".
 
 ## Install
 
@@ -25,7 +25,7 @@ Create the core folder "**biz**"
 mkdir biz
 ```
 
-### 1. Create an api
+### 1. Create a biz file
 
 Create file "./biz/say/hi.js". It defines an api `/say/hi` and handles it. 
 
