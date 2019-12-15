@@ -4,17 +4,6 @@ const data = require('../data');
 const keyPaths = require('keypaths');
 
 const fn = async (api, query) => {
-
-	const isApiExists = data.apis.indexOf(api) >= 0;
-	if (!isApiExists) {
-		if (api === '/') {
-			return 'Welcome to Noapi!';
-		}
-		else {
-			return {error: `${api} not found`};
-		}
-	}
-
 	const apiX = data.apisX[api]; // "/say/hi" => "say.hi"
 	const func = keyPaths.get(data.handlers, apiX); // say.hi()
 
