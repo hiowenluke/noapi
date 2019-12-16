@@ -1,6 +1,6 @@
 
 // Test
-// http://localhost:3000/say/hi?name=owen&age=100
+// http://localhost:3000/say/hi?age=100&name=owen
 
 // Result
 // 		{
@@ -10,6 +10,8 @@
 // 			}
 // 		}
 
+// The order of the function parameters does NOT have to be
+// the same as the order of the url parameters.
 const fn = async (name, age) => {
 	return {msg: `Hi, I am ${name}, ${age} years old.`};
 };

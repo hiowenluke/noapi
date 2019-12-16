@@ -48,7 +48,7 @@ node index.js
 Server default is listening on port 3000
 ```
 
-Visit [http://localhost:3000/say/hi?name=owen&age=100]() to see the result:
+Visit [http://localhost:3000/say/hi?age=100&name=owen]() to see the result:
 ```json
 {
     "success": true,

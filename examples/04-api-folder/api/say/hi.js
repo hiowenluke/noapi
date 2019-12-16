@@ -1,6 +1,6 @@
 /**
  * @test
- 	http://localhost:3000/say/hi?name=owen&age=100
+ 	http://localhost:3000/say/hi?age=100&name=owen
 
  * @returns
 	{
