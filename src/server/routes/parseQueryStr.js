@@ -10,7 +10,7 @@ const parseQueryStr = (str) => {
 	try {
 		// From post
 		// name=owen&obj%5Bdate%5D=2019-05-01&arr%5B0%5D=1&arr%5B1%5D=abc&arr%5B2%5D%5Btel%5D=12345678
-		if (/(^|&).+?\b%5B/.test(str)) {
+		if (/(^|&).+?\b((%5B)|(\[))/.test(str)) {
 			isComplexQueryStr = 1;
 			query = qs.parse(str);
 		}
