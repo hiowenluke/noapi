@@ -1,7 +1,7 @@
 
 # Noapi
 
-An API microservices framework for [Node.js](https://nodejs.org), load a folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it "out of the box".
+A high performance API framework for [Node.js](https://nodejs.org), load a folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it "out of the box".
 
 ## Install
 
@@ -89,7 +89,20 @@ See "[examples/04-api-folder](./examples/04-api-folder)" to learn about it.
 
 ## Benchmark
 
-Noapi is based on native http server, as fast as it. See [Benchmark](https://github.com/hiowenluke/noapi-benchmark).
+Noapi is a high performance API framework, faster than [Koa](https://github.com/koajs/koa), [Express](https://github.com/expressjs/express).
+
+See [Benchmark](https://github.com/hiowenluke/noapi-benchmark):
+
+```sh
+Benchmarking, about 30 seconds...
+========================================
+Results (requests/sec)
+========================================
+noapi   14649.4
+koa     11538.73
+express 7916.3
+========================================
+```
 
 ## Test
 
