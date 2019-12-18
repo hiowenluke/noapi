@@ -9,7 +9,10 @@ const welcome = (res) => {
 };
 
 const done = (res, result) => {
-	if (result.error) {
+	if (!result) {
+		result = {success: false, error: "Internal Server Error"};
+	}
+	else if (result.error) {
 		result = {success: false, error: result.error};
 	}
 	else {
