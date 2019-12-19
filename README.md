@@ -1,7 +1,7 @@
 
 # Noapi
 
-A high performance API framework for [Node.js](https://nodejs.org), load a folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it "out of the box".
+A high-performance and easy-to-use API framework for [Node.js](https://nodejs.org), load a folder as an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it "out of the box".
 
 ## Install
 
@@ -27,7 +27,7 @@ mkdir biz
 
 ### 1. Create a biz file
 
-Create file "./biz/say/hi.js". It defines an api `/say/hi` and handles it. 
+Create file "./biz/say/hi.js". It defines an api "/say/hi" and handles it. 
 
 ```js
 module.exports = async (name, age) => {
@@ -87,22 +87,9 @@ Each file in the biz folder corresponds to an API. If there are some tool-type f
 
 See "[examples/04-api-folder](./examples/04-api-folder)" to learn about it.
 
-## Benchmark
+## Performance
 
-Noapi is a high performance API framework, faster than [Koa](https://github.com/koajs/koa), [Express](https://github.com/expressjs/express).
-
-See [Benchmark](https://github.com/hiowenluke/noapi-benchmark):
-
-```sh
-Benchmarking, about 30 seconds...
-========================================
-Results (requests/sec)
-========================================
-noapi   14649.4
-koa     11538.73
-express 7916.3
-========================================
-```
+Noapi is a high-performance API framework, faster than [Koa](https://github.com/koajs/koa), [Express](https://github.com/expressjs/express). See [API Framework Performance PK](https://github.com/hiowenluke/api-frameworks-performance-pk)
 
 ## Test
 
