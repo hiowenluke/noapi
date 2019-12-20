@@ -1,2 +1,3 @@
 
-require('../../../..')();
+const noapi = require('../../../..');
+noapi();
