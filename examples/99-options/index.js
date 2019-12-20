@@ -7,3 +7,12 @@ const isSilence = true; // the default value is false
 
 // The order of the parameters can be arbitrary
 noapi(name, port, isSilence);
+
+// Equiv to:
+// 		const options = {
+// 			name: 'myApi',
+// 			port: 3001,
+// 			isSilence: true,
+// 		};
+//
+// 		noapi(options);
