@@ -11,18 +11,24 @@ const me = {
 		this.webServiceRoot = path.resolve(pathToCaller, '..');
 
 		let name, port, isSilence;
-		args.forEach(arg => {
-			const type = typeof arg;
-			if (type === 'number') {
-				port = arg;
-			}
-			else if (type === 'string') {
-				name = arg;
-			}
-			else if (type === 'boolean') {
-				isSilence = arg;
-			}
-		});
+
+		if (typeof args[0] === 'object') {
+			({name, port, isSilence} = args[0]);
+		}
+		else {
+			args.forEach(arg => {
+				const type = typeof arg;
+				if (type === 'number') {
+					port = arg;
+				}
+				else if (type === 'string') {
+					name = arg;
+				}
+				else if (type === 'boolean') {
+					isSilence = arg;
+				}
+			});
+		}
 
 		name && (this.name = name);
 		port && (this.port = port);
