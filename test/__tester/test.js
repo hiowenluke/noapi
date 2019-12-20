@@ -1,16 +1,7 @@
 
 const _ = require('lodash');
-const spawn = require('child_process').spawn;
 const request = require('request');
 const qs = require('qs');
-
-const wait = (ms = 1000) => {
-	return new Promise(resolve => {
-		setTimeout(() => {
-			resolve();
-		}, ms);
-	})
-};
 
 const fixMethod = (api, method) => {
 	if (!method) {
@@ -62,9 +53,6 @@ const fn = async (serverInfo, api, testCase) => {
 	method = fixMethod(api, method);
 	method = method.toLowerCase();
 
-	const cp = spawn('node', [serverInfo.path]);
-	await wait(500);
-
 	const {host = 'localhost', port = 3000} = serverInfo;
 
 	let url, data;
@@ -80,8 +68,6 @@ const fn = async (serverInfo, api, testCase) => {
 
 	return new Promise(resolve => {
 		request[method](data, (error, response, body) => {
-			process.kill(cp.pid, 'SIGTERM');
-
 			const result = parse(body);
 			const isOK = compare(result, testCase);
 

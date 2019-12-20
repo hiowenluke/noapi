@@ -2,7 +2,17 @@
 const kdo = require('kdo');
 const caller = require('caller');
 const path = require('path');
+
+const spawn = require('child_process').spawn;
 const createTests = require('./createTests');
+
+const wait = (ms = 1000) => {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve();
+		}, ms);
+	})
+};
 
 const fn = (describeTitle, serversRootPath) => {
 	const pathToCaller = caller();
@@ -19,6 +29,17 @@ const fn = (describeTitle, serversRootPath) => {
 		const serverPath = path.resolve(sourceFolder, serversRootPath + '/' + serverName);
 
 		describe(title, () => {
+			let cp;
+
+			before(async () => {
+				cp = spawn('node', [serverPath]);
+				await wait();
+			});
+
+			after(async () => {
+				process.kill(cp.pid, 'SIGTERM');
+			});
+
 			createTests(serverPath, cases);
 		});
 	}
