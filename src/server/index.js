@@ -59,10 +59,11 @@ const me = {
 		});
 
 
-		const {name, port, isSilence} = config;
+		const {name, host, port, isSilence} = config;
 		server.listen(port, () => {
 			if (isSilence) return;
-			console.log('Server %s is listening on port %d', name, port);
+			const str = host === 'localhost' || host === '127.0.0.1' ? port : host + ':' + port;
+			console.log(`Server ${name} running at ${str}`);
 		});
 	}
 };
