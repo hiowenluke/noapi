@@ -62,8 +62,7 @@ const me = {
 		const {name, host, port, isSilence} = config;
 		server.listen(port, () => {
 			if (isSilence) return;
-			const str = host === 'localhost' || host === '127.0.0.1' ? port : host + ':' + port;
-			console.log(`Server ${name} running at ${str}`);
+			console.log(`Server ${name} running at http://${host}:${port}`);
 		});
 	}
 };
