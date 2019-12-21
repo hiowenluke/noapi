@@ -1,6 +1,6 @@
 {
   "name": "noapi",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "A high-performance and easy-to-use API framework for Node.js, load a folder to be an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it \"out of the box\".",
   "main": "index.js",
   "scripts": {
