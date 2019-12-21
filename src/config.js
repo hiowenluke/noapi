@@ -3,6 +3,7 @@ const path = require('path');
 
 const me = {
 	name: 'default',
+	host: 'localhost',
 	port: 3000,
 	isSilence: false, // Do not print logs if it is true
 	webServiceRoot: '', // The root path of web service
@@ -10,10 +11,10 @@ const me = {
 	init(pathToCaller, args = []) {
 		this.webServiceRoot = path.resolve(pathToCaller, '..');
 
-		let name, port, isSilence;
+		let name, host, port, isSilence;
 
 		if (typeof args[0] === 'object') {
-			({name, port, isSilence} = args[0]);
+			({name, host, port, isSilence} = args[0]);
 		}
 		else {
 			args.forEach(arg => {
@@ -22,7 +23,12 @@ const me = {
 					port = arg;
 				}
 				else if (type === 'string') {
-					name = arg;
+					if (arg === 'localhost' || arg.indexOf('.') >= 0) {
+						host = arg;
+					}
+					else {
+						name = arg;
+					}
 				}
 				else if (type === 'boolean') {
 					isSilence = arg;
@@ -31,6 +37,7 @@ const me = {
 		}
 
 		name && (this.name = name);
+		host && (this.host = host);
 		port && (this.port = port);
 		isSilence && (this.isSilence = isSilence);
 	},
