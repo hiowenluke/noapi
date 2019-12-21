@@ -9,7 +9,7 @@ const welcome = (res) => {
 };
 
 const done = (res, result) => {
-	if (!result) {
+	if (typeof result === 'undefined') {
 		result = {success: false, error: "Internal Server Error"};
 	}
 	else if (result.error) {
