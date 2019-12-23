@@ -1,7 +1,7 @@
 
 # Noapi
 
-A high-performance and easy-to-use web API framework for [Node.js](https://nodejs.org). Noapi loads folder "biz" as a web API server, each file in it defines and handles an API, so that you can focus on writing business function code. Noapi is simple enough that you just take it "out of the box".
+A high-performance and easy-to-use web API framework for [Node.js](https://nodejs.org). Noapi loads directory "biz" as a web API server, each file in it defines and handles an API, so that you can focus on writing business function code. Noapi is simple enough that you just take it "out of the box".
 
 ## Install
 
@@ -19,7 +19,7 @@ npm init -y
 npm install noapi --save
 ```
 
-Create the core folder "**biz**"
+Create the core directory "**biz**"
 
 ```sh
 mkdir biz
@@ -64,20 +64,20 @@ The order of the parameters in the url can be different from that in file "./biz
 * [01-hello-world](./examples/01-hello-world)
 * [02-complex-url-params](./examples/02-complex-url-params)
 * [03-return-error](./examples/03-return-error)
-* [04-api-folder](./examples/04-api-folder)
+* [04-api-directory](./examples/04-api-directory)
 * [99-options](./examples/99-options)
 
 ## Options
 
 ```js
 const name = 'myApi'; // default is "default"
-const folder = './src'; // default is "./biz"
+const directory = './src'; // default is "./biz"
 const host = '127.0.0.1'; // default is "localhost"
 const port = 3001; // default is 3000
 const isSilence = true; // default is false
 
 // The number and order of parameters can be arbitrary
-noapi(name, folder, host, port, isSilence);
+noapi(name, directory, host, port, isSilence);
 ```
 
 It equivalents to:
@@ -85,7 +85,7 @@ It equivalents to:
 ```js
 const options = {
     name: 'myApi',
-    folder: './src',
+    directory: './src',
     host: '127.0.0.1',
     port: 3001,
     isSilence: true,
@@ -95,9 +95,9 @@ noapi(options);
 
 See "[examples/99-options](./examples/99-options)" to learn about it.
 
-## Biz folder
+## Biz directory
 
-Each file in the biz folder defines and handles an API. All files in the biz folder make up the API list.
+Each file in the biz directory defines and handles an API. All files in the biz directory make up the API list.
 
 ```js
 /root
@@ -109,7 +109,7 @@ Each file in the biz folder defines and handles an API. All files in the biz fol
     index.js    
 ```
 
-If there are some none-api files (only be used internally) in the biz folder, this will make the API list unclear. Then you should use the **api folder**, just create an empty file (or with the description of this api) to define an api. See "[examples/04-api-folder](./examples/04-api-folder)".
+If there are some none-api files (only be used internally) in the biz directory, this will make the API list unclear. Then you should use the **api directory**, just create an empty file (or with the description of this api) to define an api. See "[examples/04-api-directory](./examples/04-api-directory)".
 
 ```js
 /root
