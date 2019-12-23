@@ -6,26 +6,33 @@ const kdo = require('kdo');
 const config = require('./config');
 const keyPaths = require('keypaths');
 
-const loadFolders = () => {
+const loadFolder = (folderName) => {
+	let obj;
+
 	const root = config.webServiceRoot;
-	const core = {};
+	const folderPath = path.resolve(root + '/' + folderName);
 
-	const folders = ['api', 'biz'];
-	folders.forEach(folder => {
-		const folderPath = path.resolve(root + '/' + folder);
+	if (fs.existsSync(folderPath)) {
+		const indexJs = folderPath + '/index.js';
 
-		if (fs.existsSync(folderPath)) {
-			const indexJs = folderPath + '/index.js';
-
-			if (fs.existsSync(indexJs)) {
-				core[folder] = require(folderPath);
-			}
-			else {
-				const simulateIndexJs = {filename: indexJs};
-				core[folder] = kdo(simulateIndexJs);
-			}
+		if (fs.existsSync(indexJs)) {
+			obj = require(folderPath);
 		}
-	});
+		else {
+			const simulateIndexJs = {filename: indexJs};
+			obj = kdo(simulateIndexJs);
+		}
+	}
+
+	return obj;
+};
+
+const loadFolders = () => {
+	const core = {};
+	const bizFolderName = config.folder.replace(/^.\//, ''); // ./biz => biz
+
+	core.api = loadFolder('api');
+	core.biz = loadFolder(bizFolderName);
 
 	const obj = core.api || core.biz || {};
 	const apiPaths = keyPaths.toPaths(obj); // ["say.hi"]
