@@ -18,10 +18,11 @@ const me = {
 
 	init() {
 		const root = config.webServiceRoot;
+		const bizFolder = config.folder.replace(/^./, ''); // ./biz => /biz
 		const apis = data.apis;
 
 		apis.forEach(api => {
-			const filePath = root + '/biz' + api + '.js';
+			const filePath = root + bizFolder + api + '.js';
 			if (!fs.existsSync(filePath)) return;
 
 			const bizFile = require(filePath);
