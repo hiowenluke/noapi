@@ -48,7 +48,7 @@ node index.js
 Server default is listening on port 3000
 ```
 
-Visit [http://localhost:3000/say/hi?age=100&name=owen]() to see the result:
+Visit the url [http://localhost:3000/say/hi?age=100&name=owen]() to see the result:
 ```json
 {
     "success": true,
@@ -57,6 +57,7 @@ Visit [http://localhost:3000/say/hi?age=100&name=owen]() to see the result:
     }
 }
 ```
+The order of the parameters in the url can be different from that in file "./biz/say/hi.js".
 
 ## Examples
 
@@ -69,34 +70,66 @@ Visit [http://localhost:3000/say/hi?age=100&name=owen]() to see the result:
 ## Options
 
 ```js
-const noapi = require('noapi');
-
 const name = 'myApi'; // default is "default"
+const folder = './src'; // default is "./biz"
 const host = '127.0.0.1'; // default is "localhost"
 const port = 3001; // default is 3000
 const isSilence = true; // default is false
 
 // The number and order of parameters can be arbitrary
-noapi(name, host, port, isSilence);
+noapi(name, folder, host, port, isSilence);
+```
 
-// Equiv to:
-//     const options = {
-//         name: 'myApi',
-//         host: '127.0.0.1',
-//         port: 3001,
-//         isSilence: true,
-//     };
-//
-//     noapi(options);
+It equivalents to:
+
+```js
+const options = {
+    name: 'myApi',
+    folder: './src',
+    host: '127.0.0.1',
+    port: 3001,
+    isSilence: true,
+};
+noapi(options);
 ```
 
 See "[examples/99-options](./examples/99-options)" to learn about it.
 
-## Api folder
+## Biz folder
 
-Each file in the biz folder corresponds to an API. If there are some tool-type function files under the biz folder (not APIs, which can only be used internally), this will make the APIs list unclear, then you should use a separate **api folder**.
+Each file in the biz folder defines and handles an API. All files in the biz folder make up the API list.
 
-See "[examples/04-api-folder](./examples/04-api-folder)" to learn about it.
+```js
+/root
+    /biz
+        /say
+            hi.js       // /say/hi
+        about.js        // /about
+     
+    index.js    
+```
+
+If there are some none-api files (only be used internally) in the biz folder, this will make the API list unclear. Then you should use the **api folder**, just create an empty file (or with the description of this api) to define an api. See "[examples/04-api-folder](./examples/04-api-folder)".
+
+```js
+/root
+    /api
+        /say
+            hi.js       // api: /say/hi
+        about.js        // api: /about
+
+    /biz
+        /__lib
+        /say
+            /__lib
+            hi.js   
+            tools.js    // none-api
+            check.js    // none-api
+        about.js       
+        init.js         // none-api
+        
+    index.js    
+```
 
 ## Performance
 
