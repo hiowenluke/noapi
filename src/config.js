@@ -31,7 +31,7 @@ const me = {
 				}
 				else if (type === 'string') {
 					if (arg.substr(0, 1) === '.') {
-						folder = arg
+						folder = arg;
 					}
 					else if (arg !== 'localhost' && arg.indexOf('.') === -1) {
 						name = arg;
