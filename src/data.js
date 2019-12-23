@@ -29,10 +29,10 @@ const loadFolder = (folderName) => {
 
 const loadFolders = () => {
 	const core = {};
-	const bizFolderName = config.folder.replace(/^.\//, ''); // ./biz => biz
+	const bizDirName = config.dir.replace(/^.\//, ''); // ./biz => biz
 
 	core.api = loadFolder('api');
-	core.biz = loadFolder(bizFolderName);
+	core.biz = loadFolder(bizDirName);
 
 	const obj = core.api || core.biz || {};
 	const apiPaths = keyPaths.toPaths(obj); // ["say.hi"]
