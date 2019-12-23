@@ -71,13 +71,13 @@ The order of the parameters in the url can be different from that in file "./biz
 
 ```js
 const name = 'myApi'; // default is "default"
-const directory = './src'; // default is "./biz"
+const dir = './src'; // default is "./biz"
 const host = '127.0.0.1'; // default is "localhost"
 const port = 3001; // default is 3000
 const isSilence = true; // default is false
 
 // The number and order of parameters can be arbitrary
-noapi(name, directory, host, port, isSilence);
+noapi(name, dir, host, port, isSilence);
 ```
 
 It equivalents to:
@@ -85,7 +85,7 @@ It equivalents to:
 ```js
 const options = {
     name: 'myApi',
-    directory: './src',
+    dir: './src',
     host: '127.0.0.1',
     port: 3001,
     isSilence: true,
