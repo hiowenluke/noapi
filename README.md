@@ -1,7 +1,7 @@
 
 # Noapi
 
-A high-performance and easy-to-use API framework for [Node.js](https://nodejs.org), load a folder as an API service. With Noapi, you can easily define api routes, focus on writing business function code. Noapi accepts GET and POST data. Noapi is simple enough that you just take it "out of the box".
+A high-performance and easy-to-use web API framework for [Node.js](https://nodejs.org). Noapi loads folder "biz" as a web API server, each file in it defines and handles an API, so that you can focus on writing business function code. Noapi is simple enough that you just take it "out of the box".
 
 ## Install
 
@@ -133,7 +133,7 @@ If there are some none-api files (only be used internally) in the biz folder, th
 
 ## Performance
 
-Noapi is a high-performance API framework, faster than [Koa](https://github.com/koajs/koa), [Express](https://github.com/expressjs/express). See [API Framework Performance PK](https://github.com/hiowenluke/api-frameworks-performance-pk)
+Noapi is a high-performance web API framework, faster than [Koa](https://github.com/koajs/koa), [Express](https://github.com/expressjs/express). See [API Framework Performance PK](https://github.com/hiowenluke/api-frameworks-performance-pk)
 
 ## Test
 
