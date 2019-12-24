@@ -59,7 +59,7 @@ Visit the url [http://localhost:3000/say/hi?age=100&name=owen]() to see the resu
 }
 ```
 
-The order of the parameters in the url can be different from that in file "./biz/say/hi.js".
+The order of the parameters in the url can be arbitrary.
 
 ## Examples
 
@@ -71,28 +71,17 @@ The order of the parameters in the url can be different from that in file "./biz
 
 ## Options
 
+It can be omitted if it is the default value as below. 
+
 ```js
-const name = 'myApi'; // default is "default"
-const dir = './src'; // default is "./biz"
-const host = '127.0.0.1'; // default is "localhost"
-const port = 3001; // default is 3000
-const isSilence = true; // default is false
+const name = 'default';
+const dir = './biz';
+const host = 'localhost';
+const port = 3000; 
+const isSilence = false;
 
 // The number and order of parameters can be arbitrary
 noapi(name, dir, host, port, isSilence);
-```
-
-It equivalents to:
-
-```js
-const options = {
-    name: 'myApi',
-    dir: './src',
-    host: '127.0.0.1',
-    port: 3001,
-    isSilence: true,
-};
-noapi(options);
 ```
 
 See "[examples/99-options](./examples/99-options)" to learn about it.
