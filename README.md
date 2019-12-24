@@ -94,8 +94,8 @@ Each file in the biz directory defines and handles an API. All files in the biz 
 /root
     /biz
         /say
-            hi.js       // /say/hi
-        about.js        // /about
+            hi.js       // api: /say/hi
+        about.js        // api: /about
      
     index.js    
 ```
