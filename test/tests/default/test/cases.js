@@ -1,20 +1,23 @@
 
-const me = {
-	'/': {
+const me = [
+	'/',
+	{
 		result: {
 			"success": true,
 			"data": "Welcome to Noapi."
 		}
 	},
 
-	'/xxx': {
+	'/xxx',
+	{
 		result: {
 			"success": false,
 			"error": "/xxx not found"
 		}
 	},
 
-	'/get': {
+	'/get',
+	{
 		method: 'GET',
 
 		params: {
@@ -49,7 +52,8 @@ const me = {
 		}
 	},
 
-	'/post': {
+	'/post',
+	{
 		method: 'POST',
 
 		params: {
@@ -83,6 +87,6 @@ const me = {
 			}
 		}
 	}
-};
+];
 
 module.exports = me;

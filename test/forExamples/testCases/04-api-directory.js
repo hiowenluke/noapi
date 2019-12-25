@@ -1,6 +1,8 @@
 
-const me = {
-	'/say/hi': {
+const me = [
+
+	'/say/hi',
+	{
 		params: {
 			name: 'owen',
 			age: 100
@@ -16,7 +18,8 @@ const me = {
 		}
 	},
 
-	'/about': {
+	'/about',
+	{
 		result: {
 			success: true,
 			data: {
@@ -24,6 +27,6 @@ const me = {
 			}
 		}
 	},
-};
+];
 
 module.exports = me;

@@ -1,6 +1,8 @@
 
-const me = {
-	'/foo/bar': {
+const me = [
+
+	'/foo/bar',
+	{
 		params: {
 			name: "owen",
 			obj: {
@@ -32,6 +34,6 @@ const me = {
 			}
 		}
 	},
-};
+];
 
 module.exports = me;

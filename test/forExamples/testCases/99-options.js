@@ -1,9 +1,7 @@
 
-const me = {
-	host: '127.0.0.1',
-	port: 3001,
-
-	'/about': {
+const me = [
+	'/about',
+	{
 		result: {
 			success: true,
 			data: {
@@ -11,6 +9,6 @@ const me = {
 			}
 		}
 	},
-};
+];
 
 module.exports = me;

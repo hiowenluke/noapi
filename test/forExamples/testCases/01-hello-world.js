@@ -1,27 +1,30 @@
 
-const me = {
-	'/say/hi': {
+const me = [
+
+	'/say/hi',
+	{
 		params: {
 			name: 'owen',
-				age: 100
+			age: 100
 		},
 
 		result: {
 			success: true,
-				data: {
+			data: {
 				msg: "Hi, I am owen, 100 years old."
 			}
 		}
 	},
 
-	'/about': {
+	'/about',
+	{
 		result: {
 			success: true,
-				data: {
+			data: {
 				"version": "1.0.0"
 			}
 		}
 	},
-};
+];
 
 module.exports = me;
