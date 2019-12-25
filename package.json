@@ -4,7 +4,7 @@
   "description": "A high-performance and easy-to-use web API framework for Node.js. Noapi loads folder \"biz\" as a web API server, each file in it defines and handles an API, so that you can focus on writing business function code. Noapi is simple enough that you just take it \"out of the box\".",
   "main": "index.js",
   "scripts": {
-    "test": "cd test && mocha . --exit"
+    "test": "node test"
   },
   "keywords": [
     "node.js",
@@ -22,9 +22,7 @@
     "qs": "^6.9.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "request": "^2.88.0"
+    "testor": "^0.3.1"
   },
   "repository": {
     "type": "git",
