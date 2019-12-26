@@ -4,6 +4,7 @@ const path = require('path');
 const cp = require('child_process');
 
 const main = () => {
+	const testorPath = path.resolve(__dirname, '../../node_modules/testor/bin/testor');
 	const examplesPath = __dirname;
 	const exampleNames = fs.readdirSync(examplesPath);
 
@@ -13,8 +14,7 @@ const main = () => {
 		const examplePath = examplesPath + '/' + exampleName;
 		if (!fs.statSync(examplePath).isDirectory()) return;
 
-		const testPath = examplePath + '/test';
-		cp.spawnSync('node', [testPath], {stdio: "inherit"});
+		cp.spawnSync('node', [testorPath, examplePath], {stdio: "inherit"});
 	});
 };
 

@@ -4,6 +4,7 @@ const path = require('path');
 const cp = require('child_process');
 
 const main = () => {
+	const testorPath = path.resolve(__dirname, '../../node_modules/testor/bin/testor');
 	const examplesPath = path.resolve(__dirname, '../../examples');
 	const testCasesPath = path.resolve(__dirname, './testCases');
 
@@ -15,18 +16,18 @@ const main = () => {
 		if (!fs.statSync(examplePath).isDirectory()) return;
 
 		const exampleTestPath = examplePath + '/test';
+		const targetCasesFile = exampleTestPath + '/cases.js';
+
 		fs.mkdirSync(exampleTestPath);
-		fs.copyFileSync(testCasesPath + '/' + exampleName + '.js', exampleTestPath + '/cases.js');
+		fs.copyFileSync(testCasesPath + '/' + exampleName + '.js', targetCasesFile);
 
-		const host = exampleName === '99-options' ? '127.0.0.1' : 'localhost';
-		const port = exampleName === '99-options' ? 3001 : 3000;
-		const content = `require("testor")({host: '${host}', port: ${port}})`;
-		fs.writeFileSync(exampleTestPath + '/index.js', content, 'utf-8');
+		const args = [testorPath, examplePath];
+		const userConfigFile = fs.existsSync(examplePath + '/config.js') ? '--config' : '';
+		if (userConfigFile) args.push(userConfigFile);
 
-		cp.spawnSync('node', [exampleTestPath], {stdio: "inherit"});
+		cp.spawnSync('node', args, {stdio: "inherit"});
 
 		fs.unlinkSync(exampleTestPath + '/cases.js');
-		fs.unlinkSync(exampleTestPath + '/index.js');
 		fs.rmdirSync(exampleTestPath);
 	});
 };
