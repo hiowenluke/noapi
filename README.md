@@ -83,6 +83,17 @@ const isSilence = false;
 
 // The number and order of parameters can be arbitrary
 noapi(name, dir, host, port, isSilence);
+
+// It is equivalents to:
+//     const options = {
+//         name: 'default',
+//         dir: './biz',
+//         host: 'localhost',
+//         port: 3000,
+//         isSilence: true,
+//     };
+//
+//     noapi(options);
 ```
 
 See "[examples/99-options](./examples/99-options)" to learn about it.
