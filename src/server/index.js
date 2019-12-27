@@ -12,7 +12,7 @@ const done = (res, result) => {
 	if (typeof result === 'undefined') {
 		result = {success: false, error: "Internal Server Error"};
 	}
-	else if (result.error) {
+	else if (result && result.error) {
 		result = {success: false, error: result.error};
 	}
 	else {
