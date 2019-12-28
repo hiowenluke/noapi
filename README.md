@@ -112,7 +112,7 @@ Each file in the biz directory defines and handles an API. All files in the biz 
     index.js    
 ```
 
-If there are some none-api files (only be used internally) in the biz directory, this will make the API list unclear. Then you should use the **api directory**, just create an empty file (or with the description of this api) to define an api. See "[examples/04-api-directory](./examples/04-api-directory)".
+If there are some non-api files (only be used internally) in the biz directory, this will make the API list unclear. Then you should use the **api directory**, just create an empty file (or with the description of this api) to define an api. See "[examples/04-api-directory](./examples/04-api-directory)".
 
 ```js
 /root
@@ -126,12 +126,12 @@ If there are some none-api files (only be used internally) in the biz directory,
         /say
             /__lib
             hi.js   
-            tools.js    // none-api
-            check.js    // none-api
+            tools.js    // non-api
+            check.js    // non-api
         about.js       
-        init.js         // none-api
+        init.js         // non-api
         
-    index.js    
+    index.js
 ```
 
 ## Performance
