@@ -16,26 +16,7 @@ const fn = async (api, queryStr) => {
 		return query;
 	}
 
-	let result;
-
-	try {
-		result = await bizDo(api, query);
-
-		if (result && result.error) {
-			const errMsg = result.error;
-
-			if (!config.isSilence) {
-				console.log(errMsg);
-			}
-
-			result = {error: errMsg};
-		}
-	}
-	catch(e) {
-		console.log(e);
-		result = {error: e.toString()};
-	}
-
+	const result = await bizDo(api, query);
 	return result;
 };
 
