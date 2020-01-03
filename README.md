@@ -65,7 +65,8 @@ The order of the parameters in the url can be arbitrary.
 
 * [01 hello world](./examples/01-hello-world)
 * [02 complex url params](./examples/02-complex-url-params)
-* [03 return error](./examples/03-return-error)
+* [03 returning an error](./examples/03-returning-an-error)
+* [04 throwing an error](./examples/04-throwing-an-error)
 * [05 api directory](./examples/05-api-directory)
 * [06 with database](./examples/06-with-database)
 * [99 options](./examples/99-options)
