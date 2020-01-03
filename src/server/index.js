@@ -58,6 +58,10 @@ const me = {
 			const url = req.url;
 			let [api, queryStr] = url.split('?');
 
+			if (api === '/favicon.ico') {
+				return done(res, null);
+			}
+
 			if (api === '/') {
 				return welcome(res);
 			}
