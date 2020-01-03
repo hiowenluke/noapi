@@ -4,10 +4,6 @@ const http = require('http');
 const config = require('../config');
 const routes = require('./routes');
 
-const welcome = (res) => {
-	done(res, 'Welcome to Noapi.');
-};
-
 const done = (res, result) => {
 	if (typeof result === 'undefined') {
 		result = {success: false, error: "Internal Server Error"};
@@ -63,7 +59,7 @@ const me = {
 			}
 
 			if (api === '/') {
-				return welcome(res);
+				return done(res, 'Welcome to Noapi.');
 			}
 
 			const method = req.method.toLowerCase();
