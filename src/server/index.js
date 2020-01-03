@@ -19,8 +19,21 @@ const done = (res, result) => {
 		result = {success: true, data: result};
 	}
 
-	res.writeHead(200, {'Content-Type': 'application/json'});
-	res.write(JSON.stringify(result));
+	write(res, 'json', JSON.stringify(result));
+};
+
+const write = (res, type, str) => {
+	const types = {
+		json: 'application/json',
+		html: 'text/html',
+	};
+
+	if (type === 'html' && !/^<html>/i.test(str)) {
+		str = `<html><body>${str}</body></html>`;
+	}
+
+	res.writeHead(200, {'Content-Type': types[type], 'X-Powered-By': 'Noapi'});
+	res.write(str);
 	res.end();
 };
 
