@@ -50,7 +50,7 @@ const me = {
 			}
 
 			const method = req.method.toLowerCase();
-			if (method === 'post' || !queryStr) {
+			if (method === 'post') {
 				queryStr = await getQueryStr(req);
 			}
 
