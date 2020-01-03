@@ -47,6 +47,18 @@ const getQueryStr = (req) => {
 	})
 };
 
+const getErrorMessages = (arr) => {
+	const messages = [];
+
+	arr.forEach(a => {
+		if (a.substr(0, 7 ) !== '    at ') {
+			messages.push(a);
+		}
+	});
+
+	return messages;
+};
+
 const me = {
 	start() {
 		const server = new http.Server();
@@ -81,23 +93,28 @@ const me = {
 
 				let str;
 				if (config.debug === 0) {
-					str = 'Internal Server Error';
+					done(res);
 				}
 				else {
-					const arr = e.stack
-						.replace(/ {4}/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
-						.split('\n')
-					;
+					const arr = e.stack.split('\n');
+					const messages = getErrorMessages(arr);
 
-					if (config.debug === 1) { // print error stack 1
-						str = [arr[0], arr[1]].join('<br/>');
+					if (config.debug === 1) { // print error message
+						done(res, {error: messages.join('\n')});
 					}
-					else { // print full error stack
-						str = arr.join('<br/>');
+					else {
+						if (config.debug === 2) { // print error stack 1
+							const firstLine = arr.find(a => a.substr(0, 7) === '    at ');
+							str = [...messages, firstLine].join('<br/>');
+						}
+						else { // print full error stack
+							str = arr.join('<br/>');
+						}
+
+						str = str.replace(/ {4}/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+						write(res, 'html', str);
 					}
 				}
-
-				write(res, 'html', str);
 			}
 		});
 
