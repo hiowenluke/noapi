@@ -9,9 +9,8 @@ const me = {
 	isSilence: false, // Do not print logs if it is true
 
 	// 0 print "Internal Server Error"
-	// 1 print error message (default)
-	// 2 print error stack 1
-	// 3 print full error stack
+	// 1 print error message and stack 1
+	// 2 print full error stack
 	onerror: 1,
 
 	webServiceRoot: '', // The root path of web service
