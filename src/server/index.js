@@ -97,22 +97,22 @@ const me = {
 				}
 				else {
 					const arr = e.stack.split('\n');
-					const messages = getErrorMessages(arr);
 
-					if (onerror === 1) { // print error message
-						done(res, {error: messages.join('\n')});
+					// print error message with stack 1
+					if (onerror === 1) {
+						const messages = getErrorMessages(arr);
+						const message = messages.join('\n');
+						let script = arr.find(a => a.substr(0, 7) === '    at ');
+						script = script
+							.replace('    at fn (', '')
+							.replace(config.webServiceRoot, '.')
+							.replace(/\)$/, '')
+						;
+						done(res, {error: {message, script}});
 					}
 					else {
-						let str;
-
-						if (onerror === 2) { // print error stack 1
-							const firstLine = arr.find(a => a.substr(0, 7) === '    at ');
-							str = [...messages, firstLine].join('<br/>');
-						}
-						else { // print full error stack
-							str = arr.join('<br/>');
-						}
-
+						// print full error stack
+						let str = arr.join('<br/>');
 						str = str.replace(/ {4}/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
 						write(res, 'html', str);
 					}
