@@ -7,7 +7,7 @@ const me = {
 	host: 'localhost',
 	port: 3000,
 	isSilence: false, // Do not print logs if it is true
-
+	debug: 1, // 0 no error message to front / 1 print error stack 1 (default) / 2 print full errors
 	webServiceRoot: '', // The root path of web service
 
 	init(pathToCaller, args = []) {
