@@ -66,8 +66,8 @@ The order of the parameters in the url can be arbitrary.
 * [01 hello world](./examples/01-hello-world)
 * [02 complex url params](./examples/02-complex-url-params)
 * [03 return error](./examples/03-return-error)
-* [04 api directory](./examples/04-api-directory)
-* [05 with database](./examples/05-with-database)
+* [05 api directory](./examples/05-api-directory)
+* [06 with database](./examples/06-with-database)
 * [99 options](./examples/99-options)
 
 ## Options
@@ -112,7 +112,7 @@ Each file in the biz directory defines and handles an API. All files in the biz 
     index.js    
 ```
 
-If there are some non-api files (only be used internally) in the biz directory, this will make the API list unclear. Then you should use the **api directory**, just create an empty file (or with the description of this api) to define an api. See "[examples/04-api-directory](./examples/04-api-directory)".
+If there are some non-api files (only be used internally) in the biz directory, this will make the API list unclear. Then you should use the **api directory**, just create an empty file (or with the description of this api) to define an api. See "[examples/05-api-directory](./examples/05-api-directory)".
 
 ```js
 /root
