@@ -12,7 +12,7 @@ const me = {
 	// 1 print error message (default)
 	// 2 print error stack 1
 	// 3 print full error stack
-	debug: 1,
+	onerror: 1,
 
 	webServiceRoot: '', // The root path of web service
 

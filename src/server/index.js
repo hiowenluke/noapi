@@ -89,21 +89,23 @@ const me = {
 				done(res, result);
 			}
 			catch(e) {
+				const onerror = config.onerror;
 				!config.isSilence && console.log(e);
 
-				let str;
-				if (config.debug === 0) {
+				if (onerror === 0) {
 					done(res);
 				}
 				else {
 					const arr = e.stack.split('\n');
 					const messages = getErrorMessages(arr);
 
-					if (config.debug === 1) { // print error message
+					if (onerror === 1) { // print error message
 						done(res, {error: messages.join('\n')});
 					}
 					else {
-						if (config.debug === 2) { // print error stack 1
+						let str;
+
+						if (onerror === 2) { // print error stack 1
 							const firstLine = arr.find(a => a.substr(0, 7) === '    at ');
 							str = [...messages, firstLine].join('<br/>');
 						}
