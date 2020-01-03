@@ -67,10 +67,39 @@ const me = {
 				queryStr = await getQueryStr(req);
 			}
 
-			const result = await routes(api, queryStr);
-			done(res, result);
-		});
+			try {
+				let result = await routes(api, queryStr);
 
+				if (result && result.error) {
+					!config.isSilence && console.log(result.error);
+				}
+
+				done(res, result);
+			}
+			catch(e) {
+				!config.isSilence && console.log(e);
+
+				let str;
+				if (config.debug === 0) {
+					str = 'Internal Server Error';
+				}
+				else {
+					const arr = e.stack
+						.replace(/ {4}/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
+						.split('\n')
+					;
+
+					if (config.debug === 1) { // print error stack 1
+						str = [arr[0], arr[1]].join('<br/>');
+					}
+					else { // print full error stack
+						str = arr.join('<br/>');
+					}
+				}
+
+				write(res, 'html', str);
+			}
+		});
 
 		const {name, host, port, isSilence} = config;
 		server.listen(port, () => {
