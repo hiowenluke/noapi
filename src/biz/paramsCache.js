@@ -23,11 +23,18 @@ const me = {
 
 		apis.forEach(api => {
 			let filePath = root + bizDir + api;
+
+			// The filePath will be exists if it is a directory
 			if (!fs.existsSync(filePath)) {
+
+				// If it it not exists, then check for .js file
 				filePath += '.js';
+
+				// If not found, then ignore it
 				if (!fs.existsSync(filePath)) return;
 			}
 
+			// Require the directory or js file
 			const bizFile = require(filePath);
 			const content = bizFile.toString(); // "(a, b = '', c) => {}"
 
