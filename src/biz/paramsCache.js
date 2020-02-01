@@ -22,8 +22,11 @@ const me = {
 		const apis = data.apis;
 
 		apis.forEach(api => {
-			const filePath = root + bizDir + api;
-			if (!fs.existsSync(filePath)) return;
+			let filePath = root + bizDir + api;
+			if (!fs.existsSync(filePath)) {
+				filePath += '.js';
+				if (!fs.existsSync(filePath)) return;
+			}
 
 			const bizFile = require(filePath);
 			const content = bizFile.toString(); // "(a, b = '', c) => {}"
