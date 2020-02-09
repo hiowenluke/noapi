@@ -71,6 +71,15 @@ const me = {
 				const done = processPublic(api, res);
 				if (done) return;
 			}
+			else {
+				if (api === '/favicon.ico') {
+					return done(res, null);
+				}
+
+				if (api === '/') {
+					return done(res, 'Welcome to Noapi.');
+				}
+			}
 
 			const method = req.method.toLowerCase();
 			if (method === 'post') {
