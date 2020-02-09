@@ -8,7 +8,7 @@ const fn = async (api, queryStr) => {
 
 	const isApiExists = data.apis.indexOf(api) >= 0;
 	if (!isApiExists) {
-		return {error: `${api} not found`};
+		return {error: `${api} is not found`};
 	}
 
 	const query = parseQueryStr.do(queryStr);
