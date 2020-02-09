@@ -12,7 +12,7 @@ const me = [
 	{
 		result: {
 			"success": false,
-			"error": "/xxx not found"
+			"error": "/xxx is not found"
 		}
 	},
 
