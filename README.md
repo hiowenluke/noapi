@@ -69,6 +69,7 @@ The order of the parameters in the url can be arbitrary.
 * [04 throwing an error](./examples/04-throwing-an-error)
 * [05 api directory](./examples/05-api-directory)
 * [06 with database](./examples/06-with-database)
+* [07 static resources](./examples/07-static-resources)
 * [99 options](./examples/99-options)
 
 ## Options
