@@ -1,4 +1,5 @@
 
+const fs = require('fs');
 const path = require('path');
 
 const me = {
@@ -14,9 +15,11 @@ const me = {
 	onerror: 1,
 
 	webServiceRoot: '', // The root path of web service
+	enablePublic: '', // Enable public if the directory "public" is exists
 
 	init(pathToCaller, args = []) {
 		this.webServiceRoot = path.resolve(pathToCaller, '..');
+		this.enablePublic = fs.existsSync(this.webServiceRoot + '/public');
 
 		let name, dir, host, port, isSilence;
 

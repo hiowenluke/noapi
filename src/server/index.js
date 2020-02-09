@@ -3,6 +3,7 @@ const http = require('http');
 
 const config = require('../config');
 const routes = require('./routes');
+const processPublic = require('./public');
 
 const done = (res, result) => {
 	if (typeof result === 'undefined') {
@@ -66,12 +67,9 @@ const me = {
 			const url = req.url;
 			let [api, queryStr] = url.split('?');
 
-			if (api === '/favicon.ico') {
-				return done(res, null);
-			}
-
-			if (api === '/') {
-				return done(res, 'Welcome to Noapi.');
+			if (config.enablePublic) {
+				const done = processPublic(api, res);
+				if (done) return;
 			}
 
 			const method = req.method.toLowerCase();
