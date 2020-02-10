@@ -1,6 +1,6 @@
 {
   "name": "noapi",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "A high-performance and easy-to-use web API framework for Node.js. Noapi loads directory \"biz\" as a web API server, each file in it defines and handles an API, so that you can focus on writing business function code. Noapi is simple enough that you just take it \"out of the box\".",
   "main": "index.js",
   "scripts": {
