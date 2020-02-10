@@ -37,19 +37,30 @@ const fn = (pathName, res) => {
 	// non-static resources
 	const contentType = mime[ext];
 	if (!contentType) {
+
 		const filePath = getFilePath(pathName);
 		if (fs.existsSync(filePath)) {
 
 			// It is a directory
 			if (fs.statSync(filePath).isDirectory()) {
-				response(res, 'Directory is not supported');
-				return true;
+				const index = filePath + '/index.html';
+
+				// no index.html
+				if (!fs.existsSync(index)) {
+					response(res, 'Directory listing is not supported');
+				}
+				else {
+					// load index.html
+					readFile(filePath, contentType, res);
+				}
 			}
 			else {
-				// The file type is not be supported
+				// It is a file
+				// That means its file type is not be supported
 				response(res, 'File type .' + ext + ' is not supported');
-				return true;
 			}
+
+			return true;
 		}
 		else {
 			// It is an api, then do nothing
@@ -57,9 +68,9 @@ const fn = (pathName, res) => {
 		}
 	}
 
-	// not found
 	const filePath = getFilePath(pathName);
 	if (!fs.existsSync(filePath)) {
+		// not found
 		response(res, pathName + ' is not found');
 	}
 	else {
