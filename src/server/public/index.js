@@ -51,7 +51,7 @@ const fn = (pathName, res) => {
 				}
 				else {
 					// load index.html
-					readFile(filePath, contentType, res);
+					readFile(index, mime['html'], res);
 				}
 			}
 			else {
