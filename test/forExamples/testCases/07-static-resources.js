@@ -11,7 +11,7 @@ const me = [
 	'/images',
 	{
 		verify(result) {
-			return result.indexOf('Directory is not supported') >= 0;
+			return result.indexOf('Directory listing is not supported') >= 0;
 		}
 	},
 
@@ -26,6 +26,20 @@ const me = [
 	{
 		verify(result) {
 			return result.indexOf('\u0000') >= 0;
+		}
+	},
+
+	'/nav',
+	{
+		verify(result) {
+			return result.indexOf('/nav/index.html') >= 0;
+		}
+	},
+
+	'/nav/main.html',
+	{
+		verify(result) {
+			return result.indexOf('/nav/main.html') >= 0;
 		}
 	},
 
